@@ -1,43 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Thalia Tiffany" />
+        <meta
+            name="google-site-verification"
+            content="z8pDSIMD1Z-Hgt6SxaTJdqq6ISvook8pgVK677P_6J0"
+        />
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <title>Thalia Tiffany</title>
+    </head>
+    <body class="no-overflow" style="-webkit-app-region: drag">
+        <noscript>
+            <style>
+                .content {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+                .align-center {
+                    text-align: center;
+                }
+                .warning-icon svg path {
+                    fill: rgb(255, 0, 0);
+                }
+            </style>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+            <div class="content">
+                <div class="align-center warning-icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true"
+                        role="img"
+                        class="iconify iconify--fluent"
+                        width="80"
+                        height="80"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 12 12"
+                    >
+                        <g fill="none">
+                            <path
+                                d="M5.25 8.25a.75.75 0 1 1 1.5 0a.75.75 0 0 1-1.5 0z"
+                                fill="currentColor"
+                            ></path>
+                            <path
+                                d="M5.508 3.41a.5.5 0 0 1 .984 0l.008.09V6l-.008.09a.5.5 0 0 1-.984 0L5.5 6V3.5l.008-.09z"
+                                fill="currentColor"
+                            ></path>
+                            <path
+                                d="M11 6A5 5 0 1 1 1 6a5 5 0 0 1 10 0zm-1 0a4 4 0 1 0-8 0a4 4 0 0 0 8 0z"
+                                fill="currentColor"
+                            ></path>
+                        </g>
+                    </svg>
+                </div>
+                <h3>JavaScript Required</h3>
+                <hr />
+                <p>
+                    We're sorry, but this app won't work appropriately without
+                    JavaScript enabled.
+                </p>
+            </div>
+        </noscript>
+        <div id="root"></div>
+        <script>
+            function checkCanvas() {
+                const canvas = document.getElementById('fireworks');
+                if (canvas) {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    var ctx = canvas.getContext('2d');
+                    function Firework(x, y, height, yVol, R, G, B) {
+                        this.x = x;
+                        this.y = y;
+                        this.yVol = yVol;
+                        this.height = height;
+                        this.R = R;
+                        this.G = G;
+                        this.B = B;
+                        this.radius = 2;
+                        this.boom = false;
+                        var boomHeight = Math.floor(Math.random() * 200);
+                        this.draw = function () {
+                            ctx.fillStyle =
+                                'rgba(' + R + ',' + G + ',' + B + ')';
+                            ctx.strokeStyle =
+                                'rgba(' + R + ',' + G + ',' + B + ')';
+                            ctx.beginPath();
+                            //   ctx.arc(this.x,boomHeight,this.radius,Math.PI * 2,0,false);
+                            ctx.stroke();
+                            ctx.beginPath();
+                            ctx.arc(this.x, this.y, 3, Math.PI * 2, 0, false);
+                            ctx.fill();
+                        };
+                        this.update = function () {
+                            this.y -= this.yVol;
+                            if (this.radius < 20) {
+                                this.radius += 0.35;
+                            }
+                            if (this.y < boomHeight) {
+                                this.boom = true;
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+                                for (var i = 0; i < 120; i++) {
+                                    particleArray.push(
+                                        new Particle(
+                                            this.x,
+                                            this.y,
+                                            // (Math.random() * 2) + 0.5//
+                                            Math.random() * 2 + 1,
+                                            this.R,
+                                            this.G,
+                                            this.B,
+                                            1
+                                        )
+                                    );
+                                }
+                            }
+                            this.draw();
+                        };
+                        this.update();
+                    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+                    window.addEventListener('click', (e) => {
+                        var x = e.clientX;
+                        var y = canvas.height;
+                        var R = Math.floor(Math.random() * 255);
+                        var G = Math.floor(Math.random() * 255);
+                        var B = Math.floor(Math.random() * 255);
+                        var height = Math.floor(Math.random() * 20) + 10;
+                        fireworkArray.push(
+                            new Firework(x, y, height, 5, R, G, B)
+                        );
+                    });
+
+                    function Particle(x, y, radius, R, G, B, A) {
+                        this.x = x;
+                        this.y = y;
+                        this.radius = radius;
+                        this.R = R;
+                        this.G = G;
+                        this.B = B;
+                        this.A = A;
+                        this.timer = 0;
+                        this.fade = false;
+
+                        // Change random spread
+                        this.xVol = Math.random() * 10 - 4;
+                        this.yVol = Math.random() * 10 - 4;
+
+                        this.draw = function () {
+                            //   ctx.globalCompositeOperation = "lighter"
+                            ctx.fillStyle =
+                                'rgba(' +
+                                R +
+                                ',' +
+                                G +
+                                ',' +
+                                B +
+                                ',' +
+                                this.A +
+                                ')';
+                            ctx.save();
+                            ctx.beginPath();
+                            // ctx.fillStyle = "white"
+                            ctx.globalCompositeOperation = 'screen';
+                            ctx.arc(
+                                this.x,
+                                this.y,
+                                this.radius,
+                                Math.PI * 2,
+                                0,
+                                false
+                            );
+                            ctx.fill();
+
+                            ctx.restore();
+                        };
+                        this.update = function () {
+                            this.x += this.xVol;
+                            this.y += this.yVol;
+
+                            // Comment out to stop gravity.
+                            if (this.timer < 200) {
+                                this.yVol += 0.12;
+                            }
+                            this.A -= 0.02;
+                            if (this.A < 0) {
+                                this.fade = true;
+                            }
+                            this.draw();
+                        };
+                        this.update();
+                    }
+
+                    var fireworkArray = [];
+                    var particleArray = [];
+                    for (var i = 0; i < 6; i++) {
+                        var x = Math.random() * canvas.width;
+                        var y = canvas.height;
+                        var R = Math.floor(Math.random() * 255);
+                        var G = Math.floor(Math.random() * 255);
+                        var B = Math.floor(Math.random() * 255);
+                        var height = Math.floor(Math.random() * 20) + 10;
+                        fireworkArray.push(
+                            new Firework(x, y, height, 5, R, G, B)
+                        );
+                    }
+
+                    function animate() {
+                        requestAnimationFrame(animate);
+                        // ctx.clearRect(0,0,canvas.width,canvas.height)
+                        ctx.fillStyle = 'rgba(0,0,0,0.1)';
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        for (var i = 0; i < fireworkArray.length; i++) {
+                            fireworkArray[i].update();
+                        }
+                        for (var j = 0; j < particleArray.length; j++) {
+                            particleArray[j].update();
+                        }
+                        if (fireworkArray.length < 4) {
+                            var x = Math.random() * canvas.width;
+                            var y = canvas.height;
+                            var height = Math.floor(Math.random() * 20);
+                            var yVol = 5;
+                            var R = Math.floor(Math.random() * 255);
+                            var G = Math.floor(Math.random() * 255);
+                            var B = Math.floor(Math.random() * 255);
+                            fireworkArray.push(
+                                new Firework(x, y, height, yVol, R, G, B)
+                            );
+                        }
+
+                        fireworkArray = fireworkArray.filter(
+                            (obj) => !obj.boom
+                        );
+                        particleArray = particleArray.filter(
+                            (obj) => !obj.fade
+                        );
+                    }
+                    animate();
+
+                    window.addEventListener('resize', (e) => {
+                        canvas.width = window.innerWidth;
+                        canvas.height = window.innerHeight;
+                    });
+                } else setTimeout(() => checkCanvas(), 10000);
+            }
+            checkCanvas();
+        </script>
+    </body>
 </html>
