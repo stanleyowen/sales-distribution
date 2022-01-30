@@ -3,6 +3,7 @@ import { initializeApp } from '@firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import {
     Box,
+    TextField,
     AppBar,
     Toolbar,
     IconButton,
@@ -10,6 +11,12 @@ import {
     Button,
     LinearProgress,
     CircularProgress,
+    Grid,
+    Select,
+    MenuItem,
+    SelectChangeEvent,
+    InputLabel,
+    FormControl,
 } from '@mui/material';
 import { MenuIcon } from '../lib/icons.component';
 import '../scss/new-year.2021.scss';
@@ -19,12 +26,17 @@ const App = ({ auth, config }: any) => {
     const { loggedIn } = auth;
 
     const [properties, setProperties] = useState({
-        pages: 5,
-        currentPage: 1,
-        duration: 0,
-        progress: 0,
-        volume: 100,
+        invoiceNo: '',
+        invoiceType: '',
+        name: '',
+        address: '',
+        NIK: '',
+        NPWP: '',
+        items: [{ name: '', price: '', qty: '' }],
     });
+
+    const handleProperties = (id: string, value: string) =>
+        setProperties({ ...properties, [id]: value });
 
     useEffect(() => {
         initializeApp(config);
@@ -38,42 +50,16 @@ const App = ({ auth, config }: any) => {
             });
         };
 
-        const themeURL = JSON.parse(
-            localStorage.getItem('theme-session') || `{}`
-        ).url;
-        const backgroundElement = document.getElementById('backdrop-image');
-        if (backgroundElement && themeURL)
-            backgroundElement.style.background = `url(${themeURL})`;
+        document
+            .querySelectorAll('.MuiTextField-root')
+            .forEach((input: any) => {
+                input.classList.add('w-100');
+            });
     }, []); // eslint-disable-line
-
-    function LightEffect() {
-        const cirles = [];
-        for (let i = 0; i < 100; i++) {
-            cirles.push(
-                <div className="circle-container">
-                    <div className="circle"></div>
-                </div>
-            );
-        }
-        return cirles;
-    }
-
-    useEffect(() => {
-        if (properties.currentPage === 2) {
-            const page = document.querySelector(
-                '.birthday-card'
-            ) as HTMLElement;
-            const cardCover = document.querySelector(
-                '.card-cover'
-            ) as HTMLElement;
-            page.classList.add('rotated');
-            cardCover.classList.add('flipped');
-        }
-    }, [properties.currentPage]);
 
     return (
         <div>
-            {loggedIn ? (
+            <div>
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar position="static">
                         <Toolbar>
@@ -97,22 +83,94 @@ const App = ({ auth, config }: any) => {
                         </Toolbar>
                     </AppBar>
                 </Box>
-            ) : (
-                <div>
-                    <LinearProgress />
-                    <div className="backdrop-overlay"></div>
-                    <div className="backdrop">
-                        <div className="acrylic-material"></div>
-                        <div
-                            className="backdrop-image"
-                            id="backdrop-image"
-                        ></div>
-                    </div>
-                    <div className="bg-white login-container p-10 rounded-corner w-auto p-15">
-                        <CircularProgress className="m-auto" />
-                    </div>
+                <div className="mt-10 p-10">
+                    <Grid container spacing={2}>
+                        <Grid item xs={8}>
+                            <TextField
+                                variant="filled"
+                                label="Invoice No"
+                                value={properties.invoiceNo}
+                                onChange={(e) =>
+                                    handleProperties(
+                                        'invoiceNo',
+                                        e.target.value
+                                    )
+                                }
+                            />
+                        </Grid>
+                        <Grid item xs={4}>
+                            <FormControl fullWidth variant="filled">
+                                <InputLabel id="invoice-type">
+                                    Invoice Type
+                                </InputLabel>
+                                <Select
+                                    variant="filled"
+                                    labelId="invoice-type"
+                                    value={properties.invoiceType}
+                                    onChange={(e: SelectChangeEvent) =>
+                                        handleProperties(
+                                            'invoiceType',
+                                            e.target.value as string
+                                        )
+                                    }
+                                >
+                                    <MenuItem value="">Auto</MenuItem>
+                                    <MenuItem value="A">A</MenuItem>
+                                    <MenuItem value="BC">BC</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={5}>
+                            <TextField
+                                label="Item Name"
+                                value={properties.items[0].name}
+                                onChange={(e) =>
+                                    handleProperties(
+                                        'items[0].name',
+                                        e.target.value
+                                    )
+                                }
+                            />
+                        </Grid>
+                        <Grid item xs={2}>
+                            <TextField
+                                label="Quantity"
+                                value={properties.items[0].qty}
+                                onChange={(e) =>
+                                    handleProperties(
+                                        'items[0].qty',
+                                        e.target.value
+                                    )
+                                }
+                            />
+                        </Grid>
+                        <Grid item xs={2}>
+                            <TextField
+                                label="Quantity"
+                                value={properties.items[0].qty}
+                                onChange={(e) =>
+                                    handleProperties(
+                                        'items[0].qty',
+                                        e.target.value
+                                    )
+                                }
+                            />
+                        </Grid>
+                        <Grid item xs={3}>
+                            <TextField
+                                label="Quantity"
+                                value={properties.items[0].qty}
+                                onChange={(e) =>
+                                    handleProperties(
+                                        'items[0].qty',
+                                        e.target.value
+                                    )
+                                }
+                            />
+                        </Grid>
+                    </Grid>
                 </div>
-            )}
+            </div>
         </div>
     );
 };
