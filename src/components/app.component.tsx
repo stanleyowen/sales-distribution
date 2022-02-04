@@ -18,7 +18,6 @@ import {
     InputLabel,
     FormControl,
 } from '@mui/material';
-import { MenuIcon } from '../lib/icons.component';
 
 type Props = {
     invoiceNumber: string;
