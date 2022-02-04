@@ -19,7 +19,6 @@ import {
     FormControl,
 } from '@mui/material';
 import { MenuIcon } from '../lib/icons.component';
-import '../scss/new-year.2021.scss';
 
 type Props = {
     invoiceNumber: string;

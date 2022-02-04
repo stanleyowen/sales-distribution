@@ -20,7 +20,6 @@ import {
 } from '@mui/material';
 import CustomerDatabase from '../customer-data.json';
 import { MenuIcon } from '../lib/icons.component';
-import '../scss/new-year.2021.scss';
 
 // eslint-disable-next-line
 const App = ({ auth, config }: any) => {

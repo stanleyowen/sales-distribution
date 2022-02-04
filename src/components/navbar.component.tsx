@@ -8,7 +8,6 @@ import {
     Button,
 } from '@mui/material';
 import { MenuIcon } from '../lib/icons.component';
-import '../scss/new-year.2021.scss';
 
 // eslint-disable-next-line
 const Navbar = ({ auth }: any) => {
