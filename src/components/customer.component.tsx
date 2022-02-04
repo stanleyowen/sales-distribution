@@ -2,21 +2,30 @@ import React, { useEffect, useState } from 'react';
 import {
     Paper,
     Table,
+    TableRow,
     TableBody,
     TableCell,
     TableContainer,
-    TableRow,
     LinearProgress,
     TablePagination,
 } from '@mui/material';
 import CustomerDatabase from '../customer-data.json';
-import { MenuIcon } from '../lib/icons.component';
+
+type Props = {
+    page: number;
+    rowsPerPage: number;
+};
 
 // eslint-disable-next-line
 const Customer = ({ auth, config }: any) => {
     const { loggedIn } = auth;
-    const [page, setPage] = useState<number>(0);
-    const [rowPerPage, setRowPage] = useState<number>(10);
+    const [props, setProps] = useState<Props>({
+        page: 0,
+        rowsPerPage: 10,
+    });
+
+    const handleProperties = (id: string, value: number) =>
+        setProps({ ...props, [id]: value });
 
     const columns = [
         { id: 'id', label: 'Id' },
@@ -40,11 +49,12 @@ const Customer = ({ auth, config }: any) => {
                     <TableBody>
                         {CustomerDatabase.length > 0 ? (
                             CustomerDatabase.slice(
-                                page * rowPerPage,
-                                page * rowPerPage + rowPerPage
-                            ).map((customer: any, index: number) => {
+                                props.page * props.rowsPerPage,
+                                props.page * props.rowsPerPage +
+                                    props.rowsPerPage
+                            ).map((customer: any) => {
                                 return (
-                                    <TableRow key={index} hover>
+                                    <TableRow key={customer.id} hover>
                                         {columns.map((column: any) => {
                                             return (
                                                 <TableCell key={column.id}>
@@ -68,15 +78,15 @@ const Customer = ({ auth, config }: any) => {
 
             <TablePagination
                 component="div"
+                page={props.page}
+                rowsPerPage={props.rowsPerPage}
                 count={CustomerDatabase.length ?? 0}
-                rowsPerPage={rowPerPage}
-                page={page}
-                onPageChange={(_, newPage) => {
-                    setPage(newPage);
+                onPageChange={(_, newPage: number) => {
+                    handleProperties('page', newPage);
                 }}
                 onRowsPerPageChange={(e) => {
-                    setPage(0);
-                    setRowPage(+e.target.value);
+                    handleProperties('page', 0);
+                    handleProperties('rowsPerPage', +e.target.value);
                 }}
             />
         </div>
