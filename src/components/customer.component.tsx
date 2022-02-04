@@ -7,6 +7,7 @@ import {
     TableContainer,
     TableRow,
     LinearProgress,
+    TablePagination,
 } from '@mui/material';
 import CustomerDatabase from '../customer-data.json';
 import { MenuIcon } from '../lib/icons.component';
@@ -64,6 +65,20 @@ const Customer = ({ auth, config }: any) => {
                     </TableBody>
                 </Table>
             </TableContainer>
+
+            <TablePagination
+                component="div"
+                count={CustomerDatabase.length ?? 0}
+                rowsPerPage={rowPerPage}
+                page={page}
+                onPageChange={(_, newPage) => {
+                    setPage(newPage);
+                }}
+                onRowsPerPageChange={(e) => {
+                    setPage(0);
+                    setRowPage(+e.target.value);
+                }}
+            />
         </div>
     );
 };
