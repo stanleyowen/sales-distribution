@@ -1,1890 +1,1654 @@
 [
   {
-    "No": 1,
-    "Nama": "AHMAD",
-    "NPWP": "000000000000000",
-    "KTP": 1205102802710001,
-    "Alamat": "Dusun V Tg.Mulia",
-    "NPWP/KTP": "000000000000000/1205102802710001"
-  },
-  {
-    "No": 2,
-    "Nama": "AHMAD RUSDI",
-    "NPWP": "000000000000000",
-    "KTP": 1219031705780001,
-    "Alamat": "Dusun Ingin Maju, Meunasah Tumong, Seulimeum, Aceh Besar",
-    "NPWP/KTP": "000000000000000/1219031705780001"
-  },
-  {
-    "No": 3,
-    "Nama": "ARIFIN",
-    "NPWP": "000000000000000",
-    "KTP": 1116093112920001,
-    "Alamat": "Dusun Damai, Tanjung Keramat, Banda Mulia, Aceh Tamiang",
-    "NPWP/KTP": "000000000000000/1116093112920001"
-  },
-  {
-    "No": 4,
-    "Nama": "AZHARI H",
-    "NPWP": "000000000000000",
-    "KTP": 1106041510680001,
-    "Alamat": "Dusun Doa Restu, Beureunut, Seulimeum, Aceh Besar",
-    "NPWP/KTP": "000000000000000/1106041510680001"
-  },
-  {
-    "No": 5,
-    "Nama": "BOEDY HARYANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1205182404500001,
-    "Alamat": "Dusun III Tepi Gandu, RT/RW 002/002, Lubuk Kertang, Brandan Barat, Langkat",
-    "NPWP/KTP": "000000000000000/1205182404500001"
-  },
-  {
-    "No": 6,
-    "Nama": "DONA PAULUS PANJAITAN",
-    "NPWP": "000000000000000",
-    "KTP": 1209200606910009,
-    "Alamat": "Jl.Jalak Lk XI, Lestari, Kota Kisaran Timur, Asahan",
-    "NPWP/KTP": "000000000000000/1209200606910009"
-  },
-  {
-    "No": 7,
-    "Nama": "ERIK IRAWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1219010608910001,
-    "Alamat": "Gang Keluarga Lk II, Pangkalan Dodek, Medang Deras, Batu Bara",
-    "NPWP/KTP": "000000000000000/1219010608910001"
-  },
-  {
-    "No": 8,
-    "Nama": "KARSONO",
-    "NPWP": "000000000000000",
-    "KTP": 1205092005860005,
-    "Alamat": "Dusun Sido Bangun, Teluk, Secanggang, Langkat",
-    "NPWP/KTP": "000000000000000/1205092005860005"
-  },
-  {
-    "No": 9,
-    "Nama": "KHAIRIAH",
-    "NPWP": "000000000000000",
-    "KTP": 1218036102740002,
-    "Alamat": "Dusun I Bogak Besar, Teluk Mengkudu, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218036102740002"
-  },
-  {
-    "No": 10,
-    "Nama": "MANGISI TUA SIBARANI",
-    "NPWP": "000000000000000",
-    "KTP": 1207232410680004,
-    "Alamat": "Dusun IV Jl.Tanjung Balai No.8, Sunggal Kanan, Sunggal, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207232410680004"
-  },
-  {
-    "No": 11,
-    "Nama": "MAULISA PUTRA",
-    "NPWP": "000000000000000",
-    "KTP": 1207240303830004,
-    "Alamat": "Dusun VI, Hamparan Perak, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207240303830004"
-  },
-  {
-    "No": 12,
-    "Nama": "MILA BR GINTING",
-    "NPWP": "000000000000000",
-    "KTP": 1207065910760001,
-    "Alamat": "Batu Gemuk, Namo Rambe, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207065910760001"
-  },
-  {
-    "No": 13,
-    "Nama": "MUSTAR",
-    "NPWP": "000000000000000",
-    "KTP": 1219020107600004,
-    "Alamat": "Dusun II Pematang Kuing, Sei Suka, Batu Bara",
-    "NPWP/KTP": "000000000000000/1219020107600004"
+    "id": 1,
+    "fullName": "AHMAD",
+    "taxId": "000000000000000",
+    "idNumber": "1205102802710001",
+    "address": "Dusun V Tg.Mulia"
   },
   {
-    "No": 14,
-    "Nama": "NURDIN",
-    "NPWP": "000000000000000",
-    "KTP": 1219033112560028,
-    "Alamat": "Dusun IV Tanjung Harapan, Air Putih, Batu Bara",
-    "NPWP/KTP": "000000000000000/1219033112560028"
+    "id": 2,
+    "fullName": "AHMAD RUSDI",
+    "taxId": "000000000000000",
+    "idNumber": "1219031705780001",
+    "address": "Dusun Ingin Maju, Meunasah Tumong, Seulimeum, Aceh Besar"
   },
   {
-    "No": 15,
-    "Nama": "NURHAYATI",
-    "NPWP": "000000000000000",
-    "KTP": 1210024911740001,
-    "Alamat": "Dusun I Kuala Tanjung, Sei Suka, Kab.Batu Bara",
-    "NPWP/KTP": "000000000000000/1210024911740001"
+    "id": 3,
+    "fullName": "ARIFIN",
+    "taxId": "000000000000000",
+    "idNumber": "1116093112920001",
+    "address": "Dusun Damai, Tanjung Keramat, Banda Mulia, Aceh Tamiang"
   },
   {
-    "No": 16,
-    "Nama": "PENDI ANJASMARA LIMBONG",
-    "NPWP": "000000000000000",
-    "KTP": 1218111712820001,
-    "Alamat": "Dusun V Tarean, Silinda, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218111712820001"
+    "id": 4,
+    "fullName": "AZHARI H",
+    "taxId": "000000000000000",
+    "idNumber": "1106041510680001",
+    "address": "Dusun Doa Restu, Beureunut, Seulimeum, Aceh Besar"
   },
   {
-    "No": 17,
-    "Nama": "PHILIPUS TARIGAN TUA",
-    "NPWP": "000000000000000",
-    "KTP": 1207061702730001,
-    "Alamat": "Batu Gemuk, Namo Rambe, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207061702730001"
+    "id": 5,
+    "fullName": "BOEDY HARYANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1205182404500001",
+    "address": "Dusun III Tepi Gandu, RT/RW 002/002, Lubuk Kertang, Brandan Barat, Langkat"
   },
   {
-    "No": 18,
-    "Nama": "PT BAHARI MAKMUR SEJATI",
-    "NPWP": 211231220401000,
-    "KTP": "-",
-    "Alamat": "Jl.Utama Modern Industri Blok AA No.1 RT.0 RW.0 Barengkok Kibin Serang Banten, 00000",
-    "NPWP/KTP": "211231220401000/-"
+    "id": 6,
+    "fullName": "DONA PAULUS PANJAITAN",
+    "taxId": "000000000000000",
+    "idNumber": "1209200606910009",
+    "address": "Jl.Jalak Lk XI, Lestari, Kota Kisaran Timur, Asahan"
   },
   {
-    "No": 19,
-    "Nama": "PT SUMBER WINDU M S",
-    "NPWP": "014575682122000",
-    "KTP": "-",
-    "Alamat": "Jl.Aip II KS.Tubun No.120/90 Medan",
-    "NPWP/KTP": "014575682122000/-"
+    "id": 7,
+    "fullName": "ERIK IRAWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1219010608910001",
+    "address": "Gang Keluarga Lk II, Pangkalan Dodek, Medang Deras, Batu Bara"
   },
   {
-    "No": 20,
-    "Nama": "RUSLI",
-    "NPWP": "000000000000000",
-    "KTP": 1219010107700040,
-    "Alamat": "Dusun Mesjid Barat, Lalang, Medang Deras, Batu Bara",
-    "NPWP/KTP": "000000000000000/1219010107700040"
+    "id": 8,
+    "fullName": "KARSONO",
+    "taxId": "000000000000000",
+    "idNumber": "1205092005860005",
+    "address": "Dusun Sido Bangun, Teluk, Secanggang, Langkat"
   },
   {
-    "No": 21,
-    "Nama": "STELLA",
-    "NPWP": "000000000000000",
-    "KTP": "0201025409850002",
-    "Alamat": "Jl.Fahruddin Lubuk Pakam",
-    "NPWP/KTP": "000000000000000/0201025409850002"
+    "id": 9,
+    "fullName": "KHAIRIAH",
+    "taxId": "000000000000000",
+    "idNumber": "1218036102740002",
+    "address": "Dusun I Bogak Besar, Teluk Mengkudu, Serdang Bedagai"
   },
   {
-    "No": 22,
-    "Nama": "SUHENDRA",
-    "NPWP": "000000000000000",
-    "KTP": 1275052508910005,
-    "Alamat": "Jl.Sei Mahakam Lk.VI, Tanah Seribu, Binjai Selatan, Binjai",
-    "NPWP/KTP": "000000000000000/1275052508910005"
+    "id": 10,
+    "fullName": "MANGISI TUA SIBARANI",
+    "taxId": "000000000000000",
+    "idNumber": "1207232410680004",
+    "address": "Dusun IV Jl.Tanjung Balai No.8, Sunggal Kanan, Sunggal, Deli Serdang"
   },
   {
-    "No": 23,
-    "Nama": "SUHERI",
-    "NPWP": "000000000000000",
-    "KTP": 1207212507770005,
-    "Alamat": "Dusun V-B Patumbak I RT 002 RW 002, Patumbak I, Patumbak, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207212507770005"
+    "id": 11,
+    "fullName": "MAULISA PUTRA",
+    "taxId": "000000000000000",
+    "idNumber": "1207240303830004",
+    "address": "Dusun VI, Hamparan Perak, Deli Serdang"
   },
   {
-    "No": 24,
-    "Nama": "SUPRIADI",
-    "NPWP": "000000000000000",
-    "KTP": 1219012002920004,
-    "Alamat": "Dusun IX, Pakam Raya, Medang Deras, Batu Bara.",
-    "NPWP/KTP": "000000000000000/1219012002920004"
+    "id": 12,
+    "fullName": "MILA BR GINTING",
+    "taxId": "000000000000000",
+    "idNumber": "1207065910760001",
+    "address": "Batu Gemuk, Namo Rambe, Deli Serdang"
   },
   {
-    "No": 25,
-    "Nama": "SURIANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1271061408780003,
-    "Alamat": "Jl.Mangaan IV Lk II, Mabar Hilir, Medan Deli",
-    "NPWP/KTP": "000000000000000/1271061408780003"
+    "id": 13,
+    "fullName": "MUSTAR",
+    "taxId": "000000000000000",
+    "idNumber": "1219020107600004",
+    "address": "Dusun II Pematang Kuing, Sei Suka, Batu Bara"
   },
   {
-    "No": 26,
-    "Nama": "SUSANTO SURJANI",
-    "NPWP": "073819690111000",
-    "KTP": "-",
-    "Alamat": "Jl.Kol Yos Sudarso No.39 BLK.C Silalas, Medan Barat, Kotamadya Medan",
-    "NPWP/KTP": "073819690111000/-"
+    "id": 14,
+    "fullName": "NURDIN",
+    "taxId": "000000000000000",
+    "idNumber": "1219033112560028",
+    "address": "Dusun IV Tanjung Harapan, Air Putih, Batu Bara"
   },
   {
-    "No": 27,
-    "Nama": "SUWANDI",
-    "NPWP": "000000000000000",
-    "KTP": 1219032410770001,
-    "Alamat": "Dusun IV Tanjung Harapan, Air Putih, Batu Bara",
-    "NPWP/KTP": "000000000000000/1219032410770001"
+    "id": 15,
+    "fullName": "NURHAYATI",
+    "taxId": "000000000000000",
+    "idNumber": "1210024911740001",
+    "address": "Dusun I Kuala Tanjung, Sei Suka, Kab.Batu Bara"
   },
   {
-    "No": 28,
-    "Nama": "SYAFITRI, S.PI",
-    "NPWP": "000000000000000",
-    "KTP": 1205112503700002,
-    "Alamat": "Dusun Kesuma, RT/RW 001/006, Pematang Tengah, Tanjung Pura, Langkat",
-    "NPWP/KTP": "000000000000000/1205112503700002"
+    "id": 16,
+    "fullName": "PENDI ANJASMARA LIMBONG",
+    "taxId": "000000000000000",
+    "idNumber": "1218111712820001",
+    "address": "Dusun V Tarean, Silinda, Serdang Bedagai"
   },
   {
-    "No": 29,
-    "Nama": "SYAHRIAL AGUS",
-    "NPWP": "000000000000000",
-    "KTP": 1219012308880004,
-    "Alamat": "Dusun Pengajian, Lalang, Medang Deras, Batu Bara",
-    "NPWP/KTP": "000000000000000/1219012308880004"
+    "id": 17,
+    "fullName": "PHILIPUS TARIGAN TUA",
+    "taxId": "000000000000000",
+    "idNumber": "1207061702730001",
+    "address": "Batu Gemuk, Namo Rambe, Deli Serdang"
   },
   {
-    "No": 30,
-    "Nama": "UMAR BAKRI",
-    "NPWP": "000000000000000",
-    "KTP": 1219017112760004,
-    "Alamat": "Jl.Datuk Setia Wangsa Dsn V Kampung Besar, Nenas Siam, Medang Deras, Batu Bara",
-    "NPWP/KTP": "000000000000000/1219017112760004"
+    "id": 18,
+    "fullName": "PT BAHARI MAKMUR SEJATI",
+    "taxId": 211231220401000,
+    "idNumber": "-",
+    "address": "Jl.Utama Modern Industri Blok AA No.1 RT.0 RW.0 Barengkok Kibin Serang Banten, 00000"
   },
   {
-    "No": 31,
-    "Nama": "YUNIFAR DARMA D",
-    "NPWP": "000000000000000",
-    "KTP": 1271020406700007,
-    "Alamat": "Jl.Perjuangan Kompl Elite I No.B9, Tanjung Rejo, Medan Sunggal",
-    "NPWP/KTP": "000000000000000/1271020406700007"
+    "id": 19,
+    "fullName": "PT SUMBER WINDU M S",
+    "taxId": "014575682122000",
+    "idNumber": "-",
+    "address": "Jl.Aip II KS.Tubun No.120/90 Medan"
   },
   {
-    "No": 32,
-    "Nama": "PT KURNIA LESTARI SENTOSA",
-    "NPWP": "015010648122000",
-    "KTP": "-",
-    "Alamat": "Jl.Kapt Jumhana No.582 RT RW Sukaramai, Medan Area, Kota Medan",
-    "NPWP/KTP": "015010648122000/-"
+    "id": 20,
+    "fullName": "RUSLI",
+    "taxId": "000000000000000",
+    "idNumber": "1219010107700040",
+    "address": "Dusun Mesjid Barat, Lalang, Medang Deras, Batu Bara"
   },
   {
-    "No": 33,
-    "Nama": "DASIKIN",
-    "NPWP": "000000000000000",
-    "KTP": 1205090606700005,
-    "Alamat": "Dusun IX Sidodadi, Pantai Gading, Secanggang, Langkat",
-    "NPWP/KTP": "000000000000000/1205090606700005"
+    "id": 21,
+    "fullName": "STELLA",
+    "taxId": "000000000000000",
+    "idNumber": "0201025409850002",
+    "address": "Jl.Fahruddin Lubuk Pakam"
   },
   {
-    "No": 34,
-    "Nama": "SUHARSOYO",
-    "NPWP": "000000000000000",
-    "KTP": 1205071107720005,
-    "Alamat": "Dusun Suka Maju, Karang Rejo, Stabat, Langkat",
-    "NPWP/KTP": "000000000000000/1205071107720005"
+    "id": 22,
+    "fullName": "SUHENDRA",
+    "taxId": "000000000000000",
+    "idNumber": "1275052508910005",
+    "address": "Jl.Sei Mahakam Lk.VI, Tanah Seribu, Binjai Selatan, Binjai"
   },
   {
-    "No": 35,
-    "Nama": "DI DI/LILI CHUA",
-    "NPWP": "000000000000000",
-    "KTP": 761007140302,
-    "Alamat": "Jl.KLY Sudarso Lk.XI No.7A Glugur Kota, Medan",
-    "NPWP/KTP": "000000000000000/761007140302"
+    "id": 23,
+    "fullName": "SUHERI",
+    "taxId": "000000000000000",
+    "idNumber": "1207212507770005",
+    "address": "Dusun V-B Patumbak I RT 002 RW 002, Patumbak I, Patumbak, Deli Serdang"
   },
   {
-    "No": 36,
-    "Nama": "JUNAIDI MUHAMMAD",
-    "NPWP": "000000000000000",
-    "KTP": 1107231006830001,
-    "Alamat": "Tijien Daboh, Ulim, Pidie Jaya, Aceh",
-    "NPWP/KTP": "000000000000000/1107231006830001"
+    "id": 24,
+    "fullName": "SUPRIADI",
+    "taxId": "000000000000000",
+    "idNumber": "1219012002920004",
+    "address": "Dusun IX, Pakam Raya, Medang Deras, Batu Bara."
   },
   {
-    "No": 37,
-    "Nama": "ALI",
-    "NPWP": "000000000000000",
-    "KTP": 1275022510780004,
-    "Alamat": "Jl.Jenderal Ahmad Yani No.181 Lk.VI, Pekan Binjai",
-    "NPWP/KTP": "000000000000000/1275022510780004"
+    "id": 25,
+    "fullName": "SURIANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1271061408780003",
+    "address": "Jl.Mangaan IV Lk II, Mabar Hilir, Medan Deli"
   },
   {
-    "No": 38,
-    "Nama": "GUSTI ARIANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1218163008950002,
-    "Alamat": "Dusun IX Penggalangan, Tebing Syahbandar, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218163008950002"
+    "id": 26,
+    "fullName": "SUSANTO SURJANI",
+    "taxId": "073819690111000",
+    "idNumber": "-",
+    "address": "Jl.Kol Yos Sudarso No.39 BLK.C Silalas, Medan Barat, Kotamadya Medan"
   },
   {
-    "No": 39,
-    "Nama": "ALDRIN MARGANDA GULTOM",
-    "NPWP": "000000000000000",
-    "KTP": 1205186607690001,
-    "Alamat": "Dusun III Tepi Gandu, RT/RW 002/002, Lubuk Kertang, Brandan Barat, Langkat",
-    "NPWP/KTP": "000000000000000/1205186607690001"
+    "id": 27,
+    "fullName": "SUWANDI",
+    "taxId": "000000000000000",
+    "idNumber": "1219032410770001",
+    "address": "Dusun IV Tanjung Harapan, Air Putih, Batu Bara"
   },
   {
-    "No": 40,
-    "Nama": "FREDDY TJANDRA",
-    "NPWP": "000000000000000",
-    "KTP": 1271012601480002,
-    "Alamat": "Jl.Sutomo Dalam No. 31 P Pusat Pasar, Medan",
-    "NPWP/KTP": "000000000000000/1271012601480002"
+    "id": 28,
+    "fullName": "SYAFITRI, S.PI",
+    "taxId": "000000000000000",
+    "idNumber": "1205112503700002",
+    "address": "Dusun Kesuma, RT/RW 001/006, Pematang Tengah, Tanjung Pura, Langkat"
   },
   {
-    "No": 41,
-    "Nama": "ETI FAUZEN SHOLIHAH",
-    "NPWP": "000000000000000",
-    "KTP": 1271125812850005,
-    "Alamat": "Jl.M Basir Lingk-07 Rengas Pulau, Medan Marelan",
-    "NPWP/KTP": "000000000000000/1271125812850005"
+    "id": 29,
+    "fullName": "SYAHRIAL AGUS",
+    "taxId": "000000000000000",
+    "idNumber": "1219012308880004",
+    "address": "Dusun Pengajian, Lalang, Medang Deras, Batu Bara"
   },
   {
-    "No": 42,
-    "Nama": "PT ANUGERAH BANGUN PERTIWI",
-    "NPWP": 853927069216000,
-    "KTP": "-",
-    "Alamat": "Komp Pemuda City Walk B No.6 RT/RW 004/004, Tampan, Payung Sekaki, PekanBaru",
-    "NPWP/KTP": "853927069216000/-"
+    "id": 30,
+    "fullName": "UMAR BAKRI",
+    "taxId": "000000000000000",
+    "idNumber": "1219017112760004",
+    "address": "Jl.Datuk Setia Wangsa Dsn V Kampung Besar, Nenas Siam, Medang Deras, Batu Bara"
   },
   {
-    "No": 43,
-    "Nama": "MUHAMMAD ARZAN",
-    "NPWP": "000000000000000",
-    "KTP": 1108201208900001,
-    "Alamat": "Gampong Nga, Paya Bakong",
-    "NPWP/KTP": "000000000000000/1108201208900001"
+    "id": 31,
+    "fullName": "YUNIFAR DARMA D",
+    "taxId": "000000000000000",
+    "idNumber": "1271020406700007",
+    "address": "Jl.Perjuangan Kompl Elite I No.B9, Tanjung Rejo, Medan Sunggal"
   },
   {
-    "No": 44,
-    "Nama": "HERRYS VRISKO SILALAHI",
-    "NPWP": "000000000000000",
-    "KTP": 1208131506900002,
-    "Alamat": "Perum Graha Mustika Meida Blok G 3 No.27 RT/RW 001/011, Lubang Buaya, Setu, Bekasi",
-    "NPWP/KTP": "000000000000000/1208131506900002"
+    "id": 32,
+    "fullName": "PT KURNIA LESTARI SENTOSA",
+    "taxId": "015010648122000",
+    "idNumber": "-",
+    "address": "Jl.Kapt Jumhana No.582 RT RW Sukaramai, Medan Area, Kota Medan"
   },
   {
-    "No": 45,
-    "Nama": "SUROSO",
-    "NPWP": "000000000000000",
-    "KTP": 1205051801650002,
-    "Alamat": "Jl.A.Yani Lingk III Kwala Begumit, Binjai",
-    "NPWP/KTP": "000000000000000/1205051801650002"
+    "id": 33,
+    "fullName": "DASIKIN",
+    "taxId": "000000000000000",
+    "idNumber": "1205090606700005",
+    "address": "Dusun IX Sidodadi, Pantai Gading, Secanggang, Langkat"
   },
   {
-    "No": 46,
-    "Nama": "SUYANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1205132406770001,
-    "Alamat": "Dusun VIII Desa Klantan Luar Kec.Gebang",
-    "NPWP/KTP": "000000000000000/1205132406770001"
+    "id": 34,
+    "fullName": "SUHARSOYO",
+    "taxId": "000000000000000",
+    "idNumber": "1205071107720005",
+    "address": "Dusun Suka Maju, Karang Rejo, Stabat, Langkat"
   },
   {
-    "No": 47,
-    "Nama": "MARDIYANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1271122505600003,
-    "Alamat": "Jl.Marelan II Psr IV Barat Gg.Sepakat No.02 LK.27 Kel Rengas Pulau, Medan Marelan",
-    "NPWP/KTP": "000000000000000/1271122505600003"
+    "id": 35,
+    "fullName": "DI DI/LILI CHUA",
+    "taxId": "000000000000000",
+    "idNumber": "761007140302",
+    "address": "Jl.KLY Sudarso Lk.XI No.7A Glugur Kota, Medan"
   },
   {
-    "No": 48,
-    "Nama": "MHD. SAKTI MARA TUA SIAHAAN",
-    "NPWP": "000000000000000",
-    "KTP": 1207280703880006,
-    "Alamat": "Dusun II Desa Pahang, Kec Talawi, Kab Batu Bara",
-    "NPWP/KTP": "000000000000000/1207280703880006"
+    "id": 36,
+    "fullName": "JUNAIDI MUHAMMAD",
+    "taxId": "000000000000000",
+    "idNumber": "1107231006830001",
+    "address": "Tijien Daboh, Ulim, Pidie Jaya, Aceh"
   },
   {
-    "No": 49,
-    "Nama": "PT INTRACO AGROINDUSTRY",
-    "NPWP": "018422485125000",
-    "KTP": "-",
-    "Alamat": "Jl.Pulau Pinang IV Kaveling No.600351 KIM II RT. RW. Saentis, Percut Sei Tuan, Deli Serdang",
-    "NPWP/KTP": "018422485125000/-"
+    "id": 37,
+    "fullName": "ALI",
+    "taxId": "000000000000000",
+    "idNumber": "1275022510780004",
+    "address": "Jl.Jenderal Ahmad Yani No.181 Lk.VI, Pekan Binjai"
   },
   {
-    "No": 50,
-    "Nama": "ABDUL MUTHALIB PA",
-    "NPWP": "000000000000000",
-    "KTP": 1205092212690002,
-    "Alamat": "Jl.Besar Dusun II RT/RW 008/004, Selotong Kec Secanggang, Kab Langkat",
-    "NPWP/KTP": "000000000000000/1205092212690002"
+    "id": 38,
+    "fullName": "GUSTI ARIANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1218163008950002",
+    "address": "Dusun IX Penggalangan, Tebing Syahbandar, Serdang Bedagai"
   },
   {
-    "No": 51,
-    "Nama": "BUDI HERMANSYAH",
-    "NPWP": "000000000000000",
-    "KTP": 1219012912820003,
-    "Alamat": "Dusun Pahlawan I, Kel/Desa Sidomulyo, Kec.Medang Deras",
-    "NPWP/KTP": "000000000000000/1219012912820003"
+    "id": 39,
+    "fullName": "ALDRIN MARGANDA GULTOM",
+    "taxId": "000000000000000",
+    "idNumber": "1205186607690001",
+    "address": "Dusun III Tepi Gandu, RT/RW 002/002, Lubuk Kertang, Brandan Barat, Langkat"
   },
   {
-    "No": 52,
-    "Nama": "JUMADI",
-    "NPWP": "000000000000000",
-    "KTP": 1205130609730003,
-    "Alamat": "Dusun IV Sanggalima, Gebang, Langkat",
-    "NPWP/KTP": "000000000000000/1205130609730003"
+    "id": 40,
+    "fullName": "FREDDY TJANDRA",
+    "taxId": "000000000000000",
+    "idNumber": "1271012601480002",
+    "address": "Jl.Sutomo Dalam No. 31 P Pusat Pasar, Medan"
   },
   {
-    "No": 53,
-    "Nama": "SUSANTO OMAR",
-    "NPWP": "000000000000000",
-    "KTP": 1271020408620001,
-    "Alamat": "Komp Tasbi Blok oo-30, RT/RW 004/021, Tanjung Rejo, Medan Sunggal",
-    "NPWP/KTP": "000000000000000/1271020408620001"
+    "id": 41,
+    "fullName": "ETI FAUZEN SHOLIHAH",
+    "taxId": "000000000000000",
+    "idNumber": "1271125812850005",
+    "address": "Jl.M Basir Lingk-07 Rengas Pulau, Medan Marelan"
   },
   {
-    "No": 54,
-    "Nama": "EDI MULIA",
-    "NPWP": "000000000000000",
-    "KTP": 1271130405910001,
-    "Alamat": "Jl.Pasar Inpres N 06 LK VII Martubung, Medan Labuhan",
-    "NPWP/KTP": "000000000000000/1271130405910001"
+    "id": 42,
+    "fullName": "PT ANUGERAH BANGUN PERTIWI",
+    "taxId": "853927069216000",
+    "idNumber": "-",
+    "address": "Komp Pemuda City Walk B No.6 RT/RW 004/004, Tampan, Payung Sekaki, PekanBaru"
   },
   {
-    "No": 55,
-    "Nama": "TAUHID",
-    "NPWP": "000000000000000",
-    "KTP": 1208033112630024,
-    "Alamat": "Huta III Tumorang, Gunung Maligas, Simalungun",
-    "NPWP/KTP": "000000000000000/1208033112630024"
+    "id": 43,
+    "fullName": "MUHAMMAD ARZAN",
+    "taxId": "000000000000000",
+    "idNumber": "1108201208900001",
+    "address": "Gampong Nga, Paya Bakong"
   },
   {
-    "No": 56,
-    "Nama": "M. RIDWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1205131512730002,
-    "Alamat": "Dusun IV Sangga Lima, Gebang, Langkat",
-    "NPWP/KTP": "000000000000000/1205131512730002"
+    "id": 44,
+    "fullName": "HERRYS VRISKO SILALAHI",
+    "taxId": "000000000000000",
+    "idNumber": "1208131506900002",
+    "address": "Perum Graha Mustika Meida Blok G 3 No.27 RT/RW 001/011, Lubang Buaya, Setu, Bekasi"
   },
   {
-    "No": 57,
-    "Nama": "HARIRI",
-    "NPWP": "000000000000000",
-    "KTP": 1219010302730002,
-    "Alamat": "Dusun Mesjid Barat, Lalang, Medang Deras, Batu Bara",
-    "NPWP/KTP": "000000000000000/1219010302730002"
+    "id": 45,
+    "fullName": "SUROSO",
+    "taxId": "000000000000000",
+    "idNumber": "1205051801650002",
+    "address": "Jl.A.Yani Lingk III Kwala Begumit, Binjai"
   },
   {
-    "No": 58,
-    "Nama": "PT Blue Sumatra Farm",
-    "NPWP": 803662808121000,
-    "KTP": "-",
-    "Alamat": "Jl.Adi Sucipto Komp River View A-20 Suka Damai, Medan Polonia, Kota Medan Sumatera Utara",
-    "NPWP/KTP": "803662808121000/-"
+    "id": 46,
+    "fullName": "SUYANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1205132406770001",
+    "address": "Dusun VIII Desa Klantan Luar Kec.Gebang"
   },
   {
-    "No": 59,
-    "Nama": "ARPAN SOPIYAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271111903840002,
-    "Alamat": "Jl.Karya XIV Gg Mustafa III No.25 LK XV Medan",
-    "NPWP/KTP": "000000000000000/1271111903840002"
+    "id": 47,
+    "fullName": "MARDIYANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1271122505600003",
+    "address": "Jl.Marelan II Psr IV Barat Gg.Sepakat No.02 LK.27 Kel Rengas Pulau, Medan Marelan"
   },
   {
-    "No": 60,
-    "Nama": "HOK CUAN",
-    "NPWP": "000000000000000",
-    "KTP": 1207232411780009,
-    "Alamat": "Dusun XV Jl.Bintang Terang No.86 RT/RW 077/038 Mulio Rejo, Sunggal",
-    "NPWP/KTP": "000000000000000/1207232411780009"
+    "id": 48,
+    "fullName": "MHD. SAKTI MARA TUA SIAHAAN",
+    "taxId": "000000000000000",
+    "idNumber": "1207280703880006",
+    "address": "Dusun II Desa Pahang, Kec Talawi, Kab Batu Bara"
   },
   {
-    "No": 61,
-    "Nama": "DASA RAMADHAN",
-    "NPWP": "000000000000000",
-    "KTP": 1205100601960008,
-    "Alamat": "Dusun V Tg Mulia, Hinai, Langkat",
-    "NPWP/KTP": "000000000000000/1205100601960008"
+    "id": 49,
+    "fullName": "PT INTRACO AGROINDUSTRY",
+    "taxId": "018422485125000",
+    "idNumber": "-",
+    "address": "Jl.Pulau Pinang IV Kaveling No.600351 KIM II RT. RW. Saentis, Percut Sei Tuan, Deli Serdang"
   },
   {
-    "No": 62,
-    "Nama": "AGUS HERMAWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271120804830004,
-    "Alamat": "Jl.Kapt Rahmad Budin Gg.Jambu Lk.09, Rengas Pulau, Medan Marelan",
-    "NPWP/KTP": "000000000000000/1271120804830004"
+    "id": 50,
+    "fullName": "ABDUL MUTHALIB PA",
+    "taxId": "000000000000000",
+    "idNumber": "1205092212690002",
+    "address": "Jl.Besar Dusun II RT/RW 008/004, Selotong Kec Secanggang, Kab Langkat"
   },
   {
-    "No": 63,
-    "Nama": "CV TEPEWE MAKMUR",
-    "NPWP": 812334191121000,
-    "KTP": "-",
-    "Alamat": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara",
-    "NPWP/KTP": "812334191121000/-"
+    "id": 51,
+    "fullName": "BUDI HERMANSYAH",
+    "taxId": "000000000000000",
+    "idNumber": "1219012912820003",
+    "address": "Dusun Pahlawan I, Kel/Desa Sidomulyo, Kec.Medang Deras"
   },
   {
-    "No": 64,
-    "Nama": "CV JAYA OCEAN AGRO",
-    "NPWP": 812294890121000,
-    "KTP": "-",
-    "Alamat": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara",
-    "NPWP/KTP": "812294890121000/-"
+    "id": 52,
+    "fullName": "JUMADI",
+    "taxId": "000000000000000",
+    "idNumber": "1205130609730003",
+    "address": "Dusun IV Sanggalima, Gebang, Langkat"
   },
   {
-    "No": 65,
-    "Nama": "CV WINDU JAYA",
-    "NPWP": 812334613121000,
-    "KTP": "-",
-    "Alamat": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara",
-    "NPWP/KTP": "812334613121000/-"
+    "id": 53,
+    "fullName": "SUSANTO OMAR",
+    "taxId": "000000000000000",
+    "idNumber": "1271020408620001",
+    "address": "Komp Tasbi Blok oo-30, RT/RW 004/021, Tanjung Rejo, Medan Sunggal"
   },
   {
-    "No": 66,
-    "Nama": "CV SUMBER TANI ABADI",
-    "NPWP": 812294163121000,
-    "KTP": "-",
-    "Alamat": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara",
-    "NPWP/KTP": "812294163121000/-"
+    "id": 54,
+    "fullName": "EDI MULIA",
+    "taxId": "000000000000000",
+    "idNumber": "1271130405910001",
+    "address": "Jl.Pasar Inpres N 06 LK VII Martubung, Medan Labuhan"
   },
   {
-    "No": 67,
-    "Nama": "CV KARYA INTI RAKYAT",
-    "NPWP": 812295178121000,
-    "KTP": "-",
-    "Alamat": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara",
-    "NPWP/KTP": "812295178121000/-"
+    "id": 55,
+    "fullName": "TAUHID",
+    "taxId": "000000000000000",
+    "idNumber": "1208033112630024",
+    "address": "Huta III Tumorang, Gunung Maligas, Simalungun"
   },
   {
-    "No": 68,
-    "Nama": "CV MITRA TANI JAYA",
-    "NPWP": 812334373121000,
-    "KTP": "-",
-    "Alamat": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara",
-    "NPWP/KTP": "812334373121000/-"
+    "id": 56,
+    "fullName": "M. RIDWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1205131512730002",
+    "address": "Dusun IV Sangga Lima, Gebang, Langkat"
   },
   {
-    "No": 69,
-    "Nama": "SHALLY MAVIETO",
-    "NPWP": 443750807121000,
-    "KTP": "-",
-    "Alamat": "Jl.B Zein Hamid Komp Deli Graha No 1-E RT. RW. Titi Kuning",
-    "NPWP/KTP": "443750807121000/-"
+    "id": 57,
+    "fullName": "HARIRI",
+    "taxId": "000000000000000",
+    "idNumber": "1219010302730002",
+    "address": "Dusun Mesjid Barat, Lalang, Medang Deras, Batu Bara"
   },
   {
-    "No": 70,
-    "Nama": "DONI DORISMA",
-    "NPWP": "000000000000000",
-    "KTP": 1207272405910000,
-    "Alamat": "Dusun II Desa Bakaran Batu, Batang Kuis, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207272405910000"
+    "id": 58,
+    "fullName": "PT Blue Sumatra Farm",
+    "taxId": "803662808121000",
+    "idNumber": "-",
+    "address": "Jl.Adi Sucipto Komp River View A-20 Suka Damai, Medan Polonia, Kota Medan Sumatera Utara"
   },
   {
-    "No": 71,
-    "Nama": "SUHERLY",
-    "NPWP": "000000000000000",
-    "KTP": 1207231301570002,
-    "Alamat": "Jl.Keadilan Lr II Baru Timur No.39 A Sampali, Percut Sei Tuan, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207231301570002"
+    "id": 59,
+    "fullName": "ARPAN SOPIYAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271111903840002",
+    "address": "Jl.Karya XIV Gg Mustafa III No.25 LK XV Medan"
   },
   {
-    "No": 72,
-    "Nama": "SUKIMIN",
-    "NPWP": "000000000000000",
-    "KTP": 1207040309940001,
-    "Alamat": "Buka Rende, KutalimBaru, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207040309940001"
+    "id": 60,
+    "fullName": "HOK CUAN",
+    "taxId": "000000000000000",
+    "idNumber": "1207232411780009",
+    "address": "Dusun XV Jl.Bintang Terang No.86 RT/RW 077/038 Mulio Rejo, Sunggal"
   },
   {
-    "No": 73,
-    "Nama": "CV JAGAT WINDU",
-    "NPWP": 812848075121000,
-    "KTP": "-",
-    "Alamat": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara",
-    "NPWP/KTP": "812848075121000/-"
+    "id": 61,
+    "fullName": "DASA RAMADHAN",
+    "taxId": "000000000000000",
+    "idNumber": "1205100601960008",
+    "address": "Dusun V Tg Mulia, Hinai, Langkat"
   },
   {
-    "No": 74,
-    "Nama": "DWI RAIS",
-    "NPWP": "000000000000000",
-    "KTP": 1205101304820001,
-    "Alamat": "Kebun Lada, Hinai, Kab Langkat",
-    "NPWP/KTP": "000000000000000/1205101304820001"
+    "id": 62,
+    "fullName": "AGUS HERMAWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271120804830004",
+    "address": "Jl.Kapt Rahmad Budin Gg.Jambu Lk.09, Rengas Pulau, Medan Marelan"
   },
   {
-    "No": 75,
-    "Nama": "DARMAWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1205101404840008,
-    "Alamat": "Dusun I Melati, Batu Melenggang, Hinai, Kab.Langkat",
-    "NPWP/KTP": "000000000000000/1205101404840008"
+    "id": 63,
+    "fullName": "CV TEPEWE MAKMUR",
+    "taxId": "812334191121000",
+    "idNumber": "-",
+    "address": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara"
   },
   {
-    "No": 76,
-    "Nama": "TEGUH WIRAWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271181804900004,
-    "Alamat": "Jl.Parapat No.61, Pandau Hilir, Medan Perjuangan, Medan",
-    "NPWP/KTP": "000000000000000/1271181804900004"
+    "id": 64,
+    "fullName": "CV JAYA OCEAN AGRO",
+    "taxId": "812294890121000",
+    "idNumber": "-",
+    "address": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara"
   },
   {
-    "No": 77,
-    "Nama": "SUPARTA SIMBOLON",
-    "NPWP": "000000000000000",
-    "KTP": 1205072910670002,
-    "Alamat": "Lingk XV Beringin Blok C No.22 Perdamaian Stabat",
-    "NPWP/KTP": "000000000000000/1205072910670002"
+    "id": 65,
+    "fullName": "CV WINDU JAYA",
+    "taxId": "812334613121000",
+    "idNumber": "-",
+    "address": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara"
   },
   {
-    "No": 78,
-    "Nama": "BURHAN",
-    "NPWP": "063391593116000",
-    "KTP": "-",
-    "Alamat": "Tanjung Leidong, Tanjung Leidong, Kualuh Hilir",
-    "NPWP/KTP": "063391593116000/-"
+    "id": 66,
+    "fullName": "CV SUMBER TANI ABADI",
+    "taxId": "812294163121000",
+    "idNumber": "-",
+    "address": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara"
   },
   {
-    "No": 79,
-    "Nama": "CV HORAS",
-    "NPWP": 812898518119000,
-    "KTP": "-",
-    "Alamat": "Jl.Sudirman No.204 Pekan Tanjung Pura, Tanjung Pura, Kab.Langkat Sumatera Utara",
-    "NPWP/KTP": "812898518119000/-"
+    "id": 67,
+    "fullName": "CV KARYA INTI RAKYAT",
+    "taxId": "812295178121000",
+    "idNumber": "-",
+    "address": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara"
   },
   {
-    "No": 80,
-    "Nama": "ARDENT KHOVANDY",
-    "NPWP": 813560406114000,
-    "KTP": "-",
-    "Alamat": "Dusun I Lubuk Saban Pantai Cermin, Kab.Serdang Bedagai, Sumatera Utara",
-    "NPWP/KTP": "813560406114000/-"
+    "id": 68,
+    "fullName": "CV MITRA TANI JAYA",
+    "taxId": "812334373121000",
+    "idNumber": "-",
+    "address": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara"
   },
   {
-    "No": 81,
-    "Nama": "RACHMI RACHMAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271056403700002,
-    "Alamat": "Jl.Mustang Blok A - 45 Kom.The Palace Kel Sukadamai, Kec Medan Polonia, Medan",
-    "NPWP/KTP": "000000000000000/1271056403700002"
+    "id": 69,
+    "fullName": "SHALLY MAVIETO",
+    "taxId": 443750807121000,
+    "idNumber": "-",
+    "address": "Jl.B Zein Hamid Komp Deli Graha No 1-E RT. RW. Titi Kuning"
   },
   {
-    "No": 82,
-    "Nama": "M YUSUF",
-    "NPWP": "000000000000000",
-    "KTP": 1207250609910001,
-    "Alamat": "Dusun X Pematang Johar, Labuhan Deli",
-    "NPWP/KTP": "000000000000000/1207250609910001"
+    "id": 70,
+    "fullName": "DONI DORISMA",
+    "taxId": "000000000000000",
+    "idNumber": "1207272405910000",
+    "address": "Dusun II Desa Bakaran Batu, Batang Kuis, Deli Serdang"
   },
   {
-    "No": 83,
-    "Nama": "ADI GUNAWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1218012006940002,
-    "Alamat": "Kota Pari, Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218012006940002"
+    "id": 71,
+    "fullName": "SUHERLY",
+    "taxId": "000000000000000",
+    "idNumber": "1207231301570002",
+    "address": "Jl.Keadilan Lr II Baru Timur No.39 A Sampali, Percut Sei Tuan, Deli Serdang"
   },
   {
-    "No": 84,
-    "Nama": "HERMAN SYAH RITONGA",
-    "NPWP": "000000000000000",
-    "KTP": 1205181712590002,
-    "Alamat": "Dusun III Tepi Gandu, RT/RW 002/001, Lubuk Kertang, Brandan Barat, Langkat",
-    "NPWP/KTP": "000000000000000/1205181712590002"
+    "id": 72,
+    "fullName": "SUKIMIN",
+    "taxId": "000000000000000",
+    "idNumber": "1207040309940001",
+    "address": "Buka Rende, KutalimBaru, Deli Serdang"
   },
   {
-    "No": 85,
-    "Nama": "SUCIPTO",
-    "NPWP": "000000000000000",
-    "KTP": 1205092607740003,
-    "Alamat": "Dusun III Kayu Lima, Kepala Sungai, Kec.Secanggang, Langkat",
-    "NPWP/KTP": "000000000000000/1205092607740003"
+    "id": 73,
+    "fullName": "CV JAGAT WINDU",
+    "taxId": "812848075121000",
+    "idNumber": "-",
+    "address": "Komp. Multatuli Blok A No. 32 LK.X Aur, Medan Maimun, Kota Medan Sumatera Utara"
   },
   {
-    "No": 86,
-    "Nama": "WAGIMIN",
-    "NPWP": "000000000000000",
-    "KTP": 1205101912000002,
-    "Alamat": "Dusun VI Suka Damai Timur, Kec.Hinai, Langkat",
-    "NPWP/KTP": "000000000000000/1205101912000002"
+    "id": 74,
+    "fullName": "DWI RAIS",
+    "taxId": "000000000000000",
+    "idNumber": "1205101304820001",
+    "address": "Kebun Lada, Hinai, Kab Langkat"
   },
   {
-    "No": 87,
-    "Nama": "RAHMATULLAH",
-    "NPWP": "000000000000000",
-    "KTP": 1203102510680001,
-    "Alamat": "Ujung Gading, Sihapas Barumun, Padang Lawas",
-    "NPWP/KTP": "000000000000000/1203102510680001"
+    "id": 75,
+    "fullName": "DARMAWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1205101404840008",
+    "address": "Dusun I Melati, Batu Melenggang, Hinai, Kab.Langkat"
   },
   {
-    "No": 88,
-    "Nama": "ZULFAN EFENDI SITOMPUL",
-    "NPWP": "000000000000000",
-    "KTP": 1218031404840001,
-    "Alamat": "Dusun III Pasar Baru, Teluk Mengkudu, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218031404840001"
+    "id": 76,
+    "fullName": "TEGUH WIRAWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271181804900004",
+    "address": "Jl.Parapat No.61, Pandau Hilir, Medan Perjuangan, Medan"
   },
   {
-    "No": 89,
-    "Nama": "CV SELOTONG MAKMUR",
-    "NPWP": 822211470122000,
-    "KTP": "-",
-    "Alamat": "Jl.Kpt Jumhana Gg.Intan K-14 K-12 Sukaramai II Medan Area",
-    "NPWP/KTP": "822211470122000/-"
+    "id": 77,
+    "fullName": "SUPARTA SIMBOLON",
+    "taxId": "000000000000000",
+    "idNumber": "1205072910670002",
+    "address": "Lingk XV Beringin Blok C No.22 Perdamaian Stabat"
   },
   {
-    "No": 90,
-    "Nama": "IRA ASWITA",
-    "NPWP": "000000000000000",
-    "KTP": 1218036412860001,
-    "Alamat": "Dusun VI, Bogak Besar, Teluk Mengkudu, Kab.Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218036412860001"
+    "id": 78,
+    "fullName": "BURHAN",
+    "taxId": "063391593116000",
+    "idNumber": "-",
+    "address": "Tanjung Leidong, Tanjung Leidong, Kualuh Hilir"
   },
   {
-    "No": 91,
-    "Nama": "DICKY ZULKARNAIN",
-    "NPWP": "000000000000000",
-    "KTP": 1472013005650021,
-    "Alamat": "Jl.Prof M.Yamin Kel Laksamana, Kec Dumai Kota, Dumai",
-    "NPWP/KTP": "000000000000000/1472013005650021"
+    "id": 79,
+    "fullName": "CV HORAS",
+    "taxId": "812898518119000",
+    "idNumber": "-",
+    "address": "Jl.Sudirman No.204 Pekan Tanjung Pura, Tanjung Pura, Kab.Langkat Sumatera Utara"
   },
   {
-    "No": 92,
-    "Nama": "KHAIRIAH",
-    "NPWP": "000000000000000",
-    "KTP": 1218104212720004,
-    "Alamat": "Dusun I Bogak Besar, Teluk Mengkudu, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218104212720004"
+    "id": 80,
+    "fullName": "ARDENT KHOVANDY",
+    "taxId": "813560406114000",
+    "idNumber": "-",
+    "address": "Dusun I Lubuk Saban Pantai Cermin, Kab.Serdang Bedagai, Sumatera Utara"
   },
   {
-    "No": 93,
-    "Nama": "SUBUR",
-    "NPWP": "000000000000000",
-    "KTP": 1205153112620054,
-    "Alamat": "Dusun II Air Bening, Sei Merah, Kec.Pangkalan Susu, Langkat",
-    "NPWP/KTP": "000000000000000/1205153112620054"
+    "id": 81,
+    "fullName": "RACHMI RACHMAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271056403700002",
+    "address": "Jl.Mustang Blok A - 45 Kom.The Palace Kel Sukadamai, Kec Medan Polonia, Medan"
   },
   {
-    "No": 94,
-    "Nama": "ARIFIN",
-    "NPWP": "000000000000000",
-    "KTP": 1218011306730002,
-    "Alamat": "Dusun IV Kuala Lama, Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218011306730002"
+    "id": 82,
+    "fullName": "M YUSUF",
+    "taxId": "000000000000000",
+    "idNumber": "1207250609910001",
+    "address": "Dusun X Pematang Johar, Labuhan Deli"
   },
   {
-    "No": 95,
-    "Nama": "HARUN",
-    "NPWP": "000000000000000",
-    "KTP": 1219053112670063,
-    "Alamat": "Dusun III RT/RW 002/002 Dhari Selebar, Kec.Talawi, BatuBara",
-    "NPWP/KTP": "000000000000000/1219053112670063"
+    "id": 83,
+    "fullName": "ADI GUNAWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1218012006940002",
+    "address": "Kota Pari, Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 96,
-    "Nama": "ARDIANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1205150610720001,
-    "Alamat": "Dusun II Air Bening, Sei Merah, Kec.Pangkalan Susu, Langkat",
-    "NPWP/KTP": "000000000000000/1205150610720001"
+    "id": 84,
+    "fullName": "HERMAN SYAH RITONGA",
+    "taxId": "000000000000000",
+    "idNumber": "1205181712590002",
+    "address": "Dusun III Tepi Gandu, RT/RW 002/001, Lubuk Kertang, Brandan Barat, Langkat"
   },
   {
-    "No": 97,
-    "Nama": "H.MUHAMMAD IBRAHIM",
-    "NPWP": "000000000000000",
-    "KTP": 1118020608430001,
-    "Alamat": "Siblah Coh, Kec.Ulim, Pidie Jaya",
-    "NPWP/KTP": "000000000000000/1118020608430001"
+    "id": 85,
+    "fullName": "SUCIPTO",
+    "taxId": "000000000000000",
+    "idNumber": "1205092607740003",
+    "address": "Dusun III Kayu Lima, Kepala Sungai, Kec.Secanggang, Langkat"
   },
   {
-    "No": 98,
-    "Nama": "ARMAN",
-    "NPWP": "000000000000000",
-    "KTP": 1218010106580001,
-    "Alamat": "Dusun IV Kota Pari, Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218010106580001"
+    "id": 86,
+    "fullName": "WAGIMIN",
+    "taxId": "000000000000000",
+    "idNumber": "1205101912000002",
+    "address": "Dusun VI Suka Damai Timur, Kec.Hinai, Langkat"
   },
   {
-    "No": 99,
-    "Nama": "",
-    "NPWP": "",
-    "KTP": "",
-    "Alamat": "",
-    "NPWP/KTP": "/"
+    "id": 87,
+    "fullName": "RAHMATULLAH",
+    "taxId": "000000000000000",
+    "idNumber": "1203102510680001",
+    "address": "Ujung Gading, Sihapas Barumun, Padang Lawas"
   },
   {
-    "No": 100,
-    "Nama": "REYSIMON BASTARI",
-    "NPWP": "000000000000000",
-    "KTP": 3173011210570001,
-    "Alamat": "Tmn Semanan Indah Blok P6 Duri Kosambi, Cengkareng, Jakarta Barat",
-    "NPWP/KTP": "000000000000000/3173011210570001"
+    "id": 88,
+    "fullName": "ZULFAN EFENDI SITOMPUL",
+    "taxId": "000000000000000",
+    "idNumber": "1218031404840001",
+    "address": "Dusun III Pasar Baru, Teluk Mengkudu, Serdang Bedagai"
   },
   {
-    "No": 101,
-    "Nama": "LINDAWATY",
-    "NPWP": "000000000000000",
-    "KTP": 1271187006830002,
-    "Alamat": "Kompleks Greatwall Binjai",
-    "NPWP/KTP": "000000000000000/1271187006830002"
+    "id": 89,
+    "fullName": "CV SELOTONG MAKMUR",
+    "taxId": "822211470122000",
+    "idNumber": "-",
+    "address": "Jl.Kpt Jumhana Gg.Intan K-14 K-12 Sukaramai II Medan Area"
   },
   {
-    "No": 102,
-    "Nama": "HARIYANTO ANGKASA",
-    "NPWP": "000000000000000",
-    "KTP": 1271132410950001,
-    "Alamat": "Jl.Pasar Inpres A-7 SPKantor, Martubung, Medan Labuhan",
-    "NPWP/KTP": "000000000000000/1271132410950001"
+    "id": 90,
+    "fullName": "IRA ASWITA",
+    "taxId": "000000000000000",
+    "idNumber": "1218036412860001",
+    "address": "Dusun VI, Bogak Besar, Teluk Mengkudu, Kab.Serdang Bedagai"
   },
   {
-    "No": 103,
-    "Nama": "ABDUL RASYID LBS",
-    "NPWP": "000000000000000",
-    "KTP": 1213201510900001,
-    "Alamat": "Huta Baringin Julu, Puncak Sorik Marapi, Mandailing Natal",
-    "NPWP/KTP": "000000000000000/1213201510900001"
+    "id": 91,
+    "fullName": "DICKY ZULKARNAIN",
+    "taxId": "000000000000000",
+    "idNumber": "1472013005650021",
+    "address": "Jl.Prof M.Yamin Kel Laksamana, Kec Dumai Kota, Dumai"
   },
   {
-    "No": 104,
-    "Nama": "YUDHI WIRNANDO",
-    "NPWP": "000000000000000",
-    "KTP": 1271180304610003,
-    "Alamat": "Jl.Parapat No.61, Pandau Hilir, Medan Perjuangan, Medan",
-    "NPWP/KTP": "000000000000000/1271180304610003"
+    "id": 92,
+    "fullName": "KHAIRIAH",
+    "taxId": "000000000000000",
+    "idNumber": "1218104212720004",
+    "address": "Dusun I Bogak Besar, Teluk Mengkudu, Serdang Bedagai"
   },
   {
-    "No": 105,
-    "Nama": "ADRIANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1271082310560001,
-    "Alamat": "Jl.Cisadane LK XIX No.10 Blw, Belawan II, Medan",
-    "NPWP/KTP": "000000000000000/1271082310560001"
+    "id": 93,
+    "fullName": "SUBUR",
+    "taxId": "000000000000000",
+    "idNumber": "1205153112620054",
+    "address": "Dusun II Air Bening, Sei Merah, Kec.Pangkalan Susu, Langkat"
   },
   {
-    "No": 106,
-    "Nama": "MISRAN",
-    "NPWP": "000000000000000",
-    "KTP": 1205071105670003,
-    "Alamat": "Dusun V Kp.Nangka, Ara Condong, Stabat, Langkat",
-    "NPWP/KTP": "000000000000000/1205071105670003"
+    "id": 94,
+    "fullName": "ARIFIN",
+    "taxId": "000000000000000",
+    "idNumber": "1218011306730002",
+    "address": "Dusun IV Kuala Lama, Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 107,
-    "Nama": "SAFARI",
-    "NPWP": "000000000000000",
-    "KTP": 1207321205690001,
-    "Alamat": "Dusun Anggrek Baru, Perkebunan Ramunia, Pantai Labu, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207321205690001"
+    "id": 95,
+    "fullName": "HARUN",
+    "taxId": "000000000000000",
+    "idNumber": "1219053112670063",
+    "address": "Dusun III RT/RW 002/002 Dhari Selebar, Kec.Talawi, BatuBara"
   },
   {
-    "No": 108,
-    "Nama": "PT PANCA SAKTI LESTARI UTAMA",
-    "NPWP": "014532733113000",
-    "KTP": "-",
-    "Alamat": "Jl.Kejaksaan No.8 Petisah Tengah, Medan Petisah, kota Medan, Sumatera Utara",
-    "NPWP/KTP": "014532733113000/-"
+    "id": 96,
+    "fullName": "ARDIANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1205150610720001",
+    "address": "Dusun II Air Bening, Sei Merah, Kec.Pangkalan Susu, Langkat"
   },
   {
-    "No": 109,
-    "Nama": "",
-    "NPWP": "",
-    "KTP": "",
-    "Alamat": "",
-    "NPWP/KTP": "/"
+    "id": 97,
+    "fullName": "H.MUHAMMAD IBRAHIM",
+    "taxId": "000000000000000",
+    "idNumber": "1118020608430001",
+    "address": "Siblah Coh, Kec.Ulim, Pidie Jaya"
   },
   {
-    "No": 110,
-    "Nama": "SUWANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1403012009683516,
-    "Alamat": "Jl.Diponegoro GG.Segar RT/RW 001/001 Kota Bengkalis",
-    "NPWP/KTP": "000000000000000/1403012009683516"
+    "id": 98,
+    "fullName": "ARMAN",
+    "taxId": "000000000000000",
+    "idNumber": "1218010106580001",
+    "address": "Dusun IV Kota Pari, Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 111,
-    "Nama": "A PIA",
-    "NPWP": "000000000000000",
-    "KTP": 1218010701650001,
-    "Alamat": "Dusun II Kota Pari, Pantai Cermin",
-    "NPWP/KTP": "000000000000000/1218010701650001"
+    "id": 99,
+    "fullName": "",
+    "taxId": "",
+    "idNumber": "",
+    "address": ""
   },
   {
-    "No": 112,
-    "Nama": "HERMANSYAH",
-    "NPWP": "000000000000000",
-    "KTP": 1207241706780002,
-    "Alamat": "Dusun V Paluh Manan, Hamparan Perak Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207241706780002"
+    "id": 100,
+    "fullName": "REYSIMON BASTARI",
+    "taxId": "000000000000000",
+    "idNumber": "3173011210570001",
+    "address": "Tmn Semanan Indah Blok P6 Duri Kosambi, Cengkareng, Jakarta Barat"
   },
   {
-    "No": 113,
-    "Nama": "LIM TJUN GEK",
-    "NPWP": "000000000000000",
-    "KTP": 1205173011540001,
-    "Alamat": "GG Pelita LK III Anggrek RT/RW 009/003 Sei Bilah Timur, Sei Lepan, Langkat",
-    "NPWP/KTP": "000000000000000/1205173011540001"
+    "id": 101,
+    "fullName": "LINDAWATY",
+    "taxId": "000000000000000",
+    "idNumber": "1271187006830002",
+    "address": "Kompleks Greatwall Binjai"
   },
   {
-    "No": 114,
-    "Nama": "EDDYTO",
-    "NPWP": "000000000000000",
-    "KTP": 1271113012790005,
-    "Alamat": "Jl.BZ Hamid No.14-DD LK XII Titi Kuning, Medan Johor",
-    "NPWP/KTP": "000000000000000/1271113012790005"
+    "id": 102,
+    "fullName": "HARIYANTO ANGKASA",
+    "taxId": "000000000000000",
+    "idNumber": "1271132410950001",
+    "address": "Jl.Pasar Inpres A-7 SPKantor, Martubung, Medan Labuhan"
   },
   {
-    "No": 115,
-    "Nama": "PT VANNAMEI WIJAYA LESTARI",
-    "NPWP": 828079640216000,
-    "KTP": "-",
-    "Alamat": "Jl.HR Soebrantas RT001 RW002 Tuah Karya Tampan, Kota Pekan Baru, Riau",
-    "NPWP/KTP": "828079640216000/-"
+    "id": 103,
+    "fullName": "ABDUL RASYID LBS",
+    "taxId": "000000000000000",
+    "idNumber": "1213201510900001",
+    "address": "Huta Baringin Julu, Puncak Sorik Marapi, Mandailing Natal"
   },
   {
-    "No": 116,
-    "Nama": "THIO BIEN SIANG",
-    "NPWP": "000000000000000",
-    "KTP": 1218040410660001,
-    "Alamat": "Jl.Kangkung No.150 G Medan",
-    "NPWP/KTP": "000000000000000/1218040410660001"
+    "id": 104,
+    "fullName": "YUDHI WIRNANDO",
+    "taxId": "000000000000000",
+    "idNumber": "1271180304610003",
+    "address": "Jl.Parapat No.61, Pandau Hilir, Medan Perjuangan, Medan"
   },
   {
-    "No": 117,
-    "Nama": "LESTARIANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1218010305890002,
-    "Alamat": "Dsn IV Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218010305890002"
+    "id": 105,
+    "fullName": "ADRIANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1271082310560001",
+    "address": "Jl.Cisadane LK XIX No.10 Blw, Belawan II, Medan"
   },
   {
-    "No": 118,
-    "Nama": "ZAIMI",
-    "NPWP": "000000000000000",
-    "KTP": 1205090108770001,
-    "Alamat": "Dusun XI Kota Lama, Karang Gading, Secanggang",
-    "NPWP/KTP": "000000000000000/1205090108770001"
+    "id": 106,
+    "fullName": "MISRAN",
+    "taxId": "000000000000000",
+    "idNumber": "1205071105670003",
+    "address": "Dusun V Kp.Nangka, Ara Condong, Stabat, Langkat"
   },
   {
-    "No": 119,
-    "Nama": "PITONO",
-    "NPWP": "000000000000000",
-    "KTP": 1275031606960008,
-    "Alamat": "Jl.G Subroto GG.Asas No.4A Lk.II, Suka Damai, Binjai Barat",
-    "NPWP/KTP": "000000000000000/1275031606960008"
+    "id": 107,
+    "fullName": "SAFARI",
+    "taxId": "000000000000000",
+    "idNumber": "1207321205690001",
+    "address": "Dusun Anggrek Baru, Perkebunan Ramunia, Pantai Labu, Deli Serdang"
   },
   {
-    "No": 120,
-    "Nama": "FARHAN AZHARI",
-    "NPWP": 846654697412000,
-    "KTP": "-",
-    "Alamat": "Jl.Pulat V No.193 RT/RW 001/015, BaktiJaya SukmaJaya, Depok",
-    "NPWP/KTP": "846654697412000/-"
+    "id": 108,
+    "fullName": "PT PANCA SAKTI LESTARI UTAMA",
+    "taxId": "014532733113000",
+    "idNumber": "-",
+    "address": "Jl.Kejaksaan No.8 Petisah Tengah, Medan Petisah, kota Medan, Sumatera Utara"
   },
   {
-    "No": 121,
-    "Nama": "AGUS SALIM",
-    "NPWP": "000000000000000",
-    "KTP": 1218013008900003,
-    "Alamat": "Dusun V Pantai Cermin Kiri, Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218013008900003"
+    "id": 109,
+    "fullName": "",
+    "taxId": "",
+    "idNumber": "",
+    "address": ""
   },
   {
-    "No": 122,
-    "Nama": "RICKY JOHAN",
-    "NPWP": "000000000000000",
-    "KTP": 1209193012790001,
-    "Alamat": "Jl.Pukat V No.5 Kel Bantan Timur, Medan Tembung, Medan",
-    "NPWP/KTP": "000000000000000/1209193012790001"
+    "id": 110,
+    "fullName": "SUWANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1403012009683516",
+    "address": "Jl.Diponegoro GG.Segar RT/RW 001/001 Kota Bengkalis"
   },
   {
-    "No": 123,
-    "Nama": "ZULFIA M YUSUF",
-    "NPWP": "000000000000000",
-    "KTP": 1111132606720003,
-    "Alamat": "Dusun Seulanga, BireuenMeunasah Dayah, Kota Juang, Bireuen",
-    "NPWP/KTP": "000000000000000/1111132606720003"
+    "id": 111,
+    "fullName": "A PIA",
+    "taxId": "000000000000000",
+    "idNumber": "1218010701650001",
+    "address": "Dusun II Kota Pari, Pantai Cermin"
   },
   {
-    "No": 124,
-    "Nama": "HERIANTO",
-    "NPWP": "097165450216000",
-    "KTP": "-",
-    "Alamat": "Jl.Jendral No.01-E Labuh Baru Timur, Tampan, Kota PekanBaru",
-    "NPWP/KTP": "097165450216000/-"
+    "id": 112,
+    "fullName": "HERMANSYAH",
+    "taxId": "000000000000000",
+    "idNumber": "1207241706780002",
+    "address": "Dusun V Paluh Manan, Hamparan Perak Deli Serdang"
   },
   {
-    "No": 125,
-    "Nama": "VENTI ANGELINA",
-    "NPWP": "000000000000000",
-    "KTP": 1271024602870004,
-    "Alamat": "Jl.Pinang Baris Gg Buntu No.12 C Desa Lalang, Medan Sunggal",
-    "NPWP/KTP": "000000000000000/1271024602870004"
+    "id": 113,
+    "fullName": "LIM TJUN GEK",
+    "taxId": "000000000000000",
+    "idNumber": "1205173011540001",
+    "address": "GG Pelita LK III Anggrek RT/RW 009/003 Sei Bilah Timur, Sei Lepan, Langkat"
   },
   {
-    "No": 126,
-    "Nama": "CV PRATAMA JAYA",
-    "NPWP": 842451163125000,
-    "KTP": "-",
-    "Alamat": "Jl.Letda Sujono Baru I Lt.3 No.5 Medan Estate, Percut Sei Tuan, Kab Deli Serdang, Sumut",
-    "NPWP/KTP": "842451163125000/-"
+    "id": 114,
+    "fullName": "EDDYTO",
+    "taxId": "000000000000000",
+    "idNumber": "1271113012790005",
+    "address": "Jl.BZ Hamid No.14-DD LK XII Titi Kuning, Medan Johor"
   },
   {
-    "No": 127,
-    "Nama": "PT ANEKA SARI UTAMA",
-    "NPWP": 211177845112000,
-    "KTP": "-",
-    "Alamat": "Platina Raya Komp Ruko Kota Baru Blok A No.2A Titi Papan, Medan Deli",
-    "NPWP/KTP": "211177845112000/-"
+    "id": 115,
+    "fullName": "PT VANNAMEI WIJAYA LESTARI",
+    "taxId": "828079640216000",
+    "idNumber": "-",
+    "address": "Jl.HR Soebrantas RT001 RW002 Tuah Karya Tampan, Kota Pekan Baru, Riau"
   },
   {
-    "No": 128,
-    "Nama": "KELOMPOK PETANI TAMBAK UDANG SUNGAI RAMBAI",
-    "NPWP": 856225347219000,
-    "KTP": "-",
-    "Alamat": "Jl.Cagar Alam Dusun Setia Kawan RT.003 RW.006, Teluk Pambang, Biantan Kab.Bengkalis Riau",
-    "NPWP/KTP": "856225347219000/-"
+    "id": 116,
+    "fullName": "THIO BIEN SIANG",
+    "taxId": "000000000000000",
+    "idNumber": "1218040410660001",
+    "address": "Jl.Kangkung No.150 G Medan"
   },
   {
-    "No": 129,
-    "Nama": "SYARIFUDDIN",
-    "NPWP": "000000000000000",
-    "KTP": 1271140512630004,
-    "Alamat": "Asrama SPN Sampali LK XII RT/RW 049/010 Desa Indra Kasih Kec.Medan Tembung",
-    "NPWP/KTP": "000000000000000/1271140512630004"
+    "id": 117,
+    "fullName": "LESTARIANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1218010305890002",
+    "address": "Dsn IV Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 130,
-    "Nama": "INDRA WALDI JUFRIADI SINAGA",
-    "NPWP": "000000000000000",
-    "KTP": 1271031307950004,
-    "Alamat": "Jl.Setia Luhur GG Kenanga Kel.Dwikora Kec Medan Helvetia",
-    "NPWP/KTP": "000000000000000/1271031307950004"
+    "id": 118,
+    "fullName": "ZAIMI",
+    "taxId": "000000000000000",
+    "idNumber": "1205090108770001",
+    "address": "Dusun XI Kota Lama, Karang Gading, Secanggang"
   },
   {
-    "No": 131,
-    "Nama": "ISMARAJI",
-    "NPWP": "000000000000000",
-    "KTP": 1275030504610001,
-    "Alamat": "Jl.Kedondong No.14 LK.I Kel.Bandar Senembah Kec.Binjai Barat",
-    "NPWP/KTP": "000000000000000/1275030504610001"
+    "id": 119,
+    "fullName": "PITONO",
+    "taxId": "000000000000000",
+    "idNumber": "1275031606960008",
+    "address": "Jl.G Subroto GG.Asas No.4A Lk.II, Suka Damai, Binjai Barat"
   },
   {
-    "No": 132,
-    "Nama": "SUDIMAN",
-    "NPWP": "000000000000000",
-    "KTP": 1218010509720003,
-    "Alamat": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218010509720003"
+    "id": 120,
+    "fullName": "FARHAN AZHARI",
+    "taxId": "846654697412000",
+    "idNumber": "-",
+    "address": "Jl.Pulat V No.193 RT/RW 001/015, BaktiJaya SukmaJaya, Depok"
   },
   {
-    "No": 133,
-    "Nama": "SUMITO",
-    "NPWP": "000000000000000",
-    "KTP": 1205193010910005,
-    "Alamat": "Dusun Tahun XI Kel.Sei Bamban Kec.Batang Serangan",
-    "NPWP/KTP": "000000000000000/1205193010910005"
+    "id": 121,
+    "fullName": "AGUS SALIM",
+    "taxId": "000000000000000",
+    "idNumber": "1218013008900003",
+    "address": "Dusun V Pantai Cermin Kiri, Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 134,
-    "Nama": "ALEX BUDIMAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271102912850005,
-    "Alamat": "Jl.Sepat No.5 Pandau Hulu II, Medan Area",
-    "NPWP/KTP": "000000000000000/1271102912850005"
+    "id": 122,
+    "fullName": "RICKY JOHAN",
+    "taxId": "000000000000000",
+    "idNumber": "1209193012790001",
+    "address": "Jl.Pukat V No.5 Kel Bantan Timur, Medan Tembung, Medan"
   },
   {
-    "No": 135,
-    "Nama": "LIDUAN RUSLIE",
-    "NPWP": 374268944122000,
-    "KTP": "-",
-    "Alamat": "Jl.Thamrin No.186 Sei Rengas I, Medan Kota",
-    "NPWP/KTP": "374268944122000/-"
+    "id": 123,
+    "fullName": "ZULFIA M YUSUF",
+    "taxId": "000000000000000",
+    "idNumber": "1111132606720003",
+    "address": "Dusun Seulanga, BireuenMeunasah Dayah, Kota Juang, Bireuen"
   },
   {
-    "No": 136,
-    "Nama": "USMAN A RAHMAN",
-    "NPWP": "000000000000000",
-    "KTP": 1111130101690001,
-    "Alamat": "Lr Tgk Tulot Dusun Capa, Teungoh, Bireuen Aceh",
-    "NPWP/KTP": "000000000000000/1111130101690001"
+    "id": 124,
+    "fullName": "HERIANTO",
+    "taxId": "097165450216000",
+    "idNumber": "-",
+    "address": "Jl.Jendral No.01-E Labuh Baru Timur, Tampan, Kota PekanBaru"
   },
   {
-    "No": 137,
-    "Nama": "FACHRIZAL, S.Pi",
-    "NPWP": "000000000000000",
-    "KTP": 1218032508800004,
-    "Alamat": "Dusun II Sialang Buah, Teluk Mengkudu, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218032508800004"
+    "id": 125,
+    "fullName": "VENTI ANGELINA",
+    "taxId": "000000000000000",
+    "idNumber": "1271024602870004",
+    "address": "Jl.Pinang Baris Gg Buntu No.12 C Desa Lalang, Medan Sunggal"
   },
   {
-    "No": 138,
-    "Nama": "",
-    "NPWP": "",
-    "KTP": "",
-    "Alamat": "",
-    "NPWP/KTP": "/"
+    "id": 126,
+    "fullName": "CV PRATAMA JAYA",
+    "taxId": "842451163125000",
+    "idNumber": "-",
+    "address": "Jl.Letda Sujono Baru I Lt.3 No.5 Medan Estate, Percut Sei Tuan, Kab Deli Serdang, Sumut"
   },
   {
-    "No": 139,
-    "Nama": "RUSDIN SARAGIH",
-    "NPWP": "000000000000000",
-    "KTP": 1207280903680001,
-    "Alamat": "Dusun XIII Pasar Melintang Lubuk Pakam",
-    "NPWP/KTP": "000000000000000/1207280903680001"
+    "id": 127,
+    "fullName": "PT ANEKA SARI UTAMA",
+    "taxId": 211177845112000,
+    "idNumber": "-",
+    "address": "Platina Raya Komp Ruko Kota Baru Blok A No.2A Titi Papan, Medan Deli"
   },
   {
-    "No": 140,
-    "Nama": "JHONY",
-    "NPWP": "000000000000000",
-    "KTP": 1271180906730001,
-    "Alamat": "Jl.HM Said No.40/36 B Sidorame Barat I, Medan Perjuangan, Medan",
-    "NPWP/KTP": "000000000000000/1271180906730001"
+    "id": 128,
+    "fullName": "KELOMPOK PETANI TAMBAK UDANG SUNGAI RAMBAI",
+    "taxId": "856225347219000",
+    "idNumber": "-",
+    "address": "Jl.Cagar Alam Dusun Setia Kawan RT.003 RW.006, Teluk Pambang, Biantan Kab.Bengkalis Riau"
   },
   {
-    "No": 141,
-    "Nama": "MISDI",
-    "NPWP": "000000000000000",
-    "KTP": 1205091703660003,
-    "Alamat": "Jl.Besar Dusun IV RT/RW 015/008 Selotong, Secanggang Langkat",
-    "NPWP/KTP": "000000000000000/1205091703660003"
+    "id": 129,
+    "fullName": "SYARIFUDDIN",
+    "taxId": "000000000000000",
+    "idNumber": "1271140512630004",
+    "address": "Asrama SPN Sampali LK XII RT/RW 049/010 Desa Indra Kasih Kec.Medan Tembung"
   },
   {
-    "No": 142,
-    "Nama": "",
-    "NPWP": "",
-    "KTP": "",
-    "Alamat": "",
-    "NPWP/KTP": "/"
+    "id": 130,
+    "fullName": "INDRA WALDI JUFRIADI SINAGA",
+    "taxId": "000000000000000",
+    "idNumber": "1271031307950004",
+    "address": "Jl.Setia Luhur GG Kenanga Kel.Dwikora Kec Medan Helvetia"
   },
   {
-    "No": 143,
-    "Nama": "",
-    "NPWP": "",
-    "KTP": "",
-    "Alamat": "",
-    "NPWP/KTP": "/"
+    "id": 131,
+    "fullName": "ISMARAJI",
+    "taxId": "000000000000000",
+    "idNumber": "1275030504610001",
+    "address": "Jl.Kedondong No.14 LK.I Kel.Bandar Senembah Kec.Binjai Barat"
   },
   {
-    "No": 144,
-    "Nama": "TAN LIONG HAW",
-    "NPWP": "000000000000000",
-    "KTP": 3173021212650011,
-    "Alamat": "Jl.Kesturi No.28 G I Lk I  Suka Maju, Binjai Barat",
-    "NPWP/KTP": "000000000000000/3173021212650011"
+    "id": 132,
+    "fullName": "SUDIMAN",
+    "taxId": "000000000000000",
+    "idNumber": "1218010509720003",
+    "address": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 145,
-    "Nama": "RUSTAM",
-    "NPWP": "000000000000000",
-    "KTP": 1218020407710004,
-    "Alamat": "Dusun III Sei Nagalawan, Perbaungan, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218020407710004"
+    "id": 133,
+    "fullName": "SUMITO",
+    "taxId": "000000000000000",
+    "idNumber": "1205193010910005",
+    "address": "Dusun Tahun XI Kel.Sei Bamban Kec.Batang Serangan"
   },
   {
-    "No": 146,
-    "Nama": "JANSEN P TOBING",
-    "NPWP": "000000000000000",
-    "KTP": 1271112204640002,
-    "Alamat": "Jl.Kesatria No.3 A Tanjung Gusta, Medan Helvetia",
-    "NPWP/KTP": "000000000000000/1271112204640002"
+    "id": 134,
+    "fullName": "ALEX BUDIMAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271102912850005",
+    "address": "Jl.Sepat No.5 Pandau Hulu II, Medan Area"
   },
   {
-    "No": 147,
-    "Nama": "KELOMPOK PETANI TAMBAK UDANG PENEBAL INDAH",
-    "NPWP": 858943285219000,
-    "KTP": "-",
-    "Alamat": "Dusun Penebal Tengah RT.005 RW.002 Penebal, Bengkalis, Kab.Bengkalis Riau",
-    "NPWP/KTP": "858943285219000/-"
+    "id": 135,
+    "fullName": "LIDUAN RUSLIE",
+    "taxId": 374268944122000,
+    "idNumber": "-",
+    "address": "Jl.Thamrin No.186 Sei Rengas I, Medan Kota"
   },
   {
-    "No": 148,
-    "Nama": "FEBI BRADY",
-    "NPWP": "000000000000000",
-    "KTP": 1472011302880001,
-    "Alamat": "Jl.M.H.Thamrin Gg.Turi RT004 Ratu Sima, Dumai Selatan, Dumai",
-    "NPWP/KTP": "000000000000000/1472011302880001"
+    "id": 136,
+    "fullName": "USMAN A RAHMAN",
+    "taxId": "000000000000000",
+    "idNumber": "1111130101690001",
+    "address": "Lr Tgk Tulot Dusun Capa, Teungoh, Bireuen Aceh"
   },
   {
-    "No": 149,
-    "Nama": "IWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1218010805840004,
-    "Alamat": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218010805840004"
+    "id": 137,
+    "fullName": "FACHRIZAL, S.Pi",
+    "taxId": "000000000000000",
+    "idNumber": "1218032508800004",
+    "address": "Dusun II Sialang Buah, Teluk Mengkudu, Serdang Bedagai"
   },
   {
-    "No": 150,
-    "Nama": "HASAN",
-    "NPWP": "000000000000000",
-    "KTP": 1275020401660001,
-    "Alamat": "Jl.Jendral Sudirman No.186 Lk.VII Pekan Binjai, Binjai",
-    "NPWP/KTP": "000000000000000/1275020401660001"
+    "id": 138,
+    "fullName": "",
+    "taxId": "",
+    "idNumber": "",
+    "address": ""
   },
   {
-    "No": 151,
-    "Nama": "HO AN",
-    "NPWP": "000000000000000",
-    "KTP": 1275013011650001,
-    "Alamat": "Jl.T.Amir Hamzah Lk.VI Jati Karya, Binjai",
-    "NPWP/KTP": "000000000000000/1275013011650001"
+    "id": 139,
+    "fullName": "RUSDIN SARAGIH",
+    "taxId": "000000000000000",
+    "idNumber": "1207280903680001",
+    "address": "Dusun XIII Pasar Melintang Lubuk Pakam"
   },
   {
-    "No": 152,
-    "Nama": "UMAR RACHMAT",
-    "NPWP": "000000000000000",
-    "KTP": 1271190203650001,
-    "Alamat": "Jl.Rawe 9 Lingk.XI Tangkahan, Medan Labuhan, Medan",
-    "NPWP/KTP": "000000000000000/1271190203650001"
+    "id": 140,
+    "fullName": "JHONY",
+    "taxId": "000000000000000",
+    "idNumber": "1271180906730001",
+    "address": "Jl.HM Said No.40/36 B Sidorame Barat I, Medan Perjuangan, Medan"
   },
   {
-    "No": 153,
-    "Nama": "KORNELIUS WONG",
-    "NPWP": "000000000000000",
-    "KTP": 1271203004560003,
-    "Alamat": "Jl.Perwira V No.40 Pulo Brayan Bengkel, Medan Timur",
-    "NPWP/KTP": "000000000000000/1271203004560003"
+    "id": 141,
+    "fullName": "MISDI",
+    "taxId": "000000000000000",
+    "idNumber": "1205091703660003",
+    "address": "Jl.Besar Dusun IV RT/RW 015/008 Selotong, Secanggang Langkat"
   },
   {
-    "No": 154,
-    "Nama": "EDI SUHENDRI",
-    "NPWP": "000000000000000",
-    "KTP": 1205132912900005,
-    "Alamat": "Jl.Mesjid No.75 Lingk.VI, Pekan Gebang, Gebang",
-    "NPWP/KTP": "000000000000000/1205132912900005"
+    "id": 142,
+    "fullName": "",
+    "taxId": "",
+    "idNumber": "",
+    "address": ""
   },
   {
-    "No": 155,
-    "Nama": "JOKO WAWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271092502900007,
-    "Alamat": "Jl.S.M.Raja km.8,5, Timbang Deli, Medan Amplas",
-    "NPWP/KTP": "000000000000000/1271092502900007"
+    "id": 143,
+    "fullName": "",
+    "taxId": "",
+    "idNumber": "",
+    "address": ""
   },
   {
-    "No": 156,
-    "Nama": "SUHAIMI",
-    "NPWP": "000000000000000",
-    "KTP": 1219050412740003,
-    "Alamat": "Dusun II Mesjid Lama, Talawi",
-    "NPWP/KTP": "000000000000000/1219050412740003"
+    "id": 144,
+    "fullName": "TAN LIONG HAW",
+    "taxId": "000000000000000",
+    "idNumber": "3173021212650011",
+    "address": "Jl.Kesturi No.28 G I Lk I  Suka Maju, Binjai Barat"
   },
   {
-    "No": 157,
-    "Nama": "",
-    "NPWP": "",
-    "KTP": "",
-    "Alamat": "",
-    "NPWP/KTP": "/"
+    "id": 145,
+    "fullName": "RUSTAM",
+    "taxId": "000000000000000",
+    "idNumber": "1218020407710004",
+    "address": "Dusun III Sei Nagalawan, Perbaungan, Serdang Bedagai"
   },
   {
-    "No": 158,
-    "Nama": "HUSEIN SYAFRIYANSYAH",
-    "NPWP": "000000000000000",
-    "KTP": 1207020701900002,
-    "Alamat": "Dusun VI Kuala Lama, Pantai Cermin",
-    "NPWP/KTP": "000000000000000/1207020701900002"
+    "id": 146,
+    "fullName": "JANSEN P TOBING",
+    "taxId": "000000000000000",
+    "idNumber": "1271112204640002",
+    "address": "Jl.Kesatria No.3 A Tanjung Gusta, Medan Helvetia"
   },
   {
-    "No": 159,
-    "Nama": "HAMIDAH WATI",
-    "NPWP": "000000000000000",
-    "KTP": 1218034306730003,
-    "Alamat": "Dusun I Bogak Besar, Teluk Mengkudu, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218034306730003"
+    "id": 147,
+    "fullName": "KELOMPOK PETANI TAMBAK UDANG PENEBAL INDAH",
+    "taxId": "858943285219000",
+    "idNumber": "-",
+    "address": "Dusun Penebal Tengah RT.005 RW.002 Penebal, Bengkalis, Kab.Bengkalis Riau"
   },
   {
-    "No": 160,
-    "Nama": "SOFYAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271062108540001,
-    "Alamat": "Jl.Perunggu No.12 Lk.V, Kota Bangun, Medan Deli",
-    "NPWP/KTP": "000000000000000/1271062108540001"
+    "id": 148,
+    "fullName": "FEBI BRADY",
+    "taxId": "000000000000000",
+    "idNumber": "1472011302880001",
+    "address": "Jl.M.H.Thamrin Gg.Turi RT004 Ratu Sima, Dumai Selatan, Dumai"
   },
   {
-    "No": 161,
-    "Nama": "PT MARINDO UTAMA LESTARI",
-    "NPWP": 848788436216000,
-    "KTP": "-",
-    "Alamat": "Jl.HR Soebrantas Tuah Karya, Tampan, Pekan Baru, Riau",
-    "NPWP/KTP": "848788436216000/-"
+    "id": 149,
+    "fullName": "IWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1218010805840004",
+    "address": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 162,
-    "Nama": "KHAIRUL AMRI",
-    "NPWP": "000000000000000",
-    "KTP": 1218130801880000,
-    "Alamat": "Jl.Sei Mahakam Lk.Vi, Tanah Seribu, Binjai Selatan",
-    "NPWP/KTP": "000000000000000/1218130801880000"
+    "id": 150,
+    "fullName": "HASAN",
+    "taxId": "000000000000000",
+    "idNumber": "1275020401660001",
+    "address": "Jl.Jendral Sudirman No.186 Lk.VII Pekan Binjai, Binjai"
   },
   {
-    "No": 163,
-    "Nama": "ADI SUPIANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1205132807760001,
-    "Alamat": "Dusun II Tambang, Dogang,Gebang",
-    "NPWP/KTP": "000000000000000/1205132807760001"
+    "id": 151,
+    "fullName": "HO AN",
+    "taxId": "000000000000000",
+    "idNumber": "1275013011650001",
+    "address": "Jl.T.Amir Hamzah Lk.VI Jati Karya, Binjai"
   },
   {
-    "No": 164,
-    "Nama": "ILHAM",
-    "NPWP": "000000000000000",
-    "KTP": 1205130303780006,
-    "Alamat": "Dusun I Hilir, Dogang, Gebang",
-    "NPWP/KTP": "000000000000000/1205130303780006"
+    "id": 152,
+    "fullName": "UMAR RACHMAT",
+    "taxId": "000000000000000",
+    "idNumber": "1271190203650001",
+    "address": "Jl.Rawe 9 Lingk.XI Tangkahan, Medan Labuhan, Medan"
   },
   {
-    "No": 165,
-    "Nama": "SUKIRMAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271122007710002,
-    "Alamat": "Pasar IV Lingk 27, Rengas Pulau, Medan Marelan",
-    "NPWP/KTP": "000000000000000/1271122007710002"
+    "id": 153,
+    "fullName": "KORNELIUS WONG",
+    "taxId": "000000000000000",
+    "idNumber": "1271203004560003",
+    "address": "Jl.Perwira V No.40 Pulo Brayan Bengkel, Medan Timur"
   },
   {
-    "No": 166,
-    "Nama": "",
-    "NPWP": "",
-    "KTP": "",
-    "Alamat": "",
-    "NPWP/KTP": "/"
+    "id": 154,
+    "fullName": "EDI SUHENDRI",
+    "taxId": "000000000000000",
+    "idNumber": "1205132912900005",
+    "address": "Jl.Mesjid No.75 Lingk.VI, Pekan Gebang, Gebang"
   },
   {
-    "No": 167,
-    "Nama": "GITO NAINGGOLAN",
-    "NPWP": "000000000000000",
-    "KTP": 1218032711670002,
-    "Alamat": "Dusun I,Sentang , Teluk Mengkudu",
-    "NPWP/KTP": "000000000000000/1218032711670002"
+    "id": 155,
+    "fullName": "JOKO WAWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271092502900007",
+    "address": "Jl.S.M.Raja km.8,5, Timbang Deli, Medan Amplas"
   },
   {
-    "No": 168,
-    "Nama": "YUDI",
-    "NPWP": "000000000000000",
-    "KTP": 1271140210720002,
-    "Alamat": "Jl.Letda Sujono Gg.Selamat-08 Medan",
-    "NPWP/KTP": "000000000000000/1271140210720002"
+    "id": 156,
+    "fullName": "SUHAIMI",
+    "taxId": "000000000000000",
+    "idNumber": "1219050412740003",
+    "address": "Dusun II Mesjid Lama, Talawi"
   },
   {
-    "No": 169,
-    "Nama": "BUDI RAHMAT",
-    "NPWP": "000000000000000",
-    "KTP": 1218110308730002,
-    "Alamat": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218110308730002"
+    "id": 157,
+    "fullName": "",
+    "taxId": "",
+    "idNumber": "",
+    "address": ""
   },
   {
-    "No": 170,
-    "Nama": "MUHAMMAD FARID HAKIM",
-    "NPWP": "000000000000000",
-    "KTP": 1218032504730001,
-    "Alamat": "Dusun I Pasar Baru, Teluk Mengkudu, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218032504730001"
+    "id": 158,
+    "fullName": "HUSEIN SYAFRIYANSYAH",
+    "taxId": "000000000000000",
+    "idNumber": "1207020701900002",
+    "address": "Dusun VI Kuala Lama, Pantai Cermin"
   },
   {
-    "No": 171,
-    "Nama": "ARI WAHYUDI",
-    "NPWP": "000000000000000",
-    "KTP": 1116040911800002,
-    "Alamat": "Dusun Bahagia Pekan Seruway, Aceh Tamiang",
-    "NPWP/KTP": "000000000000000/1116040911800002"
+    "id": 159,
+    "fullName": "HAMIDAH WATI",
+    "taxId": "000000000000000",
+    "idNumber": "1218034306730003",
+    "address": "Dusun I Bogak Besar, Teluk Mengkudu, Serdang Bedagai"
   },
   {
-    "No": 172,
-    "Nama": "RANDANI",
-    "NPWP": "000000000000000",
-    "KTP": 1205133101950002,
-    "Alamat": "Lingk V Kolam Dalam, Pekan Gebang, Langkat, Sumatera Utara",
-    "NPWP/KTP": "000000000000000/1205133101950002"
+    "id": 160,
+    "fullName": "SOFYAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271062108540001",
+    "address": "Jl.Perunggu No.12 Lk.V, Kota Bangun, Medan Deli"
   },
   {
-    "No": 173,
-    "Nama": "SUPRIONO",
-    "NPWP": "000000000000000",
-    "KTP": 1218133112660018,
-    "Alamat": "Dusun IX Paya Lombang, Tebing Tinggi",
-    "NPWP/KTP": "000000000000000/1218133112660018"
+    "id": 161,
+    "fullName": "PT MARINDO UTAMA LESTARI",
+    "taxId": "848788436216000",
+    "idNumber": "-",
+    "address": "Jl.HR Soebrantas Tuah Karya, Tampan, Pekan Baru, Riau"
   },
   {
-    "No": 174,
-    "Nama": "ADI RAMADHAN",
-    "NPWP": "000000000000000",
-    "KTP": 1218102109760001,
-    "Alamat": "Dusun I Bantan, Kotarih Baru, Sedang Bedagai",
-    "NPWP/KTP": "000000000000000/1218102109760001"
+    "id": 162,
+    "fullName": "KHAIRUL AMRI",
+    "taxId": "000000000000000",
+    "idNumber": "1218130801880000",
+    "address": "Jl.Sei Mahakam Lk.Vi, Tanah Seribu, Binjai Selatan"
   },
   {
-    "No": 175,
-    "Nama": "DARMA PUTRA",
-    "NPWP": "000000000000000",
-    "KTP": 1116032904920001,
-    "Alamat": "Dusun Inpres, Desa Bundar, Karang Baru, Aceh Tamiang",
-    "NPWP/KTP": "000000000000000/1116032904920001"
+    "id": 163,
+    "fullName": "ADI SUPIANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1205132807760001",
+    "address": "Dusun II Tambang, Dogang,Gebang"
   },
   {
-    "No": 176,
-    "Nama": "ISAH MAULANA",
-    "NPWP": "000000000000000",
-    "KTP": 1205161609960006,
-    "Alamat": "Lingk KR Lalang, Pekan Besitang, lLangkat, Sumatera Utara",
-    "NPWP/KTP": "000000000000000/1205161609960006"
+    "id": 164,
+    "fullName": "ILHAM",
+    "taxId": "000000000000000",
+    "idNumber": "1205130303780006",
+    "address": "Dusun I Hilir, Dogang, Gebang"
   },
   {
-    "No": 177,
-    "Nama": "THERESIA",
-    "NPWP": "000000000000000",
-    "KTP": 1207265609800003,
-    "Alamat": "Jl.Dharmais I No.31 Dusun IX Kenanga, Laut Dendang, Percut Sei Tuan, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207265609800003"
+    "id": 165,
+    "fullName": "SUKIRMAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271122007710002",
+    "address": "Pasar IV Lingk 27, Rengas Pulau, Medan Marelan"
   },
   {
-    "No": 178,
-    "Nama": "IRFAN ROSYIDI",
-    "NPWP": "000000000000000",
-    "KTP": 1401030512760002,
-    "Alamat": "Mahkota Riau Blok C4 No.6, Tarai Bangun, Tambang, Kampar, Riau",
-    "NPWP/KTP": "000000000000000/1401030512760002"
+    "id": 166,
+    "fullName": "",
+    "taxId": "",
+    "idNumber": "",
+    "address": ""
   },
   {
-    "No": 179,
-    "Nama": "SUDIANTO",
-    "NPWP": "081174914216000",
-    "KTP": "-",
-    "Alamat": "Jl.Durian, Labuh Baru Timur, Payung Sekaki, PekanBaru",
-    "NPWP/KTP": "081174914216000/-"
+    "id": 167,
+    "fullName": "GITO NAINGGOLAN",
+    "taxId": "000000000000000",
+    "idNumber": "1218032711670002",
+    "address": "Dusun I,Sentang , Teluk Mengkudu"
   },
   {
-    "No": 180,
-    "Nama": "SENTOSO",
-    "NPWP": "000000000000000",
-    "KTP": 1271051611610002,
-    "Alamat": "Jl.KLY Sudarso Lk.XI No.7-A, Glugur Kota, Medan",
-    "NPWP/KTP": "000000000000000/1271051611610002"
+    "id": 168,
+    "fullName": "YUDI",
+    "taxId": "000000000000000",
+    "idNumber": "1271140210720002",
+    "address": "Jl.Letda Sujono Gg.Selamat-08 Medan"
   },
   {
-    "No": 181,
-    "Nama": "BOY FEBRIYANDI, S.Pd",
-    "NPWP": "000000000000000",
-    "KTP": 1205132802860001,
-    "Alamat": "Lingk V Kolam Dalam, Pekan Gebang, Langkat, Sumatera Utara",
-    "NPWP/KTP": "000000000000000/1205132802860001"
+    "id": 169,
+    "fullName": "BUDI RAHMAT",
+    "taxId": "000000000000000",
+    "idNumber": "1218110308730002",
+    "address": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 182,
-    "Nama": "DEFRI NALDI",
-    "NPWP": "000000000000000",
-    "KTP": 1308100208830002,
-    "Alamat": "Jl.Toman No.12 RT/RW 002/001 Tangkerang Barat, Marpoyan Damai, PekanBaru",
-    "NPWP/KTP": "000000000000000/1308100208830002"
+    "id": 170,
+    "fullName": "MUHAMMAD FARID HAKIM",
+    "taxId": "000000000000000",
+    "idNumber": "1218032504730001",
+    "address": "Dusun I Pasar Baru, Teluk Mengkudu, Serdang Bedagai"
   },
   {
-    "No": 183,
-    "Nama": "ADI SIREGAR",
-    "NPWP": "000000000000000",
-    "KTP": 1205132512800003,
-    "Alamat": "Dusun VIII Kelantan Luar RT/RW 002/004 Pasar Rawa, Gebang, Langkat",
-    "NPWP/KTP": "000000000000000/1205132512800003"
+    "id": 171,
+    "fullName": "ARI WAHYUDI",
+    "taxId": "000000000000000",
+    "idNumber": "1116040911800002",
+    "address": "Dusun Bahagia Pekan Seruway, Aceh Tamiang"
   },
   {
-    "No": 184,
-    "Nama": "HARIYANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1271140709800006,
-    "Alamat": "Jl.Mandala By Pass No.102-A Medan",
-    "NPWP/KTP": "000000000000000/1271140709800006"
+    "id": 172,
+    "fullName": "RANDANI",
+    "taxId": "000000000000000",
+    "idNumber": "1205133101950002",
+    "address": "Lingk V Kolam Dalam, Pekan Gebang, Langkat, Sumatera Utara"
   },
   {
-    "No": 185,
-    "Nama": "ARIF MUSLIM",
-    "NPWP": "000000000000000",
-    "KTP": 1106081411950002,
-    "Alamat": "Dusun Lam Lumpu Lhok, Peukan Bada, Aceh",
-    "NPWP/KTP": "000000000000000/1106081411950002"
+    "id": 173,
+    "fullName": "SUPRIONO",
+    "taxId": "000000000000000",
+    "idNumber": "1218133112660018",
+    "address": "Dusun IX Paya Lombang, Tebing Tinggi"
   },
   {
-    "No": 186,
-    "Nama": "INDAH RISKA OKTAVIANI",
-    "NPWP": "000000000000000",
-    "KTP": 1219055910930001,
-    "Alamat": "Dusun III Jaya Tani, Bangun Sari, Talawi, Batu Bara",
-    "NPWP/KTP": "000000000000000/1219055910930001"
+    "id": 174,
+    "fullName": "ADI RAMADHAN",
+    "taxId": "000000000000000",
+    "idNumber": "1218102109760001",
+    "address": "Dusun I Bantan, Kotarih Baru, Sedang Bedagai"
   },
   {
-    "No": 187,
-    "Nama": "DONI SAPUTRA",
-    "NPWP": "000000000000000",
-    "KTP": 1116072504990001,
-    "Alamat": "Dusun Sido Mulyo, Perkebunan Pulau Tiga, Tamiang Hulu, Aceh",
-    "NPWP/KTP": "000000000000000/1116072504990001"
+    "id": 175,
+    "fullName": "DARMA PUTRA",
+    "taxId": "000000000000000",
+    "idNumber": "1116032904920001",
+    "address": "Dusun Inpres, Desa Bundar, Karang Baru, Aceh Tamiang"
   },
   {
-    "No": 188,
-    "Nama": "ABIDIN",
-    "NPWP": "000000000000000",
-    "KTP": 1276052204700001,
-    "Alamat": "Jl.Pala Lk.02 Bandar Utama, Tebing Tinggi",
-    "NPWP/KTP": "000000000000000/1276052204700001"
+    "id": 176,
+    "fullName": "ISAH MAULANA",
+    "taxId": "000000000000000",
+    "idNumber": "1205161609960006",
+    "address": "Lingk KR Lalang, Pekan Besitang, lLangkat, Sumatera Utara"
   },
   {
-    "No": 189,
-    "Nama": "DEDY KURNIAWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271112406710002,
-    "Alamat": "Dusun I Simpang Trans, Karang Gading Secanggang",
-    "NPWP/KTP": "000000000000000/1271112406710002"
+    "id": 177,
+    "fullName": "THERESIA",
+    "taxId": "000000000000000",
+    "idNumber": "1207265609800003",
+    "address": "Jl.Dharmais I No.31 Dusun IX Kenanga, Laut Dendang, Percut Sei Tuan, Deli Serdang"
   },
   {
-    "No": 190,
-    "Nama": "IRFAN EFFENDI PURBA",
-    "NPWP": "000000000000000",
-    "KTP": 1218010203930002,
-    "Alamat": "Jl.Kompos Ujung Dusun VIII Puji Mulyo, Sunggal",
-    "NPWP/KTP": "000000000000000/1218010203930002"
+    "id": 178,
+    "fullName": "IRFAN ROSYIDI",
+    "taxId": "000000000000000",
+    "idNumber": "1401030512760002",
+    "address": "Mahkota Riau Blok C4 No.6, Tarai Bangun, Tambang, Kampar, Riau"
   },
   {
-    "No": 191,
-    "Nama": "TRINALDO SIMATUPANG",
-    "NPWP": "000000000000000",
-    "KTP": 1871112606970003,
-    "Alamat": "Jl.Flamboyan II No.31 Lk.I Labuhan Dalam, Tanjung Senang, Lampung",
-    "NPWP/KTP": "000000000000000/1871112606970003"
+    "id": 179,
+    "fullName": "SUDIANTO",
+    "taxId": "081174914216000",
+    "idNumber": "-",
+    "address": "Jl.Durian, Labuh Baru Timur, Payung Sekaki, PekanBaru"
   },
   {
-    "No": 192,
-    "Nama": "MERLINA",
-    "NPWP": "000000000000000",
-    "KTP": 1219035809810002,
-    "Alamat": "Jl.Jend.Sudirman Lk.II Indrapura Kota, Air Putih, BatuBara",
-    "NPWP/KTP": "000000000000000/1219035809810002"
+    "id": 180,
+    "fullName": "SENTOSO",
+    "taxId": "000000000000000",
+    "idNumber": "1271051611610002",
+    "address": "Jl.KLY Sudarso Lk.XI No.7-A, Glugur Kota, Medan"
   },
   {
-    "No": 193,
-    "Nama": "SUGIRAN",
-    "NPWP": "000000000000000",
-    "KTP": 1205090106720001,
-    "Alamat": "Lingk IV Hinai Kiri, Secanggang, Langkat",
-    "NPWP/KTP": "000000000000000/1205090106720001"
+    "id": 181,
+    "fullName": "BOY FEBRIYANDI, S.Pd",
+    "taxId": "000000000000000",
+    "idNumber": "1205132802860001",
+    "address": "Lingk V Kolam Dalam, Pekan Gebang, Langkat, Sumatera Utara"
   },
   {
-    "No": 194,
-    "Nama": "RIZKI ARMANSYAH",
-    "NPWP": "000000000000000",
-    "KTP": 1205110705990006,
-    "Alamat": "Dusun II Pematang Jaya, Kwala Serapuh, Langkat",
-    "NPWP/KTP": "000000000000000/1205110705990006"
+    "id": 182,
+    "fullName": "DEFRI NALDI",
+    "taxId": "000000000000000",
+    "idNumber": "1308100208830002",
+    "address": "Jl.Toman No.12 RT/RW 002/001 Tangkerang Barat, Marpoyan Damai, PekanBaru"
   },
   {
-    "No": 195,
-    "Nama": "IR. DJOKO SUHENDRO",
-    "NPWP": "000000000000000",
-    "KTP": 1271122807640001,
-    "Alamat": "Jl.Pasar III Lingk.12 No.111 Rengas Pulau, Medan",
-    "NPWP/KTP": "000000000000000/1271122807640001"
+    "id": 183,
+    "fullName": "ADI SIREGAR",
+    "taxId": "000000000000000",
+    "idNumber": "1205132512800003",
+    "address": "Dusun VIII Kelantan Luar RT/RW 002/004 Pasar Rawa, Gebang, Langkat"
   },
   {
-    "No": 196,
-    "Nama": "SURYANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1205142311520001,
-    "Alamat": "Jl.Babalan No.28 Brandan Barat, Langkat",
-    "NPWP/KTP": "000000000000000/1205142311520001"
+    "id": 184,
+    "fullName": "HARIYANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1271140709800006",
+    "address": "Jl.Mandala By Pass No.102-A Medan"
   },
   {
-    "No": 197,
-    "Nama": "TONY",
-    "NPWP": "000000000000000",
-    "KTP": 1271132208770001,
-    "Alamat": "Jl.P.Inpres No.17 Lingk VII Martubung, Medan Labuhan",
-    "NPWP/KTP": "000000000000000/1271132208770001"
+    "id": 185,
+    "fullName": "ARIF MUSLIM",
+    "taxId": "000000000000000",
+    "idNumber": "1106081411950002",
+    "address": "Dusun Lam Lumpu Lhok, Peukan Bada, Aceh"
   },
   {
-    "No": 198,
-    "Nama": "USMAN",
-    "NPWP": "000000000000000",
-    "KTP": 1205090308710001,
-    "Alamat": "Dusun VIII Tanjung Tiga, RT/RW 008/002 Karang Gading, Secanggang, Langkat",
-    "NPWP/KTP": "000000000000000/1205090308710001"
+    "id": 186,
+    "fullName": "INDAH RISKA OKTAVIANI",
+    "taxId": "000000000000000",
+    "idNumber": "1219055910930001",
+    "address": "Dusun III Jaya Tani, Bangun Sari, Talawi, Batu Bara"
   },
   {
-    "No": 199,
-    "Nama": "NURUL IKHWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1218010108850002,
-    "Alamat": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218010108850002"
+    "id": 187,
+    "fullName": "DONI SAPUTRA",
+    "taxId": "000000000000000",
+    "idNumber": "1116072504990001",
+    "address": "Dusun Sido Mulyo, Perkebunan Pulau Tiga, Tamiang Hulu, Aceh"
   },
   {
-    "No": 200,
-    "Nama": "DICKY KURNIAWAN",
-    "NPWP": "000000000000000",
-    "KTP": 3578122509770005,
-    "Alamat": "Jl.Garu III No.143 B, Harjosari I, Medan Amplas",
-    "NPWP/KTP": "000000000000000/3578122509770005"
+    "id": 188,
+    "fullName": "ABIDIN",
+    "taxId": "000000000000000",
+    "idNumber": "1276052204700001",
+    "address": "Jl.Pala Lk.02 Bandar Utama, Tebing Tinggi"
   },
   {
-    "No": 201,
-    "Nama": "PT RAJA AYU PERKASA",
-    "NPWP": 819376518121000,
-    "KTP": "-",
-    "Alamat": "Jl.Ring Road Selatan No.20 SukaMaju, Medan Johor, Medan",
-    "NPWP/KTP": "819376518121000/-"
+    "id": 189,
+    "fullName": "DEDY KURNIAWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271112406710002",
+    "address": "Dusun I Simpang Trans, Karang Gading Secanggang"
   },
   {
-    "No": 202,
-    "Nama": "ELFIS EDISON",
-    "NPWP": "000000000000000",
-    "KTP": 1205070204680002,
-    "Alamat": "Jl.Perniagaan Komp.Sil No.10 Stabat, Langkat",
-    "NPWP/KTP": "000000000000000/1205070204680002"
+    "id": 190,
+    "fullName": "IRFAN EFFENDI PURBA",
+    "taxId": "000000000000000",
+    "idNumber": "1218010203930002",
+    "address": "Jl.Kompos Ujung Dusun VIII Puji Mulyo, Sunggal"
   },
   {
-    "No": 203,
-    "Nama": "AMEE",
-    "NPWP": "000000000000000",
-    "KTP": 1403014106746415,
-    "Alamat": "Jl.Hang Tuah, Damon, Bengkalis",
-    "NPWP/KTP": "000000000000000/1403014106746415"
+    "id": 191,
+    "fullName": "TRINALDO SIMATUPANG",
+    "taxId": "000000000000000",
+    "idNumber": "1871112606970003",
+    "address": "Jl.Flamboyan II No.31 Lk.I Labuhan Dalam, Tanjung Senang, Lampung"
   },
   {
-    "No": 204,
-    "Nama": "RANJA SARI BENG SUSANTO",
-    "NPWP": "000000000000000",
-    "KTP": 1403022501710001,
-    "Alamat": "Jl.Jend Sudirman, Suka Maju, Bantan, Bengkalis, Riau",
-    "NPWP/KTP": "000000000000000/1403022501710001"
+    "id": 192,
+    "fullName": "MERLINA",
+    "taxId": "000000000000000",
+    "idNumber": "1219035809810002",
+    "address": "Jl.Jend.Sudirman Lk.II Indrapura Kota, Air Putih, BatuBara"
   },
   {
-    "No": 205,
-    "Nama": "AHO ALS GUNAWAN",
-    "NPWP": "000000000000000",
-    "KTP": 1275010711730001,
-    "Alamat": "Jl.Pinus No.2 Lk.IV Jati Utomo, Binjai Utara",
-    "NPWP/KTP": "000000000000000/1275010711730001"
+    "id": 193,
+    "fullName": "SUGIRAN",
+    "taxId": "000000000000000",
+    "idNumber": "1205090106720001",
+    "address": "Lingk IV Hinai Kiri, Secanggang, Langkat"
   },
   {
-    "No": 206,
-    "Nama": "IVAN ONGGESTU",
-    "NPWP": 955629480216000,
-    "KTP": "-",
-    "Alamat": "Jl.Jendral No.1 E RT 001 RW 002 Labuh Baru Timur Payung Sekaki, Kota PekanBaru, Prov Riau",
-    "NPWP/KTP": "955629480216000/-"
+    "id": 194,
+    "fullName": "RIZKI ARMANSYAH",
+    "taxId": "000000000000000",
+    "idNumber": "1205110705990006",
+    "address": "Dusun II Pematang Jaya, Kwala Serapuh, Langkat"
   },
   {
-    "No": 207,
-    "Nama": "SUNARTO",
-    "NPWP": "000000000000000",
-    "KTP": 1218071204600006,
-    "Alamat": "Kp.Keling Dusun II, Sei Rampah, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/1218071204600006"
+    "id": 195,
+    "fullName": "IR. DJOKO SUHENDRO",
+    "taxId": "000000000000000",
+    "idNumber": "1271122807640001",
+    "address": "Jl.Pasar III Lingk.12 No.111 Rengas Pulau, Medan"
   },
   {
-    "No": 208,
-    "Nama": "SUDIRMAN",
-    "NPWP": "000000000000000",
-    "KTP": 1108072002840001,
-    "Alamat": "Dusun Balee Aron, Rayeuk Paya Itek, Kec.Meurah Mulia, Aceh Utara",
-    "NPWP/KTP": "000000000000000/1108072002840001"
+    "id": 196,
+    "fullName": "SURYANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1205142311520001",
+    "address": "Jl.Babalan No.28 Brandan Barat, Langkat"
   },
   {
-    "No": 209,
-    "Nama": "SAMSUL BAHRI",
-    "NPWP": "000000000000000",
-    "KTP": 1205090504800001,
-    "Alamat": "Jl.Besar Dusun I Selotong RT/RW 003/002, Selotong, Secanggang, Langkat",
-    "NPWP/KTP": "000000000000000/1205090504800001"
+    "id": 197,
+    "fullName": "TONY",
+    "taxId": "000000000000000",
+    "idNumber": "1271132208770001",
+    "address": "Jl.P.Inpres No.17 Lingk VII Martubung, Medan Labuhan"
   },
   {
-    "No": 210,
-    "Nama": "EDY",
-    "NPWP": "000000000000000",
-    "KTP": 1205141001610002,
-    "Alamat": "Jl.Babalan No.36 Brandan Barat, Langkat",
-    "NPWP/KTP": "000000000000000/1205141001610002"
+    "id": 198,
+    "fullName": "USMAN",
+    "taxId": "000000000000000",
+    "idNumber": "1205090308710001",
+    "address": "Dusun VIII Tanjung Tiga, RT/RW 008/002 Karang Gading, Secanggang, Langkat"
   },
   {
-    "No": 211,
-    "Nama": "MAHYUDIN",
-    "NPWP": "000000000000000",
-    "KTP": 3218111303780002,
-    "Alamat": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai",
-    "NPWP/KTP": "000000000000000/3218111303780002"
+    "id": 199,
+    "fullName": "NURUL IKHWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1218010108850002",
+    "address": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 212,
-    "Nama": "TOHIRIN",
-    "NPWP": "000000000000000",
-    "KTP": 1207251006790002,
-    "Alamat": "Dusun VI Telaga Tujuh, Labuhan Deli, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207251006790002"
+    "id": 200,
+    "fullName": "DICKY KURNIAWAN",
+    "taxId": "000000000000000",
+    "idNumber": "3578122509770005",
+    "address": "Jl.Garu III No.143 B, Harjosari I, Medan Amplas"
   },
   {
-    "No": 213,
-    "Nama": "MUHAMMAD BAYU PRASTAMA",
-    "NPWP": "000000000000000",
-    "KTP": 1208282704970001,
-    "Alamat": "Jl.Siantar Medan Km. 9.8 Lk.V RT/RW 020/010 Sinaksak, Tapian Dolok, Simalungun",
-    "NPWP/KTP": "000000000000000/1208282704970001"
+    "id": 201,
+    "fullName": "PT RAJA AYU PERKASA",
+    "taxId": "819376518121000",
+    "idNumber": "-",
+    "address": "Jl.Ring Road Selatan No.20 SukaMaju, Medan Johor, Medan"
   },
   {
-    "No": 214,
-    "Nama": "JIK CAK",
-    "NPWP": "000000000000000",
-    "KTP": 1219011004740004,
-    "Alamat": "Jl.Jend A.Yani Lk IV Pangkalan Dodek Baru, Medang Deras, BatuBara",
-    "NPWP/KTP": "000000000000000/1219011004740004"
+    "id": 202,
+    "fullName": "ELFIS EDISON",
+    "taxId": "000000000000000",
+    "idNumber": "1205070204680002",
+    "address": "Jl.Perniagaan Komp.Sil No.10 Stabat, Langkat"
   },
   {
-    "No": 215,
-    "Nama": "EDY PRAYETNO",
-    "NPWP": "000000000000000",
-    "KTP": 1207331404720001,
-    "Alamat": "Sidodadi Ramonia, Kec.Beringin, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207331404720001"
+    "id": 203,
+    "fullName": "AMEE",
+    "taxId": "000000000000000",
+    "idNumber": "1403014106746415",
+    "address": "Jl.Hang Tuah, Damon, Bengkalis"
   },
   {
-    "No": 216,
-    "Nama": "ARFAN",
-    "NPWP": "000000000000000",
-    "KTP": 1218020808700005,
-    "Alamat": "Dusun II Sei Nagalawan, Perbaungan, Sedang Bedagai",
-    "NPWP/KTP": "000000000000000/1218020808700005"
+    "id": 204,
+    "fullName": "RANJA SARI BENG SUSANTO",
+    "taxId": "000000000000000",
+    "idNumber": "1403022501710001",
+    "address": "Jl.Jend Sudirman, Suka Maju, Bantan, Bengkalis, Riau"
   },
   {
-    "No": 217,
-    "Nama": "BASRI",
-    "NPWP": "000000000000000",
-    "KTP": 1801060205730002,
-    "Alamat": "Dusun Kenjuru, Merak Belantung, Kalianda",
-    "NPWP/KTP": "000000000000000/1801060205730002"
+    "id": 205,
+    "fullName": "AHO ALS GUNAWAN",
+    "taxId": "000000000000000",
+    "idNumber": "1275010711730001",
+    "address": "Jl.Pinus No.2 Lk.IV Jati Utomo, Binjai Utara"
   },
   {
-    "No": 218,
-    "Nama": "EVENDI",
-    "NPWP": "000000000000000",
-    "KTP": 1108151906900001,
-    "Alamat": "Gampong Sawang, Sawang, Aceh Utara",
-    "NPWP/KTP": "000000000000000/1108151906900001"
+    "id": 206,
+    "fullName": "IVAN ONGGESTU",
+    "taxId": 955629480216000,
+    "idNumber": "-",
+    "address": "Jl.Jendral No.1 E RT 001 RW 002 Labuh Baru Timur Payung Sekaki, Kota PekanBaru, Prov Riau"
   },
   {
-    "No": 219,
-    "Nama": "A KIONG ALIAS SWANDI",
-    "NPWP": "000000000000000",
-    "KTP": 1271130707700005,
-    "Alamat": "Prambai Lk VI Sp Tol 178, Martubung, Medan Labuhan, Medan",
-    "NPWP/KTP": "000000000000000/1271130707700005"
+    "id": 207,
+    "fullName": "SUNARTO",
+    "taxId": "000000000000000",
+    "idNumber": "1218071204600006",
+    "address": "Kp.Keling Dusun II, Sei Rampah, Serdang Bedagai"
   },
   {
-    "No": 220,
-    "Nama": "SAIFUL BAHRI",
-    "NPWP": 572398584119000,
-    "KTP": "-",
-    "Alamat": "Lingk XV Beringin Bl. D Kav.00 No.03 Perdamaian - Stabat, Langkat",
-    "NPWP/KTP": "572398584119000/-"
+    "id": 208,
+    "fullName": "SUDIRMAN",
+    "taxId": "000000000000000",
+    "idNumber": "1108072002840001",
+    "address": "Dusun Balee Aron, Rayeuk Paya Itek, Kec.Meurah Mulia, Aceh Utara"
   },
   {
-    "No": 221,
-    "Nama": "HENDRA SAFRI",
-    "NPWP": "000000000000000",
-    "KTP": 1219053112790102,
-    "Alamat": "Dusun IV Mesjid Lama, Talawi, BatuBara",
-    "NPWP/KTP": "000000000000000/1219053112790102"
+    "id": 209,
+    "fullName": "SAMSUL BAHRI",
+    "taxId": "000000000000000",
+    "idNumber": "1205090504800001",
+    "address": "Jl.Besar Dusun I Selotong RT/RW 003/002, Selotong, Secanggang, Langkat"
   },
   {
-    "No": 222,
-    "Nama": "CV PERSADA DUA PUTRA",
-    "NPWP": 416018042119000,
-    "KTP": "-",
-    "Alamat": "Lk I Dusun Kampung Lalang Pekan Besitang, Langkat, Sumatera Utara",
-    "NPWP/KTP": "416018042119000/-"
+    "id": 210,
+    "fullName": "EDY",
+    "taxId": "000000000000000",
+    "idNumber": "1205141001610002",
+    "address": "Jl.Babalan No.36 Brandan Barat, Langkat"
   },
   {
-    "No": 223,
-    "Nama": "PT TAMBAK LIBU SAGARA",
-    "NPWP": 912675857216000,
-    "KTP": "-",
-    "Alamat": "Central Panam IT Store Jl.HR Soebrantas Km.14,5 Panam Ujung RT/RW 001/0019 Tuah Karya, Tampan, PekanBaru, Riau",
-    "NPWP/KTP": "912675857216000/-"
+    "id": 211,
+    "fullName": "MAHYUDIN",
+    "taxId": "000000000000000",
+    "idNumber": "3218111303780002",
+    "address": "Dusun III Kota Pari, Pantai Cermin, Serdang Bedagai"
   },
   {
-    "No": 224,
-    "Nama": "IJO CAI SIUHERI PRAMANA",
-    "NPWP": "000000000000000",
-    "KTP": 1271122005810002,
-    "Alamat": "Lingkungan 03 Rengas Pulau, Medan Marelan, Medan",
-    "NPWP/KTP": "000000000000000/1271122005810002"
-  },
-  {
-    "No": 225,
-    "Nama": "BUDI IRWANSYAH",
-    "NPWP": "000000000000000",
-    "KTP": 1275021802810002,
-    "Alamat": "Jl. Gn.Bendahara Gg.Mufakat Lk.II Puji Dadi, Binjai Selatan, Binjai",
-    "NPWP/KTP": "000000000000000/1275021802810002"
-  },
-  {
-    "No": 226,
-    "Nama": "WILLIAM TANRIANUS",
-    "NPWP": "000000000000000",
-    "KTP": 1273022909980001,
-    "Alamat": "Dusun III Labuan Angin, Tapian Nauli I, Tapanuli Tengah",
-    "NPWP/KTP": "000000000000000/1273022909980001"
-  },
-  {
-    "No": 227,
-    "Nama": "SETYO WAHYONO",
-    "NPWP": "000000000000000",
-    "KTP": 1871032010790003,
-    "Alamat": "Jl. I.Bonjol Gg.Jabal Nur Lk II RT.004 Suka Jawa, Tanjung Karang Barat, Lampung",
-    "NPWP/KTP": "000000000000000/1871032010790003"
-  },
-  {
-    "No": 228,
-    "Nama": "NURAINI",
-    "NPWP": "000000000000000",
-    "KTP": 1207195804970002,
-    "Alamat": "Dusun I Jaharun A, Galang, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207195804970002"
-  },
-  {
-    "No": 229,
-    "Nama": "KEVIN TARIGAN",
-    "NPWP": "000000000000000",
-    "KTP": 1271210302930002,
-    "Alamat": "Jl.Bunga Cempaka No.35 A PS III, PB Selayang II, Medan Selayang",
-    "NPWP/KTP": "000000000000000/1271210302930002"
-  },
-  {
-    "No": 230,
-    "Nama": "VIRLINDA",
-    "NPWP": 817935471211000,
-    "KTP": 1471045409970003,
-    "Alamat": "Jl.Rokan No.28 B RT.004 RW.001 Tanjung Rhu, Lima Puluh, Kota PekanBaru, Riau",
-    "NPWP/KTP": "817935471211000/1471045409970003"
-  },
-  {
-    "No": 231,
-    "Nama": "LIM KHUN SUN",
-    "NPWP": "000000000000000",
-    "KTP": 1207250702630001,
-    "Alamat": "Dsn.V Gg.Langgar Helvetia, Labuhan Deli, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1207250702630001"
-  },
-  {
-    "No": 232,
-    "Nama": "ISMAIL",
-    "NPWP": "000000000000000",
-    "KTP": 1205103112800071,
-    "Alamat": "Lingk.III Perum Greend Langkat Asri, Paya Mabar, Stabat",
-    "NPWP/KTP": "000000000000000/1205103112800071"
-  },
-  {
-    "No": 233,
-    "Nama": "ACHSAN KUNCORO ADJI",
-    "NPWP": 896268547114000,
-    "KTP": 1218012509730001,
-    "Alamat": "Dusun Harapan, Pematang Tengah, Tanjung Pura, Langkat",
-    "NPWP/KTP": "896268547114000/1218012509730001"
-  },
-  {
-    "No": 234,
-    "Nama": "ABDULLAH",
-    "NPWP": "000000000000000",
-    "KTP": 1116022710800004,
-    "Alamat": "Dusun Petua Saleh, Bandar Khalifah, Kec.Bendahara, Aceh",
-    "NPWP/KTP": "000000000000000/1116022710800004"
-  },
-  {
-    "No": 235,
-    "Nama": "DESI HARIYANI",
-    "NPWP": "000000000000000",
-    "KTP": 1205177006010001,
-    "Alamat": "Gg. Hasanuddin Lk.IV Teratai RT.013/RW.004, Sei Belah Timur, Sei Lepan, Langkat",
-    "NPWP/KTP": "000000000000000/1205177006010001"
-  },
-  {
-    "No": 236,
-    "Nama": "SUDIRMAN SIHOMBING",
-    "NPWP": "000000000000000",
-    "KTP": 1208132804900002,
-    "Alamat": "Gg. Bambu Dusun XII Limau Manis, Tanjung Morawa, Deli Serdang",
-    "NPWP/KTP": "000000000000000/1208132804900002"
+    "id": 212,
+    "fullName": "TOHIRIN",
+    "taxId": "000000000000000",
+    "idNumber": "1207251006790002",
+    "address": "Dusun VI Telaga Tujuh, Labuhan Deli, Deli Serdang"
+  },
+  {
+    "id": 213,
+    "fullName": "MUHAMMAD BAYU PRASTAMA",
+    "taxId": "000000000000000",
+    "idNumber": "1208282704970001",
+    "address": "Jl.Siantar Medan Km. 9.8 Lk.V RT/RW 020/010 Sinaksak, Tapian Dolok, Simalungun"
+  },
+  {
+    "id": 214,
+    "fullName": "JIK CAK",
+    "taxId": "000000000000000",
+    "idNumber": "1219011004740004",
+    "address": "Jl.Jend A.Yani Lk IV Pangkalan Dodek Baru, Medang Deras, BatuBara"
+  },
+  {
+    "id": 215,
+    "fullName": "EDY PRAYETNO",
+    "taxId": "000000000000000",
+    "idNumber": "1207331404720001",
+    "address": "Sidodadi Ramonia, Kec.Beringin, Deli Serdang"
+  },
+  {
+    "id": 216,
+    "fullName": "ARFAN",
+    "taxId": "000000000000000",
+    "idNumber": "1218020808700005",
+    "address": "Dusun II Sei Nagalawan, Perbaungan, Sedang Bedagai"
+  },
+  {
+    "id": 217,
+    "fullName": "BASRI",
+    "taxId": "000000000000000",
+    "idNumber": "1801060205730002",
+    "address": "Dusun Kenjuru, Merak Belantung, Kalianda"
+  },
+  {
+    "id": 218,
+    "fullName": "EVENDI",
+    "taxId": "000000000000000",
+    "idNumber": "1108151906900001",
+    "address": "Gampong Sawang, Sawang, Aceh Utara"
+  },
+  {
+    "id": 219,
+    "fullName": "A KIONG ALIAS SWANDI",
+    "taxId": "000000000000000",
+    "idNumber": "1271130707700005",
+    "address": "Prambai Lk VI Sp Tol 178, Martubung, Medan Labuhan, Medan"
+  },
+  {
+    "id": 220,
+    "fullName": "SAIFUL BAHRI",
+    "taxId": 572398584119000,
+    "idNumber": "-",
+    "address": "Lingk XV Beringin Bl. D Kav.00 No.03 Perdamaian - Stabat, Langkat"
+  },
+  {
+    "id": 221,
+    "fullName": "HENDRA SAFRI",
+    "taxId": "000000000000000",
+    "idNumber": "1219053112790102",
+    "address": "Dusun IV Mesjid Lama, Talawi, BatuBara"
+  },
+  {
+    "id": 222,
+    "fullName": "CV PERSADA DUA PUTRA",
+    "taxId": 416018042119000,
+    "idNumber": "-",
+    "address": "Lk I Dusun Kampung Lalang Pekan Besitang, Langkat, Sumatera Utara"
+  },
+  {
+    "id": 223,
+    "fullName": "PT TAMBAK LIBU SAGARA",
+    "taxId": 912675857216000,
+    "idNumber": "-",
+    "address": "Central Panam IT Store Jl.HR Soebrantas Km.14,5 Panam Ujung RT/RW 001/0019 Tuah Karya, Tampan, PekanBaru, Riau"
+  },
+  {
+    "id": 224,
+    "fullName": "IJO CAI SIUHERI PRAMANA",
+    "taxId": "000000000000000",
+    "idNumber": "1271122005810002",
+    "address": "Lingkungan 03 Rengas Pulau, Medan Marelan, Medan"
+  },
+  {
+    "id": 225,
+    "fullName": "BUDI IRWANSYAH",
+    "taxId": "000000000000000",
+    "idNumber": "1275021802810002",
+    "address": "Jl. Gn.Bendahara Gg.Mufakat Lk.II Puji Dadi, Binjai Selatan, Binjai"
+  },
+  {
+    "id": 226,
+    "fullName": "WILLIAM TANRIANUS",
+    "taxId": "000000000000000",
+    "idNumber": "1273022909980001",
+    "address": "Dusun III Labuan Angin, Tapian Nauli I, Tapanuli Tengah"
+  },
+  {
+    "id": 227,
+    "fullName": "SETYO WAHYONO",
+    "taxId": "000000000000000",
+    "idNumber": "1871032010790003",
+    "address": "Jl. I.Bonjol Gg.Jabal Nur Lk II RT.004 Suka Jawa, Tanjung Karang Barat, Lampung"
+  },
+  {
+    "id": 228,
+    "fullName": "NURAINI",
+    "taxId": "000000000000000",
+    "idNumber": "1207195804970002",
+    "address": "Dusun I Jaharun A, Galang, Deli Serdang"
+  },
+  {
+    "id": 229,
+    "fullName": "KEVIN TARIGAN",
+    "taxId": "000000000000000",
+    "idNumber": "1271210302930002",
+    "address": "Jl.Bunga Cempaka No.35 A PS III, PB Selayang II, Medan Selayang"
+  },
+  {
+    "id": 230,
+    "fullName": "VIRLINDA",
+    "taxId": "817935471211000",
+    "idNumber": "1471045409970003",
+    "address": "Jl.Rokan No.28 B RT.004 RW.001 Tanjung Rhu, Lima Puluh, Kota PekanBaru, Riau"
+  },
+  {
+    "id": 231,
+    "fullName": "LIM KHUN SUN",
+    "taxId": "000000000000000",
+    "idNumber": "1207250702630001",
+    "address": "Dsn.V Gg.Langgar Helvetia, Labuhan Deli, Deli Serdang"
+  },
+  {
+    "id": 232,
+    "fullName": "ISMAIL",
+    "taxId": "000000000000000",
+    "idNumber": "1205103112800071",
+    "address": "Lingk.III Perum Greend Langkat Asri, Paya Mabar, Stabat"
+  },
+  {
+    "id": 233,
+    "fullName": "ACHSAN KUNCORO ADJI",
+    "taxId": "896268547114000",
+    "idNumber": "1218012509730001",
+    "address": "Dusun Harapan, Pematang Tengah, Tanjung Pura, Langkat"
+  },
+  {
+    "id": 234,
+    "fullName": "ABDULLAH",
+    "taxId": "000000000000000",
+    "idNumber": "1116022710800004",
+    "address": "Dusun Petua Saleh, Bandar Khalifah, Kec.Bendahara, Aceh"
+  },
+  {
+    "id": 235,
+    "fullName": "DESI HARIYANI",
+    "taxId": "000000000000000",
+    "idNumber": "1205177006010001",
+    "address": "Gg. Hasanuddin Lk.IV Teratai RT.013/RW.004, Sei Belah Timur, Sei Lepan, Langkat"
+  },
+  {
+    "id": 236,
+    "fullName": "SUDIRMAN SIHOMBING",
+    "taxId": "000000000000000",
+    "idNumber": "1208132804900002",
+    "address": "Gg. Bambu Dusun XII Limau Manis, Tanjung Morawa, Deli Serdang"
   }
 ]
