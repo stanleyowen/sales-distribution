@@ -38,14 +38,6 @@ export default function App() {
         measurementId: process.env.REACT_APP_MEASUREMENT_ID,
     };
 
-    const [song, setSong] = useState({
-        playing: false,
-        image: 'https://i.scdn.co/image/ab67616d0000b273d078f2a1f15f6e3adc59c32b',
-        audio: new Audio(
-            'https://firebasestorage.googleapis.com/v0/b/production-6db88.appspot.com/o/29652de89c665c169b383e591847f744.mp3?alt=media&token=6fb8df0f-4803-4be9-bd46-9206ed7665b6'
-        ),
-    });
-
     useEffect(() => {
         initializeApp(config);
         const userEmail = getTokenValue('email')?.split('@')[0] + '-token';
@@ -92,30 +84,12 @@ export default function App() {
         else setAuth(a);
     }, []);
 
-    const handleSong = useCallback(
-        (a) => {
-            setSong({ ...song, [a.id]: a.value });
-        },
-        [song]
-    );
-
-    useEffect(() => {
-        song.playing ? song.audio.play() : song.audio.pause();
-    }, [song]);
-
     return (
         <Router>
             <Routes>
                 <Route
                     path="/"
-                    element={
-                        <AppLayout
-                            auth={auth}
-                            config={config}
-                            song={song}
-                            handleSong={handleSong}
-                        />
-                    }
+                    element={<AppLayout auth={auth} config={config} />}
                 />
             </Routes>
         </Router>
