@@ -8,12 +8,25 @@ import {
     TableContainer,
     LinearProgress,
     TablePagination,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    TextField,
 } from '@mui/material';
 import CustomerDatabase from '../customer-data.json';
 
 type Props = {
     page: number;
     rowsPerPage: number;
+    customerDialogIsOpen: boolean;
+};
+
+type CustomerData = {
+    id: number;
+    fullName: string;
+    taxId: string | null;
+    idNumber: string | null;
+    address: string;
 };
 
 // eslint-disable-next-line
@@ -22,10 +35,20 @@ const Customer = ({ auth, config }: any) => {
     const [props, setProps] = useState<Props>({
         page: 0,
         rowsPerPage: 10,
+        customerDialogIsOpen: false,
+    });
+    const [customerData, setCustomerData] = useState<CustomerData>({
+        id: CustomerDatabase.length + 1,
+        fullName: '',
+        taxId: '',
+        idNumber: '',
+        address: '',
     });
 
-    const handleProperties = (id: string, value: number) =>
+    const handleProperties = (id: string, value: number | boolean) =>
         setProps({ ...props, [id]: value });
+    const handleCustomerData = (id: string, value: string) =>
+        setCustomerData({ ...customerData, [id]: value });
 
     const columns = [
         { id: 'id', label: 'Id' },
@@ -89,6 +112,43 @@ const Customer = ({ auth, config }: any) => {
                     handleProperties('rowsPerPage', +e.target.value);
                 }}
             />
+
+            <Dialog
+                fullWidth
+                open={true}
+                // open={props.customerDialogIsOpen}
+                onClose={() => {
+                    handleProperties('customerDialogIsOpen', false);
+                    setCustomerData({
+                        id: CustomerDatabase.length + 1,
+                        fullName: '',
+                        taxId: '',
+                        idNumber: '',
+                        address: '',
+                    });
+                }}
+            >
+                <DialogTitle>Update Customer</DialogTitle>
+                <DialogContent>
+                    {Object.keys(columns).map((_, index: number) => {
+                        const { id, label } = columns[index];
+                        if (label == 'Id') return;
+                        else
+                            return (
+                                <TextField
+                                    fullWidth
+                                    type="text"
+                                    key={index}
+                                    label={label}
+                                    margin="dense"
+                                    variant="standard"
+                                    autoFocus={index === 1}
+                                    value={(customerData as any)[id]}
+                                />
+                            );
+                    })}
+                </DialogContent>
+            </Dialog>
         </div>
     );
 };
