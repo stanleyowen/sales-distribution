@@ -7,6 +7,7 @@ import { onSnapshot, getFirestore, doc } from 'firebase/firestore';
 
 import Auth from './components/auth.component';
 import AppLayout from './components/app.component';
+import Navbar from './components/navbar.component';
 
 process.env.NODE_ENV === 'production'
     ? require('./App.min.css')
@@ -86,6 +87,7 @@ export default function App() {
 
     return (
         <Router>
+            <Navbar auth={auth} />
             <Routes>
                 <Route
                     path="/"
