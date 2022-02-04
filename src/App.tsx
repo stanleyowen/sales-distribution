@@ -8,6 +8,7 @@ import { onSnapshot, getFirestore, doc } from 'firebase/firestore';
 import Auth from './components/auth.component';
 import AppLayout from './components/app.component';
 import Navbar from './components/navbar.component';
+import Customer from './components/customer.component';
 
 process.env.NODE_ENV === 'production'
     ? require('./App.min.css')
@@ -92,6 +93,10 @@ export default function App() {
                 <Route
                     path="/"
                     element={<AppLayout auth={auth} config={config} />}
+                />
+                <Route
+                    path="/customer"
+                    element={<Customer auth={auth} config={config} />}
                 />
             </Routes>
         </Router>
