@@ -21,12 +21,22 @@ import {
 import { MenuIcon } from '../lib/icons.component';
 import '../scss/new-year.2021.scss';
 
+type Props = {
+    invoiceNumber: string;
+    invoiceType: 'Auto' | 'A' | 'BC' | '';
+    name: string;
+    address: string;
+    NIK: string;
+    NPWP: string;
+    items: any;
+};
+
 // eslint-disable-next-line
 const App = ({ auth, config }: any) => {
     const { loggedIn } = auth;
 
-    const [properties, setProperties] = useState({
-        invoiceNo: '',
+    const [properties, setProperties] = useState<Props>({
+        invoiceNumber: '',
         invoiceType: '',
         name: '',
         address: '',
@@ -89,10 +99,10 @@ const App = ({ auth, config }: any) => {
                             <TextField
                                 variant="filled"
                                 label="Invoice No"
-                                value={properties.invoiceNo}
+                                value={properties.invoiceNumber}
                                 onChange={(e) =>
                                     handleProperties(
-                                        'invoiceNo',
+                                        'invoiceNumber',
                                         e.target.value
                                     )
                                 }
@@ -114,14 +124,20 @@ const App = ({ auth, config }: any) => {
                                         )
                                     }
                                 >
-                                    <MenuItem value="">Auto</MenuItem>
+                                    <MenuItem value="Auto">Auto</MenuItem>
                                     <MenuItem value="A">A</MenuItem>
                                     <MenuItem value="BC">BC</MenuItem>
                                 </Select>
                             </FormControl>
                         </Grid>
+                    </Grid>
+
+                    <p className="mt-10 mb-10">Item(s)</p>
+
+                    <Grid container spacing={2}>
                         <Grid item xs={5}>
                             <TextField
+                                variant="filled"
                                 label="Item Name"
                                 value={properties.items[0].name}
                                 onChange={(e) =>
@@ -134,6 +150,7 @@ const App = ({ auth, config }: any) => {
                         </Grid>
                         <Grid item xs={2}>
                             <TextField
+                                variant="filled"
                                 label="Quantity"
                                 value={properties.items[0].qty}
                                 onChange={(e) =>
@@ -145,19 +162,28 @@ const App = ({ auth, config }: any) => {
                             />
                         </Grid>
                         <Grid item xs={2}>
-                            <TextField
-                                label="Quantity"
-                                value={properties.items[0].qty}
-                                onChange={(e) =>
-                                    handleProperties(
-                                        'items[0].qty',
-                                        e.target.value
-                                    )
-                                }
-                            />
+                            <FormControl fullWidth variant="filled">
+                                <InputLabel id="invoice-type">Unit</InputLabel>
+                                <Select
+                                    variant="filled"
+                                    labelId="invoice-type"
+                                    value={properties.invoiceType}
+                                    onChange={(e: SelectChangeEvent) =>
+                                        handleProperties(
+                                            'invoiceType',
+                                            e.target.value as string
+                                        )
+                                    }
+                                >
+                                    <MenuItem value="KRG">KRG</MenuItem>
+                                    <MenuItem value="A">A</MenuItem>
+                                    <MenuItem value="BC">BC</MenuItem>
+                                </Select>
+                            </FormControl>
                         </Grid>
                         <Grid item xs={3}>
                             <TextField
+                                variant="filled"
                                 label="Quantity"
                                 value={properties.items[0].qty}
                                 onChange={(e) =>
