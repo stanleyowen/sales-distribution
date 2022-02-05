@@ -13,7 +13,7 @@ import {
     DialogContent,
     TextField,
 } from '@mui/material';
-import CustomerDatabase from '../customer-data.json';
+import CustomerDatabase from '../db/customer-data.json';
 
 type Props = {
     page: number;
@@ -30,8 +30,7 @@ type CustomerData = {
 };
 
 // eslint-disable-next-line
-const Customer = ({ auth, config }: any) => {
-    const { loggedIn } = auth;
+const Customer = ({}: any) => {
     const [props, setProps] = useState<Props>({
         page: 0,
         rowsPerPage: 10,
