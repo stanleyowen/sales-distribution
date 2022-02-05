@@ -88,16 +88,10 @@ export default function App() {
 
     return (
         <Router>
-            <Navbar auth={auth} />
+            <Navbar />
             <Routes>
-                <Route
-                    path="/"
-                    element={<AppLayout auth={auth} config={config} />}
-                />
-                <Route
-                    path="/customer"
-                    element={<Customer auth={auth} config={config} />}
-                />
+                <Route path="/" element={<AppLayout />} />
+                <Route path="/customer" element={<Customer />} />
             </Routes>
         </Router>
     );
