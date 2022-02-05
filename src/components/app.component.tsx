@@ -1,16 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { initializeApp } from '@firebase/app';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import {
-    Box,
     TextField,
-    AppBar,
-    Toolbar,
-    IconButton,
-    Typography,
-    Button,
-    LinearProgress,
-    CircularProgress,
     Grid,
     Select,
     MenuItem,
@@ -18,6 +8,8 @@ import {
     InputLabel,
     FormControl,
 } from '@mui/material';
+
+import { read } from '../lib/readFile.lib';
 
 type Props = {
     invoiceNumber: string;
@@ -29,10 +21,12 @@ type Props = {
     items: any;
 };
 
-// eslint-disable-next-line
-const App = ({ auth, config }: any) => {
-    const { loggedIn } = auth;
+// fs.writeFile('./data.json', 'Hey there!', function () {
+//     console.log('The file was saved!');
+// });
 
+// eslint-disable-next-line
+const App = () => {
     const [properties, setProperties] = useState<Props>({
         invoiceNumber: '',
         invoiceType: '',
@@ -42,22 +36,15 @@ const App = ({ auth, config }: any) => {
         NPWP: '',
         items: [{ name: '', price: '', qty: '' }],
     });
+    const [data, setData] = useState<any>('');
+
+    read((result: any) => console.log(result));
+    console.log(data);
 
     const handleProperties = (id: string, value: string) =>
         setProperties({ ...properties, [id]: value });
 
     useEffect(() => {
-        initializeApp(config);
-
-        window.onerror = (msg, url, lineNo, columnNo, error) => {
-            addDoc(collection(getFirestore(), 'logs'), {
-                url: String(url),
-                error: String(error),
-                message: String(msg),
-                location: String(lineNo) + ' ' + String(columnNo),
-            });
-        };
-
         document
             .querySelectorAll('.MuiTextField-root')
             .forEach((input: any) => {

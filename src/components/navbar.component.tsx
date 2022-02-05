@@ -10,9 +10,7 @@ import {
 import { MenuIcon } from '../lib/icons.component';
 
 // eslint-disable-next-line
-const Navbar = ({ auth }: any) => {
-    const { loggedIn } = auth;
-
+const Navbar = ({}: any) => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
