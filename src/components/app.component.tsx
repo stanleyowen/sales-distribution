@@ -9,8 +9,6 @@ import {
     FormControl,
 } from '@mui/material';
 
-import { readFile } from '../lib/file-operation.lib';
-
 type Props = {
     invoiceNumber: string;
     invoiceType: 'Auto' | 'A' | 'BC' | '';
@@ -20,10 +18,6 @@ type Props = {
     NPWP: string;
     items: any;
 };
-
-// fs.writeFile('./data.json', 'Hey there!', function () {
-//     console.log('The file was saved!');
-// });
 
 // eslint-disable-next-line
 const App = () => {
@@ -36,10 +30,6 @@ const App = () => {
         NPWP: '',
         items: [{ name: '', price: '', qty: '' }],
     });
-    const [data, setData] = useState<any>([]);
-
-    readFile((result: any) => setData(result));
-    console.log(data);
 
     const handleProperties = (id: string, value: string) =>
         setProperties({ ...properties, [id]: value });

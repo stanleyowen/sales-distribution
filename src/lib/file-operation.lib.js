@@ -6,7 +6,6 @@ export function readFile(filePath, callback) {
 
     fs.readFile(filePath, 'utf-8', (err, data) => {
         if (err) throw err;
-        values = data.toString();
-        return callback(values);
+        return callback(values.toString());
     });
 }

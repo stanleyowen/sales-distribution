@@ -12,8 +12,10 @@ import {
     DialogTitle,
     DialogContent,
     TextField,
+    DialogActions,
+    Button,
 } from '@mui/material';
-import CustomerDatabase from '../db/customer-data.json';
+import { readFile } from '../lib/file-operation.lib';
 
 type Props = {
     page: number;
@@ -31,13 +33,14 @@ type CustomerData = {
 
 // eslint-disable-next-line
 const Customer = ({}: any) => {
+    const [data, setData] = useState<Array<any>>([]);
     const [props, setProps] = useState<Props>({
         page: 0,
         rowsPerPage: 10,
         customerDialogIsOpen: false,
     });
     const [customerData, setCustomerData] = useState<CustomerData>({
-        id: CustomerDatabase.length + 1,
+        id: data?.length + 1,
         fullName: '',
         taxId: '',
         idNumber: '',
@@ -57,6 +60,17 @@ const Customer = ({}: any) => {
         { id: 'address', label: 'Address' },
     ];
 
+    useEffect(() => {
+        readFile(
+            process.env.NODE_ENV === 'development'
+                ? `./public/db/customer-data.json`
+                : `../build/db/customer-data.json`,
+            (data: any) => {
+                setData(JSON.parse(data));
+            }
+        );
+    }, []); // eslint-disable-line
+
     return (
         <div>
             <TableContainer component={Paper}>
@@ -69,24 +83,26 @@ const Customer = ({}: any) => {
                         ))}
                     </TableRow>
                     <TableBody>
-                        {CustomerDatabase.length > 0 ? (
-                            CustomerDatabase.slice(
-                                props.page * props.rowsPerPage,
-                                props.page * props.rowsPerPage +
-                                    props.rowsPerPage
-                            ).map((customer: any) => {
-                                return (
-                                    <TableRow key={customer.id} hover>
-                                        {columns.map((column: any) => {
-                                            return (
-                                                <TableCell key={column.id}>
-                                                    {customer[column.id]}
-                                                </TableCell>
-                                            );
-                                        })}
-                                    </TableRow>
-                                );
-                            })
+                        {data.length > 100 ? (
+                            data
+                                .slice(
+                                    props.page * props.rowsPerPage,
+                                    props.page * props.rowsPerPage +
+                                        props.rowsPerPage
+                                )
+                                .map((customer: any) => {
+                                    return (
+                                        <TableRow key={customer.id} hover>
+                                            {columns.map((column: any) => {
+                                                return (
+                                                    <TableCell key={column.id}>
+                                                        {customer[column.id]}
+                                                    </TableCell>
+                                                );
+                                            })}
+                                        </TableRow>
+                                    );
+                                })
                         ) : (
                             <TableRow>
                                 <TableCell colSpan={2}>
@@ -119,7 +135,7 @@ const Customer = ({}: any) => {
                 onClose={() => {
                     handleProperties('customerDialogIsOpen', false);
                     setCustomerData({
-                        id: CustomerDatabase.length + 1,
+                        id: data?.length + 1,
                         fullName: '',
                         taxId: '',
                         idNumber: '',
