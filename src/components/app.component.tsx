@@ -9,7 +9,7 @@ import {
     FormControl,
 } from '@mui/material';
 
-import { read } from '../lib/readFile.lib';
+import { readFile } from '../lib/file-operation.lib';
 
 type Props = {
     invoiceNumber: string;
@@ -36,9 +36,9 @@ const App = () => {
         NPWP: '',
         items: [{ name: '', price: '', qty: '' }],
     });
-    const [data, setData] = useState<any>('');
+    const [data, setData] = useState<any>([]);
 
-    read((result: any) => console.log(result));
+    readFile((result: any) => setData(result));
     console.log(data);
 
     const handleProperties = (id: string, value: string) =>
