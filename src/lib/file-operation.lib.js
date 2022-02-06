@@ -7,3 +7,10 @@ export function readFile(filePath, callback) {
         return callback(data.toString());
     });
 }
+
+export function writeFile(filePath, content, callback) {
+    fs.writeFile(filePath, String(content), (err) => {
+        if (err) throw err;
+        return callback('User Added Successfully');
+    });
+}
