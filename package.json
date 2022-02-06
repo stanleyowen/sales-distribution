@@ -32,12 +32,33 @@
     "start": "yarn sass && react-scripts start",
     "build": "yarn sass && yarn css:minify && GENERATE_SOURCEMAP=false react-scripts build",
     "build:win": "yarn sass && yarn css:minify && cross-env GENERATE_SOURCEMAP=false react-scripts build",
+    "build:electron": "yarn build && electron-builder",
+    "build:win:electron": "yarn build:win && electron-builder",
     "css:minify": "cleancss -o ./src/App.min.css ./src/App.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml --ext .tsx ./src",
     "dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron": "wait-on tcp:3000 && electron ."
+  },
+  "build": {
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +86,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "electron": "^17.0.0",
+    "electron-builder": "^22.14.5",
     "electron-is-dev": "^2.0.0",
     "eslint": "^8.1.0",
     "eslint-plugin-react": "^7.26.1",
