@@ -71,6 +71,24 @@ const Customer = ({}: any) => {
         );
     }, []); // eslint-disable-line
 
+    useEffect(() => {
+        handleCustomerData('id', data.length + 1);
+    }, [data]);
+
+    const addCustomerData = () => {
+        const newData = JSON.stringify([...data, customerData]);
+
+        writeFile(
+            process.env.NODE_ENV === 'development'
+                ? `./public/db/customer-data.json`
+                : `../build/db/customer-data.json`,
+            String(newData),
+            (res: any) => console.log(res)
+        );
+
+        handleProperties('customerDialogIsOpen', false);
+    };
+
     return (
         <div>
             <TableContainer component={Paper}>
