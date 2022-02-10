@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
+import Setup from './components/setup.component';
 import AppLayout from './components/app.component';
 import Navbar from './components/navbar.component';
 import Customer from './components/customer.component';
@@ -16,6 +17,7 @@ export default function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<AppLayout />} />
+                <Route path="/setup" element={<Setup />} />
                 <Route path="/customer" element={<Customer />} />
             </Routes>
         </HashRouter>
