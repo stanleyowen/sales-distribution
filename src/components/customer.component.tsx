@@ -15,7 +15,7 @@ import {
     DialogActions,
     Button,
 } from '@mui/material';
-import { readFile } from '../lib/file-operation.lib';
+import { readFile, writeFile } from '../lib/file-operation.lib';
 
 type Props = {
     page: number;
@@ -40,7 +40,7 @@ const Customer = ({}: any) => {
         customerDialogIsOpen: false,
     });
     const [customerData, setCustomerData] = useState<CustomerData>({
-        id: data?.length + 1,
+        id: 0,
         fullName: '',
         taxId: '',
         idNumber: '',
@@ -49,7 +49,7 @@ const Customer = ({}: any) => {
 
     const handleProperties = (id: string, value: number | boolean) =>
         setProps({ ...props, [id]: value });
-    const handleCustomerData = (id: string, value: string) =>
+    const handleCustomerData = (id: string, value: string | number) =>
         setCustomerData({ ...customerData, [id]: value });
 
     const columns = [
@@ -136,7 +136,7 @@ const Customer = ({}: any) => {
                 component="div"
                 page={props.page}
                 rowsPerPage={props.rowsPerPage}
-                count={CustomerDatabase.length ?? 0}
+                count={data.length ?? 0}
                 onPageChange={(_, newPage: number) => {
                     handleProperties('page', newPage);
                 }}
