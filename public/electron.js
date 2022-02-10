@@ -6,8 +6,8 @@ let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 900,
+        height: 680,
         show: false,
         webPreferences: {
             nodeIntegration: true,
@@ -15,15 +15,21 @@ function createWindow() {
             contextIsolation: false,
         },
     });
-    const startURL = isDev
-        ? 'http://localhost:3000'
-        : `file://${path.join(__dirname, '../build/index.html')}`;
 
-    mainWindow.loadURL(startURL);
-
+    mainWindow.loadURL(
+        isDev
+            ? 'http://localhost:3000'
+            : `file://${path.join(__dirname, '../build/index.html')}`
+    );
+    mainWindow.setMenuBarVisibility(false);
     mainWindow.once('ready-to-show', () => mainWindow.show());
-    mainWindow.on('closed', () => {
-        mainWindow = null;
-    });
+    mainWindow.on('closed', () => (mainWindow = null));
 }
+
 app.on('ready', createWindow);
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') app.quit();
+});
+app.on('activate', () => {
+    if (mainWindow === null) createWindow();
+});
