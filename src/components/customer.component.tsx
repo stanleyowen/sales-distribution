@@ -91,6 +91,13 @@ const Customer = ({}: any) => {
 
     return (
         <div>
+            <Button
+                variant="contained"
+                className="mt-10 ml-10"
+                onClick={() => handleProperties('customerDialogIsOpen', true)}
+            >
+                Add Customer
+            </Button>
             <TableContainer component={Paper}>
                 <Table>
                     <TableRow>
@@ -148,8 +155,7 @@ const Customer = ({}: any) => {
 
             <Dialog
                 fullWidth
-                open={true}
-                // open={props.customerDialogIsOpen}
+                open={props.customerDialogIsOpen}
                 onClose={() => {
                     handleProperties('customerDialogIsOpen', false);
                     setCustomerData({
@@ -177,10 +183,23 @@ const Customer = ({}: any) => {
                                     variant="standard"
                                     autoFocus={index === 1}
                                     value={(customerData as any)[id]}
+                                    onChange={(e) =>
+                                        handleCustomerData(id, e.target.value)
+                                    }
                                 />
                             );
                     })}
                 </DialogContent>
+                <DialogActions>
+                    <Button
+                        onClick={() =>
+                            handleProperties('customerDialogIsOpen', false)
+                        }
+                    >
+                        Cancel
+                    </Button>
+                    <Button onClick={() => addCustomerData()}>Add</Button>
+                </DialogActions>
             </Dialog>
         </div>
     );
