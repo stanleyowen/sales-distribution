@@ -26,6 +26,10 @@ function createWindow() {
     mainWindow.setMenuBarVisibility(false);
     mainWindow.once('ready-to-show', () => mainWindow.show());
     mainWindow.on('closed', () => (mainWindow = null));
+
+    mainWindow.webContents.executeJavaScript(`localStorage.setItem(
+        'customer-database',
+        ${JSON.stringify(store.get('customer-database'))})`);
 }
 
 app.on('ready', createWindow);
