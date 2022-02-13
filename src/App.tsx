@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
+import Items from './components/items.component';
 import Setup from './components/setup.component';
 import AppLayout from './components/app.component';
 import Navbar from './components/navbar.component';
-import Customer from './components/customer.component';
+import Customers from './components/customers.component';
 
 process.env.NODE_ENV === 'production'
     ? require('./App.min.css')
@@ -16,9 +17,10 @@ export default function App() {
         <HashRouter>
             <Navbar />
             <Routes>
-                <Route path="/" element={<AppLayout />} />
-                <Route path="/setup" element={<Setup />} />
-                <Route path="/customer" element={<Customer />} />
+                {/* <Route path="/" element={<AppLayout />} /> */}
+                <Route path="/" element={<Setup />} />
+                <Route path="/customers" element={<Customers />} />
+                <Route path="/items" element={<Items />} />
             </Routes>
         </HashRouter>
     );
