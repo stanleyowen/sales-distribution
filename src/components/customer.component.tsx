@@ -72,37 +72,10 @@ const Customer = ({}: any) => {
         });
     }
 
-    useEffect(() => {
-        readCustomerDatabase();
-    }, []); // eslint-disable-line
-
-    useEffect(() => {
-        handleCustomerData('id', data.length + 1);
-    }, [data]);
-
-    const addCustomerData = () => {
-        if (customerData?.properties?.isUpdate) {
-            const newData = data.map((item: any) => {
-                if (item.id === customerData.id) return customerData;
-                return item;
-            });
-            delete customerData.properties;
-            writeFile(
-                localStorage.getItem('customer-database'),
-                JSON.stringify(newData),
-                (res: string) => console.log(res)
-            );
-        } else {
-            delete customerData.properties;
-            writeFile(
-                localStorage.getItem('customer-database'),
-                JSON.stringify([...data, customerData]),
-                (res: string) => console.log(res)
-            );
-        }
-
+    function closeCustomerDialog() {
+        handleProperties('customerDialogIsOpen', false);
         setCustomerData({
-            id: 0,
+            id: data?.length + 1,
             fullName: '',
             taxId: '',
             idNumber: '',
@@ -111,8 +84,39 @@ const Customer = ({}: any) => {
                 isUpdate: false,
             },
         });
+    }
+
+    useEffect(() => readCustomerDatabase(), []);
+    useEffect(() => {
+        handleCustomerData('id', data.length + 1);
+    }, [data]);
+
+    const addCustomerData = () => {
+        if (customerData?.properties?.isUpdate) {
+            const newData = data.map((item: CustomerData) => {
+                if (item.id === customerData.id) return customerData;
+                return item;
+            });
+
+            delete customerData.properties;
+
+            writeFile(
+                localStorage.getItem('customer-database'),
+                JSON.stringify(newData),
+                (res: string) => console.log(res)
+            );
+        } else {
+            delete customerData.properties;
+
+            writeFile(
+                localStorage.getItem('customer-database'),
+                JSON.stringify([...data, customerData]),
+                (res: string) => console.log(res)
+            );
+        }
+
+        closeCustomerDialog();
         readCustomerDatabase();
-        handleProperties('customerDialogIsOpen', false);
     };
 
     const UpdateCustomerData = (id: number, data: CustomerData) => {
@@ -199,19 +203,7 @@ const Customer = ({}: any) => {
             <Dialog
                 fullWidth
                 open={props.customerDialogIsOpen}
-                onClose={() => {
-                    handleProperties('customerDialogIsOpen', false);
-                    setCustomerData({
-                        id: data?.length + 1,
-                        fullName: '',
-                        taxId: '',
-                        idNumber: '',
-                        address: '',
-                        properties: {
-                            isUpdate: false,
-                        },
-                    });
-                }}
+                onClose={() => closeCustomerDialog()}
             >
                 <DialogTitle>Update Customer</DialogTitle>
                 <DialogContent>
@@ -237,14 +229,12 @@ const Customer = ({}: any) => {
                     })}
                 </DialogContent>
                 <DialogActions>
-                    <Button
-                        onClick={() =>
-                            handleProperties('customerDialogIsOpen', false)
-                        }
-                    >
+                    <Button onClick={() => closeCustomerDialog()}>
                         Cancel
                     </Button>
-                    <Button onClick={() => addCustomerData()}>Add</Button>
+                    <Button onClick={() => addCustomerData()}>
+                        {customerData?.properties?.isUpdate ? 'Update' : 'Add'}
+                    </Button>
                 </DialogActions>
             </Dialog>
         </div>
