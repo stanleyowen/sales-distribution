@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Button, Grid } from '@mui/material';
 import { UploadIcon } from '../lib/icons.component';
@@ -9,15 +9,29 @@ const Input = styled('input')({
 });
 
 const SetupData = () => {
-    const uploadedFiles = document.getElementById(
+    const customerDatabaseFiles = document.getElementById(
         'upload-customer-database'
     ) as any;
-    if (uploadedFiles.files.length > 0) {
+    const itemDatabaseFiles = document.getElementById(
+        'upload-item-database'
+    ) as any;
+
+    if (customerDatabaseFiles.files.length > 0) {
         ipcRenderer.send(
             'store-data',
             JSON.stringify({
                 id: 'customer-database',
-                value: uploadedFiles.files[0].path,
+                value: customerDatabaseFiles.files[0].path,
+            })
+        );
+    }
+
+    if (itemDatabaseFiles.files.length > 0) {
+        ipcRenderer.send(
+            'store-data',
+            JSON.stringify({
+                id: 'item-database',
+                value: itemDatabaseFiles.files[0].path,
             })
         );
     }
@@ -29,7 +43,7 @@ const Setup = ({}: any) => {
         <div className="m-20">
             <Grid container spacing={2}>
                 <Grid item xs={7}>
-                    Customer Database
+                    Customer Database / Database Pengguna
                 </Grid>
                 <Grid item xs={5}>
                     <label htmlFor="upload-customer-database">
@@ -39,13 +53,26 @@ const Setup = ({}: any) => {
                         </Button>
                     </label>
                 </Grid>
+
+                <Grid item xs={7}>
+                    Items Database / Database Barang
+                </Grid>
+                <Grid item xs={5}>
+                    <label htmlFor="upload-item-database">
+                        <Input id="upload-item-database" type="file" />
+                        <Button variant="contained" component="span">
+                            <UploadIcon />
+                        </Button>
+                    </label>
+                </Grid>
             </Grid>
+
             <Button
                 variant="contained"
                 color="primary"
                 onClick={() => SetupData()}
             >
-                Next
+                Upload
             </Button>
         </div>
     );
