@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import {
     Paper,
     Table,
+    Dialog,
+    Button,
     TableRow,
     TableBody,
     TableCell,
+    TextField,
+    DialogTitle,
+    DialogContent,
     TableContainer,
     LinearProgress,
     TablePagination,
-    Dialog,
-    DialogTitle,
-    DialogContent,
-    TextField,
     DialogActions,
-    Button,
 } from '@mui/material';
 import { readFile, writeFile } from '../lib/file-operation.lib';
 
@@ -29,6 +29,9 @@ type CustomerData = {
     taxId: string | null;
     idNumber: string | null;
     address: string;
+    properties?: {
+        isUpdate?: boolean;
+    };
 };
 
 // eslint-disable-next-line
@@ -45,6 +48,9 @@ const Customer = ({}: any) => {
         taxId: '',
         idNumber: '',
         address: '',
+        properties: {
+            isUpdate: false,
+        },
     });
 
     const handleProperties = (id: string, value: number | boolean) =>
@@ -75,11 +81,25 @@ const Customer = ({}: any) => {
     }, [data]);
 
     const addCustomerData = () => {
-        writeFile(
-            localStorage.getItem('customer-database'),
-            JSON.stringify([...data, customerData]),
-            (res: any) => console.log(res)
-        );
+        if (customerData?.properties?.isUpdate) {
+            const newData = data.map((item: any) => {
+                if (item.id === customerData.id) return customerData;
+                return item;
+            });
+            delete customerData.properties;
+            writeFile(
+                localStorage.getItem('customer-database'),
+                JSON.stringify(newData),
+                (res: string) => console.log(res)
+            );
+        } else {
+            delete customerData.properties;
+            writeFile(
+                localStorage.getItem('customer-database'),
+                JSON.stringify([...data, customerData]),
+                (res: string) => console.log(res)
+            );
+        }
 
         setCustomerData({
             id: 0,
@@ -87,9 +107,20 @@ const Customer = ({}: any) => {
             taxId: '',
             idNumber: '',
             address: '',
+            properties: {
+                isUpdate: false,
+            },
         });
         readCustomerDatabase();
         handleProperties('customerDialogIsOpen', false);
+    };
+
+    const UpdateCustomerData = (id: number, data: CustomerData) => {
+        handleProperties('customerDialogIsOpen', true);
+        setCustomerData({
+            ...data,
+            properties: { isUpdate: true },
+        });
     };
 
     return (
@@ -120,7 +151,16 @@ const Customer = ({}: any) => {
                                 )
                                 .map((customer: any) => {
                                     return (
-                                        <TableRow key={customer.id} hover>
+                                        <TableRow
+                                            key={customer.id}
+                                            hover
+                                            onClick={() =>
+                                                UpdateCustomerData(
+                                                    customer.id,
+                                                    customer
+                                                )
+                                            }
+                                        >
                                             {columns.map((column: any) => {
                                                 return (
                                                     <TableCell key={column.id}>
@@ -167,6 +207,9 @@ const Customer = ({}: any) => {
                         taxId: '',
                         idNumber: '',
                         address: '',
+                        properties: {
+                            isUpdate: false,
+                        },
                     });
                 }}
             >
