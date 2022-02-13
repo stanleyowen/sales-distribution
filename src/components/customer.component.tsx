@@ -76,13 +76,9 @@ const Customer = ({}: any) => {
     }, [data]);
 
     const addCustomerData = () => {
-        const newData = JSON.stringify([...data, customerData]);
-
         writeFile(
-            process.env.NODE_ENV === 'development'
-                ? `./public/db/customer-data.json`
-                : `../build/db/customer-data.json`,
-            String(newData),
+            localStorage.getItem('customer-database'),
+            JSON.stringify([...data, customerData]),
             (res: any) => console.log(res)
         );
 
