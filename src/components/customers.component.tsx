@@ -35,7 +35,7 @@ type CustomerData = {
 };
 
 // eslint-disable-next-line
-const Customer = ({}: any) => {
+const Customers = ({}: any) => {
     const [data, setData] = useState<Array<any>>([]);
     const [props, setProps] = useState<Props>({
         page: 0,
@@ -241,4 +241,4 @@ const Customer = ({}: any) => {
     );
 };
 
-export default Customer;
+export default Customers;
