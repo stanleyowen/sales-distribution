@@ -210,23 +210,25 @@ const Items = ({}: any) => {
                 <DialogContent>
                     {Object.keys(columns).map((_, index: number) => {
                         const { id, label } = columns[index];
-                        if (label == 'Id') return;
-                        else
-                            return (
-                                <TextField
-                                    fullWidth
-                                    type="text"
-                                    key={index}
-                                    label={label}
-                                    margin="dense"
-                                    variant="standard"
-                                    autoFocus={index === 1}
-                                    value={(itemData as any)[id]}
-                                    onChange={(e) =>
-                                        handleItemData(id, e.target.value)
-                                    }
-                                />
-                            );
+                        return (
+                            <TextField
+                                fullWidth
+                                type={label === 'Id' ? 'number' : 'text'}
+                                key={index}
+                                label={label}
+                                margin="dense"
+                                variant="standard"
+                                autoFocus={index === 1}
+                                value={(itemData as any)[id]}
+                                onChange={(e) =>
+                                    handleItemData(id, e.target.value)
+                                }
+                                disabled={
+                                    label === 'Id' &&
+                                    itemData.properties?.isUpdate
+                                }
+                            />
+                        );
                     })}
                 </DialogContent>
                 <DialogActions>
