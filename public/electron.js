@@ -1,6 +1,9 @@
-const { app, BrowserWindow } = require('electron');
-const isDev = require('electron-is-dev');
 const path = require('path');
+const isDev = require('electron-is-dev');
+const { app, BrowserWindow, ipcMain } = require('electron');
+const Store = require('electron-store');
+
+let store = new Store();
 
 let mainWindow;
 
@@ -11,7 +14,6 @@ function createWindow() {
         show: false,
         webPreferences: {
             nodeIntegration: true,
-            enableRemoteModule: true,
             contextIsolation: false,
         },
     });
@@ -32,4 +34,10 @@ app.on('window-all-closed', () => {
 });
 app.on('activate', () => {
     if (mainWindow === null) createWindow();
+});
+
+ipcMain.on('store-data', (e, arg) => {
+    const { id, value } = JSON.parse(arg);
+    store.set(id, value);
+    console.log('received', JSON.parse(arg));
 });

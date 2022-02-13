@@ -13,7 +13,13 @@ const SetupData = () => {
         'upload-customer-database'
     ) as any;
     if (uploadedFiles.files.length > 0) {
-        console.log(uploadedFiles.files[0]?.path);
+        ipcRenderer.send(
+            'store-data',
+            JSON.stringify({
+                id: 'customer-database',
+                value: uploadedFiles.files[0].path,
+            })
+        );
     }
 };
 
@@ -32,9 +38,6 @@ const Setup = ({}: any) => {
                             <UploadIcon />
                         </Button>
                     </label>
-                </Grid>
-                <Grid item xs={7}>
-                    Customer Database
                 </Grid>
             </Grid>
             <Button
