@@ -1,0 +1,452 @@
+[
+    {
+        "id": 0,
+        "itemName": "Pakan Udang No.681(10)",
+        "unitPrice": 20395
+    },
+    {
+        "id": 1,
+        "itemName": "Pakan Udang No.9001",
+        "unitPrice": 20395
+    },
+    {
+        "id": 2,
+        "itemName": "Pakan Udang No.682V",
+        "unitPrice": 18510
+    },
+    {
+        "id": 3,
+        "itemName": "Pakan Udang No.683PV",
+        "unitPrice": 18460
+    },
+    {
+        "id": 4,
+        "itemName": "Pakan Udang No.683SP",
+        "unitPrice": 18435
+    },
+    {
+        "id": 5,
+        "itemName": "Pakan Udang No.684V",
+        "unitPrice": 17885
+    },
+    {
+        "id": 6,
+        "itemName": "Pakan Udang No.684 SV",
+        "unitPrice": 18135
+    },
+    {
+        "id": 7,
+        "itemName": "Pakan Udang No.681V",
+        "unitPrice": 20395
+    },
+    {
+        "id": 13,
+        "itemName": "Pakan Udang No.6003",
+        "unitPrice": 16020
+    },
+    {
+        "id": 14,
+        "itemName": "Pakan Udang No.6003SP",
+        "unitPrice": 16020
+    },
+    {
+        "id": 15,
+        "itemName": "Pakan Udang No.999-3",
+        "unitPrice": 14110
+    },
+    {
+        "id": 16,
+        "itemName": "Pakan Udang No.999-1",
+        "unitPrice": 14315
+    },
+    {
+        "id": 17,
+        "itemName": "Pakan Udang No.999-2",
+        "unitPrice": 14225
+    },
+    {
+        "id": 18,
+        "itemName": "Pakan Udang No.999-4",
+        "unitPrice": 13805
+    },
+    {
+        "id": 21,
+        "itemName": "Pakan Ikan Lele 781-1MM",
+        "unitPrice": 12251
+    },
+    {
+        "id": 22,
+        "itemName": "Pakan Ikan Lele 781-2MM",
+        "unitPrice": 11461
+    },
+    {
+        "id": 23,
+        "itemName": "Pakan Ikan Lele 781-3MM",
+        "unitPrice": 10859
+    },
+    {
+        "id": 24,
+        "itemName": "Pakan Ikan Lele 782-4MM",
+        "unitPrice": 10824
+    },
+    {
+        "id": 25,
+        "itemName": "Pakan Ikan Bibit FF888-0,8MM",
+        "unitPrice": 19513
+    },
+    {
+        "id": 26,
+        "itemName": "Pakan Ikan Lele 771-3 3 mm",
+        "unitPrice": 10337
+    },
+    {
+        "id": 27,
+        "itemName": "Pakan Ikan Bibit Floating FF999 1mm",
+        "unitPrice": 17749
+    },
+    {
+        "id": 28,
+        "itemName": "Pakan Ikan T79-2P",
+        "unitPrice": 8289
+    },
+    {
+        "id": 29,
+        "itemName": "Pakan Ikan 771-2",
+        "unitPrice": 10866
+    },
+    {
+        "id": 30,
+        "itemName": "Pakan Ikan T79-3P",
+        "unitPrice": 8289
+    },
+    {
+        "id": 46,
+        "itemName": "",
+        "unitPrice": 0
+    },
+    {
+        "id": 90,
+        "itemName": "Benur Udang",
+        "unitPrice": 0
+    },
+    {
+        "id": 94,
+        "itemName": "Benur Udang",
+        "unitPrice": 39.5
+    },
+    {
+        "id": 95,
+        "itemName": "Benur Udang",
+        "unitPrice": 45
+    },
+    {
+        "id": 97,
+        "itemName": "Benur Udang",
+        "unitPrice": 47
+    },
+    {
+        "id": 98,
+        "itemName": "Benur Udang",
+        "unitPrice": 48
+    },
+    {
+        "id": 99,
+        "itemName": "Benur Udang",
+        "unitPrice": ""
+    },
+    {
+        "id": 100,
+        "itemName": "Udang",
+        "unitPrice": 0
+    },
+    {
+        "id": 101,
+        "itemName": "AQUATE DEFENDER @ 1 KG",
+        "unitPrice": 170136
+    },
+    {
+        "id": 102,
+        "itemName": "BI KLIN 1501 @ 1 LT",
+        "unitPrice": 65910
+    },
+    {
+        "id": 103,
+        "itemName": "BIO SOLUTION 1305 @ 5 LT",
+        "unitPrice": 340000
+    },
+    {
+        "id": 104,
+        "itemName": "COPPER SULFATE @ 25 KG",
+        "unitPrice": 1319091
+    },
+    {
+        "id": 105,
+        "itemName": "NATURAL MICRO MINERAL @ 8 KG",
+        "unitPrice": 285455
+    },
+    {
+        "id": 106,
+        "itemName": "NUVAQ @ 5 LT",
+        "unitPrice": 520909
+    },
+    {
+        "id": 107,
+        "itemName": "OMEGA PROTEIN ( 5 KG )",
+        "unitPrice": 260000
+    },
+    {
+        "id": 108,
+        "itemName": "OMEGA PROTEIN @ 20 KG",
+        "unitPrice": 924545
+    },
+    {
+        "id": 109,
+        "itemName": "SUPER LACTO @ 20 LT",
+        "unitPrice": 1240910
+    },
+    {
+        "id": 110,
+        "itemName": "SUPER NB 1105 @ 5 LT",
+        "unitPrice": 289091
+    },
+    {
+        "id": 111,
+        "itemName": "SUPER PS 2120 @ 20 LT",
+        "unitPrice": 361818
+    },
+    {
+        "id": 112,
+        "itemName": "TCCA @ 50",
+        "unitPrice": 1350000
+    },
+    {
+        "id": 113,
+        "itemName": "TRILL @ 500 GR",
+        "unitPrice": 270909
+    },
+    {
+        "id": 114,
+        "itemName": "VETREGARD PLUS @ 500 GR",
+        "unitPrice": 122727
+    },
+    {
+        "id": 115,
+        "itemName": "VIT - C @ 1 KG",
+        "unitPrice": 281818
+    },
+    {
+        "id": 116,
+        "itemName": "ZEOLITE @ 50 KG",
+        "unitPrice": 87500
+    },
+    {
+        "id": 117,
+        "itemName": "BKC 80 % @ 20 KG",
+        "unitPrice": 1423636
+    },
+    {
+        "id": 118,
+        "itemName": "M-BACTO 1620 @ 20 LT",
+        "unitPrice": 544545
+    },
+    {
+        "id": 119,
+        "itemName": "OM 15 @ 40 KG",
+        "unitPrice": 76818
+    },
+    {
+        "id": 120,
+        "itemName": "BAYMIX LATIBOND @25 KG",
+        "unitPrice": 2110909
+    },
+    {
+        "id": 121,
+        "itemName": "BI KLIN @ 5 LT",
+        "unitPrice": 0
+    },
+    {
+        "id": 122,
+        "itemName": "BRILL BLUE LIGHT 2125 @ 1 KG",
+        "unitPrice": 133636
+    },
+    {
+        "id": 123,
+        "itemName": "PONDDTOX @ 1 KG",
+        "unitPrice": 618182
+    },
+    {
+        "id": 124,
+        "itemName": "BRILL BLUE LIGHT 2129 @ 25 KG",
+        "unitPrice": 2895000
+    },
+    {
+        "id": 125,
+        "itemName": "BKK @ 25 KG",
+        "unitPrice": 275000
+    },
+    {
+        "id": 126,
+        "itemName": "VANNAPRO 1 KG",
+        "unitPrice": 230910
+    },
+    {
+        "id": 127,
+        "itemName": "MOLASES",
+        "unitPrice": 2178182
+    },
+    {
+        "id": 128,
+        "itemName": "CALCIUM HYPOCLORITE @ 15 KG",
+        "unitPrice": 340910
+    },
+    {
+        "id": 129,
+        "itemName": "PONDFOS 250EC @ 5 L",
+        "unitPrice": 335818
+    },
+    {
+        "id": 130,
+        "itemName": "BLUB @ 1 KG",
+        "unitPrice": 39091
+    },
+    {
+        "id": 131,
+        "itemName": "OXY.O @ 10 KG",
+        "unitPrice": 411818
+    },
+    {
+        "id": 132,
+        "itemName": "CALCIUM HYPOCLORITE @ 50 KG",
+        "unitPrice": 1198182
+    },
+    {
+        "id": 133,
+        "itemName": "MINGRO",
+        "unitPrice": 38182
+    },
+    {
+        "id": 134,
+        "itemName": "BACTOGRO",
+        "unitPrice": 900000
+    },
+    {
+        "id": 135,
+        "itemName": "FYTOGRO",
+        "unitPrice": 38182
+    },
+    {
+        "id": 136,
+        "itemName": "NITROGRO",
+        "unitPrice": 154545
+    },
+    {
+        "id": 137,
+        "itemName": "SOILGRO",
+        "unitPrice": 900000
+    },
+    {
+        "id": 138,
+        "itemName": "SUPER PS 2105 @ 5 LT",
+        "unitPrice": 111818
+    },
+    {
+        "id": 139,
+        "itemName": "SP-15 @ 25 KG",
+        "unitPrice": 424545
+    },
+    {
+        "id": 140,
+        "itemName": "VANNAPRO PLUS @ 1 KG",
+        "unitPrice": 332727
+    },
+    {
+        "id": 141,
+        "itemName": "SP-15 @ 25 KG",
+        "unitPrice": 355455
+    },
+    {
+        "id": 142,
+        "itemName": "OMEGA PROTEIN @ 1 KG",
+        "unitPrice": 57273
+    },
+    {
+        "id": 143,
+        "itemName": "CALCIUM HYPOCLORITE @ 16 KG",
+        "unitPrice": 400909
+    },
+    {
+        "id": 144,
+        "itemName": "PONDFOS 250EC @1 L",
+        "unitPrice": 75182
+    },
+    {
+        "id": 145,
+        "itemName": "NUVET PLUS BLUE 600EC @ 5 L",
+        "unitPrice": 820000
+    },
+    {
+        "id": 146,
+        "itemName": "NUVET PLUS BLUE 600EC @ 1 L",
+        "unitPrice": 153636
+    },
+    {
+        "id": 147,
+        "itemName": "MINA 88",
+        "unitPrice": 27273
+    },
+    {
+        "id": 148,
+        "itemName": "SUPER LACTO 1905 @ 5 LT",
+        "unitPrice": 313182
+    },
+    {
+        "id": 149,
+        "itemName": "VIT C (50 GRAM)",
+        "unitPrice": 13636
+    },
+    {
+        "id": 150,
+        "itemName": "PONDGUARD @ 5 LT",
+        "unitPrice": 206818
+    },
+    {
+        "id": 151,
+        "itemName": "PONDGUARD @ 1.2 LT",
+        "unitPrice": 60273
+    },
+    {
+        "id": 152,
+        "itemName": "ROXYCIDE @ 1 KG",
+        "unitPrice": 355454
+    },
+    {
+        "id": 153,
+        "itemName": "PONDGUARD @ 5 LT -B",
+        "unitPrice": 0
+    },
+    {
+        "id": 154,
+        "itemName": "PONDGUARD @ 1.2 LT -B",
+        "unitPrice": 0
+    },
+    {
+        "id": 155,
+        "itemName": "SUPER MEDIA 1205 @ 5 LT",
+        "unitPrice": 140909
+    },
+    {
+        "id": 156,
+        "itemName": "KAPORIT @ 15 KG",
+        "unitPrice": 350000
+    },
+    {
+        "id": 157,
+        "itemName": "SUPER MEDIA 1220 @20 LT",
+        "unitPrice": 409091
+    },
+    {
+        "id": 158,
+        "itemName": "WT-AQUACULTURE @ 15 KG",
+        "unitPrice": 455455
+    }
+]

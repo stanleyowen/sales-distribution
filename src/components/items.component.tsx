@@ -20,15 +20,13 @@ import { readFile, writeFile } from '../lib/file-operation.lib';
 type Props = {
     page: number;
     rowsPerPage: number;
-    customerDialogIsOpen: boolean;
+    itemDialogIsOpen: boolean;
 };
 
-type CustomerData = {
+type ItemData = {
     id: number;
-    fullName: string;
-    taxId: string | null;
-    idNumber: string | null;
-    address: string;
+    itemName: string;
+    unitPrice: string;
     properties?: {
         isUpdate?: boolean;
     };
@@ -40,14 +38,12 @@ const Items = ({}: any) => {
     const [props, setProps] = useState<Props>({
         page: 0,
         rowsPerPage: 10,
-        customerDialogIsOpen: false,
+        itemDialogIsOpen: false,
     });
-    const [customerData, setCustomerData] = useState<CustomerData>({
+    const [itemData, setItemData] = useState<ItemData>({
         id: 0,
-        fullName: '',
-        taxId: '',
-        idNumber: '',
-        address: '',
+        itemName: '',
+        unitPrice: '',
         properties: {
             isUpdate: false,
         },
@@ -55,91 +51,86 @@ const Items = ({}: any) => {
 
     const handleProperties = (id: string, value: number | boolean) =>
         setProps({ ...props, [id]: value });
-    const handleCustomerData = (id: string, value: string | number) =>
-        setCustomerData({ ...customerData, [id]: value });
+    const handleItemData = (id: string, value: string | number) =>
+        setItemData({ ...itemData, [id]: value });
 
     const columns = [
         { id: 'id', label: 'Id' },
-        { id: 'fullName', label: 'Name' },
-        { id: 'taxId', label: 'NPWP' },
-        { id: 'idNumber', label: 'NIK' },
-        { id: 'address', label: 'Address' },
+        { id: 'itemName', label: 'Item Name' },
+        { id: 'unitPrice', label: 'Unit Price' },
     ];
 
-    function readCustomerDatabase() {
-        readFile(localStorage.getItem('customer-database'), (data: any) => {
-            setData(JSON.parse(data));
-        });
+    function readItemDatabase() {
+        readFile(localStorage.getItem('item-database'), (data: any) =>
+            setData(JSON.parse(data))
+        );
     }
 
-    function closeCustomerDialog() {
-        handleProperties('customerDialogIsOpen', false);
-        setCustomerData({
+    function closeItemDialog() {
+        handleProperties('itemDialogIsOpen', false);
+        setItemData({
             id: data?.length + 1,
-            fullName: '',
-            taxId: '',
-            idNumber: '',
-            address: '',
+            itemName: '',
+            unitPrice: '',
             properties: {
                 isUpdate: false,
             },
         });
     }
 
-    useEffect(() => readCustomerDatabase(), []);
+    useEffect(() => readItemDatabase(), []);
     useEffect(() => {
-        handleCustomerData('id', data.length + 1);
+        handleItemData('id', data.length + 1);
     }, [data]);
 
-    const addCustomerData = () => {
-        if (customerData?.properties?.isUpdate) {
-            const newData = data.map((item: CustomerData) => {
-                if (item.id === customerData.id) return customerData;
+    const addItemData = () => {
+        if (itemData?.properties?.isUpdate) {
+            const newData = data.map((item: ItemData) => {
+                if (item.id === itemData.id) return itemData;
                 return item;
             });
 
-            delete customerData.properties;
+            delete itemData.properties;
 
             writeFile(
-                localStorage.getItem('customer-database'),
+                localStorage.getItem('item-database'),
                 JSON.stringify(newData),
                 (res: string) => console.log(res)
             );
         } else {
-            delete customerData.properties;
+            delete itemData.properties;
 
             writeFile(
-                localStorage.getItem('customer-database'),
-                JSON.stringify([...data, customerData]),
+                localStorage.getItem('item-database'),
+                JSON.stringify([...data, itemData]),
                 (res: string) => console.log(res)
             );
         }
 
-        closeCustomerDialog();
-        readCustomerDatabase();
+        closeItemDialog();
+        readItemDatabase();
     };
 
-    const UpdateCustomerData = (id: number, data: CustomerData) => {
-        handleProperties('customerDialogIsOpen', true);
-        setCustomerData({
+    const UpdateItemData = (data: ItemData) => {
+        handleProperties('itemDialogIsOpen', true);
+        setItemData({
             ...data,
             properties: { isUpdate: true },
         });
     };
 
-    const DeleteCustomerData = () => {
-        const newData = data.filter((item: CustomerData) => {
-            return item.id !== customerData.id;
+    const DeleteItemData = () => {
+        const newData = data.filter((item: ItemData) => {
+            return item.id !== itemData.id;
         });
-
         writeFile(
-            localStorage.getItem('customer-database'),
+            localStorage.getItem('item-database'),
             JSON.stringify(newData),
-            (res: string) => console.log(res)
+            () => {
+                closeItemDialog();
+                readItemDatabase();
+            }
         );
-
-        closeCustomerDialog();
-        readCustomerDatabase();
     };
 
     return (
@@ -147,7 +138,7 @@ const Items = ({}: any) => {
             <Button
                 variant="contained"
                 className="mt-10 ml-10"
-                onClick={() => handleProperties('customerDialogIsOpen', true)}
+                onClick={() => handleProperties('itemDialogIsOpen', true)}
             >
                 Add Customer
             </Button>
@@ -161,29 +152,24 @@ const Items = ({}: any) => {
                         ))}
                     </TableRow>
                     <TableBody>
-                        {data.length > 100 ? (
+                        {data.length > 0 ? (
                             data
                                 .slice(
                                     props.page * props.rowsPerPage,
                                     props.page * props.rowsPerPage +
                                         props.rowsPerPage
                                 )
-                                .map((customer: any) => {
+                                .map((item: any) => {
                                     return (
                                         <TableRow
-                                            key={customer.id}
+                                            key={item.id}
                                             hover
-                                            onClick={() =>
-                                                UpdateCustomerData(
-                                                    customer.id,
-                                                    customer
-                                                )
-                                            }
+                                            onClick={() => UpdateItemData(item)}
                                         >
                                             {columns.map((column: any) => {
                                                 return (
                                                     <TableCell key={column.id}>
-                                                        {customer[column.id]}
+                                                        {item[column.id]}
                                                     </TableCell>
                                                 );
                                             })}
@@ -217,8 +203,8 @@ const Items = ({}: any) => {
 
             <Dialog
                 fullWidth
-                open={props.customerDialogIsOpen}
-                onClose={() => closeCustomerDialog()}
+                open={props.itemDialogIsOpen}
+                onClose={() => closeItemDialog()}
             >
                 <DialogTitle>Update Customer</DialogTitle>
                 <DialogContent>
@@ -235,28 +221,23 @@ const Items = ({}: any) => {
                                     margin="dense"
                                     variant="standard"
                                     autoFocus={index === 1}
-                                    value={(customerData as any)[id]}
+                                    value={(itemData as any)[id]}
                                     onChange={(e) =>
-                                        handleCustomerData(id, e.target.value)
+                                        handleItemData(id, e.target.value)
                                     }
                                 />
                             );
                     })}
                 </DialogContent>
                 <DialogActions>
-                    {customerData?.properties?.isUpdate ? (
-                        <Button
-                            onClick={() => DeleteCustomerData()}
-                            color="error"
-                        >
+                    {itemData?.properties?.isUpdate ? (
+                        <Button onClick={() => DeleteItemData()} color="error">
                             Delete
                         </Button>
                     ) : null}
-                    <Button onClick={() => closeCustomerDialog()}>
-                        Cancel
-                    </Button>
-                    <Button onClick={() => addCustomerData()}>
-                        {customerData?.properties?.isUpdate ? 'Update' : 'Add'}
+                    <Button onClick={() => closeItemDialog()}>Cancel</Button>
+                    <Button onClick={() => addItemData()}>
+                        {itemData?.properties?.isUpdate ? 'Update' : 'Add'}
                     </Button>
                 </DialogActions>
             </Dialog>

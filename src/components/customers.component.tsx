@@ -67,9 +67,9 @@ const Customers = ({}: any) => {
     ];
 
     function readCustomerDatabase() {
-        readFile(localStorage.getItem('customer-database'), (data: any) => {
-            setData(JSON.parse(data));
-        });
+        readFile(localStorage.getItem('customer-database'), (data: any) =>
+            setData(JSON.parse(data))
+        );
     }
 
     function closeCustomerDialog() {
@@ -119,7 +119,7 @@ const Customers = ({}: any) => {
         readCustomerDatabase();
     };
 
-    const UpdateCustomerData = (id: number, data: CustomerData) => {
+    const UpdateCustomerData = (data: CustomerData) => {
         handleProperties('customerDialogIsOpen', true);
         setCustomerData({
             ...data,
@@ -161,7 +161,7 @@ const Customers = ({}: any) => {
                         ))}
                     </TableRow>
                     <TableBody>
-                        {data.length > 100 ? (
+                        {data.length > 0 ? (
                             data
                                 .slice(
                                     props.page * props.rowsPerPage,
@@ -174,10 +174,7 @@ const Customers = ({}: any) => {
                                             key={customer.id}
                                             hover
                                             onClick={() =>
-                                                UpdateCustomerData(
-                                                    customer.id,
-                                                    customer
-                                                )
+                                                UpdateCustomerData(customer)
                                             }
                                         >
                                             {columns.map((column: any) => {
