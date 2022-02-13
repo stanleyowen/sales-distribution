@@ -2,10 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Button, Grid } from '@mui/material';
 import { UploadIcon } from '../lib/icons.component';
+const { ipcRenderer } = window.require('electron');
 
 const Input = styled('input')({
     display: 'none',
 });
+
+const SetupData = () => {
+    const uploadedFiles = document.getElementById(
+        'upload-customer-database'
+    ) as any;
+    if (uploadedFiles.files.length > 0) {
+        console.log(uploadedFiles.files[0]?.path);
+    }
+};
 
 // eslint-disable-next-line
 const Setup = ({}: any) => {
@@ -23,8 +33,15 @@ const Setup = ({}: any) => {
                         </Button>
                     </label>
                 </Grid>
+                <Grid item xs={7}>
+                    Customer Database
+                </Grid>
             </Grid>
-            <Button variant="contained" color="primary">
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={() => SetupData()}
+            >
                 Next
             </Button>
         </div>
