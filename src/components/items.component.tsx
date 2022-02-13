@@ -140,7 +140,7 @@ const Items = ({}: any) => {
                 className="mt-10 ml-10"
                 onClick={() => handleProperties('itemDialogIsOpen', true)}
             >
-                Add Customer
+                Add Item
             </Button>
             <TableContainer component={Paper}>
                 <Table>
@@ -169,7 +169,14 @@ const Items = ({}: any) => {
                                             {columns.map((column: any) => {
                                                 return (
                                                     <TableCell key={column.id}>
-                                                        {item[column.id]}
+                                                        {column.id ===
+                                                        'unitPrice'
+                                                            ? item[
+                                                                  column.id
+                                                              ].toLocaleString(
+                                                                  'id-ID'
+                                                              )
+                                                            : item[column.id]}
                                                     </TableCell>
                                                 );
                                             })}
@@ -206,7 +213,7 @@ const Items = ({}: any) => {
                 open={props.itemDialogIsOpen}
                 onClose={() => closeItemDialog()}
             >
-                <DialogTitle>Update Customer</DialogTitle>
+                <DialogTitle>Update Item&#39;s Details</DialogTitle>
                 <DialogContent>
                     {Object.keys(columns).map((_, index: number) => {
                         const { id, label } = columns[index];

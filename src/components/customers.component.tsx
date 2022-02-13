@@ -217,7 +217,7 @@ const Customers = ({}: any) => {
                 open={props.customerDialogIsOpen}
                 onClose={() => closeCustomerDialog()}
             >
-                <DialogTitle>Update Customer</DialogTitle>
+                <DialogTitle>Update Customer&#39;s Details</DialogTitle>
                 <DialogContent>
                     {Object.keys(columns).map((_, index: number) => {
                         const { id, label } = columns[index];
