@@ -3,11 +3,20 @@ const isDev = require('electron-is-dev');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const Store = require('electron-store');
 
+let mainWindow;
 let store = new Store();
 
-let mainWindow;
-
 function createWindow() {
+    function setLocalStorageDatabase() {
+        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
+            'customer-database',
+            ${JSON.stringify(store.get('customer-database'))})`);
+
+        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
+            'item-database',
+            ${JSON.stringify(store.get('item-database'))})`);
+    }
+
     mainWindow = new BrowserWindow({
         width: 900,
         height: 680,
@@ -27,16 +36,12 @@ function createWindow() {
     mainWindow.once('ready-to-show', () => mainWindow.show());
     mainWindow.on('closed', () => (mainWindow = null));
 
-    mainWindow.webContents.executeJavaScript(`localStorage.setItem(
-        'customer-database',
-        ${JSON.stringify(store.get('customer-database'))})`);
+    setLocalStorageDatabase();
 
     ipcMain.on('store-data', (e, arg) => {
         const { id, value } = JSON.parse(arg);
         store.set(id, value);
-        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
-            'customer-database',
-            ${JSON.stringify(store.get('customer-database'))})`);
+        setLocalStorageDatabase();
     });
 }
 
