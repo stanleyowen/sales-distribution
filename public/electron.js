@@ -30,6 +30,14 @@ function createWindow() {
     mainWindow.webContents.executeJavaScript(`localStorage.setItem(
         'customer-database',
         ${JSON.stringify(store.get('customer-database'))})`);
+
+    ipcMain.on('store-data', (e, arg) => {
+        const { id, value } = JSON.parse(arg);
+        store.set(id, value);
+        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
+            'customer-database',
+            ${JSON.stringify(store.get('customer-database'))})`);
+    });
 }
 
 app.on('ready', createWindow);
@@ -38,10 +46,4 @@ app.on('window-all-closed', () => {
 });
 app.on('activate', () => {
     if (mainWindow === null) createWindow();
-});
-
-ipcMain.on('store-data', (e, arg) => {
-    const { id, value } = JSON.parse(arg);
-    store.set(id, value);
-    console.log('received', JSON.parse(arg));
 });
