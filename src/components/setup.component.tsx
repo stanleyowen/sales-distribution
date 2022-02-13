@@ -1,8 +1,8 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Button, Grid } from '@mui/material';
-import { UploadIcon } from '../lib/icons.component';
-const { ipcRenderer } = window.require('electron');
+import { FileIcon, UploadIcon } from '../lib/icons.component';
+import { openFilePath } from '../lib/file-operation.lib';
 
 const Input = styled('input')({
     display: 'none',
@@ -37,8 +37,13 @@ const SetupData = () => {
     }
 };
 
+const OpenFilePath = (localStorageKey: string) => {
+    const filePath = localStorage.getItem(localStorageKey);
+    if (filePath) openFilePath(filePath);
+};
+
 // eslint-disable-next-line
-const Setup = ({}: any) => {
+const Setup = () => {
     return (
         <div className="m-20">
             <Grid container spacing={2}>
@@ -52,6 +57,14 @@ const Setup = ({}: any) => {
                             <UploadIcon />
                         </Button>
                     </label>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        className="ml-10"
+                        onClick={() => OpenFilePath('customer-database')}
+                    >
+                        <FileIcon />
+                    </Button>
                 </Grid>
 
                 <Grid item xs={7}>
@@ -64,6 +77,14 @@ const Setup = ({}: any) => {
                             <UploadIcon />
                         </Button>
                     </label>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        className="ml-10"
+                        onClick={() => OpenFilePath('item-database')}
+                    >
+                        <FileIcon />
+                    </Button>
                 </Grid>
             </Grid>
 
