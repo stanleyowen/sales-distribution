@@ -60,15 +60,14 @@ const Customer = ({}: any) => {
         { id: 'address', label: 'Address' },
     ];
 
+    function readCustomerDatabase() {
+        readFile(localStorage.getItem('customer-database'), (data: any) => {
+            setData(JSON.parse(data));
+        });
+    }
+
     useEffect(() => {
-        readFile(
-            process.env.NODE_ENV === 'development'
-                ? `./public/db/customer-data.json`
-                : `../build/db/customer-data.json`,
-            (data: any) => {
-                setData(JSON.parse(data));
-            }
-        );
+        readCustomerDatabase();
     }, []); // eslint-disable-line
 
     useEffect(() => {
@@ -82,6 +81,14 @@ const Customer = ({}: any) => {
             (res: any) => console.log(res)
         );
 
+        setCustomerData({
+            id: 0,
+            fullName: '',
+            taxId: '',
+            idNumber: '',
+            address: '',
+        });
+        readCustomerDatabase();
         handleProperties('customerDialogIsOpen', false);
     };
 
