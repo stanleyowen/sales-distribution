@@ -127,6 +127,21 @@ const Items = ({}: any) => {
         });
     };
 
+    const DeleteCustomerData = () => {
+        const newData = data.filter((item: CustomerData) => {
+            return item.id !== customerData.id;
+        });
+
+        writeFile(
+            localStorage.getItem('customer-database'),
+            JSON.stringify(newData),
+            (res: string) => console.log(res)
+        );
+
+        closeCustomerDialog();
+        readCustomerDatabase();
+    };
+
     return (
         <div>
             <Button
@@ -229,6 +244,14 @@ const Items = ({}: any) => {
                     })}
                 </DialogContent>
                 <DialogActions>
+                    {customerData?.properties?.isUpdate ? (
+                        <Button
+                            onClick={() => DeleteCustomerData()}
+                            color="error"
+                        >
+                            Delete
+                        </Button>
+                    ) : null}
                     <Button onClick={() => closeCustomerDialog()}>
                         Cancel
                     </Button>
