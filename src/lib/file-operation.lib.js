@@ -1,5 +1,6 @@
 import React from 'react';
 const fs = window.require('fs');
+const { shell } = window.require('electron');
 
 export function readFile(filePath, callback) {
     fs.readFile(filePath, 'utf-8', (err, data) => {
@@ -13,4 +14,8 @@ export function writeFile(filePath, content, callback) {
         if (err) throw err;
         return callback('User Added Successfully');
     });
+}
+
+export function openFilePath(filePath) {
+    shell.showItemInFolder(filePath);
 }
