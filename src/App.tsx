@@ -17,8 +17,8 @@ export default function App() {
         <HashRouter>
             <Navbar />
             <Routes>
-                {/* <Route path="/" element={<AppLayout />} /> */}
-                <Route path="/" element={<Setup />} />
+                <Route path="/" element={<AppLayout />} />
+                <Route path="/setup" element={<Setup />} />
                 <Route path="/customers" element={<Customers />} />
                 <Route path="/items" element={<Items />} />
             </Routes>
