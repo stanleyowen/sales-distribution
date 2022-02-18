@@ -4,46 +4,53 @@ import { Button, Grid } from '@mui/material';
 import { FileIcon, UploadIcon } from '../lib/icons.component';
 import { openFilePath } from '../lib/file-operation.lib';
 
+const { ipcRenderer } = window.require('electron');
 const Input = styled('input')({
     display: 'none',
 });
 
-const SetupData = () => {
-    const customerDatabaseFiles = document.getElementById(
-        'upload-customer-database'
-    ) as any;
-    const itemDatabaseFiles = document.getElementById(
-        'upload-item-database'
-    ) as any;
-
-    if (customerDatabaseFiles.files.length > 0) {
-        ipcRenderer.send(
-            'store-data',
-            JSON.stringify({
-                id: 'customer-database',
-                value: customerDatabaseFiles.files[0].path,
-            })
-        );
-    }
-
-    if (itemDatabaseFiles.files.length > 0) {
-        ipcRenderer.send(
-            'store-data',
-            JSON.stringify({
-                id: 'item-database',
-                value: itemDatabaseFiles.files[0].path,
-            })
-        );
-    }
-};
-
-const OpenFilePath = (localStorageKey: string) => {
-    const filePath = localStorage.getItem(localStorageKey);
-    if (filePath) openFilePath(filePath);
-};
-
 // eslint-disable-next-line
 const Setup = () => {
+    const [isLoading, setLoading] = useState<boolean>(false);
+
+    const SetupData = () => {
+        setLoading(true);
+
+        const customerDatabaseFiles = document.getElementById(
+            'upload-customer-database'
+        ) as any;
+        const itemDatabaseFiles = document.getElementById(
+            'upload-item-database'
+        ) as any;
+
+        if (customerDatabaseFiles.files.length > 0) {
+            ipcRenderer.send(
+                'store-data',
+                JSON.stringify({
+                    id: 'customer-database',
+                    value: customerDatabaseFiles.files[0].path,
+                })
+            );
+        }
+
+        if (itemDatabaseFiles.files.length > 0) {
+            ipcRenderer.send(
+                'store-data',
+                JSON.stringify({
+                    id: 'item-database',
+                    value: itemDatabaseFiles.files[0].path,
+                })
+            );
+        }
+
+        setLoading(false);
+    };
+
+    const OpenFilePath = (localStorageKey: string) => {
+        const filePath = localStorage.getItem(localStorageKey);
+        if (filePath) openFilePath(filePath);
+    };
+
     return (
         <div className="m-20">
             <Grid container spacing={2} className="mb-10">
