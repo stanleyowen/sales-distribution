@@ -77,6 +77,19 @@ const App = () => {
         });
     };
 
+    const AddItem = () => {
+        const items = [...properties.items];
+        items[properties.items.length] = {
+            id: 0,
+            qty: 0,
+            itemName: '',
+            unitPrice: 0,
+            totalPrice: 0,
+            unitOfMeasure: '',
+        };
+        setProperties({ ...properties, items });
+    };
+
     return (
         <div>
             <div>
@@ -219,6 +232,7 @@ const App = () => {
                         variant="contained"
                         className="w-100"
                         startIcon={<AddIcon />}
+                        onClick={() => AddItem()}
                     >
                         Add Items
                     </Button>
