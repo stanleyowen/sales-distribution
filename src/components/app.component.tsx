@@ -120,71 +120,98 @@ const App = () => {
 
                     <p className="mt-10 mb-10">Item(s)</p>
 
-                    <Grid container spacing={2}>
-                        <Grid item xs={2}>
-                            <TextField
-                                type="number"
-                                label="Item Id"
-                                variant="filled"
-                                value={properties.items[0].id}
-                                onChange={(e) => {
-                                    handleItems('id', e.target.value, 0);
-                                    SearchItemById(e.target.value, 0);
-                                }}
-                            />
-                        </Grid>
-                        <Grid item xs={1}>
-                            <TextField
-                                type="number"
-                                variant="filled"
-                                label="Quantity"
-                                value={properties.items[0].qty}
-                                onChange={(e) => {
-                                    const totalPrice =
-                                        Number(e.target.value) *
-                                        properties.items[0].unitPrice;
-                                    handleItems('qty', e.target.value, 0);
-                                    handleItems('totalPrice', totalPrice, 0);
-                                }}
-                            />
-                        </Grid>
-                        <Grid item xs={3}>
-                            <TextField
-                                disabled
-                                variant="filled"
-                                label="Item Name"
-                                value={properties.items[0].itemName}
-                            />
-                        </Grid>
-                        <Grid item xs={2}>
-                            <TextField
-                                disabled
-                                variant="filled"
-                                label="Unit of Measure"
-                                value={properties.items[0].unitOfMeasure}
-                            />
-                        </Grid>
-                        <Grid item xs={2}>
-                            <TextField
-                                disabled
-                                variant="filled"
-                                label="Unit Price"
-                                value={properties.items[0].unitPrice.toLocaleString(
-                                    'id-ID'
-                                )}
-                            />
-                        </Grid>
-                        <Grid item xs={2}>
-                            <TextField
-                                disabled
-                                variant="filled"
-                                label="Total Price"
-                                value={properties.items[0].totalPrice.toLocaleString(
-                                    'id-ID'
-                                )}
-                            />
-                        </Grid>
-                    </Grid>
+                    {properties.items.map((item: any, index: number) => {
+                        return (
+                            <Grid container spacing={2} key={index}>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        type="number"
+                                        label="Item Id"
+                                        variant="filled"
+                                        value={properties.items[index].id}
+                                        onChange={(e) => {
+                                            handleItems(
+                                                'id',
+                                                e.target.value,
+                                                0
+                                            );
+                                            SearchItemById(
+                                                e.target.value,
+                                                index
+                                            );
+                                        }}
+                                    />
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <TextField
+                                        type="number"
+                                        variant="filled"
+                                        label="Quantity"
+                                        value={properties.items[index].qty}
+                                        onChange={(e) => {
+                                            const totalPrice =
+                                                Number(e.target.value) *
+                                                properties.items[index]
+                                                    .unitPrice;
+                                            handleItems(
+                                                'qty',
+                                                e.target.value,
+                                                0
+                                            );
+                                            handleItems(
+                                                'totalPrice',
+                                                totalPrice,
+                                                0
+                                            );
+                                        }}
+                                    />
+                                </Grid>
+                                <Grid item xs={3}>
+                                    <TextField
+                                        disabled
+                                        variant="filled"
+                                        label="Item Name"
+                                        value={properties.items[index].itemName}
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        disabled
+                                        variant="filled"
+                                        label="Unit of Measure"
+                                        value={
+                                            properties.items[index]
+                                                .unitOfMeasure
+                                        }
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        disabled
+                                        variant="filled"
+                                        label="Unit Price"
+                                        value={properties.items[
+                                            index
+                                        ].unitPrice.toLocaleString('id-ID')}
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        disabled
+                                        variant="filled"
+                                        label="Total Price"
+                                        value={properties.items[
+                                            index
+                                        ].totalPrice.toLocaleString('id-ID')}
+                                    />
+                                </Grid>
+                            </Grid>
+                        );
+                    })}
+
+                    <Button variant="contained" className="mt-10 w-100">
+                        Add Items
+                    </Button>
                 </div>
             </div>
         </div>
