@@ -44,11 +44,11 @@ const App = () => {
         ],
     });
 
-    const handleProperties = (id: string, value: string) => {
+    const handleProperties = (id: string, value: string | number) => {
         setProperties({ ...properties, [id]: value });
     };
 
-    const handleItems = (id: string, value: string, index: number) => {
+    const handleItems = (id: string, value: string | number, index: number) => {
         const items = [...properties.items];
         items[index][id] = value;
         setProperties({ ...properties, items });
@@ -140,9 +140,13 @@ const App = () => {
                                 variant="filled"
                                 label="Quantity"
                                 value={properties.items[0].qty}
-                                onChange={(e) =>
-                                    handleItems('qty', e.target.value, 0)
-                                }
+                                onChange={(e) => {
+                                    const totalPrice =
+                                        Number(e.target.value) *
+                                        properties.items[0].unitPrice;
+                                    handleItems('qty', e.target.value, 0);
+                                    handleItems('totalPrice', totalPrice, 0);
+                                }}
                             />
                         </Grid>
                         <Grid item xs={3}>
@@ -176,7 +180,7 @@ const App = () => {
                                 disabled
                                 variant="filled"
                                 label="Total Price"
-                                value={properties.items[0].unitPrice.toLocaleString(
+                                value={properties.items[0].totalPrice.toLocaleString(
                                     'id-ID'
                                 )}
                             />
