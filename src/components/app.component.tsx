@@ -15,10 +15,13 @@ import { readFile } from '../lib/file-operation.lib';
 type Props = {
     invoiceNumber: string;
     invoiceType: 'Auto' | 'A' | 'BC' | '';
-    name: string;
-    address: string;
-    NIK: string;
-    NPWP: string;
+    customer: {
+        id: number;
+        fullName: string;
+        address: string;
+        idNumber: string;
+        taxId: string;
+    };
     items: any;
 };
 
@@ -28,10 +31,13 @@ const App = () => {
     const [properties, setProperties] = useState<Props>({
         invoiceNumber: '',
         invoiceType: '',
-        name: '',
-        address: '',
-        NIK: '',
-        NPWP: '',
+        customer: {
+            id: 0,
+            fullName: '',
+            address: '',
+            idNumber: '',
+            taxId: '',
+        },
         items: [
             {
                 id: 0,
@@ -44,9 +50,14 @@ const App = () => {
         ],
     });
 
-    const handleProperties = (id: string, value: string | number) => {
+    const handleProperties = (id: string, value: string | number) =>
         setProperties({ ...properties, [id]: value });
-    };
+
+    const handleCustomer = (id: string, value: string | number) =>
+        setProperties({
+            ...properties,
+            customer: { ...properties.customer, [id]: value },
+        });
 
     const handleItems = (id: string, value: string | number, index: number) => {
         const items = [...properties.items];
@@ -184,7 +195,7 @@ const App = () => {
                         </Grid>
                     </Grid>
 
-                    <p className="mt-10 mb-10">Item(s)</p>
+                    <p className="mb-10">Item(s)</p>
 
                     {properties.items.map((_: any, index: number) => {
                         return (
