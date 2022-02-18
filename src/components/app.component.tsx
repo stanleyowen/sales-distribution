@@ -9,6 +9,7 @@ import {
     InputLabel,
     FormControl,
 } from '@mui/material';
+import { AddIcon } from '../lib/icons.component';
 import { readFile } from '../lib/file-operation.lib';
 
 type Props = {
@@ -209,7 +210,11 @@ const App = () => {
                         );
                     })}
 
-                    <Button variant="contained" className="mt-10 w-100">
+                    <Button
+                        variant="contained"
+                        className="mt-10 w-100"
+                        startIcon={<AddIcon />}
+                    >
                         Add Items
                     </Button>
                 </div>
