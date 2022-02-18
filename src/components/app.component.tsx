@@ -71,8 +71,11 @@ const App = () => {
             if (item.id === Number(id)) {
                 const items = [...properties.items];
                 items[index] = { ...items[index], ...item };
+                if (items[index].qty !== 0) {
+                    items[index]['totalPrice'] =
+                        items[index].qty * items[index].unitPrice;
+                }
                 setProperties({ ...properties, items });
-                console.log({ ...properties, items });
             }
         });
     };
@@ -172,11 +175,13 @@ const App = () => {
                                                 Number(e.target.value) *
                                                 properties.items[index]
                                                     .unitPrice;
+
                                             handleItems(
                                                 'qty',
                                                 e.target.value,
                                                 index
                                             );
+
                                             handleItems(
                                                 'totalPrice',
                                                 totalPrice,
