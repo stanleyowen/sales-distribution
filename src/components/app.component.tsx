@@ -121,9 +121,14 @@ const App = () => {
 
                     <p className="mt-10 mb-10">Item(s)</p>
 
-                    {properties.items.map((item: any, index: number) => {
+                    {properties.items.map((_: any, index: number) => {
                         return (
-                            <Grid container spacing={2} key={index}>
+                            <Grid
+                                container
+                                spacing={2}
+                                key={index}
+                                className="mb-10"
+                            >
                                 <Grid item xs={2}>
                                     <TextField
                                         type="number"
@@ -134,7 +139,7 @@ const App = () => {
                                             handleItems(
                                                 'id',
                                                 e.target.value,
-                                                0
+                                                index
                                             );
                                             SearchItemById(
                                                 e.target.value,
@@ -157,12 +162,12 @@ const App = () => {
                                             handleItems(
                                                 'qty',
                                                 e.target.value,
-                                                0
+                                                index
                                             );
                                             handleItems(
                                                 'totalPrice',
                                                 totalPrice,
-                                                0
+                                                index
                                             );
                                         }}
                                     />
@@ -212,7 +217,7 @@ const App = () => {
 
                     <Button
                         variant="contained"
-                        className="mt-10 w-100"
+                        className="w-100"
                         startIcon={<AddIcon />}
                     >
                         Add Items
