@@ -69,7 +69,7 @@ const App = () => {
         data.forEach((item: any) => {
             if (item.id === Number(id)) {
                 const items = [...properties.items];
-                items[index] = { ...item, qty: 0, totalPrice: 0 };
+                items[index] = { ...items[index], ...item };
                 setProperties({ ...properties, items });
                 console.log({ ...properties, items });
             }
