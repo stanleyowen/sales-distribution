@@ -27,7 +27,8 @@ type Props = {
 
 // eslint-disable-next-line
 const App = () => {
-    const [data, setData] = useState<Array<any>>([]);
+    const [itemData, setItemData] = useState<Array<any>>([]);
+    const [customerData, setCustomerData] = useState<Array<any>>([]);
     const [properties, setProperties] = useState<Props>({
         invoiceNumber: '',
         invoiceType: '',
@@ -73,7 +74,11 @@ const App = () => {
             });
 
         readFile(localStorage.getItem('item-database'), (data: any) =>
-            setData(JSON.parse(data))
+            setItemData(JSON.parse(data))
+        );
+
+        readFile(localStorage.getItem('customer-database'), (data: any) =>
+            setCustomerData(JSON.parse(data))
         );
     }, []); // eslint-disable-line
 
