@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import { Button, Grid } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 import { FileIcon, UploadIcon } from '../lib/icons.component';
 import { openFilePath } from '../lib/file-operation.lib';
 
@@ -95,13 +96,14 @@ const Setup = () => {
                 </Grid>
             </Grid>
 
-            <Button
-                variant="contained"
+            <LoadingButton
                 color="primary"
+                variant="contained"
+                loading={isLoading}
                 onClick={() => SetupData()}
             >
                 Upload
-            </Button>
+            </LoadingButton>
         </div>
     );
 };
