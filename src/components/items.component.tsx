@@ -57,6 +57,7 @@ const Items = ({}: any) => {
     const columns = [
         { id: 'id', label: 'Id' },
         { id: 'itemName', label: 'Item Name' },
+        { id: 'unitOfMeasure', label: 'Unit of Measure' },
         { id: 'unitPrice', label: 'Unit Price' },
     ];
 
