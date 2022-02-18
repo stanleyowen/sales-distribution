@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import { Button, Grid } from '@mui/material';
 import { FileIcon, UploadIcon } from '../lib/icons.component';
@@ -46,9 +46,9 @@ const OpenFilePath = (localStorageKey: string) => {
 const Setup = () => {
     return (
         <div className="m-20">
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className="mb-10">
                 <Grid item xs={7}>
-                    Customer Database / Database Pengguna
+                    Customer Database/Database Pengguna <i>(.json)</i>
                 </Grid>
                 <Grid item xs={5}>
                     <label htmlFor="upload-customer-database">
@@ -68,7 +68,7 @@ const Setup = () => {
                 </Grid>
 
                 <Grid item xs={7}>
-                    Items Database / Database Barang
+                    Items Database/Database Barang <i>(.json)</i>
                 </Grid>
                 <Grid item xs={5}>
                     <label htmlFor="upload-item-database">
