@@ -82,8 +82,15 @@ const App = () => {
         );
     }, []); // eslint-disable-line
 
+    const SearchCustomerById = (id: string) => {
+        customerData.forEach((customer: any) => {
+            if (customer.id === Number(id))
+                setProperties({ ...properties, customer });
+        });
+    };
+
     const SearchItemById = (id: string, index: number) => {
-        data.forEach((item: any) => {
+        itemData.forEach((item: any) => {
             if (item.id === Number(id)) {
                 const items = [...properties.items];
                 items[index] = { ...items[index], ...item };
@@ -157,9 +164,10 @@ const App = () => {
                                 variant="filled"
                                 label="Customer Id"
                                 value={properties.customer.id}
-                                onChange={(e) =>
-                                    handleCustomer('id', e.target.value)
-                                }
+                                onChange={(e) => {
+                                    handleCustomer('id', e.target.value);
+                                    SearchCustomerById(e.target.value);
+                                }}
                             />
                         </Grid>
 
