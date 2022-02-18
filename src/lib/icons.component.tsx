@@ -38,16 +38,3 @@ export function FileIcon(
         </svg>
     );
 }
-
-export function SearchIcon(
-    props: React.SVGProps<SVGSVGElement> | null | undefined
-) {
-    return (
-        <svg width="2em" height="2em" viewBox="0 0 24 24" {...props}>
-            <path
-                fill="currentColor"
-                d="M9.5 4a6.5 6.5 0 0 1 4.932 10.734l5.644 5.644l-.707.707l-5.645-5.645A6.5 6.5 0 1 1 9.5 4Zm0 1a5.5 5.5 0 1 0 0 11a5.5 5.5 0 0 0 0-11Z"
-            ></path>
-        </svg>
-    );
-}

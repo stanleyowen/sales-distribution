@@ -9,7 +9,6 @@ import {
     InputLabel,
     FormControl,
 } from '@mui/material';
-import { SearchIcon } from '../lib/icons.component';
 import { readFile } from '../lib/file-operation.lib';
 
 type Props = {
