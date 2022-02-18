@@ -111,6 +111,7 @@ const App = () => {
                                 }
                             />
                         </Grid>
+
                         <Grid item xs={4}>
                             <FormControl fullWidth variant="filled">
                                 <InputLabel id="invoice-type">
@@ -132,6 +133,54 @@ const App = () => {
                                     <MenuItem value="BC">BC</MenuItem>
                                 </Select>
                             </FormControl>
+                        </Grid>
+
+                        <Grid item xs={2}>
+                            <TextField
+                                type="number"
+                                variant="filled"
+                                label="Customer Id"
+                                value={properties.customer.id}
+                                onChange={(e) =>
+                                    handleCustomer('id', e.target.value)
+                                }
+                            />
+                        </Grid>
+
+                        <Grid item xs={4}>
+                            <TextField
+                                disabled
+                                variant="filled"
+                                label="Name"
+                                value={properties.customer.fullName}
+                            />
+                        </Grid>
+
+                        <Grid item xs={6}>
+                            <TextField
+                                disabled
+                                variant="filled"
+                                label="Address"
+                                value={properties.customer.address}
+                            />
+                        </Grid>
+
+                        <Grid item xs={6}>
+                            <TextField
+                                disabled
+                                variant="filled"
+                                label=" Tax Id (NPWP)"
+                                value={properties.customer.taxId}
+                            />
+                        </Grid>
+
+                        <Grid item xs={6}>
+                            <TextField
+                                disabled
+                                variant="filled"
+                                label="Id Number (NIK)"
+                                value={properties.customer.idNumber}
+                            />
                         </Grid>
                     </Grid>
 
