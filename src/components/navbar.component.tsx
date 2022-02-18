@@ -31,7 +31,30 @@ const Navbar = ({}: any) => {
                     >
                         News
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button
+                        color="inherit"
+                        onClick={() => (window.location.hash = '/')}
+                    >
+                        Home
+                    </Button>
+                    <Button
+                        color="inherit"
+                        onClick={() => (window.location.hash = '/items')}
+                    >
+                        Item DB
+                    </Button>
+                    <Button
+                        color="inherit"
+                        onClick={() => (window.location.hash = '/customers')}
+                    >
+                        Customer DB
+                    </Button>
+                    <Button
+                        color="inherit"
+                        onClick={() => (window.location.hash = '/setup')}
+                    >
+                        Config
+                    </Button>
                 </Toolbar>
             </AppBar>
         </Box>
