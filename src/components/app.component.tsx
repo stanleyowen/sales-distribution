@@ -77,7 +77,6 @@ const App = () => {
         });
     };
 
-    // console.log(properties.items[0]);
     return (
         <div>
             <div>
@@ -123,27 +122,17 @@ const App = () => {
                     <p className="mt-10 mb-10">Item(s)</p>
 
                     <Grid container spacing={2}>
-                        <Grid item xs={1}>
+                        <Grid item xs={2}>
                             <TextField
                                 type="number"
                                 label="Item Id"
                                 variant="filled"
                                 value={properties.items[0].id}
-                                onChange={(e) =>
-                                    handleItems('id', e.target.value, 0)
-                                }
+                                onChange={(e) => {
+                                    handleItems('id', e.target.value, 0);
+                                    SearchItemById(e.target.value, 0);
+                                }}
                             />
-                        </Grid>
-                        <Grid item>
-                            <Button
-                                className="h-100"
-                                variant="contained"
-                                onClick={() =>
-                                    SearchItemById(properties.items[0].id, 0)
-                                }
-                            >
-                                <SearchIcon />
-                            </Button>
                         </Grid>
                         <Grid item xs={1}>
                             <TextField
@@ -177,7 +166,19 @@ const App = () => {
                                 disabled
                                 variant="filled"
                                 label="Unit Price"
-                                value={properties.items[0].unitPrice}
+                                value={properties.items[0].unitPrice.toLocaleString(
+                                    'id-ID'
+                                )}
+                            />
+                        </Grid>
+                        <Grid item xs={2}>
+                            <TextField
+                                disabled
+                                variant="filled"
+                                label="Total Price"
+                                value={properties.items[0].unitPrice.toLocaleString(
+                                    'id-ID'
+                                )}
                             />
                         </Grid>
                     </Grid>
