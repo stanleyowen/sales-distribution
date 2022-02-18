@@ -32,7 +32,16 @@ const App = () => {
         address: '',
         NIK: '',
         NPWP: '',
-        items: [{ id: 0, name: '', price: '', qty: '' }],
+        items: [
+            {
+                id: 0,
+                qty: 0,
+                itemName: '',
+                unitPrice: 0,
+                totalPrice: 0,
+                unitOfMeasure: '',
+            },
+        ],
     });
 
     const handleProperties = (id: string, value: string) => {
@@ -60,13 +69,15 @@ const App = () => {
     const SearchItemById = (id: string, index: number) => {
         data.forEach((item: any) => {
             if (item.id === Number(id)) {
-                const itemNameVariable = `properties.items[${index}].name`;
-                const itemNameValue = item.itemName;
-                handleProperties(itemNameVariable, itemNameValue);
+                const items = [...properties.items];
+                items[index] = { ...item, qty: 0, totalPrice: 0 };
+                setProperties({ ...properties, items });
+                console.log({ ...properties, items });
             }
         });
     };
 
+    // console.log(properties.items[0]);
     return (
         <div>
             <div>
@@ -112,11 +123,11 @@ const App = () => {
                     <p className="mt-10 mb-10">Item(s)</p>
 
                     <Grid container spacing={2}>
-                        <Grid item xs={2}>
+                        <Grid item xs={1}>
                             <TextField
                                 type="number"
-                                variant="filled"
                                 label="Item Id"
+                                variant="filled"
                                 value={properties.items[0].id}
                                 onChange={(e) =>
                                     handleItems('id', e.target.value, 0)
@@ -134,45 +145,39 @@ const App = () => {
                                 <SearchIcon />
                             </Button>
                         </Grid>
-                        <Grid item xs={2}>
+                        <Grid item xs={1}>
                             <TextField
                                 type="number"
                                 variant="filled"
                                 label="Quantity"
                                 value={properties.items[0].qty}
                                 onChange={(e) =>
-                                    handleProperties(
-                                        'items[0].qty',
-                                        e.target.value
-                                    )
+                                    handleItems('qty', e.target.value, 0)
                                 }
                             />
                         </Grid>
                         <Grid item xs={3}>
                             <TextField
+                                disabled
                                 variant="filled"
                                 label="Item Name"
-                                value={properties.items[0].qty}
-                                onChange={(e) =>
-                                    handleProperties(
-                                        'items[0].qty',
-                                        e.target.value
-                                    )
-                                }
+                                value={properties.items[0].itemName}
                             />
                         </Grid>
                         <Grid item xs={2}>
                             <TextField
                                 disabled
                                 variant="filled"
-                                label="Quantity"
-                                value={properties.invoiceType}
-                                onChange={(e) =>
-                                    handleProperties(
-                                        'invoiceType',
-                                        e.target.value
-                                    )
-                                }
+                                label="Unit of Measure"
+                                value={properties.items[0].unitOfMeasure}
+                            />
+                        </Grid>
+                        <Grid item xs={2}>
+                            <TextField
+                                disabled
+                                variant="filled"
+                                label="Unit Price"
+                                value={properties.items[0].unitPrice}
                             />
                         </Grid>
                     </Grid>
