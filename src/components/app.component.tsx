@@ -46,6 +46,8 @@ const App = () => {
                 itemName: '',
                 unitPrice: 0,
                 totalPrice: 0,
+                discountPerKg: 0,
+                discountPercent: 0,
                 unitOfMeasure: '',
             },
         ],
@@ -237,7 +239,7 @@ const App = () => {
                                         }}
                                     />
                                 </Grid>
-                                <Grid item xs={1}>
+                                <Grid item xs={2}>
                                     <TextField
                                         type="number"
                                         variant="filled"
@@ -290,6 +292,26 @@ const App = () => {
                                         value={properties.items[
                                             index
                                         ].unitPrice.toLocaleString('id-ID')}
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        type="number"
+                                        variant="filled"
+                                        label="Discount (%)"
+                                        value={properties.items[
+                                            index
+                                        ].totalPrice.toLocaleString('id-ID')}
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        type="number"
+                                        variant="filled"
+                                        label="Discount Each Kg"
+                                        value={properties.items[
+                                            index
+                                        ].totalPrice.toLocaleString('id-ID')}
                                     />
                                 </Grid>
                                 <Grid item xs={2}>
