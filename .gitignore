@@ -15,6 +15,7 @@ debug.log
 .env.production.local
 
 **/img/*[.png][.jpg]
+db
 dist
 docs
 node_modules
