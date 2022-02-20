@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Button, Grid } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
@@ -17,6 +17,9 @@ const Setup = () => {
     const SetupData = () => {
         setLoading(true);
 
+        const invoiceDatabaseFiles = document.getElementById(
+            'upload-invoice-database'
+        ) as any;
         const customerDatabaseFiles = document.getElementById(
             'upload-customer-database'
         ) as any;
@@ -44,6 +47,16 @@ const Setup = () => {
             );
         }
 
+        if (invoiceDatabaseFiles.files.length > 0) {
+            ipcRenderer.send(
+                'store-data',
+                JSON.stringify({
+                    id: 'invoice-database',
+                    value: invoiceDatabaseFiles.files[0].path,
+                })
+            );
+        }
+
         setLoading(false);
     };
 
@@ -55,6 +68,26 @@ const Setup = () => {
     return (
         <div className="m-20">
             <Grid container spacing={2} className="mb-10">
+                <Grid item xs={7}>
+                    Invoice Database <i>(.json)</i>
+                </Grid>
+                <Grid item xs={5}>
+                    <label htmlFor="upload-invoice-database">
+                        <Input id="upload-invoice-database" type="file" />
+                        <Button variant="contained" component="span">
+                            <UploadIcon />
+                        </Button>
+                    </label>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        className="ml-10"
+                        onClick={() => OpenFilePath('invoice-database')}
+                    >
+                        <FileIcon />
+                    </Button>
+                </Grid>
+
                 <Grid item xs={7}>
                     Customer Database/Database Pengguna <i>(.json)</i>
                 </Grid>
