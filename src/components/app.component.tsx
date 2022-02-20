@@ -118,6 +118,17 @@ const App = () => {
         setProperties({ ...properties, items });
     };
 
+    function calculateTotalPricePerItem(index: number) {
+        const { qty, unitPrice, discountPercent, discountPerKg } =
+            properties.items[index];
+        const totalDiscountPercent =
+            discountPercent > 0 ? (100 - discountPercent) / 100 : 1;
+        const totalDiscountPerKg = discountPerKg * qty;
+        const totalPrice =
+            qty * unitPrice * totalDiscountPercent - totalDiscountPerKg;
+        handleItems('totalPrice', totalPrice, index);
+    }
+
     return (
         <div>
             <div>
@@ -246,26 +257,16 @@ const App = () => {
                                         label="Quantity"
                                         value={properties.items[index].qty}
                                         onChange={(e) => {
-                                            const totalPrice =
-                                                Number(e.target.value) *
-                                                properties.items[index]
-                                                    .unitPrice;
-
                                             handleItems(
                                                 'qty',
                                                 e.target.value,
                                                 index
                                             );
-
-                                            handleItems(
-                                                'totalPrice',
-                                                totalPrice,
-                                                index
-                                            );
+                                            calculateTotalPricePerItem(index);
                                         }}
                                     />
                                 </Grid>
-                                <Grid item xs={3}>
+                                <Grid item xs={4}>
                                     <TextField
                                         disabled
                                         variant="filled"
