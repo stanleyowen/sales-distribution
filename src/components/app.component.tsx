@@ -9,8 +9,8 @@ import {
     InputLabel,
     FormControl,
 } from '@mui/material';
-import { AddIcon } from '../lib/icons.component';
-import { readFile } from '../lib/file-operation.lib';
+import { readFile, writeFile } from '../lib/file-operation.lib';
+import { AddIcon, CloseIcon, SaveIcon } from '../lib/icons.component';
 
 type Props = {
     invoiceNumber: string;
@@ -28,6 +28,7 @@ type Props = {
 // eslint-disable-next-line
 const App = () => {
     const [itemData, setItemData] = useState<Array<any>>([]);
+    const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
     const [properties, setProperties] = useState<Props>({
         invoiceNumber: '',
@@ -122,6 +123,16 @@ const App = () => {
         const items = [...properties.items];
         items.splice(index, 1);
         setProperties({ ...properties, items });
+    };
+
+    const SaveInvoice = () => {
+        readFile(localStorage.getItem('invoice-database'), (invoice: any) => {
+            writeFile(
+                localStorage.getItem('invoice-database'),
+                JSON.stringify([...JSON.parse(invoice), properties]),
+                (res: string) => console.log(res)
+            );
+        });
     };
 
     function calculateTotalPricePerItem(index: number) {
@@ -366,11 +377,20 @@ const App = () => {
 
                     <Button
                         variant="contained"
-                        className="w-100"
+                        className="w-100 mb-10"
                         startIcon={<AddIcon />}
                         onClick={() => AddItem()}
                     >
                         Add Items
+                    </Button>
+
+                    <Button
+                        variant="contained"
+                        className="w-100"
+                        startIcon={<SaveIcon />}
+                        onClick={() => SaveInvoice()}
+                    >
+                        Save
                     </Button>
                 </div>
             </div>
