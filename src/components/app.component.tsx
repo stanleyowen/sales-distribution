@@ -295,27 +295,45 @@ const App = () => {
                                         ].unitPrice.toLocaleString('id-ID')}
                                     />
                                 </Grid>
-                                <Grid item xs={2}>
+                                <Grid item xs={3}>
                                     <TextField
                                         type="number"
                                         variant="filled"
                                         label="Discount (%)"
-                                        value={properties.items[
-                                            index
-                                        ].totalPrice.toLocaleString('id-ID')}
+                                        value={
+                                            properties.items[index]
+                                                .discountPercent
+                                        }
+                                        onChange={(e) => {
+                                            handleItems(
+                                                'discountPercent',
+                                                e.target.value,
+                                                index
+                                            );
+                                            calculateTotalPricePerItem(index);
+                                        }}
                                     />
                                 </Grid>
-                                <Grid item xs={2}>
+                                <Grid item xs={3}>
                                     <TextField
                                         type="number"
                                         variant="filled"
                                         label="Discount Each Kg"
-                                        value={properties.items[
-                                            index
-                                        ].totalPrice.toLocaleString('id-ID')}
+                                        value={
+                                            properties.items[index]
+                                                .discountPerKg
+                                        }
+                                        onChange={(e) => {
+                                            handleItems(
+                                                'discountPerKg',
+                                                e.target.value,
+                                                index
+                                            );
+                                            calculateTotalPricePerItem(index);
+                                        }}
                                     />
                                 </Grid>
-                                <Grid item xs={2}>
+                                <Grid item xs={6}>
                                     <TextField
                                         disabled
                                         variant="filled"
