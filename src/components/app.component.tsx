@@ -118,6 +118,12 @@ const App = () => {
         setProperties({ ...properties, items });
     };
 
+    const removeItem = (index: number) => {
+        const items = [...properties.items];
+        items.splice(index, 1);
+        setProperties({ ...properties, items });
+    };
+
     function calculateTotalPricePerItem(index: number) {
         const { qty, unitPrice, discountPercent, discountPerKg } =
             properties.items[index];
@@ -333,7 +339,7 @@ const App = () => {
                                         }}
                                     />
                                 </Grid>
-                                <Grid item xs={6}>
+                                <Grid item xs={3}>
                                     <TextField
                                         disabled
                                         variant="filled"
@@ -343,6 +349,17 @@ const App = () => {
                                         ].totalPrice.toLocaleString('id-ID')}
                                     />
                                 </Grid>
+                                {index === 0 ? null : (
+                                    <Grid item>
+                                        <Button
+                                            color="warning"
+                                            className="h-100"
+                                            onClick={() => removeItem(index)}
+                                        >
+                                            <CloseIcon />
+                                        </Button>
+                                    </Grid>
+                                )}
                             </Grid>
                         );
                     })}
