@@ -12,7 +12,7 @@ export function readFile(filePath, callback) {
 export function writeFile(filePath, content, callback) {
     fs.writeFile(filePath, String(content), (err) => {
         if (err) throw err;
-        return callback('User Added Successfully');
+        return callback('Write Operation Successful');
     });
 }
 
