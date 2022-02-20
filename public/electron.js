@@ -15,6 +15,10 @@ function createWindow() {
         mainWindow.webContents.executeJavaScript(`localStorage.setItem(
             'item-database',
             ${JSON.stringify(store.get('item-database'))})`);
+
+        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
+            'invoice-database',
+            ${JSON.stringify(store.get('invoice-database'))})`);
     }
 
     mainWindow = new BrowserWindow({
