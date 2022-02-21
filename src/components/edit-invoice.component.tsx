@@ -84,6 +84,13 @@ const EditInvoice = () => {
         readFile(localStorage.getItem('customer-database'), (data: any) =>
             setCustomerData(JSON.parse(data))
         );
+
+        readFile(localStorage.getItem('invoice-database'), (data: any) => {
+            const invoice = JSON.parse(data).find(
+                (invoice: any) => invoice.invoiceNumber === id
+            );
+            setProperties(invoice);
+        });
     }, []); // eslint-disable-line
 
     const SearchCustomerById = (id: string) => {
