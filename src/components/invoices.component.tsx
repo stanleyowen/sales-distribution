@@ -2,26 +2,22 @@ import React, { useEffect, useState } from 'react';
 import {
     Paper,
     Table,
-    Dialog,
     Button,
     TableRow,
     TableBody,
     TableCell,
-    TextField,
-    DialogTitle,
-    DialogContent,
     TableContainer,
     LinearProgress,
     TablePagination,
-    DialogActions,
 } from '@mui/material';
-import { readFile, writeFile } from '../lib/file-operation.lib';
+import { readFile } from '../lib/file-operation.lib';
 
 type Props = {
     page: number;
     rowsPerPage: number;
     itemDialogIsOpen: boolean;
 };
+
 // eslint-disable-next-line
 const Invoices = ({}: any) => {
     const [data, setData] = useState<Array<any>>([]);
@@ -34,18 +30,13 @@ const Invoices = ({}: any) => {
     const handleProperties = (id: string, value: number | boolean) =>
         setProps({ ...props, [id]: value });
 
-    const columns = [
-        { id: 'invoiceNumber', label: 'Invoice Number' },
-        { id: 'customer', label: 'Customer Name' },
-    ];
-
-    function readItemDatabase() {
-        readFile(localStorage.getItem('invoice-database'), (data: any) =>
-            setData(JSON.parse(data))
-        );
-    }
-
-    useEffect(() => readItemDatabase(), []);
+    useEffect(
+        () =>
+            readFile(localStorage.getItem('invoice-database'), (data: any) =>
+                setData(JSON.parse(data))
+            ),
+        []
+    );
 
     return (
         <div>
@@ -77,7 +68,9 @@ const Invoices = ({}: any) => {
                                         <TableRow
                                             key={item.id}
                                             hover
-                                            // onClick={() => UpdateItemData(item)}
+                                            onClick={() =>
+                                                (window.location.hash = `/invoices/${item.invoiceNumber}`)
+                                            }
                                         >
                                             <TableCell key="invoiceNumber">
                                                 {item['invoiceNumber']}
