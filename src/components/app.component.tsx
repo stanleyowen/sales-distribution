@@ -113,6 +113,8 @@ const App = () => {
             itemName: '',
             unitPrice: 0,
             totalPrice: 0,
+            discountPerKg: 0,
+            discountPercent: 0,
             unitOfMeasure: '',
         };
         setProperties({ ...properties, items });
