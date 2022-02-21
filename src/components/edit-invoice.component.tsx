@@ -31,6 +31,7 @@ const EditInvoice = () => {
     const { id } = useParams();
     const [itemData, setItemData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
+    const [oldInvoiceNumber, setOldInvoiceNumber] = useState<string>('');
     const [properties, setProperties] = useState<Props>({
         invoiceNumber: '',
         invoiceType: '',
@@ -90,6 +91,7 @@ const EditInvoice = () => {
                 (invoice: any) => invoice.invoiceNumber === id
             );
             setProperties(invoice);
+            setOldInvoiceNumber(invoice.invoiceNumber);
         });
     }, []); // eslint-disable-line
 
@@ -135,12 +137,18 @@ const EditInvoice = () => {
         setProperties({ ...properties, items });
     };
 
-    const SaveInvoice = () => {
+    const UpdateInvoice = () => {
         readFile(localStorage.getItem('invoice-database'), (invoice: any) => {
+            const newInvoice = JSON.parse(invoice).map((data: any) => {
+                if (data.invoiceNumber === oldInvoiceNumber) {
+                    return properties;
+                }
+                return data;
+            });
             writeFile(
                 localStorage.getItem('invoice-database'),
-                JSON.stringify([...JSON.parse(invoice), properties]),
-                (res: string) => console.log(res)
+                JSON.stringify(newInvoice),
+                (res: string) => (window.location.hash = '/invoices')
             );
         });
     };
@@ -398,9 +406,9 @@ const EditInvoice = () => {
                         variant="contained"
                         className="w-100"
                         startIcon={<SaveIcon />}
-                        onClick={() => SaveInvoice()}
+                        onClick={() => UpdateInvoice()}
                     >
-                        Save
+                        Update
                     </Button>
                 </div>
             </div>
