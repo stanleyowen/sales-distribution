@@ -39,6 +39,12 @@ const Navbar = ({}: any) => {
                     </Button>
                     <Button
                         color="inherit"
+                        onClick={() => (window.location.hash = '/invoices')}
+                    >
+                        Invoices
+                    </Button>
+                    <Button
+                        color="inherit"
                         onClick={() => (window.location.hash = '/items')}
                     >
                         Item DB
