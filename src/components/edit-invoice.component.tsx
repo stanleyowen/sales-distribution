@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
-    TextField,
     Grid,
     Button,
     Select,
     MenuItem,
-    SelectChangeEvent,
+    TextField,
     InputLabel,
     FormControl,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+    SelectChangeEvent,
 } from '@mui/material';
+import {
+    AddIcon,
+    SaveIcon,
+    CloseIcon,
+    DeleteIcon,
+} from '../lib/icons.component';
 import { readFile, writeFile } from '../lib/file-operation.lib';
-import { AddIcon, CloseIcon, SaveIcon } from '../lib/icons.component';
 
 type Props = {
     invoiceNumber: string;
@@ -30,6 +38,7 @@ type Props = {
 const EditInvoice = () => {
     const { id } = useParams();
     const [itemData, setItemData] = useState<Array<any>>([]);
+    const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
     const [oldInvoiceNumber, setOldInvoiceNumber] = useState<string>('');
     const [properties, setProperties] = useState<Props>({
@@ -90,6 +99,8 @@ const EditInvoice = () => {
             const invoice = JSON.parse(data).find(
                 (invoice: any) => invoice.invoiceNumber === id
             );
+
+            setInvoiceData(JSON.parse(data));
             setProperties(invoice);
             setOldInvoiceNumber(invoice.invoiceNumber);
         });
@@ -138,19 +149,16 @@ const EditInvoice = () => {
     };
 
     const UpdateInvoice = () => {
-        readFile(localStorage.getItem('invoice-database'), (invoice: any) => {
-            const newInvoice = JSON.parse(invoice).map((data: any) => {
-                if (data.invoiceNumber === oldInvoiceNumber) {
-                    return properties;
-                }
-                return data;
-            });
-            writeFile(
-                localStorage.getItem('invoice-database'),
-                JSON.stringify(newInvoice),
-                (res: string) => (window.location.hash = '/invoices')
-            );
+        const newInvoice = invoiceData.map((data: any) => {
+            if (data.invoiceNumber === oldInvoiceNumber) return properties;
+            return data;
         });
+
+        writeFile(
+            localStorage.getItem('invoice-database'),
+            JSON.stringify(newInvoice),
+            (res: string) => (window.location.hash = '/invoices')
+        );
     };
 
     function calculateTotalPricePerItem(index: number) {
@@ -254,8 +262,9 @@ const EditInvoice = () => {
                             value={properties.customer.idNumber}
                         />
                     </Grid>
+                </Grid>
 
-                    <p className="mb-10">Item(s)</p>
+                <p className="mb-10">Item(s)</p>
 
                 {properties.items.map((_: any, index: number) => {
                     return (
