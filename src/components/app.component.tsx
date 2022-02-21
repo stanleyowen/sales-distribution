@@ -368,7 +368,10 @@ const App = () => {
                                             className="h-100"
                                             onClick={() => removeItem(index)}
                                         >
-                                            <CloseIcon />
+                                            <CloseIcon
+                                                width="2em"
+                                                height="2em"
+                                            />
                                         </Button>
                                     </Grid>
                                 )}
