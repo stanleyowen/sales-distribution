@@ -405,14 +405,31 @@ const EditInvoice = () => {
                         Add Items
                     </Button>
 
-                    <Button
-                        variant="contained"
-                        className="w-100"
-                        startIcon={<SaveIcon />}
-                        onClick={() => UpdateInvoice()}
-                    >
-                        Update
-                    </Button>
+                    <Grid container spacing={2}>
+                        <Grid item xs={6}>
+                            <Button
+                                color="error"
+                                variant="contained"
+                                className="w-100"
+                                startIcon={<CloseIcon />}
+                                onClick={() =>
+                                    (window.location.hash = '/invoices')
+                                }
+                            >
+                                Cancel
+                            </Button>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <Button
+                                variant="contained"
+                                className="w-100"
+                                startIcon={<SaveIcon />}
+                                onClick={() => UpdateInvoice()}
+                            >
+                                Update
+                            </Button>
+                        </Grid>
+                    </Grid>
                 </div>
             </div>
         </div>
