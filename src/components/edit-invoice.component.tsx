@@ -4,6 +4,7 @@ import {
     Grid,
     Button,
     Select,
+    Dialog,
     MenuItem,
     TextField,
     InputLabel,
@@ -40,6 +41,7 @@ const EditInvoice = () => {
     const [itemData, setItemData] = useState<Array<any>>([]);
     const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
+    const [dialogIsOpen, setDialogIsOpen] = useState<boolean>(false);
     const [oldInvoiceNumber, setOldInvoiceNumber] = useState<string>('');
     const [properties, setProperties] = useState<Props>({
         invoiceNumber: '',
@@ -411,7 +413,7 @@ const EditInvoice = () => {
                             variant="outlined"
                             className="w-100"
                             startIcon={<DeleteIcon />}
-                            onClick={() => (window.location.hash = '/invoices')}
+                            onClick={() => setDialogIsOpen(true)}
                         >
                             Delete
                         </Button>
@@ -439,6 +441,26 @@ const EditInvoice = () => {
                     </Grid>
                 </Grid>
             </div>
+
+            <Dialog
+                fullWidth
+                open={dialogIsOpen}
+                onClose={() => setDialogIsOpen(false)}
+            >
+                <DialogTitle className="error">
+                    Delete Invoice Permanently
+                </DialogTitle>
+                <DialogContent>
+                    Are you sure want to delete this invoice permanently? This
+                    action is <span className="error">irreversible</span>.
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setDialogIsOpen(false)}>
+                        Cancel
+                    </Button>
+                    <Button color="error">Delete</Button>
+                </DialogActions>
+            </Dialog>
         </div>
     );
 };
