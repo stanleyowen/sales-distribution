@@ -150,6 +150,20 @@ const EditInvoice = () => {
         setProperties({ ...properties, items });
     };
 
+    const deleteInvoice = () => {
+        const invoices = [...invoiceData];
+        const index = invoices.findIndex(
+            (invoice: Props) => invoice.invoiceNumber === oldInvoiceNumber
+        );
+
+        invoices.splice(index, 1);
+        writeFile(
+            localStorage.getItem('invoice-database'),
+            JSON.stringify(invoices),
+            () => (window.location.hash = '/invoices')
+        );
+    };
+
     const UpdateInvoice = () => {
         const newInvoice = invoiceData.map((data: any) => {
             if (data.invoiceNumber === oldInvoiceNumber) return properties;
@@ -458,7 +472,9 @@ const EditInvoice = () => {
                     <Button onClick={() => setDialogIsOpen(false)}>
                         Cancel
                     </Button>
-                    <Button color="error">Delete</Button>
+                    <Button color="error" onClick={() => deleteInvoice()}>
+                        Delete
+                    </Button>
                 </DialogActions>
             </Dialog>
         </div>
