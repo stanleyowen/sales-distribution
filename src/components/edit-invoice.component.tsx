@@ -395,32 +395,40 @@ const EditInvoice = () => {
                     Add Items
                 </Button>
 
-                    <Grid container spacing={2}>
-                        <Grid item xs={6}>
-                            <Button
-                                color="error"
-                                variant="contained"
-                                className="w-100"
-                                startIcon={<CloseIcon />}
-                                onClick={() =>
-                                    (window.location.hash = '/invoices')
-                                }
-                            >
-                                Cancel
-                            </Button>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Button
-                                variant="contained"
-                                className="w-100"
-                                startIcon={<SaveIcon />}
-                                onClick={() => UpdateInvoice()}
-                            >
-                                Update
-                            </Button>
-                        </Grid>
+                <Grid container spacing={2}>
+                    <Grid item xs={4}>
+                        <Button
+                            color="error"
+                            variant="outlined"
+                            className="w-100"
+                            startIcon={<DeleteIcon />}
+                            onClick={() => (window.location.hash = '/invoices')}
+                        >
+                            Delete
+                        </Button>
                     </Grid>
-                </div>
+                    <Grid item xs={4}>
+                        <Button
+                            color="error"
+                            variant="contained"
+                            className="w-100"
+                            startIcon={<CloseIcon />}
+                            onClick={() => (window.location.hash = '/invoices')}
+                        >
+                            Cancel
+                        </Button>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Button
+                            variant="contained"
+                            className="w-100"
+                            startIcon={<SaveIcon />}
+                            onClick={() => UpdateInvoice()}
+                        >
+                            Update
+                        </Button>
+                    </Grid>
+                </Grid>
             </div>
         </div>
     );
