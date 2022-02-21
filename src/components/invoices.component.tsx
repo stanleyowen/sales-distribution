@@ -22,16 +22,6 @@ type Props = {
     rowsPerPage: number;
     itemDialogIsOpen: boolean;
 };
-
-type ItemData = {
-    id: number;
-    itemName: string;
-    unitPrice: string;
-    properties?: {
-        isUpdate?: boolean;
-    };
-};
-
 // eslint-disable-next-line
 const Invoices = ({}: any) => {
     const [data, setData] = useState<Array<any>>([]);
@@ -40,99 +30,22 @@ const Invoices = ({}: any) => {
         rowsPerPage: 10,
         itemDialogIsOpen: false,
     });
-    const [itemData, setItemData] = useState<ItemData>({
-        id: 0,
-        itemName: '',
-        unitPrice: '',
-        properties: {
-            isUpdate: false,
-        },
-    });
 
     const handleProperties = (id: string, value: number | boolean) =>
         setProps({ ...props, [id]: value });
-    const handleItemData = (id: string, value: string | number) =>
-        setItemData({ ...itemData, [id]: value });
 
     const columns = [
-        { id: 'id', label: 'Id' },
-        { id: 'itemName', label: 'Item Name' },
-        { id: 'unitOfMeasure', label: 'Unit of Measure' },
-        { id: 'unitPrice', label: 'Unit Price' },
+        { id: 'invoiceNumber', label: 'Invoice Number' },
+        { id: 'customer', label: 'Customer Name' },
     ];
 
     function readItemDatabase() {
-        readFile(localStorage.getItem('item-database'), (data: any) =>
+        readFile(localStorage.getItem('invoice-database'), (data: any) =>
             setData(JSON.parse(data))
         );
     }
 
-    function closeItemDialog() {
-        handleProperties('itemDialogIsOpen', false);
-        setItemData({
-            id: data?.length + 1,
-            itemName: '',
-            unitPrice: '',
-            properties: {
-                isUpdate: false,
-            },
-        });
-    }
-
     useEffect(() => readItemDatabase(), []);
-    useEffect(() => {
-        handleItemData('id', data.length + 1);
-    }, [data]);
-
-    const addItemData = () => {
-        if (itemData?.properties?.isUpdate) {
-            const newData = data.map((item: ItemData) => {
-                if (item.id === itemData.id) return itemData;
-                return item;
-            });
-
-            delete itemData.properties;
-
-            writeFile(
-                localStorage.getItem('item-database'),
-                JSON.stringify(newData),
-                (res: string) => console.log(res)
-            );
-        } else {
-            delete itemData.properties;
-
-            writeFile(
-                localStorage.getItem('item-database'),
-                JSON.stringify([...data, itemData]),
-                (res: string) => console.log(res)
-            );
-        }
-
-        closeItemDialog();
-        readItemDatabase();
-    };
-
-    const UpdateItemData = (data: ItemData) => {
-        handleProperties('itemDialogIsOpen', true);
-        setItemData({
-            ...data,
-            properties: { isUpdate: true },
-        });
-    };
-
-    const DeleteItemData = () => {
-        const newData = data.filter((item: ItemData) => {
-            return item.id !== itemData.id;
-        });
-        writeFile(
-            localStorage.getItem('item-database'),
-            JSON.stringify(newData),
-            () => {
-                closeItemDialog();
-                readItemDatabase();
-            }
-        );
-    };
 
     return (
         <div>
@@ -146,11 +59,10 @@ const Invoices = ({}: any) => {
             <TableContainer component={Paper}>
                 <Table>
                     <TableRow>
-                        {columns.map((column) => (
-                            <TableCell key={column.id}>
-                                {column.label}
-                            </TableCell>
-                        ))}
+                        <TableCell key="invoiceNumber">
+                            Invoice Number
+                        </TableCell>
+                        <TableCell key="customer">Customer Name</TableCell>
                     </TableRow>
                     <TableBody>
                         {data.length > 0 ? (
@@ -165,22 +77,14 @@ const Invoices = ({}: any) => {
                                         <TableRow
                                             key={item.id}
                                             hover
-                                            onClick={() => UpdateItemData(item)}
+                                            // onClick={() => UpdateItemData(item)}
                                         >
-                                            {columns.map((column: any) => {
-                                                return (
-                                                    <TableCell key={column.id}>
-                                                        {column.id ===
-                                                        'unitPrice'
-                                                            ? item[
-                                                                  column.id
-                                                              ].toLocaleString(
-                                                                  'id-ID'
-                                                              )
-                                                            : item[column.id]}
-                                                    </TableCell>
-                                                );
-                                            })}
+                                            <TableCell key="invoiceNumber">
+                                                {item['invoiceNumber']}
+                                            </TableCell>
+                                            <TableCell key="customer">
+                                                {item.customer['fullName']}
+                                            </TableCell>
                                         </TableRow>
                                     );
                                 })
@@ -208,49 +112,6 @@ const Invoices = ({}: any) => {
                     handleProperties('rowsPerPage', +e.target.value);
                 }}
             />
-
-            <Dialog
-                fullWidth
-                open={props.itemDialogIsOpen}
-                onClose={() => closeItemDialog()}
-            >
-                <DialogTitle>Update Item&#39;s Details</DialogTitle>
-                <DialogContent>
-                    {Object.keys(columns).map((_, index: number) => {
-                        const { id, label } = columns[index];
-                        return (
-                            <TextField
-                                fullWidth
-                                type={label === 'Id' ? 'number' : 'text'}
-                                key={index}
-                                label={label}
-                                margin="dense"
-                                variant="standard"
-                                autoFocus={index === 1}
-                                value={(itemData as any)[id]}
-                                onChange={(e) =>
-                                    handleItemData(id, e.target.value)
-                                }
-                                disabled={
-                                    label === 'Id' &&
-                                    itemData.properties?.isUpdate
-                                }
-                            />
-                        );
-                    })}
-                </DialogContent>
-                <DialogActions>
-                    {itemData?.properties?.isUpdate ? (
-                        <Button onClick={() => DeleteItemData()} color="error">
-                            Delete
-                        </Button>
-                    ) : null}
-                    <Button onClick={() => closeItemDialog()}>Cancel</Button>
-                    <Button onClick={() => addItemData()}>
-                        {itemData?.properties?.isUpdate ? 'Update' : 'Add'}
-                    </Button>
-                </DialogActions>
-            </Dialog>
         </div>
     );
 };

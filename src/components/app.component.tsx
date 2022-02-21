@@ -28,7 +28,6 @@ type Props = {
 // eslint-disable-next-line
 const App = () => {
     const [itemData, setItemData] = useState<Array<any>>([]);
-    const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
     const [properties, setProperties] = useState<Props>({
         invoiceNumber: '',
