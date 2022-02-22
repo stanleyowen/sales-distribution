@@ -295,6 +295,7 @@ const EditInvoice = () => {
                                     type="number"
                                     label="Item Id"
                                     variant="filled"
+                                    className="w-100"
                                     value={properties.items[index].id}
                                     onChange={(e) => {
                                         handleItems(
@@ -311,6 +312,7 @@ const EditInvoice = () => {
                                     type="number"
                                     variant="filled"
                                     label="Quantity"
+                                    className="w-100"
                                     value={properties.items[index].qty}
                                     onChange={(e) => {
                                         handleItems(
@@ -327,6 +329,7 @@ const EditInvoice = () => {
                                     disabled
                                     variant="filled"
                                     label="Item Name"
+                                    className="w-100"
                                     value={properties.items[index].itemName}
                                 />
                             </Grid>
@@ -334,6 +337,7 @@ const EditInvoice = () => {
                                 <TextField
                                     disabled
                                     variant="filled"
+                                    className="w-100"
                                     label="Unit of Measure"
                                     value={
                                         properties.items[index].unitOfMeasure
@@ -344,6 +348,7 @@ const EditInvoice = () => {
                                 <TextField
                                     disabled
                                     variant="filled"
+                                    className="w-100"
                                     label="Unit Price"
                                     value={properties.items[
                                         index
@@ -354,6 +359,7 @@ const EditInvoice = () => {
                                 <TextField
                                     type="number"
                                     variant="filled"
+                                    className="w-100"
                                     label="Discount (%)"
                                     value={
                                         properties.items[index].discountPercent
@@ -372,6 +378,7 @@ const EditInvoice = () => {
                                 <TextField
                                     type="number"
                                     variant="filled"
+                                    className="w-100"
                                     label="Discount Each Kg"
                                     value={
                                         properties.items[index].discountPerKg
@@ -390,6 +397,7 @@ const EditInvoice = () => {
                                 <TextField
                                     disabled
                                     variant="filled"
+                                    className="w-100"
                                     label="Total Price"
                                     value={properties.items[
                                         index

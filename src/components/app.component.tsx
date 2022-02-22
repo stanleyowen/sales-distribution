@@ -254,6 +254,7 @@ const App = () => {
                                         type="number"
                                         label="Item Id"
                                         variant="filled"
+                                        className="w-100"
                                         value={properties.items[index].id}
                                         onChange={(e) => {
                                             handleItems(
@@ -273,6 +274,7 @@ const App = () => {
                                         type="number"
                                         variant="filled"
                                         label="Quantity"
+                                        className="w-100"
                                         value={properties.items[index].qty}
                                         onChange={(e) => {
                                             handleItems(
@@ -289,6 +291,7 @@ const App = () => {
                                         disabled
                                         variant="filled"
                                         label="Item Name"
+                                        className="w-100"
                                         value={properties.items[index].itemName}
                                     />
                                 </Grid>
@@ -296,6 +299,7 @@ const App = () => {
                                     <TextField
                                         disabled
                                         variant="filled"
+                                        className="w-100"
                                         label="Unit of Measure"
                                         value={
                                             properties.items[index]
@@ -307,6 +311,7 @@ const App = () => {
                                     <TextField
                                         disabled
                                         variant="filled"
+                                        className="w-100"
                                         label="Unit Price"
                                         value={properties.items[
                                             index
@@ -317,6 +322,7 @@ const App = () => {
                                     <TextField
                                         type="number"
                                         variant="filled"
+                                        className="w-100"
                                         label="Discount (%)"
                                         value={
                                             properties.items[index]
@@ -336,6 +342,7 @@ const App = () => {
                                     <TextField
                                         type="number"
                                         variant="filled"
+                                        className="w-100"
                                         label="Discount Each Kg"
                                         value={
                                             properties.items[index]
@@ -355,6 +362,7 @@ const App = () => {
                                     <TextField
                                         disabled
                                         variant="filled"
+                                        className="w-100"
                                         label="Total Price"
                                         value={properties.items[
                                             index
