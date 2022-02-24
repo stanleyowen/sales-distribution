@@ -13,6 +13,7 @@ import {
     DialogContent,
     DialogActions,
     SelectChangeEvent,
+    Alert,
 } from '@mui/material';
 import {
     AddIcon,
@@ -23,7 +24,7 @@ import {
 import { readFile, writeFile } from '../lib/file-operation.lib';
 
 type Data = {
-    invoiceNumber: string;
+    invoiceNumber: number;
     invoiceType: 'Auto' | 'A' | 'BC' | '';
     customer: {
         id: number;
@@ -37,6 +38,7 @@ type Data = {
 
 type Props = {
     isLoading: boolean;
+    isDuplicete: boolean;
     dialogIsOpen: boolean;
 };
 
@@ -46,13 +48,14 @@ const EditInvoice = () => {
     const [itemData, setItemData] = useState<Array<any>>([]);
     const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
-    const [oldInvoiceNumber, setOldInvoiceNumber] = useState<string>('');
+    const [oldInvoiceNumber, setOldInvoiceNumber] = useState<number>(0);
     const [properties, setProps] = useState<Props>({
         isLoading: true,
+        isDuplicete: false,
         dialogIsOpen: false,
     });
     const [data, setData] = useState<Data>({
-        invoiceNumber: '',
+        invoiceNumber: 0,
         invoiceType: '',
         customer: {
             id: 0,
@@ -232,6 +235,14 @@ const EditInvoice = () => {
     return (
         <div>
             <div className="mt-10 p-10">
+                <Alert
+                    severity="error"
+                    className="w-100 border-box mb-10"
+                    hidden={!properties.isDuplicete}
+                >
+                    Invoice number {data.invoiceType + data.invoiceNumber}{' '}
+                    already exists. Please try another invoice number.
+                </Alert>
                 <Grid container spacing={2}>
                     <Grid item xs={8}>
                         <TextField
