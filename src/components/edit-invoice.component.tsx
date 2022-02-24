@@ -48,7 +48,7 @@ const EditInvoice = () => {
     const [customerData, setCustomerData] = useState<Array<any>>([]);
     const [oldInvoiceNumber, setOldInvoiceNumber] = useState<string>('');
     const [properties, setProps] = useState<Props>({
-        isLoading: false,
+        isLoading: true,
         dialogIsOpen: false,
     });
     const [data, setData] = useState<Data>({
@@ -118,6 +118,27 @@ const EditInvoice = () => {
             setOldInvoiceNumber(invoice.invoiceNumber);
         });
     }, []); // eslint-disable-line
+
+    useEffect(() => {
+        if (properties.isLoading)
+            document.querySelectorAll('input').forEach((input: any) => {
+                const { parentElement: inputParentElement } = input;
+                input.disabled = true;
+                inputParentElement.classList.add('Mui-disabled');
+            });
+        else {
+            document.querySelectorAll('input').forEach((input: any) => {
+                const { parentElement: inputParentElement } =
+                    input.parentElement;
+                if (!inputParentElement.classList.contains('disabled')) {
+                    input.disabled = false;
+                    input.parentElement.classList.remove('Mui-disabled');
+                }
+            });
+
+            document.getElementById('invoice-number')?.focus();
+        }
+    }, [properties.isLoading]);
 
     const SearchCustomerById = (id: string) => {
         customerData.forEach((customer: any) => {
@@ -255,6 +276,7 @@ const EditInvoice = () => {
                             disabled
                             variant="filled"
                             label="Name"
+                            className="disabled"
                             value={data.customer.fullName}
                         />
                     </Grid>
@@ -264,6 +286,7 @@ const EditInvoice = () => {
                             disabled
                             variant="filled"
                             label="Address"
+                            className="disabled"
                             value={data.customer.address}
                         />
                     </Grid>
@@ -272,6 +295,7 @@ const EditInvoice = () => {
                         <TextField
                             disabled
                             variant="filled"
+                            className="disabled"
                             label=" Tax Id (NPWP)"
                             value={data.customer.taxId}
                         />
@@ -281,6 +305,7 @@ const EditInvoice = () => {
                         <TextField
                             disabled
                             variant="filled"
+                            className="disabled"
                             label="Id Number (NIK)"
                             value={data.customer.idNumber}
                         />
@@ -336,7 +361,7 @@ const EditInvoice = () => {
                                     disabled
                                     variant="filled"
                                     label="Item Name"
-                                    className="w-100"
+                                    className="w-100 disabled"
                                     value={data.items[index].itemName}
                                 />
                             </Grid>
@@ -344,7 +369,7 @@ const EditInvoice = () => {
                                 <TextField
                                     disabled
                                     variant="filled"
-                                    className="w-100"
+                                    className="w-100 disabled"
                                     label="Unit of Measure"
                                     value={data.items[index].unitOfMeasure}
                                 />
@@ -353,7 +378,7 @@ const EditInvoice = () => {
                                 <TextField
                                     disabled
                                     variant="filled"
-                                    className="w-100"
+                                    className="w-100 disabled"
                                     label="Unit Price"
                                     value={data.items[
                                         index
@@ -398,7 +423,7 @@ const EditInvoice = () => {
                                 <TextField
                                     disabled
                                     variant="filled"
-                                    className="w-100"
+                                    className="w-100 disabled"
                                     label="Total Price"
                                     value={data.items[
                                         index
