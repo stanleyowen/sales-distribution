@@ -38,7 +38,7 @@ type Data = {
 
 type Props = {
     isLoading: boolean;
-    isDuplicete: boolean;
+    isDuplicate: boolean;
     dialogIsOpen: boolean;
 };
 
@@ -51,7 +51,7 @@ const EditInvoice = () => {
     const [oldInvoiceNumber, setOldInvoiceNumber] = useState<string>('');
     const [properties, setProps] = useState<Props>({
         isLoading: true,
-        isDuplicete: false,
+        isDuplicate: false,
         dialogIsOpen: false,
     });
     const [data, setData] = useState<Data>({
@@ -203,12 +203,16 @@ const EditInvoice = () => {
 
     const UpdateInvoice = () => {
         handleProperties('isLoading', true);
+        let isDuplicate = false;
         const newInvoice = invoiceData.map((invoice: any) => {
             if (
                 oldInvoiceNumber !== data.invoiceType + data.invoiceNumber &&
-                data.invoiceNumber === invoice.invoiceNumber
-            )
+                data.invoiceType + data.invoiceNumber ===
+                    invoice.invoiceType + invoice.invoiceNumber
+            ) {
+                isDuplicate = true;
                 handleProperties('isDuplicate', true);
+            }
             if (
                 invoice.invoiceType + invoice.invoiceNumber ===
                 oldInvoiceNumber
@@ -217,7 +221,7 @@ const EditInvoice = () => {
             return invoice;
         });
 
-        if (!properties.isDuplicete) {
+        if (!isDuplicate) {
             writeFile(
                 localStorage.getItem('invoice-database'),
                 JSON.stringify(newInvoice),
@@ -240,12 +244,12 @@ const EditInvoice = () => {
     return (
         <div>
             <div className="mt-10 p-10">
-                {properties.isDuplicete ?? (
+                {properties.isDuplicate ? (
                     <Alert severity="error" className="w-100 border-box mb-10">
                         Invoice number {data.invoiceType + data.invoiceNumber}{' '}
                         already exists. Please try another invoice number.
                     </Alert>
-                )}
+                ) : null}
                 <Grid container spacing={2}>
                     <Grid item xs={8}>
                         <TextField
