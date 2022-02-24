@@ -205,11 +205,15 @@ const EditInvoice = () => {
         handleProperties('isLoading', true);
         const newInvoice = invoiceData.map((invoice: any) => {
             if (
-                oldInvoiceNumber !== invoice.invoiceType + data.invoiceNumber &&
+                oldInvoiceNumber !== data.invoiceType + data.invoiceNumber &&
                 data.invoiceNumber === invoice.invoiceNumber
             )
                 handleProperties('isDuplicate', true);
-            if (invoice.invoiceNumber === oldInvoiceNumber) return invoice;
+            if (
+                invoice.invoiceType + invoice.invoiceNumber ===
+                oldInvoiceNumber
+            )
+                return data;
             return invoice;
         });
 
