@@ -35,13 +35,17 @@ type Data = {
     items: any;
 };
 
+type Props = {
+    isLoading: boolean;
+    dialogIsOpen: boolean;
+};
+
 // eslint-disable-next-line
 const EditInvoice = () => {
     const { id } = useParams();
     const [itemData, setItemData] = useState<Array<any>>([]);
     const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
-    const [dialogIsOpen, setDialogIsOpen] = useState<boolean>(false);
     const [oldInvoiceNumber, setOldInvoiceNumber] = useState<string>('');
     const [properties, setProps] = useState<Props>({
         isLoading: false,
@@ -85,6 +89,9 @@ const EditInvoice = () => {
         items[index][id] = value;
         setData({ ...data, items });
     };
+
+    const handleProperties = (id: string, value: boolean) =>
+        setProps({ ...properties, [id]: value });
 
     useEffect(() => {
         document
@@ -429,7 +436,9 @@ const EditInvoice = () => {
                             variant="outlined"
                             className="w-100"
                             startIcon={<DeleteIcon />}
-                            onClick={() => setDialogIsOpen(true)}
+                            onClick={() =>
+                                handleProperties('dialogIsOpen', true)
+                            }
                         >
                             Delete
                         </Button>
@@ -460,8 +469,8 @@ const EditInvoice = () => {
 
             <Dialog
                 fullWidth
-                open={dialogIsOpen}
-                onClose={() => setDialogIsOpen(false)}
+                open={properties.dialogIsOpen}
+                onClose={() => handleProperties('dialogIsOpen', false)}
             >
                 <DialogTitle className="error">
                     Delete Invoice Permanently
@@ -471,7 +480,9 @@ const EditInvoice = () => {
                     action is <span className="error">irreversible</span>.
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setDialogIsOpen(false)}>
+                    <Button
+                        onClick={() => handleProperties('dialogIsOpen', false)}
+                    >
                         Cancel
                     </Button>
                     <Button color="error" onClick={() => deleteInvoice()}>
