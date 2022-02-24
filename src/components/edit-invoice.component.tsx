@@ -196,9 +196,15 @@ const EditInvoice = () => {
     };
 
     const UpdateInvoice = () => {
-        const newInvoice = invoiceData.map((data: any) => {
-            if (data.invoiceNumber === oldInvoiceNumber) return data;
-            return data;
+        handleProperties('isLoading', true);
+        const newInvoice = invoiceData.map((invoice: any) => {
+            if (
+                oldInvoiceNumber !== data.invoiceNumber &&
+                data.invoiceNumber === invoice.invoiceNumber
+            )
+                handleProperties('isDuplicate', true);
+            if (invoice.invoiceNumber === oldInvoiceNumber) return invoice;
+            return invoice;
         });
 
         writeFile(
@@ -225,7 +231,7 @@ const EditInvoice = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={8}>
                         <TextField
-                            autoFocus
+                            id="invoice-number"
                             variant="filled"
                             label="Invoice No"
                             value={data.invoiceNumber}
