@@ -154,6 +154,7 @@ const App = () => {
                     <Grid container spacing={2}>
                         <Grid item xs={8}>
                             <TextField
+                                autoFocus
                                 variant="filled"
                                 label="Invoice No"
                                 value={properties.invoiceNumber}
