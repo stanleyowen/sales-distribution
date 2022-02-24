@@ -116,6 +116,8 @@ const EditInvoice = () => {
             setInvoiceData(JSON.parse(data));
             setData(invoice);
             setOldInvoiceNumber(invoice.invoiceNumber);
+
+            handleProperties('isLoading', false);
         });
     }, []); // eslint-disable-line
 
@@ -207,11 +209,13 @@ const EditInvoice = () => {
             return invoice;
         });
 
-        writeFile(
-            localStorage.getItem('invoice-database'),
-            JSON.stringify(newInvoice),
-            (res: string) => (window.location.hash = '/invoices')
-        );
+        if (!properties.isDuplicete) {
+            writeFile(
+                localStorage.getItem('invoice-database'),
+                JSON.stringify(newInvoice),
+                (res: string) => (window.location.hash = '/invoices')
+            );
+        }
     };
 
     function calculateTotalPricePerItem(index: number) {
