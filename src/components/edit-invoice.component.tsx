@@ -22,7 +22,7 @@ import {
 } from '../lib/icons.component';
 import { readFile, writeFile } from '../lib/file-operation.lib';
 
-type Props = {
+type Data = {
     invoiceNumber: string;
     invoiceType: 'Auto' | 'A' | 'BC' | '';
     customer: {
@@ -43,7 +43,11 @@ const EditInvoice = () => {
     const [customerData, setCustomerData] = useState<Array<any>>([]);
     const [dialogIsOpen, setDialogIsOpen] = useState<boolean>(false);
     const [oldInvoiceNumber, setOldInvoiceNumber] = useState<string>('');
-    const [properties, setProperties] = useState<Props>({
+    const [properties, setProps] = useState<Props>({
+        isLoading: false,
+        dialogIsOpen: false,
+    });
+    const [data, setData] = useState<Data>({
         invoiceNumber: '',
         invoiceType: '',
         customer: {
@@ -67,19 +71,19 @@ const EditInvoice = () => {
         ],
     });
 
-    const handleProperties = (id: string, value: string | number) =>
-        setProperties({ ...properties, [id]: value });
+    const handleData = (id: string, value: string | number) =>
+        setData({ ...data, [id]: value });
 
     const handleCustomer = (id: string, value: string | number) =>
-        setProperties({
-            ...properties,
-            customer: { ...properties.customer, [id]: value },
+        setData({
+            ...data,
+            customer: { ...data.customer, [id]: value },
         });
 
     const handleItems = (id: string, value: string | number, index: number) => {
-        const items = [...properties.items];
+        const items = [...data.items];
         items[index][id] = value;
-        setProperties({ ...properties, items });
+        setData({ ...data, items });
     };
 
     useEffect(() => {
@@ -103,35 +107,34 @@ const EditInvoice = () => {
             );
 
             setInvoiceData(JSON.parse(data));
-            setProperties(invoice);
+            setData(invoice);
             setOldInvoiceNumber(invoice.invoiceNumber);
         });
     }, []); // eslint-disable-line
 
     const SearchCustomerById = (id: string) => {
         customerData.forEach((customer: any) => {
-            if (customer.id === Number(id))
-                setProperties({ ...properties, customer });
+            if (customer.id === Number(id)) setData({ ...data, customer });
         });
     };
 
     const SearchItemById = (id: string, index: number) => {
         itemData.forEach((item: any) => {
             if (item.id === Number(id)) {
-                const items = [...properties.items];
+                const items = [...data.items];
                 items[index] = { ...items[index], ...item };
                 if (items[index].qty !== 0) {
                     items[index]['totalPrice'] =
                         items[index].qty * items[index].unitPrice;
                 }
-                setProperties({ ...properties, items });
+                setData({ ...data, items });
             }
         });
     };
 
     const AddItem = () => {
-        const items = [...properties.items];
-        items[properties.items.length] = {
+        const items = [...data.items];
+        items[data.items.length] = {
             id: 0,
             qty: 0,
             itemName: '',
@@ -141,19 +144,19 @@ const EditInvoice = () => {
             discountPercent: 0,
             unitOfMeasure: '',
         };
-        setProperties({ ...properties, items });
+        setData({ ...data, items });
     };
 
     const removeItem = (index: number) => {
-        const items = [...properties.items];
+        const items = [...data.items];
         items.splice(index, 1);
-        setProperties({ ...properties, items });
+        setData({ ...data, items });
     };
 
     const deleteInvoice = () => {
         const invoices = [...invoiceData];
         const index = invoices.findIndex(
-            (invoice: Props) => invoice.invoiceNumber === oldInvoiceNumber
+            (invoice: Data) => invoice.invoiceNumber === oldInvoiceNumber
         );
 
         invoices.splice(index, 1);
@@ -166,7 +169,7 @@ const EditInvoice = () => {
 
     const UpdateInvoice = () => {
         const newInvoice = invoiceData.map((data: any) => {
-            if (data.invoiceNumber === oldInvoiceNumber) return properties;
+            if (data.invoiceNumber === oldInvoiceNumber) return data;
             return data;
         });
 
@@ -179,7 +182,7 @@ const EditInvoice = () => {
 
     function calculateTotalPricePerItem(index: number) {
         const { qty, unitPrice, discountPercent, discountPerKg } =
-            properties.items[index];
+            data.items[index];
         const totalDiscountPercent =
             discountPercent > 0 ? (100 - discountPercent) / 100 : 1;
         const totalDiscountPerKg = discountPerKg * qty;
@@ -197,12 +200,9 @@ const EditInvoice = () => {
                             autoFocus
                             variant="filled"
                             label="Invoice No"
-                            value={properties.invoiceNumber}
+                            value={data.invoiceNumber}
                             onChange={(e) =>
-                                handleProperties(
-                                    'invoiceNumber',
-                                    e.target.value
-                                )
+                                handleData('invoiceNumber', e.target.value)
                             }
                         />
                     </Grid>
@@ -215,9 +215,9 @@ const EditInvoice = () => {
                             <Select
                                 variant="filled"
                                 labelId="invoice-type"
-                                value={properties.invoiceType}
+                                value={data.invoiceType}
                                 onChange={(e: SelectChangeEvent) =>
-                                    handleProperties(
+                                    handleData(
                                         'invoiceType',
                                         e.target.value as string
                                     )
@@ -235,7 +235,7 @@ const EditInvoice = () => {
                             type="number"
                             variant="filled"
                             label="Customer Id"
-                            value={properties.customer.id}
+                            value={data.customer.id}
                             onChange={(e) => {
                                 handleCustomer('id', e.target.value);
                                 SearchCustomerById(e.target.value);
@@ -248,7 +248,7 @@ const EditInvoice = () => {
                             disabled
                             variant="filled"
                             label="Name"
-                            value={properties.customer.fullName}
+                            value={data.customer.fullName}
                         />
                     </Grid>
 
@@ -257,7 +257,7 @@ const EditInvoice = () => {
                             disabled
                             variant="filled"
                             label="Address"
-                            value={properties.customer.address}
+                            value={data.customer.address}
                         />
                     </Grid>
 
@@ -266,7 +266,7 @@ const EditInvoice = () => {
                             disabled
                             variant="filled"
                             label=" Tax Id (NPWP)"
-                            value={properties.customer.taxId}
+                            value={data.customer.taxId}
                         />
                     </Grid>
 
@@ -275,14 +275,14 @@ const EditInvoice = () => {
                             disabled
                             variant="filled"
                             label="Id Number (NIK)"
-                            value={properties.customer.idNumber}
+                            value={data.customer.idNumber}
                         />
                     </Grid>
                 </Grid>
 
                 <p className="mb-10">Item(s)</p>
 
-                {properties.items.map((_: any, index: number) => {
+                {data.items.map((_: any, index: number) => {
                     return (
                         <Grid
                             container
@@ -296,7 +296,7 @@ const EditInvoice = () => {
                                     label="Item Id"
                                     variant="filled"
                                     className="w-100"
-                                    value={properties.items[index].id}
+                                    value={data.items[index].id}
                                     onChange={(e) => {
                                         handleItems(
                                             'id',
@@ -313,7 +313,7 @@ const EditInvoice = () => {
                                     variant="filled"
                                     label="Quantity"
                                     className="w-100"
-                                    value={properties.items[index].qty}
+                                    value={data.items[index].qty}
                                     onChange={(e) => {
                                         handleItems(
                                             'qty',
@@ -330,7 +330,7 @@ const EditInvoice = () => {
                                     variant="filled"
                                     label="Item Name"
                                     className="w-100"
-                                    value={properties.items[index].itemName}
+                                    value={data.items[index].itemName}
                                 />
                             </Grid>
                             <Grid item xs={2}>
@@ -339,9 +339,7 @@ const EditInvoice = () => {
                                     variant="filled"
                                     className="w-100"
                                     label="Unit of Measure"
-                                    value={
-                                        properties.items[index].unitOfMeasure
-                                    }
+                                    value={data.items[index].unitOfMeasure}
                                 />
                             </Grid>
                             <Grid item xs={2}>
@@ -350,7 +348,7 @@ const EditInvoice = () => {
                                     variant="filled"
                                     className="w-100"
                                     label="Unit Price"
-                                    value={properties.items[
+                                    value={data.items[
                                         index
                                     ].unitPrice.toLocaleString('id-ID')}
                                 />
@@ -361,9 +359,7 @@ const EditInvoice = () => {
                                     variant="filled"
                                     className="w-100"
                                     label="Discount (%)"
-                                    value={
-                                        properties.items[index].discountPercent
-                                    }
+                                    value={data.items[index].discountPercent}
                                     onChange={(e) => {
                                         handleItems(
                                             'discountPercent',
@@ -380,9 +376,7 @@ const EditInvoice = () => {
                                     variant="filled"
                                     className="w-100"
                                     label="Discount Each Kg"
-                                    value={
-                                        properties.items[index].discountPerKg
-                                    }
+                                    value={data.items[index].discountPerKg}
                                     onChange={(e) => {
                                         handleItems(
                                             'discountPerKg',
@@ -399,7 +393,7 @@ const EditInvoice = () => {
                                     variant="filled"
                                     className="w-100"
                                     label="Total Price"
-                                    value={properties.items[
+                                    value={data.items[
                                         index
                                     ].totalPrice.toLocaleString('id-ID')}
                                 />
