@@ -73,7 +73,8 @@ const Invoices = ({}: any) => {
                                             }
                                         >
                                             <TableCell key="invoiceNumber">
-                                                {item['invoiceNumber']}
+                                                {item['invoiceType'] +
+                                                    item['invoiceNumber']}
                                             </TableCell>
                                             <TableCell key="customer">
                                                 {item.customer['fullName']}
