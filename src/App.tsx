@@ -5,6 +5,7 @@ import Items from './components/items.component';
 import Setup from './components/setup.component';
 import AppLayout from './components/app.component';
 import Navbar from './components/navbar.component';
+import Preview from './components/preview.component';
 import Invoices from './components/invoices.component';
 import Customers from './components/customers.component';
 import EditInvoice from './components/edit-invoice.component';
@@ -25,6 +26,7 @@ export default function App() {
                 <Route path="/invoices" element={<Invoices />} />
                 <Route path="/invoices/:id" element={<EditInvoice />} />
                 <Route path="/items" element={<Items />} />
+                <Route path="/preview" element={<Preview />} />
             </Routes>
         </HashRouter>
     );
