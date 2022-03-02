@@ -20,6 +20,7 @@ import {
     SaveIcon,
     CloseIcon,
     DeleteIcon,
+    PrintIcon,
 } from '../lib/icons.component';
 import { readFile, writeFile } from '../lib/file-operation.lib';
 
