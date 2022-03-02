@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { executePython } from '../lib/executePy.lib';
 import { createFolder } from '../lib/file-operation.lib';
-const fs = window.require('fs').promises;
 const xlsx = window.require('exceljs');
 
 // eslint-disable-next-line
