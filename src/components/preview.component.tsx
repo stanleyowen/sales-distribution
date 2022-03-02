@@ -13,7 +13,7 @@ const Preview = ({}: any) => {
             // Get parent directory of the file
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
             createFolder(dir, '/tmp/', () => {
-                executePython();
+                executePython(localStorage.getItem('excel-template') ?? '');
             });
             callback(worksheet);
         });
