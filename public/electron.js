@@ -1,32 +1,24 @@
 const path = require('path');
+const Store = require('electron-store');
 const isDev = require('electron-is-dev');
 const { app, BrowserWindow, ipcMain } = require('electron');
-const Store = require('electron-store');
 
 let mainWindow;
 let store = new Store();
 
 function createWindow() {
     function setLocalStorageDatabase() {
-        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
+        [
             'customer-database',
-            ${JSON.stringify(store.get('customer-database'))})`);
-
-        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
             'item-database',
-            ${JSON.stringify(store.get('item-database'))})`);
-
-        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
             'invoice-database',
-            ${JSON.stringify(store.get('invoice-database'))})`);
-
-        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
-                'excel-template',
-                ${JSON.stringify(store.get('excel-template'))})`);
-
-        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
-                'script-py',
-                ${JSON.stringify(store.get('script-py'))})`);
+            'excel-template',
+            'script-py',
+        ].forEach((key) => {
+            mainWindow.webContents.executeJavaScript(`localStorage.setItem(
+                '${key}',
+                ${JSON.stringify(store.get(key))})`);
+        });
     }
 
     mainWindow = new BrowserWindow({
