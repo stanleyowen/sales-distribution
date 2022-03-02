@@ -43,7 +43,7 @@ function createWindow() {
 
     setLocalStorageDatabase();
 
-    ipcMain.on('store-data', (e, arg) => {
+    ipcMain.on('store-data', (_, arg) => {
         const { id, value } = JSON.parse(arg);
         store.set(id, value);
         setLocalStorageDatabase();
