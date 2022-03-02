@@ -69,7 +69,10 @@ const Invoices = ({}: any) => {
                                             key={item.id}
                                             hover
                                             onClick={() =>
-                                                (window.location.hash = `/invoices/${item.invoiceNumber}`)
+                                                (window.location.hash = `/invoices/${
+                                                    item.invoiceType +
+                                                    item.invoiceNumber
+                                                }`)
                                             }
                                         >
                                             <TableCell key="invoiceNumber">

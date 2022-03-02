@@ -113,7 +113,8 @@ const EditInvoice = () => {
 
         readFile(localStorage.getItem('invoice-database'), (data: any) => {
             const invoice = JSON.parse(data).find(
-                (invoice: any) => invoice.invoiceNumber === id
+                (invoice: any) =>
+                    invoice.invoiceType + invoice.invoiceNumber === id
             );
 
             setInvoiceData(JSON.parse(data));
@@ -481,6 +482,15 @@ const EditInvoice = () => {
                     onClick={() => AddItem()}
                 >
                     Add Items
+                </Button>
+
+                <Button
+                    variant="contained"
+                    className="w-100 mb-10"
+                    startIcon={<PrintIcon />}
+                    onClick={() => (window.location.hash = `/preview/${id}`)}
+                >
+                    Print
                 </Button>
 
                 <Grid container spacing={2}>
