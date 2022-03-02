@@ -29,6 +29,9 @@ const Setup = () => {
         const itemDatabaseFiles = document.getElementById(
             'upload-item-database'
         ) as any;
+        const executePyFile = document.getElementById(
+            'upload-script-py'
+        ) as any;
 
         if (customerDatabaseFiles.files.length > 0) {
             ipcRenderer.send(
@@ -66,6 +69,16 @@ const Setup = () => {
                 JSON.stringify({
                     id: 'invoice-database',
                     value: invoiceDatabaseFiles.files[0].path,
+                })
+            );
+        }
+
+        if (executePyFile.files.length > 0) {
+            ipcRenderer.send(
+                'store-data',
+                JSON.stringify({
+                    id: 'script-py',
+                    value: executePyFile.files[0].path,
                 })
             );
         }
@@ -156,6 +169,26 @@ const Setup = () => {
                         component="span"
                         className="ml-10"
                         onClick={() => OpenFilePath('item-database')}
+                    >
+                        <FileIcon />
+                    </Button>
+                </Grid>
+
+                <Grid item xs={7}>
+                    Executeable Script <i>(.py)</i>
+                </Grid>
+                <Grid item xs={5}>
+                    <label htmlFor="upload-script-py">
+                        <Input id="upload-script-py" type="file" />
+                        <Button variant="contained" component="span">
+                            <UploadIcon />
+                        </Button>
+                    </label>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        className="ml-10"
+                        onClick={() => OpenFilePath('script-py')}
                     >
                         <FileIcon />
                     </Button>

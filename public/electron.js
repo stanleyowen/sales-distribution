@@ -23,6 +23,10 @@ function createWindow() {
         mainWindow.webContents.executeJavaScript(`localStorage.setItem(
                 'excel-template',
                 ${JSON.stringify(store.get('excel-template'))})`);
+
+        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
+                'script-py',
+                ${JSON.stringify(store.get('script-py'))})`);
     }
 
     mainWindow = new BrowserWindow({
