@@ -20,6 +20,9 @@ const Setup = () => {
         const invoiceDatabaseFiles = document.getElementById(
             'upload-invoice-database'
         ) as any;
+        const itemExcelFiles = document.getElementById(
+            'upload-excel-template'
+        ) as any;
         const customerDatabaseFiles = document.getElementById(
             'upload-customer-database'
         ) as any;
@@ -33,6 +36,16 @@ const Setup = () => {
                 JSON.stringify({
                     id: 'customer-database',
                     value: customerDatabaseFiles.files[0].path,
+                })
+            );
+        }
+
+        if (itemExcelFiles.files.length > 0) {
+            ipcRenderer.send(
+                'store-data',
+                JSON.stringify({
+                    id: 'excel-template',
+                    value: itemExcelFiles.files[0].path,
                 })
             );
         }
@@ -83,6 +96,26 @@ const Setup = () => {
                         component="span"
                         className="ml-10"
                         onClick={() => OpenFilePath('invoice-database')}
+                    >
+                        <FileIcon />
+                    </Button>
+                </Grid>
+
+                <Grid item xs={7}>
+                    Excel Template <i>(.xlsx, .xls)</i>
+                </Grid>
+                <Grid item xs={5}>
+                    <label htmlFor="upload-excel-template">
+                        <Input id="upload-excel-template" type="file" />
+                        <Button variant="contained" component="span">
+                            <UploadIcon />
+                        </Button>
+                    </label>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        className="ml-10"
+                        onClick={() => OpenFilePath('excel-template')}
                     >
                         <FileIcon />
                     </Button>

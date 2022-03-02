@@ -19,6 +19,10 @@ function createWindow() {
         mainWindow.webContents.executeJavaScript(`localStorage.setItem(
             'invoice-database',
             ${JSON.stringify(store.get('invoice-database'))})`);
+
+        mainWindow.webContents.executeJavaScript(`localStorage.setItem(
+                'excel-template',
+                ${JSON.stringify(store.get('excel-template'))})`);
     }
 
     mainWindow = new BrowserWindow({
