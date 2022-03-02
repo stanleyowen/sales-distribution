@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { executePython } from '../lib/executePy.lib';
 import { createFolder } from '../lib/file-operation.lib';
 const fs = window.require('fs').promises;
 const xlsx = window.require('exceljs');
-const aspose: any = {};
-aspose.cells = window.require('aspose.cells');
 
 // eslint-disable-next-line
 const Preview = ({}: any) => {
@@ -15,8 +14,7 @@ const Preview = ({}: any) => {
             // Get parent directory of the file
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
             createFolder(dir, '/tmp/', () => {
-                const wb = aspose.cells.Workbook(filePath);
-                wb.save(`${dir}/tmp/output.html`);
+                executePython();
             });
             callback(worksheet);
         });
