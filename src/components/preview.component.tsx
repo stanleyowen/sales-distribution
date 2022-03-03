@@ -7,6 +7,8 @@ const xlsx = window.require('exceljs');
 // eslint-disable-next-line
 const Preview = ({}: any) => {
     const { id } = useParams();
+    const [path, setPath] = useState<string>('');
+
     function readExcelFile(filePath: string, callback: any) {
         const workbook = new xlsx.Workbook();
         workbook.xlsx.readFile(filePath).then(() => {
@@ -19,7 +21,8 @@ const Preview = ({}: any) => {
                     createFolder(dir, '/tmp/', () => {
                         executePython(
                             localStorage.getItem('excel-template') ?? '',
-                            id
+                            id,
+                            (path: string) => setPath(path)
                         );
                     });
                 })
@@ -33,7 +36,23 @@ const Preview = ({}: any) => {
     readExcelFile(localStorage.getItem('excel-template') ?? '', (data: any) => {
         console.log(data);
     });
-    return <div>Preview</div>;
+
+    return (
+        <div>
+            {path ? (
+                <object
+                    data={`file:///${path}`}
+                    type="application/pdf"
+                    width="500"
+                    height="678"
+                >
+                    <iframe src={`file:///${path}`} width="500" height="678">
+                        <p>App aren&#39;t able to preview converted PDF!</p>
+                    </iframe>
+                </object>
+            ) : null}
+        </div>
+    );
 };
 
 export default Preview;
