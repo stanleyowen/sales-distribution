@@ -2,8 +2,8 @@
 
 _Personal Information Collection_
 
-Birthday Platform collects and stores information to provide our services.
+SD App doesn't collect and store users information.
 
 _Non-Personal Information Collection_
 
-Birthday Platform collects and stores data which are useful for logging, bugs, and fix crashes. All information sent is anonymous and free of any user or contextual data.
+SD App doesn't collect and store non-personal data.
