@@ -1,11 +1,11 @@
 const { PythonShell } = window.require('python-shell');
 
-export function executePython(filePath, fileName) {
+export function executePython(filePath, fileName, callback) {
     const pyShell = new PythonShell(localStorage.getItem('script-py'));
     pyShell.send(filePath);
     pyShell.send(fileName);
-    pyShell.on('message', (message) => {
-        console.log(message);
+    pyShell.on('message', (outputPath) => {
+        callback(outputPath);
     });
     pyShell.end((err) => {
         if (err) throw err;
