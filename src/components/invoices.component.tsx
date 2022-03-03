@@ -33,7 +33,7 @@ const Invoices = () => {
     useEffect(
         () =>
             readFile(localStorage.getItem('invoice-database'), (data: any) =>
-                setData(JSON.parse(data))
+                setData(JSON.parse(data).reverse())
             ),
         []
     );

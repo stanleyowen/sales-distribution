@@ -243,7 +243,7 @@ const Items = () => {
                             className="w-100 border-box mb-10"
                         >
                             Item Id {itemData.id} already exists. Please try
-                            another Item Id.
+                            another Id.
                         </Alert>
                     ) : null}
                     {Object.keys(columns).map((_, index: number) => {
@@ -252,7 +252,11 @@ const Items = () => {
                             <TextField
                                 fullWidth
                                 id={id}
-                                type={label === 'Id' ? 'number' : 'text'}
+                                type={
+                                    id === 'id' || id === 'unitPrice'
+                                        ? 'number'
+                                        : 'text'
+                                }
                                 key={index}
                                 label={label}
                                 margin="dense"
