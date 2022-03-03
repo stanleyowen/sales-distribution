@@ -86,10 +86,12 @@ const Items = ({}: any) => {
 
     const addItemData = () => {
         if (itemData?.properties?.isUpdate) {
-            const newData = data.map((item: ItemData) => {
-                if (item.id === itemData.id) return itemData;
-                return item;
-            });
+            const newData = data
+                .map((item: ItemData) => {
+                    if (item.id === itemData.id) return itemData;
+                    return item;
+                })
+                .sort((a: ItemData, b: ItemData) => a.id - b.id);
 
             delete itemData.properties;
 
@@ -99,11 +101,17 @@ const Items = ({}: any) => {
                 (res: string) => console.log(res)
             );
         } else {
+            const sortedData = JSON.stringify(
+                [...data, itemData].sort(
+                    (a: ItemData, b: ItemData) => a.id - b.id
+                )
+            );
+
             delete itemData.properties;
 
             writeFile(
                 localStorage.getItem('item-database'),
-                JSON.stringify([...data, itemData]),
+                sortedData,
                 (res: string) => console.log(res)
             );
         }
