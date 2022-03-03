@@ -33,9 +33,14 @@ const Preview = ({}: any) => {
         });
     }
 
-    readExcelFile(localStorage.getItem('excel-template') ?? '', (data: any) => {
-        console.log(data);
-    });
+    useEffect(() => {
+        readExcelFile(
+            localStorage.getItem('excel-template') ?? '',
+            (data: any) => {
+                console.log(data);
+            }
+        );
+    }, []);
 
     return (
         <div>
