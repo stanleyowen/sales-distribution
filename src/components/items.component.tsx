@@ -5,6 +5,7 @@ import {
     Table,
     Dialog,
     Button,
+    Tooltip,
     TableRow,
     TableBody,
     TableCell,
@@ -271,9 +272,17 @@ const Items = () => {
                 </DialogContent>
                 <DialogActions>
                     {itemData?.properties?.isUpdate ? (
-                        <Button onClick={() => DeleteItemData()} color="error">
-                            Delete
-                        </Button>
+                        <Tooltip
+                            placement="top"
+                            title="Double Click the Button to Delete the Item"
+                        >
+                            <Button
+                                onDoubleClick={() => DeleteItemData()}
+                                color="error"
+                            >
+                                Delete
+                            </Button>
+                        </Tooltip>
                     ) : null}
                     <Button onClick={() => closeItemDialog()}>Cancel</Button>
                     <Button onClick={() => addItemData()}>

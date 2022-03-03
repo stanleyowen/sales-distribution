@@ -4,6 +4,7 @@ import {
     Table,
     Dialog,
     Button,
+    Tooltip,
     TableRow,
     TableBody,
     TableCell,
@@ -242,12 +243,17 @@ const Customers = () => {
                 </DialogContent>
                 <DialogActions>
                     {customerData?.properties?.isUpdate ? (
-                        <Button
-                            onClick={() => DeleteCustomerData()}
-                            color="error"
+                        <Tooltip
+                            placement="top"
+                            title="Double Click the Button to Delete Customer Data"
                         >
-                            Delete
-                        </Button>
+                            <Button
+                                onDoubleClick={() => DeleteCustomerData()}
+                                color="error"
+                            >
+                                Delete
+                            </Button>
+                        </Tooltip>
                     ) : null}
                     <Button onClick={() => closeCustomerDialog()}>
                         Cancel
