@@ -28,7 +28,7 @@ import { readFile, writeFile, openFilePath } from '../lib/file-operation.lib';
 
 type Data = {
     invoiceNumber: number;
-    invoiceType: 'Auto' | 'A' | 'BC' | '';
+    invoiceType: '00' | 'A00' | 'BC000' | 'D00' | 'E00' | '';
     customer: {
         id: number;
         fullName: string;
@@ -290,9 +290,11 @@ const EditInvoice = () => {
                                     )
                                 }
                             >
-                                <MenuItem value="Auto">Auto</MenuItem>
-                                <MenuItem value="A">A</MenuItem>
-                                <MenuItem value="BC">BC</MenuItem>
+                                <MenuItem value="00">00</MenuItem>
+                                <MenuItem value="A00">A00</MenuItem>
+                                <MenuItem value="BC000">BC000</MenuItem>
+                                <MenuItem value="D00">D00</MenuItem>
+                                <MenuItem value="E00">E00</MenuItem>
                             </Select>
                         </FormControl>
                     </Grid>

@@ -7,7 +7,7 @@ const xlsx = window.require('exceljs');
 
 type Data = {
     invoiceNumber: number;
-    invoiceType: 'Auto' | 'A' | 'BC' | '';
+    invoiceType: '00' | 'A00' | 'BC000' | 'D00' | 'E00' | '';
     customer: {
         id: number;
         fullName: string;
@@ -61,13 +61,16 @@ const Preview = () => {
     function readExcelFile(filePath: string, callback: any) {
         const workbook = new xlsx.Workbook();
         workbook.xlsx.readFile(filePath).then(() => {
-            const worksheet = workbook.getWorksheet(1);
+            const template = workbook.worksheets[0];
+            const config = workbook.worksheets[1];
 
-            worksheet.getCell('G1').value =
+            config.getCell('C2').value = data.invoiceType;
+
+            template.getCell('G1').value =
                 data.invoiceType + data.invoiceNumber;
-            worksheet.getCell('F4').value = data.customer.fullName;
-            worksheet.getCell('F5').value = data.customer.address;
-            worksheet.getCell('F6').value =
+            template.getCell('F4').value = data.customer.fullName;
+            template.getCell('F5').value = data.customer.address;
+            template.getCell('F6').value =
                 data.customer.idNumber + ' / ' + data.customer.taxId;
 
             // =IF(ISBLANK(B8);"";ROUND((C8*E8*(1-F8))+(-G8*C8);0))
@@ -75,25 +78,25 @@ const Preview = () => {
             data.items.map((item: any, col: number) => {
                 const row = col + 8;
 
-                worksheet.getCell('A' + row).alignment = {
+                template.getCell('A' + row).alignment = {
                     horizontal: 'center',
                 };
-                worksheet.getCell('C' + row).alignment = {
+                template.getCell('C' + row).alignment = {
                     horizontal: 'right',
                 };
                 ['B', 'D', 'E', 'F', 'G', 'H'].map((cell: string) => {
-                    worksheet.getCell(cell + row).alignment = {
+                    template.getCell(cell + row).alignment = {
                         horizontal: 'left',
                     };
                 });
 
-                worksheet.getCell('B' + row).value = item.itemName;
-                worksheet.getCell('C' + row).value = item.qty;
-                worksheet.getCell('D' + row).value = item.unitOfMeasure;
-                worksheet.getCell('E' + row).value = item.unitPrice;
-                worksheet.getCell('F' + row).value = item.discountPercent / 100;
-                worksheet.getCell('G' + row).value = item.discountPerKg;
-                worksheet.getCell('H' + row).value = item.totalPrice;
+                template.getCell('B' + row).value = item.itemName;
+                template.getCell('C' + row).value = item.qty;
+                template.getCell('D' + row).value = item.unitOfMeasure;
+                template.getCell('E' + row).value = item.unitPrice;
+                template.getCell('F' + row).value = item.discountPercent / 100;
+                template.getCell('G' + row).value = item.discountPerKg;
+                template.getCell('H' + row).value = item.totalPrice;
             });
 
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
@@ -110,7 +113,7 @@ const Preview = () => {
                 .catch((err: any) => {
                     throw err;
                 });
-            callback(worksheet);
+            callback(template);
         });
     }
 
