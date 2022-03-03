@@ -4,10 +4,55 @@ import { executePython } from '../lib/executePy.lib';
 import { createFolder } from '../lib/file-operation.lib';
 const xlsx = window.require('exceljs');
 
+type Data = {
+    invoiceNumber: number;
+    invoiceType: 'Auto' | 'A' | 'BC' | '';
+    customer: {
+        id: number;
+        fullName: string;
+        address: string;
+        idNumber: string;
+        taxId: string;
+    };
+    items: any;
+};
+
+type Props = {
+    isLoadingData: boolean;
+    isConverting: boolean;
+};
+
 // eslint-disable-next-line
 const Preview = ({}: any) => {
     const { id } = useParams();
+    const [properties, setProps] = useState<Props>({
+        isLoadingData: true,
+        isConverting: true,
+    });
     const [path, setPath] = useState<string>('');
+    const [data, setData] = useState<Data>({
+        invoiceNumber: 0,
+        invoiceType: '',
+        customer: {
+            id: 0,
+            fullName: '',
+            address: '',
+            idNumber: '',
+            taxId: '',
+        },
+        items: [
+            {
+                id: 0,
+                qty: 0,
+                itemName: '',
+                unitPrice: 0,
+                totalPrice: 0,
+                discountPerKg: 0,
+                discountPercent: 0,
+                unitOfMeasure: '',
+            },
+        ],
+    });
 
     function readExcelFile(filePath: string, callback: any) {
         const workbook = new xlsx.Workbook();
