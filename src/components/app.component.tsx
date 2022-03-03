@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import {
     TextField,
     Grid,
@@ -131,7 +131,12 @@ const App = () => {
             writeFile(
                 localStorage.getItem('invoice-database'),
                 JSON.stringify([...JSON.parse(invoice), properties]),
-                (res: string) => console.log(res)
+                (res: string) => {
+                    console.log(res);
+                    window.location.hash = `/preview/${
+                        properties.invoiceType + properties.invoiceNumber
+                    }`;
+                }
             );
         });
     };
