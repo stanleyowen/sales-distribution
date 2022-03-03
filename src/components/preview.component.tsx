@@ -97,14 +97,17 @@ const Preview = ({}: any) => {
 
             handleProperties('isLoadingData', false);
         });
-
-        readExcelFile(
-            localStorage.getItem('excel-template') ?? '',
-            (data: any) => {
-                console.log(data);
-            }
-        );
     }, []);
+
+    useEffect(() => {
+        if (!properties.isLoadingData)
+            readExcelFile(
+                localStorage.getItem('excel-template') ?? '',
+                (data: any) => {
+                    console.log(data);
+                }
+            );
+    }, [properties.isLoadingData]);
 
     return (
         <div>
