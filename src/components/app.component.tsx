@@ -28,6 +28,7 @@ type Props = {
 // eslint-disable-next-line
 const App = () => {
     const [itemData, setItemData] = useState<Array<any>>([]);
+    const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
     const [properties, setProps] = useState<Props>({
         invoiceNumber: '',
@@ -79,10 +80,28 @@ const App = () => {
             setItemData(JSON.parse(data))
         );
 
+        readFile(localStorage.getItem('invoice-database'), (data: any) =>
+            setInvoiceData(JSON.parse(data))
+        );
+
         readFile(localStorage.getItem('customer-database'), (data: any) =>
             setCustomerData(JSON.parse(data))
         );
     }, []); // eslint-disable-line
+
+    useEffect(() => {
+        if (invoiceData.length > 0) {
+            const invoiceType: any[] = invoiceData.filter(
+                (invoice: any) => invoice.invoiceType === properties.invoiceType
+            );
+            if (invoiceType.length > 0) {
+                const { invoiceNumber } = invoiceType.sort(
+                    (a: any, b: any) => b.invoiceNumber - a.invoiceNumber
+                )[0];
+                handleProperties('invoiceNumber', parseInt(invoiceNumber) + 1);
+            }
+        }
+    }, [invoiceData, properties.invoiceType]);
 
     const SearchCustomerById = (id: string) => {
         customerData.forEach((customer: any) => {
