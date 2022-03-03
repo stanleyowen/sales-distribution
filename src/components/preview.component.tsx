@@ -16,12 +16,11 @@ const Preview = ({}: any) => {
             worksheet.getCell('H4').value = 'Abang Jago';
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
             workbook.xlsx
-                .writeFile(dir + '/tmp/' + id + '.xlsx')
+                .writeFile(dir + '\\tmp\\' + id + '.xlsx')
                 .then(() => {
-                    createFolder(dir, '/tmp/', () => {
+                    createFolder(dir, '\\tmp\\', () => {
                         executePython(
-                            localStorage.getItem('excel-template') ?? '',
-                            id,
+                            dir + '\\tmp\\' + id + '.xlsx',
                             (path: string) => setPath(path)
                         );
                     });
