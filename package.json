@@ -30,7 +30,6 @@
   "main": "public/electron.js",
   "homepage": "./",
   "scripts": {
-    "tauri": "tauri",
     "sass": "sass src/App.scss src/App.css",
     "sass-watch": "sass --watch src/App.scss src/App.css",
     "start": "yarn sass && react-scripts start",
