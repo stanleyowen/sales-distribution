@@ -19,16 +19,16 @@ type Props = {
 };
 
 // eslint-disable-next-line
-const Invoices = ({}: any) => {
+const Invoices = () => {
     const [data, setData] = useState<Array<any>>([]);
-    const [props, setProps] = useState<Props>({
+    const [properties, setProps] = useState<Props>({
         page: 0,
         rowsPerPage: 10,
         itemDialogIsOpen: false,
     });
 
     const handleProperties = (id: string, value: number | boolean) =>
-        setProps({ ...props, [id]: value });
+        setProps({ ...properties, [id]: value });
 
     useEffect(
         () =>
@@ -59,9 +59,9 @@ const Invoices = ({}: any) => {
                         {data.length > 0 ? (
                             data
                                 .slice(
-                                    props.page * props.rowsPerPage,
-                                    props.page * props.rowsPerPage +
-                                        props.rowsPerPage
+                                    properties.page * properties.rowsPerPage,
+                                    properties.page * properties.rowsPerPage +
+                                        properties.rowsPerPage
                                 )
                                 .map((item: any) => {
                                     return (
@@ -98,8 +98,8 @@ const Invoices = ({}: any) => {
 
             <TablePagination
                 component="div"
-                page={props.page}
-                rowsPerPage={props.rowsPerPage}
+                page={properties.page}
+                rowsPerPage={properties.rowsPerPage}
                 count={data.length ?? 0}
                 onPageChange={(_, newPage: number) => {
                     handleProperties('page', newPage);

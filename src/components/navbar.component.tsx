@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 
 // eslint-disable-next-line
-const Navbar = ({}: any) => {
+const Navbar = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">

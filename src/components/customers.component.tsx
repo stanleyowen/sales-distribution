@@ -35,9 +35,9 @@ type CustomerData = {
 };
 
 // eslint-disable-next-line
-const Customers = ({}: any) => {
+const Customers = () => {
     const [data, setData] = useState<Array<any>>([]);
-    const [props, setProps] = useState<Props>({
+    const [properties, setProps] = useState<Props>({
         page: 0,
         rowsPerPage: 10,
         customerDialogIsOpen: false,
@@ -54,7 +54,7 @@ const Customers = ({}: any) => {
     });
 
     const handleProperties = (id: string, value: number | boolean) =>
-        setProps({ ...props, [id]: value });
+        setProps({ ...properties, [id]: value });
     const handleCustomerData = (id: string, value: string | number) =>
         setCustomerData({ ...customerData, [id]: value });
 
@@ -164,9 +164,9 @@ const Customers = ({}: any) => {
                         {data.length > 0 ? (
                             data
                                 .slice(
-                                    props.page * props.rowsPerPage,
-                                    props.page * props.rowsPerPage +
-                                        props.rowsPerPage
+                                    properties.page * properties.rowsPerPage,
+                                    properties.page * properties.rowsPerPage +
+                                        properties.rowsPerPage
                                 )
                                 .map((customer: any) => {
                                     return (
@@ -200,8 +200,8 @@ const Customers = ({}: any) => {
 
             <TablePagination
                 component="div"
-                page={props.page}
-                rowsPerPage={props.rowsPerPage}
+                page={properties.page}
+                rowsPerPage={properties.rowsPerPage}
                 count={data.length ?? 0}
                 onPageChange={(_, newPage: number) => {
                     handleProperties('page', newPage);
@@ -214,7 +214,7 @@ const Customers = ({}: any) => {
 
             <Dialog
                 fullWidth
-                open={props.customerDialogIsOpen}
+                open={properties.customerDialogIsOpen}
                 onClose={() => closeCustomerDialog()}
             >
                 <DialogTitle>Update Customer&#39;s Details</DialogTitle>

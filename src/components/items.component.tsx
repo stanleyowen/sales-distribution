@@ -20,6 +20,7 @@ import { readFile, writeFile } from '../lib/file-operation.lib';
 type Props = {
     page: number;
     rowsPerPage: number;
+    isDuplicate: boolean;
     itemDialogIsOpen: boolean;
 };
 
@@ -33,11 +34,12 @@ type ItemData = {
 };
 
 // eslint-disable-next-line
-const Items = ({}: any) => {
+const Items = () => {
     const [data, setData] = useState<Array<any>>([]);
-    const [props, setProps] = useState<Props>({
+    const [properties, setProps] = useState<Props>({
         page: 0,
         rowsPerPage: 10,
+        isDuplicate: false,
         itemDialogIsOpen: false,
     });
     const [itemData, setItemData] = useState<ItemData>({
@@ -50,7 +52,7 @@ const Items = ({}: any) => {
     });
 
     const handleProperties = (id: string, value: number | boolean) =>
-        setProps({ ...props, [id]: value });
+        setProps({ ...properties, [id]: value });
     const handleItemData = (id: string, value: string | number) =>
         setItemData({ ...itemData, [id]: value });
 
@@ -164,9 +166,9 @@ const Items = ({}: any) => {
                         {data.length > 0 ? (
                             data
                                 .slice(
-                                    props.page * props.rowsPerPage,
-                                    props.page * props.rowsPerPage +
-                                        props.rowsPerPage
+                                    properties.page * properties.rowsPerPage,
+                                    properties.page * properties.rowsPerPage +
+                                        properties.rowsPerPage
                                 )
                                 .map((item: any) => {
                                     return (
@@ -205,8 +207,8 @@ const Items = ({}: any) => {
 
             <TablePagination
                 component="div"
-                page={props.page}
-                rowsPerPage={props.rowsPerPage}
+                page={properties.page}
+                rowsPerPage={properties.rowsPerPage}
                 count={data.length ?? 0}
                 onPageChange={(_, newPage: number) => {
                     handleProperties('page', newPage);
@@ -219,7 +221,7 @@ const Items = ({}: any) => {
 
             <Dialog
                 fullWidth
-                open={props.itemDialogIsOpen}
+                open={properties.itemDialogIsOpen}
                 onClose={() => closeItemDialog()}
             >
                 <DialogTitle>Update Item&#39;s Details</DialogTitle>

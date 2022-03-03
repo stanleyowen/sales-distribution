@@ -24,7 +24,7 @@ type Props = {
 };
 
 // eslint-disable-next-line
-const Preview = ({}: any) => {
+const Preview = () => {
     const { id } = useParams();
     const [properties, setProps] = useState<Props>({
         isLoadingData: true,

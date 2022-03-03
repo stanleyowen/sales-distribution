@@ -29,7 +29,7 @@ type Props = {
 const App = () => {
     const [itemData, setItemData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
-    const [properties, setProperties] = useState<Props>({
+    const [properties, setProps] = useState<Props>({
         invoiceNumber: '',
         invoiceType: '',
         customer: {
@@ -54,10 +54,10 @@ const App = () => {
     });
 
     const handleProperties = (id: string, value: string | number) =>
-        setProperties({ ...properties, [id]: value });
+        setProps({ ...properties, [id]: value });
 
     const handleCustomer = (id: string, value: string | number) =>
-        setProperties({
+        setProps({
             ...properties,
             customer: { ...properties.customer, [id]: value },
         });
@@ -65,7 +65,7 @@ const App = () => {
     const handleItems = (id: string, value: any, index: number) => {
         const items = [...properties.items];
         items[index][id] = isNaN(value) ? value : parseFloat(value);
-        setProperties({ ...properties, items });
+        setProps({ ...properties, items });
     };
 
     useEffect(() => {
@@ -87,7 +87,7 @@ const App = () => {
     const SearchCustomerById = (id: string) => {
         customerData.forEach((customer: any) => {
             if (customer.id === Number(id))
-                setProperties({ ...properties, customer });
+                setProps({ ...properties, customer });
         });
     };
 
@@ -100,7 +100,7 @@ const App = () => {
                     items[index]['totalPrice'] =
                         items[index].qty * items[index].unitPrice;
                 }
-                setProperties({ ...properties, items });
+                setProps({ ...properties, items });
             }
         });
     };
@@ -117,13 +117,13 @@ const App = () => {
             discountPercent: 0,
             unitOfMeasure: '',
         };
-        setProperties({ ...properties, items });
+        setProps({ ...properties, items });
     };
 
     const removeItem = (index: number) => {
         const items = [...properties.items];
         items.splice(index, 1);
-        setProperties({ ...properties, items });
+        setProps({ ...properties, items });
     };
 
     const SaveInvoice = () => {
