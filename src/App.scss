@@ -26,6 +26,10 @@ p {
     font-weight: normal;
 }
 
+.MuiTableRow-hover:hover {
+    cursor: pointer;
+}
+
 /* App Background */
 .backdrop {
     top: 0;
