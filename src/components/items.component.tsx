@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
+    Alert,
     Paper,
     Table,
     Dialog,
@@ -230,6 +231,15 @@ const Items = () => {
             >
                 <DialogTitle>Update Item&#39;s Details</DialogTitle>
                 <DialogContent>
+                    {properties.isDuplicate ? (
+                        <Alert
+                            severity="error"
+                            className="w-100 border-box mb-10"
+                        >
+                            Item Id {itemData.id} already exists. Please try
+                            another Item Id.
+                        </Alert>
+                    ) : null}
                     {Object.keys(columns).map((_, index: number) => {
                         const { id, label } = columns[index];
                         return (
