@@ -207,7 +207,7 @@ const Items = () => {
                                 })
                         ) : (
                             <TableRow>
-                                <TableCell colSpan={2}>
+                                <TableCell colSpan={4}>
                                     <LinearProgress />
                                 </TableCell>
                             </TableRow>
