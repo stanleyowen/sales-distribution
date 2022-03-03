@@ -63,10 +63,38 @@ const Preview = ({}: any) => {
         workbook.xlsx.readFile(filePath).then(() => {
             const worksheet = workbook.getWorksheet(1);
 
+            worksheet.getCell('G1').value =
+                data.invoiceType + data.invoiceNumber;
             worksheet.getCell('F4').value = data.customer.fullName;
             worksheet.getCell('F5').value = data.customer.address;
             worksheet.getCell('F6').value =
                 data.customer.idNumber + ' / ' + data.customer.taxId;
+
+            // =IF(ISBLANK(B8);"";ROUND((C8*E8*(1-F8))+(-G8*C8);0))
+
+            data.items.map((item: any, col: number) => {
+                const row = col + 8;
+
+                worksheet.getCell('A' + row).alignment = {
+                    horizontal: 'center',
+                };
+                worksheet.getCell('C' + row).alignment = {
+                    horizontal: 'right',
+                };
+                ['B', 'D', 'E', 'F', 'G', 'H'].map((cell: string) => {
+                    worksheet.getCell(cell + row).alignment = {
+                        horizontal: 'left',
+                    };
+                });
+
+                worksheet.getCell('B' + row).value = item.itemName;
+                worksheet.getCell('C' + row).value = item.qty;
+                worksheet.getCell('D' + row).value = item.unitOfMeasure;
+                worksheet.getCell('E' + row).value = item.unitPrice;
+                worksheet.getCell('F' + row).value = item.discountPercent / 100;
+                worksheet.getCell('G' + row).value = item.discountPerKg;
+                worksheet.getCell('H' + row).value = item.totalPrice;
+            });
 
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
             workbook.xlsx
