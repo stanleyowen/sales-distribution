@@ -45,6 +45,7 @@ const Preview = ({}: any) => {
                     type="application/pdf"
                     width="500"
                     height="678"
+                    className="w-100"
                 >
                     <iframe src={`file:///${path}`} width="500" height="678">
                         <p>App aren&#39;t able to preview converted PDF!</p>
