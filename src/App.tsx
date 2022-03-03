@@ -26,7 +26,7 @@ export default function App() {
                 <Route path="/invoices" element={<Invoices />} />
                 <Route path="/invoices/:id" element={<EditInvoice />} />
                 <Route path="/items" element={<Items />} />
-                <Route path="/preview" element={<Preview />} />
+                <Route path="/preview/:id" element={<Preview />} />
             </Routes>
         </HashRouter>
     );
