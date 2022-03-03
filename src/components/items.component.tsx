@@ -71,7 +71,11 @@ const Items = () => {
     }
 
     function closeItemDialog() {
-        handleProperties('itemDialogIsOpen', false);
+        setProps({
+            ...properties,
+            isDuplicate: false,
+            itemDialogIsOpen: false,
+        });
         setItemData({
             id: data?.length + 1,
             itemName: '',
@@ -104,9 +108,10 @@ const Items = () => {
                 (res: string) => console.log(res)
             );
         } else {
-            if (data.find((item: ItemData) => item.id == itemData.id))
+            if (data.find((item: ItemData) => item.id == itemData.id)) {
+                document.getElementById('id')?.focus();
                 return handleProperties('isDuplicate', true);
-            else {
+            } else {
                 const sortedData = JSON.stringify(
                     [...data, itemData].sort(
                         (a: ItemData, b: ItemData) => a.id - b.id
@@ -245,6 +250,7 @@ const Items = () => {
                         return (
                             <TextField
                                 fullWidth
+                                id={id}
                                 type={label === 'Id' ? 'number' : 'text'}
                                 key={index}
                                 label={label}
