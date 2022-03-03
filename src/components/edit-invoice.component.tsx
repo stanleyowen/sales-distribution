@@ -88,9 +88,9 @@ const EditInvoice = () => {
             customer: { ...data.customer, [id]: value },
         });
 
-    const handleItems = (id: string, value: string | number, index: number) => {
+    const handleItems = (id: string, value: any, index: number) => {
         const items = [...data.items];
-        items[index][id] = value;
+        items[index][id] = isNaN(value) ? value : parseFloat(value);
         setData({ ...data, items });
     };
 

@@ -62,9 +62,9 @@ const App = () => {
             customer: { ...properties.customer, [id]: value },
         });
 
-    const handleItems = (id: string, value: string | number, index: number) => {
+    const handleItems = (id: string, value: any, index: number) => {
         const items = [...properties.items];
-        items[index][id] = value;
+        items[index][id] = isNaN(value) ? value : parseFloat(value);
         setProperties({ ...properties, items });
     };
 
