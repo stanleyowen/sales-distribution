@@ -13,9 +13,19 @@ const Preview = ({}: any) => {
             const worksheet = workbook.getWorksheet(1);
             worksheet.getCell('H4').value = 'Abang Jago';
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
-            createFolder(dir, '/tmp/', () => {
-                executePython(localStorage.getItem('excel-template') ?? '');
-            });
+            workbook.xlsx
+                .writeFile(dir + '/tmp/' + id + '.xlsx')
+                .then(() => {
+                    createFolder(dir, '/tmp/', () => {
+                        executePython(
+                            localStorage.getItem('excel-template') ?? '',
+                            id
+                        );
+                    });
+                })
+                .catch((err: any) => {
+                    throw err;
+                });
             callback(worksheet);
         });
     }
