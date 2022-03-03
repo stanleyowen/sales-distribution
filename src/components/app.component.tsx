@@ -144,7 +144,7 @@ const App = () => {
         const totalDiscountPerKg = discountPerKg * qty;
         const totalPrice =
             qty * unitPrice * totalDiscountPercent - totalDiscountPerKg;
-        handleItems('totalPrice', totalPrice, index);
+        handleItems('totalPrice', Math.round(totalPrice), index);
     }
 
     return (
