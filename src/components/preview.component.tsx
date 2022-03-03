@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { executePython } from '../lib/executePy.lib';
 import { createFolder } from '../lib/file-operation.lib';
+import { readFile, writeFile } from '../lib/file-operation.lib';
 const xlsx = window.require('exceljs');
 
 type Data = {
@@ -54,11 +55,19 @@ const Preview = ({}: any) => {
         ],
     });
 
+    const handleProperties = (id: string, value: boolean) =>
+        setProps({ ...properties, [id]: value });
+
     function readExcelFile(filePath: string, callback: any) {
         const workbook = new xlsx.Workbook();
         workbook.xlsx.readFile(filePath).then(() => {
             const worksheet = workbook.getWorksheet(1);
-            worksheet.getCell('H4').value = 'Abang Jago';
+
+            worksheet.getCell('F4').value = data.customer.fullName;
+            worksheet.getCell('F5').value = data.customer.address;
+            worksheet.getCell('F6').value =
+                data.customer.idNumber + ' / ' + data.customer.taxId;
+
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
             workbook.xlsx
                 .writeFile(dir + '\\tmp\\' + id + '.xlsx')
@@ -78,6 +87,17 @@ const Preview = ({}: any) => {
     }
 
     useEffect(() => {
+        readFile(localStorage.getItem('invoice-database'), (data: any) => {
+            const invoice = JSON.parse(data).find(
+                (invoice: any) =>
+                    invoice.invoiceType + invoice.invoiceNumber === id
+            );
+
+            setData(invoice);
+
+            handleProperties('isLoadingData', false);
+        });
+
         readExcelFile(
             localStorage.getItem('excel-template') ?? '',
             (data: any) => {
