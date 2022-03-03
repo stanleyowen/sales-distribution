@@ -19,7 +19,7 @@ const Navbar = () => {
                         component="div"
                         sx={{ flexGrow: 1 }}
                     >
-                        Tax
+                        Sales & Distribution
                     </Typography>
                     <Button
                         color="inherit"

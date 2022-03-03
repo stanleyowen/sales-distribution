@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Items from './components/items.component';
