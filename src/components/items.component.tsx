@@ -103,19 +103,23 @@ const Items = () => {
                 (res: string) => console.log(res)
             );
         } else {
-            const sortedData = JSON.stringify(
-                [...data, itemData].sort(
-                    (a: ItemData, b: ItemData) => a.id - b.id
-                )
-            );
+            if (data.find((item: ItemData) => item.id == itemData.id))
+                return handleProperties('isDuplicate', true);
+            else {
+                const sortedData = JSON.stringify(
+                    [...data, itemData].sort(
+                        (a: ItemData, b: ItemData) => a.id - b.id
+                    )
+                );
 
-            delete itemData.properties;
+                delete itemData.properties;
 
-            writeFile(
-                localStorage.getItem('item-database'),
-                sortedData,
-                (res: string) => console.log(res)
-            );
+                writeFile(
+                    localStorage.getItem('item-database'),
+                    sortedData,
+                    (res: string) => console.log(res)
+                );
+            }
         }
 
         closeItemDialog();
