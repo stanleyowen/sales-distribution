@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
     Grid,
+    Alert,
     Button,
     Select,
     Dialog,
@@ -13,16 +14,17 @@ import {
     DialogContent,
     DialogActions,
     SelectChangeEvent,
-    Alert,
 } from '@mui/material';
 import {
     AddIcon,
     SaveIcon,
+    FileIcon,
+    ExcelIcon,
     CloseIcon,
     DeleteIcon,
     PrintIcon,
 } from '../lib/icons.component';
-import { readFile, writeFile } from '../lib/file-operation.lib';
+import { readFile, writeFile, openFilePath } from '../lib/file-operation.lib';
 
 type Data = {
     invoiceNumber: number;
@@ -231,6 +233,12 @@ const EditInvoice = () => {
             );
         }
     };
+
+    function RevealDocuments(type: 'xlsx' | 'pdf') {
+        const path = localStorage.getItem('excel-template');
+        const parentDir = path?.substring(0, path?.lastIndexOf('\\'));
+        openFilePath(parentDir + '\\tmp\\' + oldInvoiceNumber + '.' + type);
+    }
 
     function calculateTotalPricePerItem(index: number) {
         const { qty, unitPrice, discountPercent, discountPerKg } =
@@ -485,14 +493,40 @@ const EditInvoice = () => {
                     Add Items
                 </Button>
 
-                <Button
-                    variant="contained"
-                    className="w-100 mb-10"
-                    startIcon={<PrintIcon />}
-                    onClick={() => (window.location.hash = `/preview/${id}`)}
-                >
-                    Print
-                </Button>
+                <Grid container spacing={2}>
+                    <Grid item xs={4}>
+                        <Button
+                            variant="contained"
+                            className="w-100"
+                            startIcon={<FileIcon />}
+                            onClick={() => RevealDocuments('pdf')}
+                        >
+                            Reveal PDF
+                        </Button>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Button
+                            variant="contained"
+                            className="w-100"
+                            startIcon={<ExcelIcon />}
+                            onClick={() => RevealDocuments('xlsx')}
+                        >
+                            Reveal XLSX
+                        </Button>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Button
+                            variant="contained"
+                            className="w-100 mb-10"
+                            startIcon={<PrintIcon />}
+                            onClick={() =>
+                                (window.location.hash = `/preview/${id}`)
+                            }
+                        >
+                            Print
+                        </Button>
+                    </Grid>
+                </Grid>
 
                 <Grid container spacing={2}>
                     <Grid item xs={4}>
