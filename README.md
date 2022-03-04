@@ -1,6 +1,6 @@
 # Sales and Distribution
 
-![Birthday Platform](https://user-images.githubusercontent.com/69080584/139032160-7307faa1-530d-4249-b4ec-30f6ff3c8bc8.png)
+![Sales and Distribution](https://user-images.githubusercontent.com/69080584/156720933-b46a3dc6-dd20-441d-a3ac-a98a328dd49c.png)
 
 <hr />
 
