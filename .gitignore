@@ -18,6 +18,7 @@ debug.log
 db
 dist
 docs
+setup
 node_modules
 dist
 
