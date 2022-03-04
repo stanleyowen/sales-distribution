@@ -44,8 +44,17 @@
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron": "wait-on tcp:3000 && electron ."
   },
+  "license": "Apache-2.0",
   "build": {
+    "appId": "com.stanleyowen.sd",
     "productName": "SD App",
+    "copyright": "Copyright © 2022 Stanley Owen",
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "license": "./LICENSE.txt",
+      "allowToChangeInstallationDirectory": true
+    },
     "win": {
       "target": [
         {
