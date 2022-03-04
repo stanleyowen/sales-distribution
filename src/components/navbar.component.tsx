@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-    Box,
-    AppBar,
-    Toolbar,
-    IconButton,
-    Typography,
-    Button,
-} from '@mui/material';
+import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
 
 // eslint-disable-next-line
 const Navbar = () => {
