@@ -4,6 +4,7 @@ import {
     Table,
     Button,
     TableRow,
+    TableHead,
     TableBody,
     TableCell,
     TableContainer,
@@ -49,12 +50,14 @@ const Invoices = () => {
             </Button>
             <TableContainer component={Paper}>
                 <Table>
-                    <TableRow>
-                        <TableCell key="invoiceNumber">
-                            Invoice Number
-                        </TableCell>
-                        <TableCell key="customer">Customer Name</TableCell>
-                    </TableRow>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell key="invoiceNumber">
+                                Invoice Number
+                            </TableCell>
+                            <TableCell key="customer">Customer Name</TableCell>
+                        </TableRow>
+                    </TableHead>
                     <TableBody>
                         {data.length > 0 ? (
                             data

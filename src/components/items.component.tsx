@@ -7,6 +7,7 @@ import {
     Button,
     Tooltip,
     TableRow,
+    TableHead,
     TableBody,
     TableCell,
     TextField,
@@ -166,13 +167,15 @@ const Items = () => {
             </Button>
             <TableContainer component={Paper}>
                 <Table>
-                    <TableRow>
-                        {columns.map((column) => (
-                            <TableCell key={column.id}>
-                                {column.label}
-                            </TableCell>
-                        ))}
-                    </TableRow>
+                    <TableHead>
+                        <TableRow>
+                            {columns.map((column) => (
+                                <TableCell key={column.id}>
+                                    {column.label}
+                                </TableCell>
+                            ))}
+                        </TableRow>
+                    </TableHead>
                     <TableBody>
                         {data.length > 0 ? (
                             data
