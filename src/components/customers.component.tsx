@@ -102,20 +102,29 @@ const Customers = () => {
 
     const addCustomerData = () => {
         if (
-            customerData.taxId === '' ||
-            customerData.idNumber === '' ||
-            customerData.taxId?.length !== 16 ||
-            customerData.idNumber?.length !== 15
+            (customerData.taxId === '' && customerData.idNumber === '') ||
+            (customerData.taxId !== '' && customerData.taxId?.length !== 15) ||
+            (customerData.idNumber !== '' &&
+                customerData.idNumber?.length !== 16)
         )
             handleProperties('isNotValid', true);
         else {
-            if (customerData?.properties?.isUpdate) {
+            const newCustomerData = {
+                ...customerData,
+                idNumber:
+                    customerData.idNumber === '' ? '-' : customerData.idNumber,
+                taxId:
+                    customerData.taxId === ''
+                        ? '000000000000000'
+                        : customerData.taxId,
+            };
+            if (newCustomerData?.properties?.isUpdate) {
+                delete newCustomerData.properties;
+
                 const newData = data.map((item: CustomerData) => {
-                    if (item.id === customerData.id) return customerData;
+                    if (item.id === newCustomerData.id) return newCustomerData;
                     return item;
                 });
-
-                delete customerData.properties;
 
                 writeFile(
                     localStorage.getItem('customer-database'),
@@ -125,17 +134,17 @@ const Customers = () => {
             } else {
                 if (
                     data.find(
-                        (item: CustomerData) => item.id === customerData.id
+                        (item: CustomerData) => item.id === newCustomerData.id
                     )
                 ) {
                     document.getElementById('id')?.focus();
                     return handleProperties('isDuplicate', true);
                 } else {
-                    delete customerData.properties;
+                    delete newCustomerData?.properties;
 
                     writeFile(
                         localStorage.getItem('customer-database'),
-                        JSON.stringify([...data, customerData]),
+                        JSON.stringify(newCustomerData),
                         (res: string) => console.log(res)
                     );
                 }
