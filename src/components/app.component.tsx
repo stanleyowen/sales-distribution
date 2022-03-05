@@ -11,12 +11,12 @@ import {
     FormControl,
     SelectChangeEvent,
 } from '@mui/material';
-import { CheckAllRequiredFields } from '../lib/function.lib';
 import { readFile, writeFile } from '../lib/file-operation.lib';
 import { AddIcon, CloseIcon, SaveIcon } from '../lib/icons.component';
 
 type Props = {
     isNotValid: boolean;
+    isDuplicate: boolean;
 };
 type Data = {
     invoiceNumber: string;
@@ -38,6 +38,7 @@ const App = () => {
     const [customerData, setCustomerData] = useState<Array<any>>([]);
     const [properties, setProps] = useState<Props>({
         isNotValid: false,
+        isDuplicate: false,
     });
     const [data, setData] = useState<Data>({
         invoiceNumber: '',
@@ -167,25 +168,16 @@ const App = () => {
     };
 
     const SaveInvoice = () => {
-        CheckAllRequiredFields((isValid: boolean) => {
-            isValid
-                ? readFile(
-                      localStorage.getItem('invoice-database'),
-                      (invoice: any) => {
-                          writeFile(
-                              localStorage.getItem('invoice-database'),
-                              JSON.stringify([...JSON.parse(invoice), data]),
-                              (res: string) => {
-                                  console.log(res);
-                                  window.location.hash = `/preview/${
-                                      data.invoiceType + data.invoiceNumber
-                                  }`;
-                              }
-                          );
-                      }
-                  )
-                : handleProps('isNotValid', true);
-        });
+        writeFile(
+            localStorage.getItem('invoice-database'),
+            JSON.stringify([...invoiceData, data]),
+            (res: string) => {
+                console.log(res);
+                window.location.hash = `/preview/${
+                    data.invoiceType + data.invoiceNumber
+                }`;
+            }
+        );
     };
 
     function calculateTotalPricePerItem(index: number) {
