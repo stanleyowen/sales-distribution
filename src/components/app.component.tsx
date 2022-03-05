@@ -76,17 +76,23 @@ const App = () => {
                 input.classList.add('w-100');
             });
 
-        readFile(localStorage.getItem('item-database'), (data: any) =>
-            setItemData(JSON.parse(data))
-        );
+        localStorage.getItem('item-database')
+            ? readFile(localStorage.getItem('item-database'), (data: any) =>
+                  setItemData(JSON.parse(data))
+              )
+            : null;
 
-        readFile(localStorage.getItem('invoice-database'), (data: any) =>
-            setInvoiceData(JSON.parse(data))
-        );
+        localStorage.getItem('invoice-database')
+            ? readFile(localStorage.getItem('invoice-database'), (data: any) =>
+                  setInvoiceData(JSON.parse(data))
+              )
+            : null;
 
-        readFile(localStorage.getItem('customer-database'), (data: any) =>
-            setCustomerData(JSON.parse(data))
-        );
+        localStorage.getItem('customer-database')
+            ? readFile(localStorage.getItem('customer-database'), (data: any) =>
+                  setCustomerData(JSON.parse(data))
+              )
+            : null;
     }, []); // eslint-disable-line
 
     useEffect(() => {
