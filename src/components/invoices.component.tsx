@@ -66,10 +66,10 @@ const Invoices = () => {
                                     properties.page * properties.rowsPerPage +
                                         properties.rowsPerPage
                                 )
-                                .map((item: any) => {
+                                .map((item: any, index: number) => {
                                     return (
                                         <TableRow
-                                            key={item.id}
+                                            key={index}
                                             hover
                                             onClick={() =>
                                                 (window.location.hash = `/invoices/${

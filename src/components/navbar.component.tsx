@@ -30,13 +30,13 @@ const Navbar = () => {
                         color="inherit"
                         onClick={() => (window.location.hash = '/items')}
                     >
-                        Item DB
+                        Item
                     </Button>
                     <Button
                         color="inherit"
                         onClick={() => (window.location.hash = '/customers')}
                     >
-                        Customer DB
+                        Customer
                     </Button>
                     <Button
                         color="inherit"
