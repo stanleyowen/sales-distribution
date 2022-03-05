@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
+    Alert,
     Paper,
     Table,
     Dialog,
@@ -22,6 +23,7 @@ import { readFile, writeFile } from '../lib/file-operation.lib';
 type Props = {
     page: number;
     rowsPerPage: number;
+    isDuplicate: boolean;
     customerDialogIsOpen: boolean;
 };
 
@@ -42,6 +44,7 @@ const Customers = () => {
     const [properties, setProps] = useState<Props>({
         page: 0,
         rowsPerPage: 10,
+        isDuplicate: false,
         customerDialogIsOpen: false,
     });
     const [customerData, setCustomerData] = useState<CustomerData>({
@@ -108,13 +111,20 @@ const Customers = () => {
                 (res: string) => console.log(res)
             );
         } else {
-            delete customerData.properties;
+            if (
+                data.find((item: CustomerData) => item.id === customerData.id)
+            ) {
+                document.getElementById('id')?.focus();
+                return handleProperties('isDuplicate', true);
+            } else {
+                delete customerData.properties;
 
-            writeFile(
-                localStorage.getItem('customer-database'),
-                JSON.stringify([...data, customerData]),
-                (res: string) => console.log(res)
-            );
+                writeFile(
+                    localStorage.getItem('customer-database'),
+                    JSON.stringify([...data, customerData]),
+                    (res: string) => console.log(res)
+                );
+            }
         }
 
         closeCustomerDialog();
@@ -193,7 +203,7 @@ const Customers = () => {
                                 })
                         ) : (
                             <TableRow>
-                                <TableCell colSpan={5}>
+                                <TableCell colSpan={2}>
                                     <LinearProgress />
                                 </TableCell>
                             </TableRow>
@@ -221,50 +231,63 @@ const Customers = () => {
                 open={properties.customerDialogIsOpen}
                 onClose={() => closeCustomerDialog()}
             >
-                <DialogTitle>Update Customer&#39;s Details</DialogTitle>
-                <DialogContent>
-                    {Object.keys(columns).map((_, index: number) => {
-                        const { id, label } = columns[index];
-                        if (label == 'Id') return;
-                        else
-                            return (
-                                <TextField
-                                    fullWidth
-                                    type="text"
-                                    key={index}
-                                    label={label}
-                                    margin="dense"
-                                    variant="standard"
-                                    autoFocus={index === 1}
-                                    value={(customerData as any)[id]}
-                                    onChange={(e) =>
-                                        handleCustomerData(id, e.target.value)
-                                    }
-                                />
-                            );
-                    })}
-                </DialogContent>
-                <DialogActions>
-                    {customerData?.properties?.isUpdate ? (
-                        <Tooltip
-                            placement="top"
-                            title="Double Click the Button to Delete Customer Data"
-                        >
-                            <Button
-                                onDoubleClick={() => DeleteCustomerData()}
-                                color="error"
+                <form onSubmit={() => addCustomerData()}>
+                    <DialogTitle>Update Customer&#39;s Details</DialogTitle>
+                    <DialogContent>
+                        {Object.keys(columns).map((_, index: number) => {
+                            const { id, label } = columns[index];
+                            if (label == 'Id') return;
+                            else
+                                return (
+                                    <TextField
+                                        required={
+                                            id === 'fullName' ||
+                                            id === 'address'
+                                                ? true
+                                                : false
+                                        }
+                                        fullWidth
+                                        type="text"
+                                        key={index}
+                                        label={label}
+                                        margin="dense"
+                                        variant="standard"
+                                        autoFocus={index === 1}
+                                        value={(customerData as any)[id]}
+                                        onChange={(e) =>
+                                            handleCustomerData(
+                                                id,
+                                                e.target.value
+                                            )
+                                        }
+                                    />
+                                );
+                        })}
+                    </DialogContent>
+                    <DialogActions>
+                        {customerData?.properties?.isUpdate ? (
+                            <Tooltip
+                                placement="top"
+                                title="Double Click the Button to Delete Customer Data"
                             >
-                                Delete
-                            </Button>
-                        </Tooltip>
-                    ) : null}
-                    <Button onClick={() => closeCustomerDialog()}>
-                        Cancel
-                    </Button>
-                    <Button onClick={() => addCustomerData()}>
-                        {customerData?.properties?.isUpdate ? 'Update' : 'Add'}
-                    </Button>
-                </DialogActions>
+                                <Button
+                                    onDoubleClick={() => DeleteCustomerData()}
+                                    color="error"
+                                >
+                                    Delete
+                                </Button>
+                            </Tooltip>
+                        ) : null}
+                        <Button onClick={() => closeCustomerDialog()}>
+                            Cancel
+                        </Button>
+                        <Button type="submit">
+                            {customerData?.properties?.isUpdate
+                                ? 'Update'
+                                : 'Add'}
+                        </Button>
+                    </DialogActions>
+                </form>
             </Dialog>
         </div>
     );
