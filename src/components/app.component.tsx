@@ -31,7 +31,7 @@ const App = () => {
     const [itemData, setItemData] = useState<Array<any>>([]);
     const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
-    const [properties, setProps] = useState<Props>({
+    const [data, setData] = useState<Props>({
         invoiceNumber: '',
         invoiceType: '',
         customer: {
@@ -55,19 +55,19 @@ const App = () => {
         ],
     });
 
-    const handleProperties = (id: string, value: string | number) =>
-        setProps({ ...properties, [id]: value });
+    const handleData = (id: string, value: string | number) =>
+        setData({ ...data, [id]: value });
 
     const handleCustomer = (id: string, value: string | number) =>
-        setProps({
-            ...properties,
-            customer: { ...properties.customer, [id]: value },
+        setData({
+            ...data,
+            customer: { ...data.customer, [id]: value },
         });
 
     const handleItems = (id: string, value: any, index: number) => {
-        const items = [...properties.items];
+        const items = [...data.items];
         items[index][id] = isNaN(value) ? value : parseFloat(value);
-        setProps({ ...properties, items });
+        setData({ ...data, items });
     };
 
     useEffect(() => {
@@ -97,43 +97,42 @@ const App = () => {
     }, []); // eslint-disable-line
 
     useEffect(() => {
-        if (invoiceData.length > 0 && properties.invoiceType) {
+        if (invoiceData.length > 0 && data.invoiceType) {
             const invoiceType: any[] = invoiceData.filter(
-                (invoice: any) => invoice.invoiceType === properties.invoiceType
+                (invoice: any) => invoice.invoiceType === data.invoiceType
             );
             if (invoiceType.length > 0) {
                 const { invoiceNumber } = invoiceType.sort(
                     (a: any, b: any) => b.invoiceNumber - a.invoiceNumber
                 )[0];
-                handleProperties('invoiceNumber', parseInt(invoiceNumber) + 1);
+                handleData('invoiceNumber', parseInt(invoiceNumber) + 1);
             }
         }
-    }, [invoiceData, properties.invoiceType]);
+    }, [invoiceData, data.invoiceType]);
 
     const SearchCustomerById = (id: string) => {
         customerData.forEach((customer: any) => {
-            if (customer.id === Number(id))
-                setProps({ ...properties, customer });
+            if (customer.id === Number(id)) setData({ ...data, customer });
         });
     };
 
     const SearchItemById = (id: string, index: number) => {
         itemData.forEach((item: any) => {
             if (item.id === Number(id)) {
-                const items = [...properties.items];
+                const items = [...data.items];
                 items[index] = { ...items[index], ...item };
                 if (items[index].qty !== 0) {
                     items[index]['totalPrice'] =
                         items[index].qty * items[index].unitPrice;
                 }
-                setProps({ ...properties, items });
+                setData({ ...data, items });
             }
         });
     };
 
     const AddItem = () => {
-        const items = [...properties.items];
-        items[properties.items.length] = {
+        const items = [...data.items];
+        items[data.items.length] = {
             id: 0,
             qty: 0,
             itemName: '',
@@ -143,24 +142,24 @@ const App = () => {
             discountPercent: 0,
             unitOfMeasure: '',
         };
-        setProps({ ...properties, items });
+        setData({ ...data, items });
     };
 
     const removeItem = (index: number) => {
-        const items = [...properties.items];
+        const items = [...data.items];
         items.splice(index, 1);
-        setProps({ ...properties, items });
+        setData({ ...data, items });
     };
 
     const SaveInvoice = () => {
         readFile(localStorage.getItem('invoice-database'), (invoice: any) => {
             writeFile(
                 localStorage.getItem('invoice-database'),
-                JSON.stringify([...JSON.parse(invoice), properties]),
+                JSON.stringify([...JSON.parse(invoice), data]),
                 (res: string) => {
                     console.log(res);
                     window.location.hash = `/preview/${
-                        properties.invoiceType + properties.invoiceNumber
+                        data.invoiceType + data.invoiceNumber
                     }`;
                 }
             );
@@ -169,7 +168,7 @@ const App = () => {
 
     function calculateTotalPricePerItem(index: number) {
         const { qty, unitPrice, discountPercent, discountPerKg } =
-            properties.items[index];
+            data.items[index];
         const totalDiscountPercent =
             discountPercent > 0 ? (100 - discountPercent) / 100 : 1;
         const totalDiscountPerKg = discountPerKg * qty;
@@ -190,9 +189,9 @@ const App = () => {
                                     autoFocus
                                     variant="filled"
                                     label="Invoice No"
-                                    value={properties.invoiceNumber}
+                                    value={data.invoiceNumber}
                                     onChange={(e) =>
-                                        handleProperties(
+                                        handleData(
                                             'invoiceNumber',
                                             e.target.value
                                         )
@@ -209,9 +208,9 @@ const App = () => {
                                         required
                                         variant="filled"
                                         labelId="invoice-type"
-                                        value={properties.invoiceType}
+                                        value={data.invoiceType}
                                         onChange={(e: SelectChangeEvent) =>
-                                            handleProperties(
+                                            handleData(
                                                 'invoiceType',
                                                 e.target.value as string
                                             )
@@ -232,7 +231,7 @@ const App = () => {
                                     type="number"
                                     variant="filled"
                                     label="Customer Id"
-                                    value={properties.customer.id}
+                                    value={data.customer.id}
                                     onChange={(e) => {
                                         handleCustomer('id', e.target.value);
                                         SearchCustomerById(e.target.value);
@@ -245,7 +244,7 @@ const App = () => {
                                     disabled
                                     variant="filled"
                                     label="Name"
-                                    value={properties.customer.fullName}
+                                    value={data.customer.fullName}
                                 />
                             </Grid>
 
@@ -254,7 +253,7 @@ const App = () => {
                                     disabled
                                     variant="filled"
                                     label="Address"
-                                    value={properties.customer.address}
+                                    value={data.customer.address}
                                 />
                             </Grid>
 
@@ -263,7 +262,7 @@ const App = () => {
                                     disabled
                                     variant="filled"
                                     label=" Tax Id (NPWP)"
-                                    value={properties.customer.taxId}
+                                    value={data.customer.taxId}
                                 />
                             </Grid>
 
@@ -272,14 +271,14 @@ const App = () => {
                                     disabled
                                     variant="filled"
                                     label="Id Number (NIK)"
-                                    value={properties.customer.idNumber}
+                                    value={data.customer.idNumber}
                                 />
                             </Grid>
                         </Grid>
 
                         <p className="mb-10">Item(s)</p>
 
-                        {properties.items.map((_: any, index: number) => {
+                        {data.items.map((_: any, index: number) => {
                             return (
                                 <Grid
                                     container
@@ -294,7 +293,7 @@ const App = () => {
                                             label="Item Id"
                                             variant="filled"
                                             className="w-100"
-                                            value={properties.items[index].id}
+                                            value={data.items[index].id}
                                             onChange={(e) => {
                                                 handleItems(
                                                     'id',
@@ -315,7 +314,7 @@ const App = () => {
                                             variant="filled"
                                             label="Quantity"
                                             className="w-100"
-                                            value={properties.items[index].qty}
+                                            value={data.items[index].qty}
                                             onChange={(e) => {
                                                 handleItems(
                                                     'qty',
@@ -334,9 +333,7 @@ const App = () => {
                                             variant="filled"
                                             label="Item Name"
                                             className="w-100"
-                                            value={
-                                                properties.items[index].itemName
-                                            }
+                                            value={data.items[index].itemName}
                                         />
                                     </Grid>
                                     <Grid item xs={2}>
@@ -346,8 +343,7 @@ const App = () => {
                                             className="w-100"
                                             label="Unit of Measure"
                                             value={
-                                                properties.items[index]
-                                                    .unitOfMeasure
+                                                data.items[index].unitOfMeasure
                                             }
                                         />
                                     </Grid>
@@ -357,7 +353,7 @@ const App = () => {
                                             variant="filled"
                                             className="w-100"
                                             label="Unit Price"
-                                            value={properties.items[
+                                            value={data.items[
                                                 index
                                             ].unitPrice.toLocaleString('id-ID')}
                                         />
@@ -369,7 +365,7 @@ const App = () => {
                                             className="w-100"
                                             label="Discount (%)"
                                             value={
-                                                properties.items[index]
+                                                data.items[index]
                                                     .discountPercent
                                             }
                                             onChange={(e) => {
@@ -391,8 +387,7 @@ const App = () => {
                                             className="w-100"
                                             label="Discount Each Kg"
                                             value={
-                                                properties.items[index]
-                                                    .discountPerKg
+                                                data.items[index].discountPerKg
                                             }
                                             onChange={(e) => {
                                                 handleItems(
@@ -412,7 +407,7 @@ const App = () => {
                                             variant="filled"
                                             className="w-100"
                                             label="Total Price"
-                                            value={properties.items[
+                                            value={data.items[
                                                 index
                                             ].totalPrice.toLocaleString(
                                                 'id-ID'
