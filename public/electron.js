@@ -1,12 +1,11 @@
 const path = require('path');
 const Store = require('electron-store');
 const isDev = require('electron-is-dev');
+const autoUpdate = require('update-electron-app');
 const { app, BrowserWindow, ipcMain } = require('electron');
 
 let mainWindow;
 let store = new Store();
-
-require('update-electron-app')({ repo: 'stanleyowen/sales-distribution' });
 
 function createWindow() {
     function setLocalStorageDatabase() {
@@ -52,7 +51,10 @@ function createWindow() {
     });
 }
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+    autoUpdate({ notifyUser: true });
+    createWindow();
+});
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();
 });

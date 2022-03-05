@@ -2,6 +2,7 @@
   "name": "sd-app",
   "version": "1.2.0",
   "private": true,
+  "repository": "https://github.com/stanleyowen/sales-distribution",
   "author": "Stanley Owen <stanleyowen06@gmail.com>",
   "dependencies": {
     "@emotion/react": "^11.8.1",

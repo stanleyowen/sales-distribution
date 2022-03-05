@@ -1,4 +1,5 @@
 import React from 'react';
+import packageInfo from '../package.json';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Items from './components/items.component';
@@ -13,6 +14,8 @@ import EditInvoice from './components/edit-invoice.component';
 process.env.NODE_ENV === 'production'
     ? require('./App.min.css')
     : require('./App.css');
+
+console.log('SD version:', packageInfo.version);
 
 // eslint-disable-next-line
 export default function App() {
