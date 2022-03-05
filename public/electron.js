@@ -6,6 +6,8 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 let mainWindow;
 let store = new Store();
 
+require('update-electron-app')({ repo: 'stanleyowen/sales-distribution' });
+
 function createWindow() {
     function setLocalStorageDatabase() {
         [
