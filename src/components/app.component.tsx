@@ -3,6 +3,7 @@ import {
     Grid,
     Button,
     Select,
+    Tooltip,
     MenuItem,
     TextField,
     InputLabel,
@@ -96,7 +97,7 @@ const App = () => {
     }, []); // eslint-disable-line
 
     useEffect(() => {
-        if (invoiceData.length > 0 && properties.invoiceNumber !== '') {
+        if (invoiceData.length > 0 && properties.invoiceType) {
             const invoiceType: any[] = invoiceData.filter(
                 (invoice: any) => invoice.invoiceType === properties.invoiceType
             );
@@ -404,16 +405,21 @@ const App = () => {
                                 </Grid>
                                 {index === 0 ? null : (
                                     <Grid item>
-                                        <Button
-                                            color="warning"
-                                            className="h-100"
-                                            onClick={() => removeItem(index)}
-                                        >
-                                            <CloseIcon
-                                                width="2em"
-                                                height="2em"
-                                            />
-                                        </Button>
+                                        <Tooltip title="Remove Item">
+                                            <Button
+                                                color="warning"
+                                                className="h-100"
+                                                variant="outlined"
+                                                onClick={() =>
+                                                    removeItem(index)
+                                                }
+                                            >
+                                                <CloseIcon
+                                                    width="2em"
+                                                    height="2em"
+                                                />
+                                            </Button>
+                                        </Tooltip>
                                     </Grid>
                                 )}
                             </Grid>
