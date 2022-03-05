@@ -23,7 +23,7 @@ import { readFile, writeFile } from '../lib/file-operation.lib';
 type Props = {
     page: number;
     rowsPerPage: number;
-    isDuplicate: boolean;
+    isNotValid: boolean;
     customerDialogIsOpen: boolean;
 };
 
@@ -78,7 +78,11 @@ const Customers = () => {
     }
 
     function closeCustomerDialog() {
-        handleProperties('customerDialogIsOpen', false);
+        setProps({
+            ...properties,
+            isNotValid: false,
+            customerDialogIsOpen: false,
+        });
         setCustomerData({
             id: data?.length + 1,
             fullName: '',
