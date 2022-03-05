@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
     Grid,
+    Alert,
     Button,
     Select,
     Tooltip,
@@ -202,6 +203,14 @@ const App = () => {
         <div>
             <div>
                 <div className="mt-10 p-10">
+                    {properties.isNotValid ? (
+                        <Alert
+                            severity="error"
+                            className="w-100 border-box mb-10"
+                        >
+                            Please make sure to fill out all required fields.
+                        </Alert>
+                    ) : null}
                     <form onSubmit={() => SaveInvoice()}>
                         <Grid container spacing={2}>
                             <Grid item xs={8}>
