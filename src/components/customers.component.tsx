@@ -44,7 +44,7 @@ const Customers = () => {
     const [properties, setProps] = useState<Props>({
         page: 0,
         rowsPerPage: 10,
-        isDuplicate: false,
+        isNotValid: false,
         customerDialogIsOpen: false,
     });
     const [customerData, setCustomerData] = useState<CustomerData>({
@@ -97,38 +97,49 @@ const Customers = () => {
     }, [data]);
 
     const addCustomerData = () => {
-        if (customerData?.properties?.isUpdate) {
-            const newData = data.map((item: CustomerData) => {
-                if (item.id === customerData.id) return customerData;
-                return item;
-            });
+        if (
+            customerData.taxId === '' ||
+            customerData.idNumber === '' ||
+            customerData.taxId?.length !== 16 ||
+            customerData.idNumber?.length !== 15
+        )
+            handleProperties('isNotValid', true);
+        else {
+            if (customerData?.properties?.isUpdate) {
+                const newData = data.map((item: CustomerData) => {
+                    if (item.id === customerData.id) return customerData;
+                    return item;
+                });
 
-            delete customerData.properties;
-
-            writeFile(
-                localStorage.getItem('customer-database'),
-                JSON.stringify(newData),
-                (res: string) => console.log(res)
-            );
-        } else {
-            if (
-                data.find((item: CustomerData) => item.id === customerData.id)
-            ) {
-                document.getElementById('id')?.focus();
-                return handleProperties('isDuplicate', true);
-            } else {
                 delete customerData.properties;
 
                 writeFile(
                     localStorage.getItem('customer-database'),
-                    JSON.stringify([...data, customerData]),
+                    JSON.stringify(newData),
                     (res: string) => console.log(res)
                 );
-            }
-        }
+            } else {
+                if (
+                    data.find(
+                        (item: CustomerData) => item.id === customerData.id
+                    )
+                ) {
+                    document.getElementById('id')?.focus();
+                    return handleProperties('isDuplicate', true);
+                } else {
+                    delete customerData.properties;
 
-        closeCustomerDialog();
-        readCustomerDatabase();
+                    writeFile(
+                        localStorage.getItem('customer-database'),
+                        JSON.stringify([...data, customerData]),
+                        (res: string) => console.log(res)
+                    );
+                }
+            }
+
+            closeCustomerDialog();
+            readCustomerDatabase();
+        }
     };
 
     const UpdateCustomerData = (data: CustomerData) => {
@@ -234,6 +245,16 @@ const Customers = () => {
                 <form onSubmit={() => addCustomerData()}>
                     <DialogTitle>Update Customer&#39;s Details</DialogTitle>
                     <DialogContent>
+                        {properties.isNotValid ? (
+                            <Alert
+                                severity="error"
+                                className="w-100 border-box mb-10"
+                            >
+                                One of the fields, either Tax Id (NPWP) or Id
+                                Number (NIK) is required or contains invalid
+                                format.
+                            </Alert>
+                        ) : null}
                         {Object.keys(columns).map((_, index: number) => {
                             const { id, label } = columns[index];
                             if (label == 'Id') return;
