@@ -1,13 +1,13 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-    TextField,
     Grid,
     Button,
     Select,
     MenuItem,
-    SelectChangeEvent,
+    TextField,
     InputLabel,
     FormControl,
+    SelectChangeEvent,
 } from '@mui/material';
 import { readFile, writeFile } from '../lib/file-operation.lib';
 import { AddIcon, CloseIcon, SaveIcon } from '../lib/icons.component';
@@ -96,7 +96,7 @@ const App = () => {
     }, []); // eslint-disable-line
 
     useEffect(() => {
-        if (invoiceData.length > 0) {
+        if (invoiceData.length > 0 && properties.invoiceNumber !== '') {
             const invoiceType: any[] = invoiceData.filter(
                 (invoice: any) => invoice.invoiceType === properties.invoiceType
             );
