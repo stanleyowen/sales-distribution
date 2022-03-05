@@ -10,10 +10,14 @@ import {
     FormControl,
     SelectChangeEvent,
 } from '@mui/material';
+import { CheckAllRequiredFields } from '../lib/function.lib';
 import { readFile, writeFile } from '../lib/file-operation.lib';
 import { AddIcon, CloseIcon, SaveIcon } from '../lib/icons.component';
 
 type Props = {
+    isNotValid: boolean;
+};
+type Data = {
     invoiceNumber: string;
     invoiceType: '00' | 'A00' | 'BC000' | 'D00' | 'E00' | '';
     customer: {
@@ -31,7 +35,10 @@ const App = () => {
     const [itemData, setItemData] = useState<Array<any>>([]);
     const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
-    const [data, setData] = useState<Props>({
+    const [properties, setProps] = useState<Props>({
+        isNotValid: false,
+    });
+    const [data, setData] = useState<Data>({
         invoiceNumber: '',
         invoiceType: '',
         customer: {
@@ -58,6 +65,9 @@ const App = () => {
     const handleData = (id: string, value: string | number) =>
         setData({ ...data, [id]: value });
 
+    const handleProps = (id: string, value: boolean) =>
+        setProps({ ...properties, [id]: value });
+
     const handleCustomer = (id: string, value: string | number) =>
         setData({
             ...data,
@@ -76,6 +86,10 @@ const App = () => {
             .forEach((input: any) => {
                 input.classList.add('w-100');
             });
+
+        document.querySelectorAll('[required]').forEach((input: any) => {
+            input.classList.add('required');
+        });
 
         localStorage.getItem('item-database')
             ? readFile(localStorage.getItem('item-database'), (data: any) =>
@@ -152,17 +166,24 @@ const App = () => {
     };
 
     const SaveInvoice = () => {
-        readFile(localStorage.getItem('invoice-database'), (invoice: any) => {
-            writeFile(
-                localStorage.getItem('invoice-database'),
-                JSON.stringify([...JSON.parse(invoice), data]),
-                (res: string) => {
-                    console.log(res);
-                    window.location.hash = `/preview/${
-                        data.invoiceType + data.invoiceNumber
-                    }`;
-                }
-            );
+        CheckAllRequiredFields((isValid: boolean) => {
+            isValid
+                ? readFile(
+                      localStorage.getItem('invoice-database'),
+                      (invoice: any) => {
+                          writeFile(
+                              localStorage.getItem('invoice-database'),
+                              JSON.stringify([...JSON.parse(invoice), data]),
+                              (res: string) => {
+                                  console.log(res);
+                                  window.location.hash = `/preview/${
+                                      data.invoiceType + data.invoiceNumber
+                                  }`;
+                              }
+                          );
+                      }
+                  )
+                : handleProps('isNotValid', true);
         });
     };
 
