@@ -40,7 +40,7 @@ const App = () => {
     });
     const [data, setData] = useState<Data>({
         invoiceNumber: '',
-        invoiceType: '',
+        invoiceType: '00',
         customer: {
             id: 0,
             fullName: '',
@@ -204,12 +204,14 @@ const App = () => {
         <div>
             <div>
                 <div className="mt-10 p-10">
-                    {properties.isNotValid ? (
+                    {properties.isDuplicate ? (
                         <Alert
                             severity="error"
                             className="w-100 border-box mb-10"
                         >
-                            Please make sure to fill out all required fields.
+                            Invoice number{' '}
+                            {data.invoiceType + data.invoiceNumber} already
+                            exists. Please try another invoice number.
                         </Alert>
                     ) : null}
                     <form onSubmit={() => SaveInvoice()}>
@@ -218,6 +220,7 @@ const App = () => {
                                 <TextField
                                     required
                                     autoFocus
+                                    id="invoice-number"
                                     variant="filled"
                                     label="Invoice No"
                                     value={data.invoiceNumber}
