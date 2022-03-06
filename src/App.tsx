@@ -15,8 +15,6 @@ process.env.NODE_ENV === 'production'
     ? require('./App.min.css')
     : require('./App.css');
 
-console.log('SD version:', packageInfo.version);
-
 // eslint-disable-next-line
 export default function App() {
     return (

@@ -17,7 +17,7 @@ export function writeFile(filePath, content, callback) {
 
 export function createFolder(filePath, folderName, callback) {
     if (!fs.existsSync(filePath + folderName)) {
-        fs.mkdirSync(filePath + folderName, (err) => {
+        fs.mkdir(filePath + folderName, (err) => {
             if (err) throw err;
             return callback('Write Operation Successful');
         });
