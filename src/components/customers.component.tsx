@@ -226,7 +226,7 @@ const Customers = () => {
                                 })
                         ) : (
                             <TableRow>
-                                <TableCell colSpan={2}>
+                                <TableCell colSpan={5}>
                                     <LinearProgress />
                                 </TableCell>
                             </TableRow>
