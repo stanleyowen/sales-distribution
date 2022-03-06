@@ -18,6 +18,7 @@
     "clean-css-cli": "^5.5.2",
     "electron-is-dev": "^2.0.0",
     "electron-store": "^8.0.1",
+    "electron-updater": "^4.6.5",
     "exceljs": "^4.3.0",
     "firebase": "^9.6.8",
     "python-shell": "^3.0.1",
@@ -26,7 +27,6 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "^5.0.0",
     "sass": "^1.49.9",
-    "update-electron-app": "^2.0.1",
     "web-vitals": "^2.1.4"
   },
   "main": "public/electron.js",
