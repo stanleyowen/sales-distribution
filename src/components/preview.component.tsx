@@ -100,19 +100,20 @@ const Preview = () => {
             });
 
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
-            workbook.xlsx
-                .writeFile(dir + '\\tmp\\' + id + '.xlsx')
-                .then(() => {
-                    createFolder(dir, '\\tmp\\', () => {
+            createFolder(dir, '\\tmp\\', (cb: boolean) => {
+                console.log(cb);
+                workbook.xlsx
+                    .writeFile(dir + '\\tmp\\' + id + '.xlsx')
+                    .then(() => {
                         executePython(
                             dir + '\\tmp\\' + id + '.xlsx',
                             (path: string) => setPath(path)
                         );
+                    })
+                    .catch((err: any) => {
+                        throw err;
                     });
-                })
-                .catch((err: any) => {
-                    throw err;
-                });
+            });
             callback(template);
         });
     }
