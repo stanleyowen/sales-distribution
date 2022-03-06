@@ -1,5 +1,4 @@
 import React from 'react';
-import packageInfo from '../package.json';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Items from './components/items.component';
@@ -10,6 +9,7 @@ import Preview from './components/preview.component';
 import Invoices from './components/invoices.component';
 import Customers from './components/customers.component';
 import EditInvoice from './components/edit-invoice.component';
+import Notification from './components/notification.component';
 
 process.env.NODE_ENV === 'production'
     ? require('./App.min.css')
@@ -20,6 +20,7 @@ export default function App() {
     return (
         <HashRouter>
             <Navbar />
+            <Notification />
             <Routes>
                 <Route path="/" element={<AppLayout />} />
                 <Route path="/setup" element={<Setup />} />
