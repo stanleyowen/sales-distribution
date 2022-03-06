@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { executePython } from '../lib/executePy.lib';
-import { createFolder } from '../lib/file-operation.lib';
-import { readFile, writeFile } from '../lib/file-operation.lib';
+import { readFile, createFolder } from '../lib/file-operation.lib';
 const xlsx = window.require('exceljs');
 
 type Data = {
@@ -73,22 +72,15 @@ const Preview = () => {
             template.getCell('F6').value =
                 data.customer.idNumber + ' / ' + data.customer.taxId;
 
-            // =IF(ISBLANK(B8);"";ROUND((C8*E8*(1-F8))+(-G8*C8);0))
-
             data.items.map((item: any, col: number) => {
                 const row = col + 8;
 
-                template.getCell('A' + row).alignment = {
-                    horizontal: 'center',
-                };
-                template.getCell('C' + row).alignment = {
-                    horizontal: 'right',
-                };
-                ['B', 'D', 'E', 'F', 'G', 'H'].map((cell: string) => {
-                    template.getCell(cell + row).alignment = {
-                        horizontal: 'left',
-                    };
-                });
+                ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].map(
+                    (cell: string) =>
+                        (template.getCell(cell + row).alignment = {
+                            horizontal: 'left',
+                        })
+                );
 
                 template.getCell('B' + row).value = item.itemName;
                 template.getCell('C' + row).value = item.qty;
@@ -100,8 +92,7 @@ const Preview = () => {
             });
 
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
-            createFolder(dir, '\\tmp\\', (cb: boolean) => {
-                console.log(cb);
+            createFolder(dir, '\\tmp\\', () => {
                 workbook.xlsx
                     .writeFile(dir + '\\tmp\\' + id + '.xlsx')
                     .then(() => {
@@ -133,11 +124,8 @@ const Preview = () => {
 
     useEffect(() => {
         if (!properties.isLoadingData)
-            readExcelFile(
-                localStorage.getItem('excel-template') ?? '',
-                (data: any) => {
-                    console.log(data);
-                }
+            readExcelFile(localStorage.getItem('excel-template') ?? '', () =>
+                console.log('Reading Excel File')
             );
     }, [properties.isLoadingData]);
 
