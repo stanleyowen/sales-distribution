@@ -253,7 +253,7 @@ const EditInvoice = () => {
 
     return (
         <div>
-            <div className="mt-10 p-10">
+            <form className="mt-10 p-10" onSubmit={() => UpdateInvoice()}>
                 {properties.isDuplicate ? (
                     <Alert severity="error" className="w-100 border-box mb-10">
                         Invoice number {data.invoiceType + data.invoiceNumber}{' '}
@@ -263,6 +263,7 @@ const EditInvoice = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={8}>
                         <TextField
+                            required
                             type="number"
                             variant="filled"
                             label="Invoice No"
@@ -280,6 +281,7 @@ const EditInvoice = () => {
                                 Invoice Type
                             </InputLabel>
                             <Select
+                                required
                                 variant="filled"
                                 labelId="invoice-type"
                                 value={data.invoiceType}
@@ -301,6 +303,7 @@ const EditInvoice = () => {
 
                     <Grid item xs={2}>
                         <TextField
+                            required
                             type="number"
                             variant="filled"
                             label="Customer Id"
@@ -365,6 +368,7 @@ const EditInvoice = () => {
                         >
                             <Grid item xs={2}>
                                 <TextField
+                                    required
                                     type="number"
                                     label="Item Id"
                                     variant="filled"
@@ -382,6 +386,7 @@ const EditInvoice = () => {
                             </Grid>
                             <Grid item xs={2}>
                                 <TextField
+                                    required
                                     type="number"
                                     variant="filled"
                                     label="Quantity"
@@ -557,16 +562,16 @@ const EditInvoice = () => {
                     </Grid>
                     <Grid item xs={4}>
                         <Button
+                            type="submit"
                             variant="contained"
                             className="w-100"
                             startIcon={<SaveIcon />}
-                            onClick={() => UpdateInvoice()}
                         >
                             Update
                         </Button>
                     </Grid>
                 </Grid>
-            </div>
+            </form>
 
             <Dialog
                 fullWidth

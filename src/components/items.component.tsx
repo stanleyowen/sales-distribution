@@ -238,64 +238,69 @@ const Items = () => {
                 open={properties.itemDialogIsOpen}
                 onClose={() => closeItemDialog()}
             >
-                <DialogTitle>Update Item&#39;s Details</DialogTitle>
-                <DialogContent>
-                    {properties.isDuplicate ? (
-                        <Alert
-                            severity="error"
-                            className="w-100 border-box mb-10"
-                        >
-                            Item Id {itemData.id} already exists. Please try
-                            another Id.
-                        </Alert>
-                    ) : null}
-                    {Object.keys(columns).map((_, index: number) => {
-                        const { id, label } = columns[index];
-                        return (
-                            <TextField
-                                fullWidth
-                                id={id}
-                                type={
-                                    id === 'id' || id === 'unitPrice'
-                                        ? 'number'
-                                        : 'text'
-                                }
-                                key={index}
-                                label={label}
-                                margin="dense"
-                                variant="standard"
-                                autoFocus={index === 1}
-                                value={(itemData as any)[id]}
-                                onChange={(e) =>
-                                    handleItemData(id, e.target.value)
-                                }
-                                disabled={
-                                    label === 'Id' &&
-                                    itemData.properties?.isUpdate
-                                }
-                            />
-                        );
-                    })}
-                </DialogContent>
-                <DialogActions>
-                    {itemData?.properties?.isUpdate ? (
-                        <Tooltip
-                            placement="top"
-                            title="Double Click the Button to Delete the Item"
-                        >
-                            <Button
-                                onDoubleClick={() => DeleteItemData()}
-                                color="error"
+                <form onSubmit={() => addItemData()}>
+                    <DialogTitle>Update Item&#39;s Details</DialogTitle>
+                    <DialogContent>
+                        {properties.isDuplicate ? (
+                            <Alert
+                                severity="error"
+                                className="w-100 border-box mb-10"
                             >
-                                Delete
-                            </Button>
-                        </Tooltip>
-                    ) : null}
-                    <Button onClick={() => closeItemDialog()}>Cancel</Button>
-                    <Button onClick={() => addItemData()}>
-                        {itemData?.properties?.isUpdate ? 'Update' : 'Add'}
-                    </Button>
-                </DialogActions>
+                                Item Id {itemData.id} already exists. Please try
+                                another Id.
+                            </Alert>
+                        ) : null}
+                        {Object.keys(columns).map((_, index: number) => {
+                            const { id, label } = columns[index];
+                            return (
+                                <TextField
+                                    fullWidth
+                                    required
+                                    id={id}
+                                    type={
+                                        id === 'id' || id === 'unitPrice'
+                                            ? 'number'
+                                            : 'text'
+                                    }
+                                    key={index}
+                                    label={label}
+                                    margin="dense"
+                                    variant="standard"
+                                    autoFocus={index === 1}
+                                    value={(itemData as any)[id]}
+                                    onChange={(e) =>
+                                        handleItemData(id, e.target.value)
+                                    }
+                                    disabled={
+                                        label === 'Id' &&
+                                        itemData.properties?.isUpdate
+                                    }
+                                />
+                            );
+                        })}
+                    </DialogContent>
+                    <DialogActions>
+                        {itemData?.properties?.isUpdate ? (
+                            <Tooltip
+                                placement="top"
+                                title="Double Click the Button to Delete the Item"
+                            >
+                                <Button
+                                    onDoubleClick={() => DeleteItemData()}
+                                    color="error"
+                                >
+                                    Delete
+                                </Button>
+                            </Tooltip>
+                        ) : null}
+                        <Button onClick={() => closeItemDialog()}>
+                            Cancel
+                        </Button>
+                        <Button type="submit">
+                            {itemData?.properties?.isUpdate ? 'Update' : 'Add'}
+                        </Button>
+                    </DialogActions>
+                </form>
             </Dialog>
         </div>
     );
