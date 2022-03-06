@@ -103,8 +103,16 @@ const Customers = () => {
     const addCustomerData = () => {
         if (
             (customerData.taxId === '' && customerData.idNumber === '') ||
-            (customerData.taxId !== '' && customerData.taxId?.length !== 15) ||
+            (customerData.taxId === '000000000000000' &&
+                customerData.idNumber === '-') ||
+            (customerData.taxId === '' && customerData.idNumber === '-') ||
+            (customerData.taxId === '000000000000000' &&
+                customerData.idNumber === '') ||
+            (customerData.taxId !== '' &&
+                customerData.taxId !== '000000000000000' &&
+                customerData.taxId?.length !== 15) ||
             (customerData.idNumber !== '' &&
+                customerData.idNumber !== '-' &&
                 customerData.idNumber?.length !== 16)
         )
             handleProperties('isNotValid', true);
@@ -132,22 +140,13 @@ const Customers = () => {
                     (res: string) => console.log(res)
                 );
             } else {
-                if (
-                    data.find(
-                        (item: CustomerData) => item.id === newCustomerData.id
-                    )
-                ) {
-                    document.getElementById('id')?.focus();
-                    return handleProperties('isDuplicate', true);
-                } else {
-                    delete newCustomerData?.properties;
+                delete newCustomerData?.properties;
 
-                    writeFile(
-                        localStorage.getItem('customer-database'),
-                        JSON.stringify(newCustomerData),
-                        (res: string) => console.log(res)
-                    );
-                }
+                writeFile(
+                    localStorage.getItem('customer-database'),
+                    JSON.stringify([...data, newCustomerData]),
+                    (res: string) => console.log(res)
+                );
             }
 
             closeCustomerDialog();
