@@ -126,7 +126,7 @@ const EditInvoice = () => {
 
             handleProperties('isLoading', false);
         });
-    }, []); // eslint-disable-line
+    }, []);
 
     useEffect(() => {
         if (properties.isLoading)
@@ -229,7 +229,7 @@ const EditInvoice = () => {
             writeFile(
                 localStorage.getItem('invoice-database'),
                 JSON.stringify(newInvoice),
-                (res: string) => (window.location.hash = '/invoices')
+                () => (window.location.hash = '/invoices')
             );
         }
     };

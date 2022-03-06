@@ -17,6 +17,7 @@ import { AddIcon, CloseIcon, SaveIcon } from '../lib/icons.component';
 type Props = {
     isDuplicate: boolean;
 };
+
 type Data = {
     invoiceNumber: string;
     invoiceType: '00' | 'A00' | 'BC000' | 'D00' | 'E00' | '';
@@ -87,10 +88,6 @@ const App = () => {
                 input.classList.add('w-100');
             });
 
-        document.querySelectorAll('[required]').forEach((input: any) => {
-            input.classList.add('required');
-        });
-
         localStorage.getItem('item-database')
             ? readFile(localStorage.getItem('item-database'), (data: any) =>
                   setItemData(JSON.parse(data))
@@ -108,7 +105,7 @@ const App = () => {
                   setCustomerData(JSON.parse(data))
               )
             : null;
-    }, []); // eslint-disable-line
+    }, []);
 
     useEffect(() => {
         if (invoiceData.length > 0 && data.invoiceType) {
@@ -179,12 +176,10 @@ const App = () => {
             writeFile(
                 localStorage.getItem('invoice-database'),
                 JSON.stringify([...invoiceData, data]),
-                (res: string) => {
-                    console.log(res);
-                    window.location.hash = `/preview/${
+                () =>
+                    (window.location.hash = `/preview/${
                         data.invoiceType + data.invoiceNumber
-                    }`;
-                }
+                    }`)
             );
         }
     };

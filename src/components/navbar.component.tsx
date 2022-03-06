@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
 
 // eslint-disable-next-line
