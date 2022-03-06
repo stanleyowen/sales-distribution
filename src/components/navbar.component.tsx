@@ -1,4 +1,5 @@
 import React from 'react';
+import PackageInfo from '../../package.json';
 import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
 
 // eslint-disable-next-line
@@ -13,6 +14,7 @@ const Navbar = () => {
                         sx={{ flexGrow: 1 }}
                     >
                         Sales & Distribution
+                        <sub className="small"> v{PackageInfo.version}</sub>
                     </Typography>
                     <Button
                         color="inherit"
