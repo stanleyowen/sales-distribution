@@ -15,7 +15,6 @@ import { readFile, writeFile } from '../lib/file-operation.lib';
 import { AddIcon, CloseIcon, SaveIcon } from '../lib/icons.component';
 
 type Props = {
-    isNotValid: boolean;
     isDuplicate: boolean;
 };
 type Data = {
@@ -37,7 +36,6 @@ const App = () => {
     const [invoiceData, setInvoiceData] = useState<Array<any>>([]);
     const [customerData, setCustomerData] = useState<Array<any>>([]);
     const [properties, setProps] = useState<Props>({
-        isNotValid: false,
         isDuplicate: false,
     });
     const [data, setData] = useState<Data>({
@@ -168,16 +166,27 @@ const App = () => {
     };
 
     const SaveInvoice = () => {
-        writeFile(
-            localStorage.getItem('invoice-database'),
-            JSON.stringify([...invoiceData, data]),
-            (res: string) => {
-                console.log(res);
-                window.location.hash = `/preview/${
+        if (
+            invoiceData.find(
+                (invoice: any) =>
+                    invoice.invoiceType + invoice.invoiceNumber ===
                     data.invoiceType + data.invoiceNumber
-                }`;
-            }
-        );
+            )
+        ) {
+            document.getElementById('invoice-number')?.focus();
+            return handleProps('isDuplicate', true);
+        } else {
+            writeFile(
+                localStorage.getItem('invoice-database'),
+                JSON.stringify([...invoiceData, data]),
+                (res: string) => {
+                    console.log(res);
+                    window.location.hash = `/preview/${
+                        data.invoiceType + data.invoiceNumber
+                    }`;
+                }
+            );
+        }
     };
 
     function calculateTotalPricePerItem(index: number) {
