@@ -40,7 +40,9 @@ input:disabled {
     pointer-events: none !important;
 }
 
-.error {
+.error,
+.MuiFormLabel-asterisk,
+.MuiInputLabel-asterisk {
     color: red;
 }
 

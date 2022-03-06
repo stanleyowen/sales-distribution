@@ -6,6 +6,7 @@ import {
     Button,
     Select,
     Dialog,
+    Tooltip,
     MenuItem,
     TextField,
     InputLabel,
@@ -478,13 +479,19 @@ const EditInvoice = () => {
                             </Grid>
                             {index === 0 ? null : (
                                 <Grid item>
-                                    <Button
-                                        color="warning"
-                                        className="h-100"
-                                        onClick={() => removeItem(index)}
-                                    >
-                                        <CloseIcon width="2em" height="2em" />
-                                    </Button>
+                                    <Tooltip title="Remove Item">
+                                        <Button
+                                            color="warning"
+                                            className="h-100"
+                                            variant="outlined"
+                                            onClick={() => removeItem(index)}
+                                        >
+                                            <CloseIcon
+                                                width="2em"
+                                                height="2em"
+                                            />
+                                        </Button>
+                                    </Tooltip>
                                 </Grid>
                             )}
                         </Grid>
