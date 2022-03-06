@@ -1,6 +1,6 @@
 {
   "name": "sd-app",
-  "version": "1.2.0",
+  "version": "1.2.5",
   "private": true,
   "repository": "https://github.com/stanleyowen/sales-distribution",
   "author": "Stanley Owen <stanleyowen06@gmail.com>",
@@ -38,11 +38,12 @@
     "build": "yarn sass && yarn css:minify && GENERATE_SOURCEMAP=false react-scripts build",
     "build:win": "yarn sass && yarn css:minify && cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "build:electron": "node ./scripts/prebuild.js && yarn build && electron-builder && node ./scripts/postbuild.js",
-    "build:win:electron": "node ./scripts/prebuild.js && yarn build:win && electron-builder && node ./scripts/postbuild.js",
+    "build:win:electron": "node ./scripts/prebuild.js && yarn build:win && electron-builder build --win --publish never && node ./scripts/postbuild.js",
     "css:minify": "cleancss -o ./src/App.min.css ./src/App.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml --ext .tsx ./src",
+    "deploy": "node ./scripts/prebuild.js && yarn build:win && electron-builder build --win --publish always && node ./scripts/postbuild.js",
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "license": "Apache-2.0",
