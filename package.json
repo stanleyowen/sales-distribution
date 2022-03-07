@@ -1,5 +1,5 @@
 {
-  "name": "sd-app",
+  "name": "sd-desktop",
   "version": "1.2.5",
   "private": true,
   "repository": "https://github.com/stanleyowen/sales-distribution",
@@ -49,7 +49,7 @@
   "license": "Apache-2.0",
   "build": {
     "appId": "com.stanleyowen.sd",
-    "productName": "SD App",
+    "productName": "SD Desktop",
     "copyright": "Copyright © 2022 Stanley Owen",
     "nsis": {
       "oneClick": false,
