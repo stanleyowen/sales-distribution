@@ -1,6 +1,6 @@
 {
   "name": "sd-desktop",
-  "version": "1.2.5",
+  "version": "1.2.0",
   "private": true,
   "repository": "https://github.com/stanleyowen/sales-distribution",
   "author": "Stanley Owen <stanleyowen06@gmail.com>",
@@ -51,6 +51,13 @@
     "appId": "com.stanleyowen.sd",
     "productName": "SD Desktop",
     "copyright": "Copyright © 2022 Stanley Owen",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "stanleyowen",
+        "repo": "sales-distribution"
+      }
+    ],
     "nsis": {
       "oneClick": false,
       "perMachine": true,
