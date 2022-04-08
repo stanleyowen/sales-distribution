@@ -49,6 +49,17 @@ input:disabled {
 .small {
     font-size: 0.8rem;
 }
+
+a {
+    color: #1976d2;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+a:focus {
+    opacity: 0.7;
+}
+
 .w-auto {
     width: auto !important;
 }
