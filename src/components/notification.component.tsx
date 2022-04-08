@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Slide, Snackbar, SlideProps, Button } from '@mui/material';
 
 const ipcRenderer = window.require('electron').ipcRenderer;
@@ -12,19 +12,37 @@ const Notification = () => {
         React.ComponentType<TransitionProps> | undefined
     >(undefined);
 
+    useEffect(() => {
+        function Transition(props: TransitionProps) {
+            return <Slide {...props} direction="right" />;
+        }
+        setTransition(() => Transition);
+
+        ipcRenderer.on('update_downloaded', () => {
+            ipcRenderer.removeAllListeners('update_downloaded');
+            setOpen(true);
+        });
+    }, []);
+
     return (
         <Snackbar open={isOpen} TransitionComponent={transition}>
             <Alert severity="info">
                 <p>
-                    An updated version of SD App is available and will be
+                    An updated version of SD Desktop is available and will be
                     installed at the next launch. See{' '}
-                    <a href="https://github.com/stanleyowen/sales-distribution/releases">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/stanleyowen/sales-distribution/releases/latest"
+                    >
                         what&#39;s new
                     </a>
                     .
                 </p>
                 <Button>Later</Button>
-                <Button>Restart SD App</Button>
+                <Button onClick={() => ipcRenderer.send('restart_app')}>
+                    Restart App
+                </Button>
             </Alert>
         </Snackbar>
     );
