@@ -4,7 +4,7 @@
 
 <hr />
 
-Sales and Distribution App is a **closed source** app platform designed for personal purposes. This application is built with **Typescript, React, Electron, SCSS, and Python**.
+Sales and Distribution App is a **open source** app platform designed for personal purposes. This application is built with **Typescript, React, Electron, SCSS, and Python**.
 
 ## LICENSE
 

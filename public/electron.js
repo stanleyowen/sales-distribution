@@ -1,8 +1,8 @@
 const path = require('path');
 const Store = require('electron-store');
 const isDev = require('electron-is-dev');
-const autoUpdate = require('update-electron-app');
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { autoUpdater } = require('electron-updater');
+const { app, shell, BrowserWindow, ipcMain } = require('electron');
 
 let mainWindow;
 let store = new Store();
@@ -41,6 +41,13 @@ function createWindow() {
     mainWindow.setMenuBarVisibility(false);
     mainWindow.once('ready-to-show', () => mainWindow.show());
     mainWindow.on('closed', () => (mainWindow = null));
+    mainWindow.once('ready-to-show', () =>
+        autoUpdater.checkForUpdatesAndNotify()
+    );
+    mainWindow.webContents.on('new-window', (e, url) => {
+        e.preventDefault();
+        shell.openExternal(url);
+    });
 
     setLocalStorageDatabase();
 
@@ -49,15 +56,18 @@ function createWindow() {
         store.set(id, value);
         setLocalStorageDatabase();
     });
+
+    ipcMain.on('restart_app', () => autoUpdater.quitAndInstall());
 }
 
-app.on('ready', () => {
-    autoUpdate({ notifyUser: true });
-    createWindow();
-});
+app.on('ready', createWindow);
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();
 });
 app.on('activate', () => {
     if (mainWindow === null) createWindow();
 });
+
+autoUpdater.on('update-downloaded', () =>
+    mainWindow.webContents.send('update_downloaded')
+);

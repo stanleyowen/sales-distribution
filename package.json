@@ -1,5 +1,5 @@
 {
-  "name": "sd-app",
+  "name": "sd-desktop",
   "version": "1.2.0",
   "private": true,
   "repository": "https://github.com/stanleyowen/sales-distribution",
@@ -18,6 +18,7 @@
     "clean-css-cli": "^5.5.2",
     "electron-is-dev": "^2.0.0",
     "electron-store": "^8.0.1",
+    "electron-updater": "^4.6.5",
     "exceljs": "^4.3.0",
     "firebase": "^9.6.8",
     "python-shell": "^3.0.1",
@@ -26,7 +27,6 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "^5.0.0",
     "sass": "^1.49.9",
-    "update-electron-app": "^2.0.1",
     "web-vitals": "^2.1.4"
   },
   "main": "public/electron.js",
@@ -38,18 +38,26 @@
     "build": "yarn sass && yarn css:minify && GENERATE_SOURCEMAP=false react-scripts build",
     "build:win": "yarn sass && yarn css:minify && cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "build:electron": "node ./scripts/prebuild.js && yarn build && electron-builder && node ./scripts/postbuild.js",
-    "build:win:electron": "node ./scripts/prebuild.js && yarn build:win && electron-builder && node ./scripts/postbuild.js",
+    "build:win:electron": "node ./scripts/prebuild.js && yarn build:win && electron-builder build --win --publish never && node ./scripts/postbuild.js",
     "css:minify": "cleancss -o ./src/App.min.css ./src/App.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml --ext .tsx ./src",
+    "deploy": "node ./scripts/prebuild.js && yarn build:win && electron-builder build --win --publish always && node ./scripts/postbuild.js",
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "license": "Apache-2.0",
   "build": {
     "appId": "com.stanleyowen.sd",
-    "productName": "SD App",
+    "productName": "SD Desktop",
     "copyright": "Copyright © 2022 Stanley Owen",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "stanleyowen",
+        "repo": "sales-distribution"
+      }
+    ],
     "nsis": {
       "oneClick": false,
       "perMachine": true,

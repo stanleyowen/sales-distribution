@@ -50,6 +50,16 @@ input:disabled {
     font-size: 0.8rem;
 }
 
+a {
+    color: #1976d2;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+a:focus {
+    opacity: 0.7;
+}
+
 .w-auto {
     width: auto !important;
 }
@@ -58,7 +68,8 @@ input:disabled {
     box-sizing: border-box !important;
 }
 
-.w-100 {
+.w-100,
+.MuiAlert-message {
     width: 100% !important;
 }
 
@@ -111,6 +122,10 @@ button {
     border: none;
     cursor: pointer;
     background-color: transparent;
+}
+
+.text-center {
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
