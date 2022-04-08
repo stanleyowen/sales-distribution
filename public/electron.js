@@ -44,6 +44,10 @@ function createWindow() {
     mainWindow.once('ready-to-show', () =>
         autoUpdater.checkForUpdatesAndNotify()
     );
+    mainWindow.webContents.on('new-window', (e, url) => {
+        e.preventDefault();
+        shell.openExternal(url);
+    });
 
     setLocalStorageDatabase();
 
