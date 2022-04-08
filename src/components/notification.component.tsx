@@ -6,7 +6,7 @@ type TransitionProps = Omit<SlideProps, 'direction'>;
 
 // eslint-disable-next-line
 const Notification = () => {
-    const [isOpen, setOpen] = useState<boolean>(true);
+    const [isOpen, setOpen] = useState<boolean>(false);
 
     const [transition, setTransition] = useState<
         React.ComponentType<TransitionProps> | undefined
