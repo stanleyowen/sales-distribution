@@ -43,7 +43,7 @@ const Notification = () => {
                     </a>
                     .
                 </p>
-                <Button>Later</Button>
+                <Button onClick={() => setOpen(false)}>Later</Button>
                 <Button onClick={() => ipcRenderer.send('restart_app')}>
                     Restart App
                 </Button>
