@@ -18,6 +18,10 @@ const Notification = () => {
         }
         setTransition(() => Transition);
 
+        ipcRenderer.on('update_available', () => {
+            console.log('Updates Available');
+        });
+
         ipcRenderer.on('update_downloaded', () => {
             ipcRenderer.removeAllListeners('update_downloaded');
             setOpen(true);

@@ -41,9 +41,7 @@ function createWindow() {
     mainWindow.setMenuBarVisibility(false);
     mainWindow.once('ready-to-show', () => mainWindow.show());
     mainWindow.on('closed', () => (mainWindow = null));
-    mainWindow.once('ready-to-show', () =>
-        autoUpdater.checkForUpdatesAndNotify()
-    );
+    mainWindow.once('ready-to-show', () => autoUpdater.checkForUpdates());
     mainWindow.webContents.on('new-window', (e, url) => {
         e.preventDefault();
         shell.openExternal(url);
@@ -56,7 +54,6 @@ function createWindow() {
         store.set(id, value);
         setLocalStorageDatabase();
     });
-
     ipcMain.on('restart_app', () => autoUpdater.quitAndInstall());
 }
 
@@ -68,6 +65,9 @@ app.on('activate', () => {
     if (mainWindow === null) createWindow();
 });
 
+autoUpdater.on('update-available', () =>
+    mainWindow.webContents.send('update_available')
+);
 autoUpdater.on('update-downloaded', () =>
     mainWindow.webContents.send('update_downloaded')
 );
