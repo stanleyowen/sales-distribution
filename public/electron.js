@@ -41,9 +41,7 @@ function createWindow() {
     mainWindow.setMenuBarVisibility(false);
     mainWindow.once('ready-to-show', () => mainWindow.show());
     mainWindow.on('closed', () => (mainWindow = null));
-    mainWindow.once('ready-to-show', () =>
-        autoUpdater.checkForUpdatesAndNotify()
-    );
+    mainWindow.once('ready-to-show', () => autoUpdater.checkForUpdates());
     mainWindow.webContents.on('new-window', (e, url) => {
         e.preventDefault();
         shell.openExternal(url);
