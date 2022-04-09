@@ -13,7 +13,7 @@ const Navbar = () => {
                         component="div"
                         sx={{ flexGrow: 1 }}
                     >
-                        Sales & Distribution (Testing Purposes)
+                        Sales & Distribution
                         <sub className="small"> v{PackageInfo.version}</sub>
                     </Typography>
                     <Button
