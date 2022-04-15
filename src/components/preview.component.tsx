@@ -6,7 +6,7 @@ const xlsx = window.require('exceljs');
 
 type Data = {
     invoiceNumber: number;
-    invoiceType: '00' | 'A00' | 'BC000' | 'D00' | 'E00' | '';
+    invoiceType: '00' | 'A00' | 'B00' | 'BC000' | 'D00' | 'E00' | '';
     customer: {
         id: number;
         fullName: string;
