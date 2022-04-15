@@ -66,6 +66,10 @@ const Preview = () => {
             const template = workbook.worksheets[0];
             const config = workbook.worksheets[1];
 
+            if (data.invoiceType === 'NR00') {
+                template.getColumn(2).width = 22.35;
+                template.getColumn(6).width = 12.75;
+            }
             config.getCell('C2').value = data.invoiceType;
 
             template.getCell('G1').value =
