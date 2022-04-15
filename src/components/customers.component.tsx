@@ -156,6 +156,7 @@ const Customers = () => {
 
     const UpdateCustomerData = (data: CustomerData) => {
         handleProperties('customerDialogIsOpen', true);
+
         setCustomerData({
             ...data,
             properties: { isUpdate: true },
@@ -254,7 +255,13 @@ const Customers = () => {
                 open={properties.customerDialogIsOpen}
                 onClose={() => closeCustomerDialog()}
             >
-                <form onSubmit={() => addCustomerData()}>
+                <form
+                    onSubmit={() =>
+                        customerData?.properties?.isUpdate
+                            ? null
+                            : addCustomerData()
+                    }
+                >
                     <DialogTitle>Update Customer&#39;s Details</DialogTitle>
                     <DialogContent>
                         {properties.isNotValid ? (
@@ -288,10 +295,12 @@ const Customers = () => {
                                         autoFocus={index === 1}
                                         value={(customerData as any)[id]}
                                         onChange={(e) =>
-                                            handleCustomerData(
-                                                id,
-                                                e.target.value
-                                            )
+                                            customerData?.properties?.isUpdate
+                                                ? null
+                                                : handleCustomerData(
+                                                      id,
+                                                      e.target.value
+                                                  )
                                         }
                                     />
                                 );
@@ -304,7 +313,14 @@ const Customers = () => {
                                 title="Double Click the Button to Delete Customer Data"
                             >
                                 <Button
-                                    onDoubleClick={() => DeleteCustomerData()}
+                                    disabled={
+                                        customerData?.properties?.isUpdate
+                                    }
+                                    onDoubleClick={() =>
+                                        customerData?.properties?.isUpdate
+                                            ? null
+                                            : DeleteCustomerData()
+                                    }
                                     color="error"
                                 >
                                     Delete
@@ -314,7 +330,10 @@ const Customers = () => {
                         <Button onClick={() => closeCustomerDialog()}>
                             Cancel
                         </Button>
-                        <Button type="submit">
+                        <Button
+                            type="submit"
+                            disabled={customerData?.properties?.isUpdate}
+                        >
                             {customerData?.properties?.isUpdate
                                 ? 'Update'
                                 : 'Add'}
