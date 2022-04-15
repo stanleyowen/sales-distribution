@@ -60,8 +60,11 @@ const Preview = () => {
     function readExcelFile(filePath: string, callback: any) {
         const workbook = new xlsx.Workbook();
         workbook.xlsx.readFile(filePath).then(() => {
-            const template = workbook.worksheets[0];
-            const config = workbook.worksheets[1];
+            const template =
+                data.invoiceType === 'A00'
+                    ? workbook.worksheets[1]
+                    : workbook.worksheets[0];
+            const config = workbook.worksheets[2];
 
             config.getCell('C2').value = data.invoiceType;
 
