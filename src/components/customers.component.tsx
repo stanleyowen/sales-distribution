@@ -312,19 +312,21 @@ const Customers = () => {
                                 placement="top"
                                 title="Double Click the Button to Delete Customer Data"
                             >
-                                <Button
-                                    disabled={
-                                        customerData?.properties?.isUpdate
-                                    }
-                                    onDoubleClick={() =>
-                                        customerData?.properties?.isUpdate
-                                            ? null
-                                            : DeleteCustomerData()
-                                    }
-                                    color="error"
-                                >
-                                    Delete
-                                </Button>
+                                <span>
+                                    <Button
+                                        disabled={
+                                            customerData?.properties?.isUpdate
+                                        }
+                                        onDoubleClick={() =>
+                                            customerData?.properties?.isUpdate
+                                                ? null
+                                                : DeleteCustomerData()
+                                        }
+                                        color="error"
+                                    >
+                                        Delete
+                                    </Button>
+                                </span>
                             </Tooltip>
                         ) : null}
                         <Button onClick={() => closeCustomerDialog()}>
