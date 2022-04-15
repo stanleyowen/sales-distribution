@@ -75,10 +75,16 @@ const Preview = () => {
             data.items.map((item: any, col: number) => {
                 const row = col + 8;
 
-                ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].map(
+                ['A', 'B', 'D'].map(
                     (cell: string) =>
                         (template.getCell(cell + row).alignment = {
                             horizontal: 'left',
+                        })
+                );
+                ['C', 'E', 'F', 'G', 'H'].map(
+                    (cell: string) =>
+                        (template.getCell(cell + row).alignment = {
+                            horizontal: 'right',
                         })
                 );
 

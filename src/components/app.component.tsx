@@ -247,7 +247,7 @@ const App = () => {
                                     >
                                         <MenuItem value="00">00</MenuItem>
                                         <MenuItem value="A00">A00</MenuItem>
-                                        <MenuItem value="BC000">B00</MenuItem>
+                                        <MenuItem value="B00">B00</MenuItem>
                                         <MenuItem value="BC000">BC000</MenuItem>
                                         <MenuItem value="D00">D00</MenuItem>
                                         <MenuItem value="E00">E00</MenuItem>
