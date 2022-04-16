@@ -101,7 +101,10 @@ const Preview = () => {
                 template.getCell('E' + row).value = item.unitPrice;
                 template.getCell('F' + row).value = item.discountPercent / 100;
                 template.getCell('G' + row).value = item.discountPerKg;
-                template.getCell('H' + row).value = item.totalPrice;
+                template.getCell('H' + row).value = item.unitPrice * item.qty;
+                config.getCell('B' + (row - 6)).value =
+                    item.unitPrice * item.qty - item.totalPrice;
+                console.log(item.unitPrice, item.qty, item.totalPrice);
             });
 
             const dir = filePath.substring(0, filePath.lastIndexOf('\\'));
