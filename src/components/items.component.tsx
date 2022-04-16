@@ -30,7 +30,7 @@ type Props = {
 type ItemData = {
     id: number;
     itemName: string;
-    unitPrice: string;
+    unitPrice: number;
     properties?: {
         isUpdate?: boolean;
     };
@@ -48,7 +48,7 @@ const Items = () => {
     const [itemData, setItemData] = useState<ItemData>({
         id: 0,
         itemName: '',
-        unitPrice: '',
+        unitPrice: 0,
         properties: {
             isUpdate: false,
         },
@@ -56,8 +56,12 @@ const Items = () => {
 
     const handleProperties = (id: string, value: number | boolean) =>
         setProps({ ...properties, [id]: value });
-    const handleItemData = (id: string, value: string | number) =>
-        setItemData({ ...itemData, [id]: value });
+    const handleItemData = (id: string, value: any) => {
+        setItemData({
+            ...itemData,
+            [id]: isNaN(value) ? value : parseInt(value),
+        });
+    };
 
     const columns = [
         { id: 'id', label: 'Id' },
@@ -81,7 +85,7 @@ const Items = () => {
         setItemData({
             id: data?.length + 1,
             itemName: '',
-            unitPrice: '',
+            unitPrice: 0,
             properties: {
                 isUpdate: false,
             },
