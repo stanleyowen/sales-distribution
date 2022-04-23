@@ -19,6 +19,7 @@ type Props = {
 };
 
 type Data = {
+    invoiceDate: Date | null;
     invoiceNumber: string;
     invoiceType: '00' | 'A00' | 'B00' | 'BC000' | 'D00' | 'E00' | 'NR00' | '';
     customer: {
@@ -40,6 +41,7 @@ const App = () => {
         isDuplicate: false,
     });
     const [data, setData] = useState<Data>({
+        invoiceDate: new Date(),
         invoiceNumber: '',
         invoiceType: '00',
         customer: {
@@ -63,7 +65,7 @@ const App = () => {
         ],
     });
 
-    const handleData = (id: string, value: string | number) =>
+    const handleData = (id: string, value: string | number | Date) =>
         setData({ ...data, [id]: value });
 
     const handleProps = (id: string, value: boolean) =>
@@ -211,7 +213,7 @@ const App = () => {
                     ) : null}
                     <form onSubmit={() => SaveInvoice()}>
                         <Grid container spacing={2}>
-                            <Grid item xs={8}>
+                            <Grid item xs={4}>
                                 <TextField
                                     required
                                     autoFocus
@@ -254,6 +256,22 @@ const App = () => {
                                         <MenuItem value="NR00">NR00</MenuItem>
                                     </Select>
                                 </FormControl>
+                            </Grid>
+
+                            <Grid item xs={4}>
+                                <TextField
+                                    required
+                                    type="date"
+                                    variant="filled"
+                                    label="Invoice Date"
+                                    value={data.invoiceDate}
+                                    onChange={(e) =>
+                                        handleData(
+                                            'invoiceDate',
+                                            e.target.value
+                                        )
+                                    }
+                                />
                             </Grid>
 
                             <Grid item xs={2}>
