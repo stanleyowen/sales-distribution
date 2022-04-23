@@ -232,7 +232,10 @@ const EditInvoice = () => {
             writeFile(
                 localStorage.getItem('invoice-database'),
                 JSON.stringify(newInvoice),
-                () => (window.location.hash = '/invoices')
+                () =>
+                    (window.location.hash = `/preview/${
+                        data.invoiceType + data.invoiceNumber
+                    }`)
             );
         }
     };
