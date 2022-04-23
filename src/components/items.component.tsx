@@ -59,7 +59,7 @@ const Items = () => {
     const handleItemData = (id: string, value: any) => {
         setItemData({
             ...itemData,
-            [id]: isNaN(value) ? value : parseInt(value),
+            [id]: isNaN(value) || !value ? value : parseInt(value),
         });
     };
 
