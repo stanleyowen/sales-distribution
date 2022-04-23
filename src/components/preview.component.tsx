@@ -80,7 +80,15 @@ const Preview = () => {
             template.getCell('F5').value = data.customer.address;
             template.getCell('F6').value =
                 data.customer.idNumber + ' / ' + data.customer.taxId;
-            template.getCell('E24').value = data.invoiceDate;
+            template.getCell('E24').value = data.invoiceDate
+                ? 'Medan, '.concat(
+                      new Date(data.invoiceDate)!.toLocaleDateString('id-ID', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                      })
+                  )
+                : data.invoiceDate;
 
             data.items.map((item: any, col: number) => {
                 const row = col + 8;
