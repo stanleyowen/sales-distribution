@@ -28,6 +28,7 @@ import {
 import { readFile, writeFile, openFilePath } from '../lib/file-operation.lib';
 
 type Data = {
+    invoiceDate: Date | null;
     invoiceNumber: number;
     invoiceType: '00' | 'A00' | 'B00' | 'BC000' | 'D00' | 'E00' | 'NR00' | '';
     customer: {
@@ -59,6 +60,7 @@ const EditInvoice = () => {
         dialogIsOpen: false,
     });
     const [data, setData] = useState<Data>({
+        invoiceDate: new Date(),
         invoiceNumber: 0,
         invoiceType: '',
         customer: {
@@ -262,7 +264,7 @@ const EditInvoice = () => {
                     </Alert>
                 ) : null}
                 <Grid container spacing={2}>
-                    <Grid item xs={8}>
+                    <Grid item xs={4}>
                         <TextField
                             required
                             type="number"
@@ -302,6 +304,19 @@ const EditInvoice = () => {
                                 <MenuItem value="NR00">NR00</MenuItem>
                             </Select>
                         </FormControl>
+                    </Grid>
+
+                    <Grid item xs={4}>
+                        <TextField
+                            required
+                            type="date"
+                            variant="filled"
+                            label="Invoice Date"
+                            value={data.invoiceDate}
+                            onChange={(e) =>
+                                handleData('invoiceDate', e.target.value)
+                            }
+                        />
                     </Grid>
 
                     <Grid item xs={2}>
