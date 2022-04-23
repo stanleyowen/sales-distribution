@@ -5,6 +5,7 @@ import { readFile, createFolder } from '../lib/file-operation.lib';
 const xlsx = window.require('exceljs');
 
 type Data = {
+    invoiceDate: Date | null;
     invoiceNumber: number;
     invoiceType: '00' | 'A00' | 'B00' | 'BC000' | 'D00' | 'E00' | 'NR00' | '';
     customer: {
@@ -31,6 +32,7 @@ const Preview = () => {
     });
     const [path, setPath] = useState<string>('');
     const [data, setData] = useState<Data>({
+        invoiceDate: new Date(),
         invoiceNumber: 0,
         invoiceType: '',
         customer: {
@@ -78,6 +80,15 @@ const Preview = () => {
             template.getCell('F5').value = data.customer.address;
             template.getCell('F6').value =
                 data.customer.idNumber + ' / ' + data.customer.taxId;
+            template.getCell('E24').value = data.invoiceDate
+                ? 'Medan, '.concat(
+                      new Date(data.invoiceDate)!.toLocaleDateString('id-ID', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                      })
+                  )
+                : data.invoiceDate;
 
             data.items.map((item: any, col: number) => {
                 const row = col + 8;
