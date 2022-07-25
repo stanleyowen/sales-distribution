@@ -6,7 +6,7 @@ import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
 const Navbar = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar>
                     <Typography
                         variant="h6"

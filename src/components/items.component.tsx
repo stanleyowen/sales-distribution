@@ -12,11 +12,11 @@ import {
     TableCell,
     TextField,
     DialogTitle,
+    DialogActions,
     DialogContent,
     TableContainer,
     LinearProgress,
     TablePagination,
-    DialogActions,
 } from '@mui/material';
 import { readFile, writeFile } from '../lib/file-operation.lib';
 
@@ -56,12 +56,11 @@ const Items = () => {
 
     const handleProperties = (id: string, value: number | boolean) =>
         setProps({ ...properties, [id]: value });
-    const handleItemData = (id: string, value: any) => {
+    const handleItemData = (id: string, value: any) =>
         setItemData({
             ...itemData,
             [id]: isNaN(value) || !value ? value : parseInt(value),
         });
-    };
 
     const columns = [
         { id: 'id', label: 'Id' },

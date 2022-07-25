@@ -21,15 +21,17 @@ export default function App() {
         <HashRouter>
             <Navbar />
             <Notification />
-            <Routes>
-                <Route path="/" element={<AppLayout />} />
-                <Route path="/setup" element={<Setup />} />
-                <Route path="/customers" element={<Customers />} />
-                <Route path="/invoices" element={<Invoices />} />
-                <Route path="/invoices/:id" element={<EditInvoice />} />
-                <Route path="/items" element={<Items />} />
-                <Route path="/preview/:id" element={<Preview />} />
-            </Routes>
+            <div style={{ marginTop: '70px' }}>
+                <Routes>
+                    <Route path="/" element={<AppLayout />} />
+                    <Route path="/setup" element={<Setup />} />
+                    <Route path="/customers" element={<Customers />} />
+                    <Route path="/invoices" element={<Invoices />} />
+                    <Route path="/invoices/:id" element={<EditInvoice />} />
+                    <Route path="/items" element={<Items />} />
+                    <Route path="/preview/:id" element={<Preview />} />
+                </Routes>
+            </div>
         </HashRouter>
     );
 }
