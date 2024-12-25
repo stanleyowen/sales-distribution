@@ -48,6 +48,21 @@ function createWindow() {
         shell.openExternal(url);
     });
 
+    // Enable refresh functionality
+    mainWindow.webContents.on('before-input-event', (event, input) => {
+        if ((input.key === 'R' && input.meta) || input.key === 'F5') {
+            mainWindow.reload();
+            event.preventDefault();
+        }
+    });
+
+    // Add event listener for F12 key to open DevTools
+    mainWindow.webContents.on('before-input-event', (event, input) => {
+        if (input.key === 'F12' && input.type === 'keyDown') {
+            mainWindow.webContents.openDevTools();
+        }
+    });
+
     setLocalStorageDatabase();
 
     ipcMain.on('store-data', (_, arg) => {
