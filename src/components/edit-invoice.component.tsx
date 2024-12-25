@@ -277,7 +277,7 @@ const EditInvoice = () => {
                             variant="filled"
                             label="Invoice No"
                             id="invoice-number"
-                            value={data.invoiceNumber}
+                            value={data?.invoiceNumber}
                             onChange={(e) =>
                                 handleData('invoiceNumber', e.target.value)
                             }
@@ -293,7 +293,7 @@ const EditInvoice = () => {
                                 required
                                 variant="filled"
                                 labelId="invoice-type"
-                                value={data.invoiceType}
+                                value={data?.invoiceType}
                                 onChange={(e: SelectChangeEvent) =>
                                     handleData(
                                         'invoiceType',
@@ -318,7 +318,7 @@ const EditInvoice = () => {
                             type="date"
                             variant="filled"
                             label="Invoice Date"
-                            value={data.invoiceDate}
+                            value={data?.invoiceDate}
                             onChange={(e) =>
                                 handleData('invoiceDate', e.target.value)
                             }
@@ -331,7 +331,7 @@ const EditInvoice = () => {
                             type="number"
                             variant="filled"
                             label="Customer Id"
-                            value={data.customer.id}
+                            value={data?.customer.id}
                             onChange={(e) => {
                                 handleCustomer('id', e.target.value);
                                 SearchCustomerById(e.target.value);
@@ -345,7 +345,7 @@ const EditInvoice = () => {
                             variant="filled"
                             label="Name"
                             className="disabled"
-                            value={data.customer.fullName}
+                            value={data?.customer.fullName}
                         />
                     </Grid>
 
@@ -355,7 +355,7 @@ const EditInvoice = () => {
                             variant="filled"
                             label="Address"
                             className="disabled"
-                            value={data.customer.address}
+                            value={data?.customer.address}
                         />
                     </Grid>
 
@@ -365,7 +365,7 @@ const EditInvoice = () => {
                             variant="filled"
                             className="disabled"
                             label=" Tax Id (NPWP)"
-                            value={data.customer.taxId}
+                            value={data?.customer.taxId}
                         />
                     </Grid>
 
@@ -375,149 +375,157 @@ const EditInvoice = () => {
                             variant="filled"
                             className="disabled"
                             label="Id Number (NIK)"
-                            value={data.customer.idNumber}
+                            value={data?.customer.idNumber}
                         />
                     </Grid>
                 </Grid>
 
-                <p className="mb-10">Item(s)</p>
-
-                {data.items.map((_: any, index: number) => {
+                {data?.items.map((_: any, index: number) => {
                     return (
-                        <Grid
-                            container
-                            spacing={2}
-                            key={index}
-                            className="mb-10"
-                        >
-                            <Grid item xs={2}>
-                                <TextField
-                                    required
-                                    type="number"
-                                    label="Item Id"
-                                    variant="filled"
-                                    className="w-100"
-                                    value={data.items[index].id}
-                                    onChange={(e) => {
-                                        handleItems(
-                                            'id',
-                                            e.target.value,
-                                            index
-                                        );
-                                        SearchItemById(e.target.value, index);
-                                    }}
-                                />
-                            </Grid>
-                            <Grid item xs={2}>
-                                <TextField
-                                    required
-                                    type="number"
-                                    variant="filled"
-                                    label="Quantity"
-                                    className="w-100"
-                                    value={data.items[index].qty}
-                                    onChange={(e) => {
-                                        handleItems(
-                                            'qty',
-                                            e.target.value,
-                                            index
-                                        );
-                                        calculateTotalPricePerItem(index);
-                                    }}
-                                />
-                            </Grid>
-                            <Grid item xs={4}>
-                                <TextField
-                                    disabled
-                                    variant="filled"
-                                    label="Item Name"
-                                    className="w-100 disabled"
-                                    value={data.items[index].itemName}
-                                />
-                            </Grid>
-                            <Grid item xs={2}>
-                                <TextField
-                                    disabled
-                                    variant="filled"
-                                    className="w-100 disabled"
-                                    label="Unit of Measure"
-                                    value={data.items[index].unitOfMeasure}
-                                />
-                            </Grid>
-                            <Grid item xs={2}>
-                                <TextField
-                                    disabled
-                                    variant="filled"
-                                    className="w-100 disabled"
-                                    label="Unit Price"
-                                    value={data.items[
-                                        index
-                                    ].unitPrice.toLocaleString('id-ID')}
-                                />
-                            </Grid>
-                            <Grid item xs={3}>
-                                <TextField
-                                    type="number"
-                                    variant="filled"
-                                    className="w-100"
-                                    label="Discount (%)"
-                                    value={data.items[index].discountPercent}
-                                    onChange={(e) => {
-                                        handleItems(
-                                            'discountPercent',
-                                            e.target.value,
-                                            index
-                                        );
-                                        calculateTotalPricePerItem(index);
-                                    }}
-                                />
-                            </Grid>
-                            <Grid item xs={3}>
-                                <TextField
-                                    type="number"
-                                    variant="filled"
-                                    className="w-100"
-                                    label="Discount Each Kg"
-                                    value={data.items[index].discountPerKg}
-                                    onChange={(e) => {
-                                        handleItems(
-                                            'discountPerKg',
-                                            e.target.value,
-                                            index
-                                        );
-                                        calculateTotalPricePerItem(index);
-                                    }}
-                                />
-                            </Grid>
-                            <Grid item xs={3}>
-                                <TextField
-                                    disabled
-                                    variant="filled"
-                                    className="w-100 disabled"
-                                    label="Total Price"
-                                    value={data.items[
-                                        index
-                                    ].totalPrice.toLocaleString('id-ID')}
-                                />
-                            </Grid>
-                            {index === 0 ? null : (
-                                <Grid item>
-                                    <Tooltip title="Remove Item">
-                                        <Button
-                                            color="warning"
-                                            className="h-100"
-                                            variant="outlined"
-                                            onClick={() => removeItem(index)}
-                                        >
-                                            <CloseIcon
-                                                width="2em"
-                                                height="2em"
-                                            />
-                                        </Button>
-                                    </Tooltip>
+                        <>
+                            <p className="mb-10">Item(s)</p>
+                            <Grid
+                                container
+                                spacing={2}
+                                key={index}
+                                className="mb-10"
+                            >
+                                <Grid item xs={2}>
+                                    <TextField
+                                        required
+                                        type="number"
+                                        label="Item Id"
+                                        variant="filled"
+                                        className="w-100"
+                                        value={data.items[index].id}
+                                        onChange={(e) => {
+                                            handleItems(
+                                                'id',
+                                                e.target.value,
+                                                index
+                                            );
+                                            SearchItemById(
+                                                e.target.value,
+                                                index
+                                            );
+                                        }}
+                                    />
                                 </Grid>
-                            )}
-                        </Grid>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        required
+                                        type="number"
+                                        variant="filled"
+                                        label="Quantity"
+                                        className="w-100"
+                                        value={data.items[index].qty}
+                                        onChange={(e) => {
+                                            handleItems(
+                                                'qty',
+                                                e.target.value,
+                                                index
+                                            );
+                                            calculateTotalPricePerItem(index);
+                                        }}
+                                    />
+                                </Grid>
+                                <Grid item xs={4}>
+                                    <TextField
+                                        disabled
+                                        variant="filled"
+                                        label="Item Name"
+                                        className="w-100 disabled"
+                                        value={data.items[index].itemName}
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        disabled
+                                        variant="filled"
+                                        className="w-100 disabled"
+                                        label="Unit of Measure"
+                                        value={data.items[index].unitOfMeasure}
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        disabled
+                                        variant="filled"
+                                        className="w-100 disabled"
+                                        label="Unit Price"
+                                        value={data.items[
+                                            index
+                                        ].unitPrice.toLocaleString('id-ID')}
+                                    />
+                                </Grid>
+                                <Grid item xs={3}>
+                                    <TextField
+                                        type="number"
+                                        variant="filled"
+                                        className="w-100"
+                                        label="Discount (%)"
+                                        value={
+                                            data.items[index].discountPercent
+                                        }
+                                        onChange={(e) => {
+                                            handleItems(
+                                                'discountPercent',
+                                                e.target.value,
+                                                index
+                                            );
+                                            calculateTotalPricePerItem(index);
+                                        }}
+                                    />
+                                </Grid>
+                                <Grid item xs={3}>
+                                    <TextField
+                                        type="number"
+                                        variant="filled"
+                                        className="w-100"
+                                        label="Discount Each Kg"
+                                        value={data.items[index].discountPerKg}
+                                        onChange={(e) => {
+                                            handleItems(
+                                                'discountPerKg',
+                                                e.target.value,
+                                                index
+                                            );
+                                            calculateTotalPricePerItem(index);
+                                        }}
+                                    />
+                                </Grid>
+                                <Grid item xs={3}>
+                                    <TextField
+                                        disabled
+                                        variant="filled"
+                                        className="w-100 disabled"
+                                        label="Total Price"
+                                        value={data.items[
+                                            index
+                                        ].totalPrice.toLocaleString('id-ID')}
+                                    />
+                                </Grid>
+                                {index === 0 ? null : (
+                                    <Grid item>
+                                        <Tooltip title="Remove Item">
+                                            <Button
+                                                color="warning"
+                                                className="h-100"
+                                                variant="outlined"
+                                                onClick={() =>
+                                                    removeItem(index)
+                                                }
+                                            >
+                                                <CloseIcon
+                                                    width="2em"
+                                                    height="2em"
+                                                />
+                                            </Button>
+                                        </Tooltip>
+                                    </Grid>
+                                )}
+                            </Grid>
+                        </>
                     );
                 })}
 
